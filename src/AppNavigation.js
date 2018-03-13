@@ -14,8 +14,8 @@ import SearchScreen from './Screens/SearchScreen'
 import ExercisesScreen from './Screens/ExercisesScreen'
 import ChatScreen from './Screens/ChatScreen'
 
-export const AppNavigation = StackNavigator({
 
+export const AppNavigation =  StackNavigator({
     Home: { screen: Home },
     MainScreen: { screen: MainScreen },
     CallScreen: { screen: CallScreen },
@@ -24,8 +24,7 @@ export const AppNavigation = StackNavigator({
     SearchScreen: { screen: SearchScreen },
     ExercisesScreen: { screen: ExercisesScreen },
     ChatScreen: { screen: ChatScreen },
-
 },
-    {
-        initialRouteName: 'Home',
-    })
+{
+  initialRouteName: 'MainScreen',
+})
