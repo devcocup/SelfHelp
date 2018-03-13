@@ -1,5 +1,5 @@
 //React
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import {
 	View,
 	Text,
@@ -8,19 +8,19 @@ import {
 	StyleSheet,
 	TouchableOpacity,
 	Image
-} from "react-native";
+} from 'react-native'
 
 const Menu = require('../Assets/Images/menu.png')
 
-const { height, width } = Dimensions.get("window");
+const { height, width } = Dimensions.get("window")
 
-const heading1 = "Building Hope & Resiliency";
+const heading1 = "Building Hope & Resiliency"
 const label1 =
-	"A self guided education program that helps you begin to recover and heal";
+	"A self guided education program that helps you begin to recover and heal"
 
-const heading2 = "What to do ";
+const heading2 = "What to do "
 const label2 =
-	"Learn what to do if you or someone you know has been sexually assaulted.";
+	"Learn what to do if you or someone you know has been sexually assaulted."
 
 const Button = ({ text }) => {
 	return (
@@ -29,12 +29,12 @@ const Button = ({ text }) => {
 				<Text style={styles.buttonText}>{text}</Text>
 			</View>
 		</TouchableOpacity>
-	);
-};
+	)
+}
 
 const Card = ({ heading, label }) => {
 	return (
-		<TouchableOpacity style={styles.singleCardContainer}>
+		<View style={styles.singleCardContainer}>
 			<View style={styles.iconContainer}>
 				<Text style={styles.icon}>Icon</Text>
 			</View>
@@ -42,13 +42,13 @@ const Card = ({ heading, label }) => {
 				<Text style={styles.headingTxt}>{heading}</Text>
 				<Text style={styles.labelTxt}>{label}</Text>
 			</View>
-		</TouchableOpacity>
-	);
-};
+		</View>
+	)
+}
 
 export default class LearnScreen extends Component {
 
-    /*
+	/*
     static navigationOptions = {      
         headerStyle: {backgroundColor: 'rgb(0,143,120)'},
         headerTintColor: 'white',
@@ -60,7 +60,7 @@ export default class LearnScreen extends Component {
         title: 'Plan Screen',
         headerStyle: {backgroundColor: 'rgb(0,143,120)'},
         headerTintColor: 'white',
-        headerTitleStyle : {alignSelf:'flex-start'},
+        headerTitleStyle : {alignSelf:'flex-start'}
     }
 
 
@@ -89,7 +89,7 @@ export default class LearnScreen extends Component {
 					</View>
 				</View>
 			</View>
-		);
+		)
 	}
 }
 
@@ -101,13 +101,16 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 		justifyContent: "center"
 	},
+
 	heading: { fontSize: 30, fontWeight: "600" },
+	
 	cardContainer: {
 		flex: 1,
 		paddingLeft: 10,
 		paddingRight: 10,
 		backgroundColor: "#208167"
 	},
+
 	button: {
 		height: height / 16,
 		marginTop: 10,
@@ -117,6 +120,7 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		borderRadius: 4
 	},
+
 	singleCardContainer: {
 		height: height / 7,
 		marginTop: 10,
@@ -128,21 +132,43 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		overflow: "hidden"
 	},
+
 	iconContainer: {
 		height: height / 7,
 		width: height / 7,
 		alignItems: "center",
 		justifyContent: "center"
 	},
+
 	details: {
 		height: height / 7,
 		width: width - height / 7 - 20,
 		justifyContent: "center",
 		padding: 10
 	},
-	buttonText: { color: "white", fontWeight: "600", fontSize: 18 },
-	icon: { color: "white", fontWeight: "600", fontSize: 18 },
-	headingTxt: { color: "white", fontWeight: "600", fontSize: 14 },
-	labelTxt: { color: "white", fontWeight: "400", fontSize: 12, marginTop: 3 }
-});
 
+	buttonText: {
+		color: "white",
+		fontWeight: "600",
+		fontSize: 18
+	},
+
+	icon: {
+		color: "white",
+		fontWeight: "600",
+		fontSize: 18
+	},
+
+	headingTxt: {
+		color: "white",
+		fontWeight: "600",
+		fontSize: 14
+	},
+
+	labelTxt: {
+		color: "white",
+		fontWeight: "400",
+		fontSize: 12,
+		marginTop: 3
+	}
+})
