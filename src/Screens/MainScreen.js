@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View,ScrollView,Text, Dimensions, Image, TouchableOpacity, StyleSheet } from 'react-native'
 //Assets
-import MenuBox from '../Components/MenuBox'
+import HomeButton from '../Components/HomeButton'
 
 const Search = require('../Assets/Images/ic_search_white_3x.png')
 const Logo = require('../Assets/Images/logo.png')
@@ -33,35 +33,35 @@ export default class MainScreen extends Component {
                     </View>   
                     <View style={{margin:10}}>
                     <View style={styles.Boxcontainer}>
-                        <MenuBox 
+                        <HomeButton 
                             source={ Chat } 
                             Label='Chat'
                             onPress={() => this.goToScreen("ChatScreen")} 
                             
                         />
-                        <MenuBox 
+                        <HomeButton 
                             source={ Phone } 
                             Label='Call'  
                             onPress={() => this.goToScreen("CallScreen")} 
                         />         
                     </View>    
                     <View style={styles.Boxcontainer}>
-                        <MenuBox 
+                        <HomeButton 
                             source={ Learn } 
                             Label='Learn'
                             onPress={() => this.goToScreen("LearnScreen")} 
                         />
-                        <MenuBox 
+                        <HomeButton 
                             Label='Plan'  
                             onPress={() => this.goToScreen("PlanScreen")} 
                         />    
                     </View>  
                     <View style={styles.Boxcontainer}>
-                        <MenuBox 
+                        <HomeButton 
                             Label='Exercises' 
                             onPress={() => this.goToScreen("ExercisesScreen")}  
                         />
-                        <MenuBox 
+                        <HomeButton 
                             Label='Search' 
                             onPress={() => this.goToScreen("SearchScreen")}   
                         />   

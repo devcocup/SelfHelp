@@ -18,7 +18,7 @@ var styles = StyleSheet.create({
         marginLeft: 10,
         backgroundColor: 'rgb(0,143,120)',
         height: 120,
-        width: 180,
+        width: 160,
         borderRadius: 7,
         justifyContent: 'flex-end',
         alignItems: 'center',
