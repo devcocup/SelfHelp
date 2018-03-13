@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { View,ScrollView,Text, Dimensions, Image, TouchableOpacity, StyleSheet } from 'react-native'
+import Overlay from 'react-native-modal-overlay'
+
 //Assets
 import HomeButton from '../Components/HomeButton'
+import ChatMenu from './ChatMenu'
 
 const Search = require('../Assets/Images/ic_search_white_3x.png')
 const Logo = require('../Assets/Images/logo.png')
@@ -20,54 +23,77 @@ export default class MainScreen extends Component {
         headerRight: <Image source={Menu} style={{ marginRight: 10 }}/>
     }
 
+    state = {
+        chatMenuVisible: false
+    }
+
     goToScreen = (ScreenName) => {
         const { navigate } = this.props.navigation
         navigate(ScreenName)
     }
 
+    onChatClick = (ScreenName) => {
+        // this.goToScreen(ScreenName)
+        this.setState({
+            chatMenuVisible: true
+        })
+    }
+
     render() {
+        const { chatMenuVisible } = this.state
+
         return(
-            <ScrollView style={{backgroundColor: 'rgb(0,131,105)'}}>  
-                <View style={{backgroundColor:'white', height: height/5, justifyContent:'center',alignItems:'center' }}>
-                    <Image source={Logo} style={{ height:100, width:width }} />
-                    </View>   
-                    <View style={{margin:10}}>
-                    <View style={styles.Boxcontainer}>
-                        <HomeButton 
-                            source={ Chat } 
-                            Label='Chat'
-                            onPress={() => this.goToScreen("ChatScreen")} 
-                            
-                        />
-                        <HomeButton 
-                            source={ Phone } 
-                            Label='Call'  
-                            onPress={() => this.goToScreen("CallScreen")} 
-                        />         
-                    </View>    
-                    <View style={styles.Boxcontainer}>
-                        <HomeButton 
-                            source={ Learn } 
-                            Label='Learn'
-                            onPress={() => this.goToScreen("LearnScreen")} 
-                        />
-                        <HomeButton 
-                            Label='Plan'  
-                            onPress={() => this.goToScreen("PlanScreen")} 
-                        />    
-                    </View>  
-                    <View style={styles.Boxcontainer}>
-                        <HomeButton 
-                            Label='Exercises' 
-                            onPress={() => this.goToScreen("ExercisesScreen")}  
-                        />
-                        <HomeButton 
-                            Label='Search' 
-                            onPress={() => this.goToScreen("SearchScreen")}   
-                        />   
-                    </View>  
-                </View> 
-            </ScrollView>
+            <View style={{ height: height }}>
+                <ScrollView style={{ backgroundColor:'rgb(0,131,105)' }}>  
+                    <View style={{ backgroundColor:'white', height:height/5, justifyContent:'center',alignItems:'center' }}>
+                        <Image source={Logo} style={{ height:100, width:width }} />
+                        </View>   
+                        <View style={{margin:10}}>
+                        <View style={styles.Boxcontainer}>
+                            <HomeButton 
+                                source={ Chat } 
+                                Label='Chat'
+                                onPress={() => this.onChatClick("ChatScreen")} 
+                                
+                            />
+                            <HomeButton 
+                                source={ Phone } 
+                                Label='Call'  
+                                onPress={() => this.goToScreen("CallScreen")} 
+                            />         
+                        </View>    
+                        <View style={styles.Boxcontainer}>
+                            <HomeButton 
+                                source={ Learn } 
+                                Label='Learn'
+                                onPress={() => this.goToScreen("LearnScreen")} 
+                            />
+                            <HomeButton 
+                                Label='Plan'  
+                                onPress={() => this.goToScreen("PlanScreen")} 
+                            />    
+                        </View>  
+                        <View style={styles.Boxcontainer}>
+                            <HomeButton 
+                                Label='Exercises' 
+                                onPress={() => this.goToScreen("ExercisesScreen")}  
+                            />
+                            <HomeButton 
+                                Label='Search' 
+                                onPress={() => this.goToScreen("SearchScreen")}   
+                            />   
+                        </View>  
+                    </View> 
+                </ScrollView>
+                <Overlay visible={chatMenuVisible}
+                    closeOnTouchOutside animationType="zoomIn"
+                    containerStyle={{ backgroundColor: 'rgba(0,131,105,0.78)' }}
+                    childrenWrapperStyle={{ backgroundColor: 'transparent' }}
+                    animationDuration={500}
+                >
+                    <ChatMenu />
+                </Overlay>
+            </View>
         )
     }
 }
