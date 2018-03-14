@@ -1,6 +1,6 @@
 //React
 import React, { Component } from 'react'
-import { View,Text, Dimensions, Image, StyleSheet } from 'react-native'
+import { View, Text, Dimensions, Image, StyleSheet } from 'react-native'
 import { TabViewAnimated, TabBar, SceneMap } from 'react-native-tab-view'
 
 //Assets

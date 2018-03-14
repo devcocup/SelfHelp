@@ -25,7 +25,6 @@ var styles = StyleSheet.create({
     },
 
     textStyle: {
-
         color: 'white',
         fontSize: 23,
         fontWeight: '600',
