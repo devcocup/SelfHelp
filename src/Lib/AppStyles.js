@@ -1,4 +1,7 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
+import Constants from './Constants'
+
+const { height,width } = Dimensions.get('window')
 
 const AppStyles = StyleSheet.create({
     center: {
@@ -8,6 +11,12 @@ const AppStyles = StyleSheet.create({
 
     vCenter: {
         justifyContent: 'center'
+    },
+
+    mainContainer: {
+        height: height,
+        backgroundColor: Constants.Colors.primaryBgColor,
+        paddingTop: 20
     }
 })
 
