@@ -1,4 +1,4 @@
-//React
+// React
 import React, { Component } from 'react'
 import {
 	View,
@@ -9,6 +9,12 @@ import {
 	TouchableOpacity,
 	Image
 } from 'react-native'
+
+// Global Styles & Constants
+import AppStyles from '../Lib/AppStyles'
+
+// Assets
+import Header from '../Components/Header'
 
 const Menu = require('../Assets/Images/menu.png')
 
@@ -47,15 +53,6 @@ const Card = ({ heading, label }) => {
 }
 
 export default class LearnScreen extends Component {
-
-	/*
-    static navigationOptions = {      
-        headerStyle: {backgroundColor: 'rgb(0,143,120)'},
-        headerTintColor: 'white',
-        headerLeft: <Text style={{ fontSize: 18, color: 'white', fontWeight: '600',marginLeft: 10 }}> Safe Helpline </Text>,
-        headerRight: <Image source={Menu} style={{ marginRight: 10 }}/>
-    } */
-
     static navigationOptions = {
         title: 'Plan Screen',
         headerStyle: {backgroundColor: 'rgb(0,143,120)'},
@@ -63,29 +60,33 @@ export default class LearnScreen extends Component {
         headerTitleStyle : {alignSelf:'flex-start'}
     }
 
-
 	render() {
 		return (
-			<View style={{ backgroundColor: "#ededed", flex: 1 }}>
-				<View style={{ height: height - 64, width }}>
-					<View style={{ flex: 1 }}>
-						<ScrollView>
-							<View style={styles.headingContainer}>
-								<Text style={styles.heading}>Learn</Text>
-							</View>
-							<View style={styles.cardContainer}>
-								<Button text="Understanding Sexual Assault" />
-								<Card heading={heading1} label={label1} />
-								<Card heading={heading2} label={label2} />
-								<Button text="Transitioning Service Member" />
-								<Card heading={heading1} label={label1} />
-								<Card heading={heading2} label={label2} />
-								<Card heading={heading2} label={label2} />
-								<Button text="Transitioning Service Member" />
-								<Card heading={heading1} label={label1} />
-								<Card heading={heading2} label={label2} />
-							</View>
-						</ScrollView>
+			<View style={AppStyles.mainContainer}>
+				<Header
+					type='Home'
+				/>
+				<View style={{ backgroundColor: "#ededed", flex: 1 }}>
+					<View style={{ height: height - 64, width }}>
+						<View style={{ flex: 1 }}>
+							<ScrollView>
+								<View style={styles.headingContainer}>
+									<Text style={styles.heading}>Learn</Text>
+								</View>
+								<View style={styles.cardContainer}>
+									<Button text="Understanding Sexual Assault" />
+									<Card heading={heading1} label={label1} />
+									<Card heading={heading2} label={label2} />
+									<Button text="Transitioning Service Member" />
+									<Card heading={heading1} label={label1} />
+									<Card heading={heading2} label={label2} />
+									<Card heading={heading2} label={label2} />
+									<Button text="Transitioning Service Member" />
+									<Card heading={heading1} label={label1} />
+									<Card heading={heading2} label={label2} />
+								</View>
+							</ScrollView>
+						</View>
 					</View>
 				</View>
 			</View>
