@@ -3,6 +3,8 @@ import { View,ScrollView,Text, Dimensions, Image, TouchableOpacity, StyleSheet }
 import Overlay from 'react-native-modal-overlay'
 
 //Assets
+import Constants from '../Lib/Constants'
+import Header from '../Components/Header'
 import HomeButton from '../Components/HomeButton'
 import ChatMenu from './ChatMenu'
 import CallMenu from './CallMenu'
@@ -82,7 +84,10 @@ export default class MainScreen extends Component {
         } = this.state
 
         return(
-            <View style={{ height: height }}>
+            <View style={styles.mainContainer}>
+                <Header
+                    type='Home'
+                />
                 <ScrollView style={{ backgroundColor:'rgb(0,131,105)' }}>  
                     <View style={{ backgroundColor:'white', height:height/5, justifyContent:'center',alignItems:'center' }}>
                         <Image source={Logo} style={{ height:100, width:width }} />
@@ -153,6 +158,12 @@ export default class MainScreen extends Component {
 }
 
 var styles = StyleSheet.create({
+    mainContainer: {
+        height: height,
+        backgroundColor: Constants.Colors.primaryBgColor,
+        paddingTop: 20
+    },
+
     Boxcontainer: {
         flexDirection: 'row',
         justifyContent:'center',
