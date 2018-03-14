@@ -3,15 +3,19 @@ import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-nati
 
 const { height,width } = Dimensions.get('window')
 
-const ModalMenuButton = ({ label, color, onPress }) => {
+const ModalMenuButton = ({ label, bgColor, onPress }) => {
     const inheritedStyle = {
-        backgroundColor: color
+        backgroundColor: bgColor
+    }
+
+    const textColor = {
+        color: bgColor === 'white' ? 'black' : 'white'
     }
 
     return (
         <TouchableOpacity onPress={onPress}>
             <View style={[styles.buttonStyle, inheritedStyle]}>
-                <Text style={styles.textStyle}>{label}</Text>
+                <Text style={[styles.textStyle, textColor]}>{label}</Text>
             </View>
         </TouchableOpacity>
     )
@@ -19,16 +23,15 @@ const ModalMenuButton = ({ label, color, onPress }) => {
 
 const styles = StyleSheet.create({
     buttonStyle: {
-        width: width - 50,
-        height: 60,
-        borderRadius: 5,
+        width: width - 40,
+        height: 65,
+        borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 10
+        marginBottom: 15
     },
 
     textStyle: {
-        color: 'white',
         fontSize: 23,
         fontFamily: 'Arial-BoldMT',
         fontWeight: 'bold'
