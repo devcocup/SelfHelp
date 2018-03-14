@@ -4,6 +4,10 @@ const AppStyles = StyleSheet.create({
     center: {
         alignItems: 'center',
         justifyContent: 'center'
+    },
+
+    vCenter: {
+        justifyContent: 'center'
     }
 })
 
