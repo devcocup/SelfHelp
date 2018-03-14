@@ -29,6 +29,13 @@ export default class MainScreen extends Component {
         callMenuVisible: false
     }
 
+    dismissModal() {
+        this.setState({
+            chatMenuVisible: false,
+            callMenuVisible: false
+        })
+    }
+
     goToScreen = (ScreenName) => {
         const { navigate } = this.props.navigation
         navigate(ScreenName)
@@ -41,24 +48,17 @@ export default class MainScreen extends Component {
     }
 
     onChat = () => {
-        this.setState({
-            chatMenuVisible: false
-        })
+        this.dismissModal()
         this.goToScreen('ChatScreen')
     }
 
     onGroupChat = () => {
-        this.setState({
-            chatMenuVisible: false
-        })
+        this.dismissModal()
         this.goToScreen('ChatScreen')
     }
 
     onCancel = () => {
-        this.setState({
-            chatMenuVisible: false,
-            callMenuVisible: false
-        })
+        this.dismissModal();
     }
 
     onCallMenu = () => {
@@ -68,11 +68,11 @@ export default class MainScreen extends Component {
     }
 
     onInternet = () => {
-        console.log('internet clicked')
+        this.dismissModal()
     }
 
     onCellular = () => {
-        console.log('cell clicked')
+        this.dismissModal()
     }
 
     render() {
