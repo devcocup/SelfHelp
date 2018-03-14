@@ -5,6 +5,7 @@ import Overlay from 'react-native-modal-overlay'
 //Assets
 import HomeButton from '../Components/HomeButton'
 import ChatMenu from './ChatMenu'
+import CallMenu from './CallMenu'
 
 const Search = require('../Assets/Images/ic_search_white_3x.png')
 const Logo = require('../Assets/Images/logo.png')
@@ -24,7 +25,8 @@ export default class MainScreen extends Component {
     }
 
     state = {
-        chatMenuVisible: false
+        chatMenuVisible: false,
+        callMenuVisible: false
     }
 
     goToScreen = (ScreenName) => {
@@ -32,15 +34,13 @@ export default class MainScreen extends Component {
         navigate(ScreenName)
     }
 
-    onChatMenu = (ScreenName) => {
-        // this.goToScreen(ScreenName)
+    onChatMenu = () => {
         this.setState({
             chatMenuVisible: true
         })
     }
 
     onChat = () => {
-        console.log('chat clicked')
         this.setState({
             chatMenuVisible: false
         })
@@ -48,7 +48,6 @@ export default class MainScreen extends Component {
     }
 
     onGroupChat = () => {
-        console.log('group chat clicked')
         this.setState({
             chatMenuVisible: false
         })
@@ -57,12 +56,30 @@ export default class MainScreen extends Component {
 
     onCancel = () => {
         this.setState({
-            chatMenuVisible: false
+            chatMenuVisible: false,
+            callMenuVisible: false
         })
     }
 
+    onCallMenu = () => {
+        this.setState({
+            callMenuVisible: true
+        })
+    }
+
+    onInternet = () => {
+        console.log('internet clicked')
+    }
+
+    onCellular = () => {
+        console.log('cell clicked')
+    }
+
     render() {
-        const { chatMenuVisible } = this.state
+        const {
+            chatMenuVisible,
+            callMenuVisible
+        } = this.state
 
         return(
             <View style={{ height: height }}>
@@ -75,12 +92,12 @@ export default class MainScreen extends Component {
                             <HomeButton 
                                 source={ Chat } 
                                 Label='Chat'
-                                onPress={() => this.onChatMenu("ChatScreen")} 
+                                onPress={this.onChatMenu} 
                             />
                             <HomeButton 
                                 source={ Phone } 
                                 Label='Call'  
-                                onPress={() => this.goToScreen("CallScreen")} 
+                                onPress={this.onCallMenu} 
                             />         
                         </View>    
                         <View style={styles.Boxcontainer}>
@@ -115,6 +132,18 @@ export default class MainScreen extends Component {
                     <ChatMenu
                         onChat={this.onChat}
                         onGroupChat={this.onGroupChat}
+                        onCancel={this.onCancel}
+                    />
+                </Overlay>
+                <Overlay visible={callMenuVisible}
+                    closeOnTouchOutside animationType="zoomIn"
+                    containerStyle={{ backgroundColor: 'rgba(0,131,105,0.78)' }}
+                    childrenWrapperStyle={{ backgroundColor: 'transparent' }}
+                    animationDuration={500}
+                >
+                    <CallMenu
+                        onInternet={this.onInternet}
+                        onCellular={this.onCellular}
                         onCancel={this.onCancel}
                     />
                 </Overlay>
