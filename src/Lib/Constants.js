@@ -4,4 +4,13 @@ const Colors = {
     lightGreen: 'rgb(58, 152, 132)'
 }
 
-export default Colors
+const FontSizes = {
+    menuFontSize: 23
+}
+
+const Constants = {
+    Colors,
+    FontSizes
+}
+
+export default Constants
