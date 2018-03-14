@@ -26,5 +26,6 @@ export const AppNavigation =  StackNavigator({
     ChatScreen: { screen: ChatScreen },
 },
 {
+  headerMode: 'none',
   initialRouteName: 'MainScreen',
 })
