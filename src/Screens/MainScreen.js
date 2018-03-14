@@ -32,10 +32,32 @@ export default class MainScreen extends Component {
         navigate(ScreenName)
     }
 
-    onChatClick = (ScreenName) => {
+    onChatMenu = (ScreenName) => {
         // this.goToScreen(ScreenName)
         this.setState({
             chatMenuVisible: true
+        })
+    }
+
+    onChat = () => {
+        console.log('chat clicked')
+        this.setState({
+            chatMenuVisible: false
+        })
+        this.goToScreen('ChatScreen')
+    }
+
+    onGroupChat = () => {
+        console.log('group chat clicked')
+        this.setState({
+            chatMenuVisible: false
+        })
+        this.goToScreen('ChatScreen')
+    }
+
+    onCancel = () => {
+        this.setState({
+            chatMenuVisible: false
         })
     }
 
@@ -53,8 +75,7 @@ export default class MainScreen extends Component {
                             <HomeButton 
                                 source={ Chat } 
                                 Label='Chat'
-                                onPress={() => this.onChatClick("ChatScreen")} 
-                                
+                                onPress={() => this.onChatMenu("ChatScreen")} 
                             />
                             <HomeButton 
                                 source={ Phone } 
@@ -91,7 +112,11 @@ export default class MainScreen extends Component {
                     childrenWrapperStyle={{ backgroundColor: 'transparent' }}
                     animationDuration={500}
                 >
-                    <ChatMenu />
+                    <ChatMenu
+                        onChat={this.onChat}
+                        onGroupChat={this.onGroupChat}
+                        onCancel={this.onCancel}
+                    />
                 </Overlay>
             </View>
         )
