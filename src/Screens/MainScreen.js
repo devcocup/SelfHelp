@@ -2,8 +2,11 @@ import React, { Component } from 'react'
 import { View,ScrollView,Text, Dimensions, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import Overlay from 'react-native-modal-overlay'
 
-//Assets
+// Global Styles & Constants
+import AppStyles from '../Lib/AppStyles'
 import Constants from '../Lib/Constants'
+
+//Assets
 import Header from '../Components/Header'
 import HomeButton from '../Components/HomeButton'
 import ChatMenu from './ChatMenu'
@@ -84,7 +87,7 @@ export default class MainScreen extends Component {
         } = this.state
 
         return(
-            <View style={styles.mainContainer}>
+            <View style={AppStyles.mainContainer}>
                 <Header
                     type='Home'
                 />
@@ -158,12 +161,6 @@ export default class MainScreen extends Component {
 }
 
 var styles = StyleSheet.create({
-    mainContainer: {
-        height: height,
-        backgroundColor: Constants.Colors.primaryBgColor,
-        paddingTop: 20
-    },
-
     Boxcontainer: {
         flexDirection: 'row',
         justifyContent:'center',
