@@ -24,8 +24,16 @@ const LearnIcon = require('../Assets/Images/learn_orange.png')
 
 const { height, width } = Dimensions.get("window")
 
-const CardContainer = () => {
+goToScreen = (ScreenName, navigation) => {
+    const { navigate } = navigation
+    navigate(ScreenName)
+}
 
+onLearnDetail = (navigation) => {
+    this.goToScreen('LearnDetailScreen', navigation)
+}
+
+const CardContainer = ({ navigation }) => {
     const cardList = Constants.LearnLabels.map((item, index) => {
         return (
             <View
@@ -39,6 +47,7 @@ const CardContainer = () => {
                             <SingleCard
                                 key={cardIndex}
                                 cardContent={cardItem}
+                                onPress={() => this.onLearnDetail(navigation)}
                             />
                         )
                     })
@@ -66,7 +75,7 @@ export default class LearnScreen extends Component {
                 <Header
                     type='Home'
                 />
-                <View style={{ backgroundColor: "#ededed", flex: 1 }}>
+                <View style={{ backgroundColor: "#208167", flex: 1 }}>
                     <View style={{ height: height - 64, width }}>
                         <View style={{ flex: 1 }}>
                             <ScrollView>
@@ -74,7 +83,9 @@ export default class LearnScreen extends Component {
                                     headingImage={LearnIcon}
                                     headingText='Learn'
                                 />
-                                <CardContainer />
+                                <CardContainer
+                                    navigation={this.props.navigation}
+                                />
                             </ScrollView>
                         </View>
                     </View>
