@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
-import { View, Text, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
+
+// Global Styles & Constants
+import AppStyles from '../Lib/AppStyles'
 
 const { height, width } = Dimensions.get('window')
 
 const SingleCard = ({ cardContent }) => {
     return (
         <View style={styles.singleCardContainer}>
-            <View style={styles.iconContainer}>
-                <Text style={styles.icon}>Icon</Text>
+            <View style={[styles.iconContainer, AppStyles.center]}>
+                <Image source={cardContent.icon} style={styles.icon}/>
             </View>
-            <View style={styles.details}>
+            <View style={[styles.details, AppStyles.vCenter]}>
                 <Text style={styles.headingTxt}>{cardContent.subTopic}</Text>
                 <Text style={styles.labelTxt}>{cardContent.description}</Text>
             </View>
@@ -23,8 +26,6 @@ const styles = StyleSheet.create({
         marginTop: 15,
         width: width - 40,
         backgroundColor: "#2C8D77",
-        alignItems: "center",
-        justifyContent: "center",
         borderRadius: 4,
         flexDirection: "row",
         overflow: "hidden"
@@ -32,22 +33,18 @@ const styles = StyleSheet.create({
 
     iconContainer: {
         height: height / 7,
-        width: height / 7,
-        alignItems: "center",
-        justifyContent: "center"
+        width: height / 7
+    },
+
+    icon: {
+        width: 50,
+        height: 50
     },
 
     details: {
         height: height / 7,
         width: width - height / 7 - 20,
-        justifyContent: "center",
-        padding: 10
-    },
-
-    icon: {
-        color: "white",
-        fontWeight: "600",
-        fontSize: 18
+        paddingRight: 20,
     },
 
     headingTxt: {

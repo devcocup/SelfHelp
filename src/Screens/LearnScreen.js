@@ -30,7 +30,7 @@ const CardContainer = () => {
         return (
             <View
                 key={index}
-                style={[styles.cardContainer, AppStyles.center]}
+                style={[styles.cardContainer, AppStyles.hCenter]}
             >
                 <TopicButton text={item.topic} />
                 {
@@ -74,9 +74,7 @@ export default class LearnScreen extends Component {
                                     headingImage={LearnIcon}
                                     headingText='Learn'
                                 />
-                                <View style={[styles.cardContainer, AppStyles.center]}>
-                                    <CardContainer />
-                                </View>
+                                <CardContainer />
                             </ScrollView>
                         </View>
                     </View>
@@ -89,8 +87,7 @@ export default class LearnScreen extends Component {
 const styles = StyleSheet.create({  
     cardContainer: {
         flex: 1,
-        paddingLeft: 10,
-        paddingRight: 10,
+        paddingHorizontal: 10,
         backgroundColor: "#208167"
     },
 
