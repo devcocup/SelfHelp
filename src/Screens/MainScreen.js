@@ -18,6 +18,7 @@ const Phone = require('../Assets/Images/ic_call_white_3x.png')
 const Menu = require('../Assets/Images/menu.png')
 const Chat = require('../Assets/Images/ic_chat_white_3x.png')
 const Learn = require('../Assets/Images/ic_school_white_3x.png')
+const SelfCare = require('../Assets/Images/self_care.png')
 
 const { height,width } = Dimensions.get('window')
 
@@ -96,30 +97,31 @@ export default class MainScreen extends Component {
                         <Image source={Logo} style={{ height:100, width:width }} />
                         </View>   
                         <View style={{margin:10}}>
-                        <View style={styles.Boxcontainer}>
+                        <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
                             <HomeButton 
-                                source={ Chat } 
+                                source={Chat} 
                                 Label='Chat'
                                 onPress={this.onChatMenu} 
                             />
                             <HomeButton 
-                                source={ Phone } 
+                                source={Phone} 
                                 Label='Call'  
                                 onPress={this.onCallMenu} 
                             />         
                         </View>    
-                        <View style={styles.Boxcontainer}>
+                        <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
                             <HomeButton 
-                                source={ Learn } 
+                                source={Learn} 
                                 Label='Learn'
-                                onPress={() => this.goToScreen("LearnScreen")} 
+                                onPress={() => this.goToScreen('LearnScreen')} 
                             />
                             <HomeButton 
-                                Label='Plan'  
-                                onPress={() => this.goToScreen("PlanScreen")} 
+                                source={SelfCare}
+                                Label='Self-Care'
+                                onPress={() => this.goToScreen('SelfCareScreen')} 
                             />    
                         </View>  
-                        <View style={styles.Boxcontainer}>
+                        <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
                             <HomeButton 
                                 Label='Exercises' 
                                 onPress={() => this.goToScreen("ExercisesScreen")}  
