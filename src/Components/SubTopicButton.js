@@ -20,7 +20,7 @@ const SubTopicButton = ({ text }) => {
 const styles = StyleSheet.create({
     button: {
         height: height / 14,
-        marginTop: 15,
+        marginTop: 10,
         width: width - 40,
         backgroundColor: Constants.Colors.lightGreen,
         borderRadius: 4
