@@ -1,56 +1,55 @@
 // React
 import React, { Component } from 'react'
 import {
-	View,
-	Text,
-	Dimensions,
-	ScrollView,
-	StyleSheet,
-	TouchableOpacity,
-	Image
+    View,
+    Text,
+    Dimensions,
+    ScrollView,
+    StyleSheet,
+    TouchableOpacity,
+    Image
 } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
+import Constants from '../Lib/Constants'
 
 // Assets
 import Header from '../Components/Header'
 import HeadingContainer from '../Components/HeadingContainer'
+import TopicButton from '../Components/TopicButton'
+import SingleCard from '../Components/SingleCard'
 
 const LearnIcon = require('../Assets/Images/learn_orange.png')
 
 const { height, width } = Dimensions.get("window")
 
-const heading1 = "Building Hope & Resiliency"
-const label1 =
-	"A self guided education program that helps you begin to recover and heal"
+const CardContainer = () => {
 
-const heading2 = "What to do "
-const label2 =
-	"Learn what to do if you or someone you know has been sexually assaulted."
+    const cardList = Constants.LearnLabels.map((item, index) => {
+        return (
+            <View
+                key={index}
+                style={[styles.cardContainer, AppStyles.center]}
+            >
+                <TopicButton text={item.topic} />
+                {
+                    item.content.map((cardItem, cardIndex) => {
+                        return (
+                            <SingleCard
+                                key={cardIndex}
+                                cardContent={cardItem}
+                            />
+                        )
+                    })
+                }
+            </View>
+        )
+    })
 
-const Button = ({ text }) => {
-	return (
-		<TouchableOpacity>
-			<View style={styles.button}>
-				<Text style={styles.buttonText}>{text}</Text>
-			</View>
-		</TouchableOpacity>
-	)
-}
-
-const Card = ({ heading, label }) => {
-	return (
-		<View style={styles.singleCardContainer}>
-			<View style={styles.iconContainer}>
-				<Text style={styles.icon}>Icon</Text>
-			</View>
-			<View style={styles.details}>
-				<Text style={styles.headingTxt}>{heading}</Text>
-				<Text style={styles.labelTxt}>{label}</Text>
-			</View>
-		</View>
-	)
+    return (
+        <View>{ cardList }</View>
+    )
 }
 
 export default class LearnScreen extends Component {
@@ -61,117 +60,49 @@ export default class LearnScreen extends Component {
         headerTitleStyle : {alignSelf:'flex-start'}
     }
 
-	render() {
-		return (
-			<View style={AppStyles.mainContainer}>
-				<Header
-					type='Home'
-				/>
-				<View style={{ backgroundColor: "#ededed", flex: 1 }}>
-					<View style={{ height: height - 64, width }}>
-						<View style={{ flex: 1 }}>
-							<ScrollView>
-								<HeadingContainer
-									headingImage={LearnIcon}
-									headingText='Learn'
-								/>
-								<View style={styles.cardContainer}>
-									<Button text="Understanding Sexual Assault" />
-									<Card heading={heading1} label={label1} />
-									<Card heading={heading2} label={label2} />
-									<Button text="Transitioning Service Member" />
-									<Card heading={heading1} label={label1} />
-									<Card heading={heading2} label={label2} />
-									<Card heading={heading2} label={label2} />
-									<Button text="Transitioning Service Member" />
-									<Card heading={heading1} label={label1} />
-									<Card heading={heading2} label={label2} />
-								</View>
-							</ScrollView>
-						</View>
-					</View>
-				</View>
-			</View>
-		)
-	}
+    render() {
+        return (
+            <View style={AppStyles.mainContainer}>
+                <Header
+                    type='Home'
+                />
+                <View style={{ backgroundColor: "#ededed", flex: 1 }}>
+                    <View style={{ height: height - 64, width }}>
+                        <View style={{ flex: 1 }}>
+                            <ScrollView>
+                                <HeadingContainer
+                                    headingImage={LearnIcon}
+                                    headingText='Learn'
+                                />
+                                <View style={[styles.cardContainer, AppStyles.center]}>
+                                    <CardContainer />
+                                </View>
+                            </ScrollView>
+                        </View>
+                    </View>
+                </View>
+            </View>
+        )
+    }
 }
 
-const styles = StyleSheet.create({
-	headingContainer: {
-		height: height / 4,
-		width,
-		backgroundColor: "white",
-		alignItems: "center",
-		justifyContent: "center"
-	},
+const styles = StyleSheet.create({  
+    cardContainer: {
+        flex: 1,
+        paddingLeft: 10,
+        paddingRight: 10,
+        backgroundColor: "#208167"
+    },
 
-	heading: { fontSize: 30, fontWeight: "600" },
-	
-	cardContainer: {
-		flex: 1,
-		paddingLeft: 10,
-		paddingRight: 10,
-		backgroundColor: "#208167"
-	},
-
-	button: {
-		height: height / 16,
-		marginTop: 10,
-		width: width - 20,
-		backgroundColor: "#F7A553",
-		alignItems: "center",
-		justifyContent: "center",
-		borderRadius: 4
-	},
-
-	singleCardContainer: {
-		height: height / 7,
-		marginTop: 10,
-		width: width - 20,
-		backgroundColor: "#2C8D77",
-		alignItems: "center",
-		justifyContent: "center",
-		borderRadius: 4,
-		flexDirection: "row",
-		overflow: "hidden"
-	},
-
-	iconContainer: {
-		height: height / 7,
-		width: height / 7,
-		alignItems: "center",
-		justifyContent: "center"
-	},
-
-	details: {
-		height: height / 7,
-		width: width - height / 7 - 20,
-		justifyContent: "center",
-		padding: 10
-	},
-
-	buttonText: {
-		color: "white",
-		fontWeight: "600",
-		fontSize: 18
-	},
-
-	icon: {
-		color: "white",
-		fontWeight: "600",
-		fontSize: 18
-	},
-
-	headingTxt: {
-		color: "white",
-		fontWeight: "600",
-		fontSize: 14
-	},
-
-	labelTxt: {
-		color: "white",
-		fontWeight: "400",
-		fontSize: 12,
-		marginTop: 3
-	}
+    singleCardContainer: {
+        height: height / 7,
+        marginTop: 10,
+        width: width - 20,
+        backgroundColor: "#2C8D77",
+        alignItems: "center",
+        justifyContent: "center",
+        borderRadius: 4,
+        flexDirection: "row",
+        overflow: "hidden"
+    }
 })
