@@ -13,6 +13,10 @@ const AppStyles = StyleSheet.create({
         justifyContent: 'center'
     },
 
+    hCenter: {
+        alignItems: 'center'
+    },
+
     mainContainer: {
         height: height,
         backgroundColor: Constants.Colors.primaryBgColor,
