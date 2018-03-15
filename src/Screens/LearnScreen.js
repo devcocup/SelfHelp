@@ -24,13 +24,13 @@ const LearnIcon = require('../Assets/Images/learn_orange.png')
 
 const { height, width } = Dimensions.get("window")
 
-goToScreen = (ScreenName, navigation) => {
+goToScreen = (ScreenName, navigation, subTopic, subContent) => {
     const { navigate } = navigation
-    navigate(ScreenName)
+    navigate(ScreenName, { subTopic, subContent })
 }
 
-onLearnDetail = (navigation) => {
-    this.goToScreen('LearnDetailScreen', navigation)
+onLearnDetail = (navigation, subTopic, subContent) => {
+    this.goToScreen('LearnDetailScreen', navigation, subTopic, subContent)
 }
 
 const CardContainer = ({ navigation }) => {
@@ -47,7 +47,7 @@ const CardContainer = ({ navigation }) => {
                             <SingleCard
                                 key={cardIndex}
                                 cardContent={cardItem}
-                                onPress={() => this.onLearnDetail(navigation)}
+                                onPress={() => this.onLearnDetail(navigation, cardItem.subTopic, cardItem.subContent)}
                             />
                         )
                     })
@@ -57,7 +57,7 @@ const CardContainer = ({ navigation }) => {
     })
 
     return (
-        <View>{ cardList }</View>
+        <View>{cardList}</View>
     )
 }
 
