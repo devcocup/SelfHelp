@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
-import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
 
 const { height, width } = Dimensions.get('window')
 
-const SingleCard = ({ cardContent }) => {
+const SingleCard = ({ cardContent, onPress }) => {
     return (
-        <View style={styles.singleCardContainer}>
-            <View style={[styles.iconContainer, AppStyles.center]}>
-                <Image source={cardContent.icon} style={styles.icon}/>
+        <TouchableOpacity onPress={onPress}>
+            <View style={styles.singleCardContainer}>
+                <View style={[styles.iconContainer, AppStyles.center]}>
+                    <Image source={cardContent.icon} style={styles.icon}/>
+                </View>
+                <View style={[styles.details, AppStyles.vCenter]}>
+                    <Text style={styles.headingTxt}>{cardContent.subTopic}</Text>
+                    <Text style={styles.labelTxt}>{cardContent.description}</Text>
+                </View>
             </View>
-            <View style={[styles.details, AppStyles.vCenter]}>
-                <Text style={styles.headingTxt}>{cardContent.subTopic}</Text>
-                <Text style={styles.labelTxt}>{cardContent.description}</Text>
-            </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
