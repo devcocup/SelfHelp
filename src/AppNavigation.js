@@ -13,7 +13,7 @@ import PlanScreen from './Screens/PlanScreen'
 import SearchScreen from './Screens/SearchScreen'
 import ExercisesScreen from './Screens/ExercisesScreen'
 import ChatScreen from './Screens/ChatScreen'
-
+import LearnDetailScreen from './Screens/LearnDetailScreen'
 
 export const AppNavigation =  StackNavigator({
     Home: { screen: Home },
@@ -24,6 +24,7 @@ export const AppNavigation =  StackNavigator({
     SearchScreen: { screen: SearchScreen },
     ExercisesScreen: { screen: ExercisesScreen },
     ChatScreen: { screen: ChatScreen },
+    LearnDetailScreen: { screen: LearnDetailScreen }
 },
 {
   headerMode: 'none',
