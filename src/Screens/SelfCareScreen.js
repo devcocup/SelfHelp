@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { View,Text  } from 'react-native'
 
-export default class PlanScreen extends Component {
+export default class SelfCareScreen extends Component {
     static navigationOptions = {
         title: 'Plan Screen',
         headerStyle: {backgroundColor: 'rgb(0,143,120)'},
@@ -13,7 +13,7 @@ export default class PlanScreen extends Component {
     render() {
         return(
            <View>
-               <Text style={{ fontSize: 20 }}>Plan Screen </Text>
+               <Text style={{ fontSize: 20 }}>Self-Care Screen </Text>
            </View>    
         )
     }

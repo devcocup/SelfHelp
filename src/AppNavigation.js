@@ -9,7 +9,7 @@ import Home from './Screens/Home'
 import MainScreen from './Screens/MainScreen'
 import CallScreen from './Screens/CallScreen'
 import LearnScreen from './Screens/LearnScreen'
-import PlanScreen from './Screens/PlanScreen'
+import SelfCareScreen from './Screens/SelfCareScreen'
 import SearchScreen from './Screens/SearchScreen'
 import ExercisesScreen from './Screens/ExercisesScreen'
 import ChatScreen from './Screens/ChatScreen'
@@ -20,7 +20,7 @@ export const AppNavigation =  StackNavigator({
     MainScreen: { screen: MainScreen },
     CallScreen: { screen: CallScreen },
     LearnScreen: { screen: LearnScreen },
-    PlanScreen: { screen: PlanScreen },
+    SelfCareScreen: { screen: SelfCareScreen },
     SearchScreen: { screen: SearchScreen },
     ExercisesScreen: { screen: ExercisesScreen },
     ChatScreen: { screen: ChatScreen },
