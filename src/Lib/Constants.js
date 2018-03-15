@@ -5,7 +5,8 @@ const Colors = {
 }
 
 const FontSizes = {
-    menuFontSize: 23
+    menuFS: 23,
+    headingFS: 36
 }
 
 const Constants = {
