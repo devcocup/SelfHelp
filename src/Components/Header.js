@@ -37,13 +37,13 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row',
         height: 50,
-        width: width,
+        width,
         backgroundColor: Constants.Colors.secondaryBgColor
     },
 
     textStyle: {
         color: 'white',
-        fontSize: Constants.FontSizes.menuFontSize,
+        fontSize: Constants.FontSizes.menuFS,
         fontWeight: 'bold',
     },
 

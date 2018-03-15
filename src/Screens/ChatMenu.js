@@ -5,11 +5,14 @@ import { View, Text, Dimensions, StyleSheet } from 'react-native'
 //Assets
 import ModalMenuButton from '../Components/ModalMenuButton'
 
+// Global Styles & Constants
+import AppStyles from '../Lib/AppStyles'
+
 const { height,width } = Dimensions.get('window')
 
 const ChatMenu = ({ onChat, onGroupChat, onCancel }) => {
     return (
-        <View style={styles.mainContainer}>
+        <View style={[styles.mainContainer, AppStyles.center]}>
             <ModalMenuButton
                 label="Chat"
                 bgColor="#F7A553"
@@ -31,10 +34,8 @@ const ChatMenu = ({ onChat, onGroupChat, onCancel }) => {
 
 const styles = StyleSheet.create({
     mainContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: width,
-        height: height,
+        width,
+        height,
         backgroundColor: 'rgb(0,131,105)',
         opacity: .8
     }
