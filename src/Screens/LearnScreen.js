@@ -15,8 +15,9 @@ import AppStyles from '../Lib/AppStyles'
 
 // Assets
 import Header from '../Components/Header'
+import HeadingContainer from '../Components/HeadingContainer'
 
-const Menu = require('../Assets/Images/menu.png')
+const LearnIcon = require('../Assets/Images/learn_orange.png')
 
 const { height, width } = Dimensions.get("window")
 
@@ -70,9 +71,10 @@ export default class LearnScreen extends Component {
 					<View style={{ height: height - 64, width }}>
 						<View style={{ flex: 1 }}>
 							<ScrollView>
-								<View style={styles.headingContainer}>
-									<Text style={styles.heading}>Learn</Text>
-								</View>
+								<HeadingContainer
+									headingImage={LearnIcon}
+									headingText='Learn'
+								/>
 								<View style={styles.cardContainer}>
 									<Button text="Understanding Sexual Assault" />
 									<Card heading={heading1} label={label1} />
