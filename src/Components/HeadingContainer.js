@@ -35,7 +35,7 @@ var styles = StyleSheet.create({
 
     imgStyle: {
         width: 90,
-        height: 60
+        height: 65
     },
 
     textArea: {
