@@ -7,7 +7,8 @@ const Colors = {
 
 const FontSizes = {
     menuFS: 23,
-    headingFS: 32
+    headingFS: 32,
+    topicFS: 18
 }
 
 const LearnLabels = [
