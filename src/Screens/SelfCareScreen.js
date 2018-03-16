@@ -1,10 +1,21 @@
 //React
 import React, { Component } from 'react'
-import { View,Text  } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
+
+// Global Styles & Constants
+import AppStyles from '../Lib/AppStyles'
+import Constants from '../Lib/Constants'
+
+// Assets
+import Header from '../Components/Header'
+import HeadingContainer from '../Components/HeadingContainer'
+
+const SelfCareIcon = require('../Assets/Images/self_care_orange.png')
+const { height, width } = Dimensions.get('window')
 
 export default class SelfCareScreen extends Component {
     static navigationOptions = {
-        title: 'Plan Screen',
+        title: 'Self-Care Screen',
         headerStyle: {backgroundColor: 'rgb(0,143,120)'},
         headerTintColor: 'white',
         headerTitleStyle : {alignSelf:'flex-start'},
@@ -12,9 +23,21 @@ export default class SelfCareScreen extends Component {
 
     render() {
         return(
-           <View>
-               <Text style={{ fontSize: 20 }}>Self-Care Screen </Text>
-           </View>    
+            <View style={AppStyles.mainContainer}>
+                <Header
+                    type='Home'
+                />
+                <ScrollView>
+                    <HeadingContainer
+                        headingImage={SelfCareIcon}
+                        headingText='Self-Care'
+                    />
+                </ScrollView>
+            </View>    
         )
     }
 }
+
+const styles = StyleSheet.create({
+
+})
