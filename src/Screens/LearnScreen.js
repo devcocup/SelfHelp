@@ -30,7 +30,7 @@ goToScreen = (ScreenName, navigation, subTopic, subContent) => {
 }
 
 onLearnDetail = (navigation, subTopic, subContent) => {
-    this.goToScreen('LearnDetailScreen', navigation, subTopic, subContent)
+    goToScreen('LearnDetailScreen', navigation, subTopic, subContent)
 }
 
 const CardContainer = ({ navigation }) => {
@@ -47,7 +47,7 @@ const CardContainer = ({ navigation }) => {
                             <SingleCard
                                 key={cardIndex}
                                 cardContent={cardItem}
-                                onPress={() => this.onLearnDetail(navigation, cardItem.subTopic, cardItem.subContent)}
+                                onPress={() => onLearnDetail(navigation, cardItem.subTopic, cardItem.subContent)}
                             />
                         )
                     })
