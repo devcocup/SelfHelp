@@ -24,12 +24,12 @@ const LearnIcon = require('../Assets/Images/learn_orange.png')
 
 const { height, width } = Dimensions.get("window")
 
-goToScreen = (ScreenName, navigation, subTopic, subContent) => {
+const goToScreen = (ScreenName, navigation, subTopic, subContent) => {
     const { navigate } = navigation
     navigate(ScreenName, { subTopic, subContent })
 }
 
-onLearnDetail = (navigation, subTopic, subContent) => {
+const onLearnDetail = (navigation, subTopic, subContent) => {
     goToScreen('LearnDetailScreen', navigation, subTopic, subContent)
 }
 
