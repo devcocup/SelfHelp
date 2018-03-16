@@ -16,6 +16,18 @@ const LearnLabels = [
         topic: 'Understanding Sexual Assault',
         content: [
             {
+                icon: require('../Assets/Images/what_can_I_do_to_help.png'),
+                subTopic: 'What can I do to help?',
+                description: 'Learn how to help someone who has been harassed or sexual assaulted.',
+                subContent: []
+            },
+            {
+                icon: require('../Assets/Images/learn.png'),
+                subTopic: 'Educational Programs',
+                description: 'Summary goes here',
+                subContent: []
+            },
+            {
                 icon: require('../Assets/Images/building_hope.png'),
                 subTopic: 'Building Hope & Resiliency',
                 description: 'A self guided education program that helps you begin to recover and heal.',
