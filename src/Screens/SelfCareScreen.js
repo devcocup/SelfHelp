@@ -17,9 +17,18 @@ const BrowseIcon = require('../Assets/Images/browse_past_plans.png')
 const { height, width } = Dimensions.get('window')
 const { Colors, FontSizes } = Constants
 
-const CardWithImage = ({ cardImage, text }) => {
+goToScreen = (ScreenName, navigation) => {
+    const { navigate } = navigation
+    navigate(ScreenName)
+}
+
+onBrowse = (navigation) => {
+    goToScreen('PastPlansScreen', navigation)
+}
+
+const CardWithImage = ({ cardImage, text, onPress }) => {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPress}>
             <View style={[styles.buttonWithImage, AppStyles.center]}>
                 <View style={[styles.cardImageArea, AppStyles.center]}>
                     <Image source={cardImage} style={styles.cardImageStyle} />
@@ -42,7 +51,7 @@ const CardWithoutImage = ({ text }) => {
     )
 }
 
-const CardContainer = () => {
+const CardContainer = ({ navigation }) => {
     return (
         <View style={[styles.cardContainer, AppStyles.hCenter]}>
             <CardWithImage
@@ -52,6 +61,7 @@ const CardContainer = () => {
             <CardWithImage
                 cardImage={BrowseIcon}
                 text='Browse past plans'
+                onPress={() => onBrowse(navigation)}
             />
             <View style={styles.boxWithoutImageArea}>
                 <CardWithoutImage text='Journal' />
@@ -80,7 +90,9 @@ export default class SelfCareScreen extends Component {
                         headingImage={SelfCareIcon}
                         headingText='Self-Care'
                     />
-                    <CardContainer />
+                    <CardContainer
+                        navigation={this.props.navigation}
+                    />
                 </ScrollView>
             </View>    
         )
