@@ -80,10 +80,12 @@ export default class SelfCareScreen extends Component {
     }
 
     render() {
+        const { navigation } = this.props
         return(
             <View style={AppStyles.mainContainer}>
                 <Header
                     type='Home'
+                    navigation={navigation}
                 />
                 <ScrollView>
                     <HeadingContainer
@@ -91,7 +93,7 @@ export default class SelfCareScreen extends Component {
                         headingText='Self-Care'
                     />
                     <CardContainer
-                        navigation={this.props.navigation}
+                        navigation={navigation}
                     />
                 </ScrollView>
             </View>    

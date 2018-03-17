@@ -26,8 +26,7 @@ export const AppNavigation =  StackNavigator({
     SelfCareScreen: { screen: SelfCareScreen },
     PastPlansScreen: { screen: PastPlansScreen },
     SearchScreen: { screen: SearchScreen },
-    ExercisesScreen: { screen: ExercisesScreen },
-
+    ExercisesScreen: { screen: ExercisesScreen }
 },
 {
     headerMode: 'none',

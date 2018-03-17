@@ -25,7 +25,7 @@ const LearnIcon = require('../Assets/Images/learn_orange.png')
 const { height, width } = Dimensions.get("window")
 
 const goToScreen = (ScreenName, navigation, subTopic, subContent) => {
-    const { navigate } = navigation
+    const { state, navigate } = navigation
     navigate(ScreenName, { subTopic, subContent })
 }
 
@@ -70,10 +70,13 @@ export default class LearnScreen extends Component {
     }
 
     render() {
+        const { navigation } = this.props
+
         return (
             <View style={AppStyles.mainContainer}>
                 <Header
                     type='Home'
+                    navigation={navigation}
                 />
                 <View style={{ backgroundColor: "#208167", flex: 1 }}>
                     <View style={{ height: height - 64, width }}>
@@ -84,7 +87,7 @@ export default class LearnScreen extends Component {
                                     headingText='Learn'
                                 />
                                 <CardContainer
-                                    navigation={this.props.navigation}
+                                    navigation={navigation}
                                 />
                             </ScrollView>
                         </View>

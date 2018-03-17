@@ -86,11 +86,13 @@ export default class MainScreen extends Component {
             chatMenuVisible,
             callMenuVisible
         } = this.state
+        const { navigation } = this.props
 
         return(
             <View style={AppStyles.mainContainer}>
                 <Header
                     type='Home'
+                    navigation={navigation}
                 />
                 <ScrollView style={{ backgroundColor:'rgb(0,131,105)' }}>  
                     <View style={{ backgroundColor:'white', height:height/5, justifyContent:'center',alignItems:'center' }}>

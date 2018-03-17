@@ -33,14 +33,17 @@ const CardContainer = ({ content }) => {
 
 export default class LearnDetailScreen extends Component {
     render() {
+        const { navigation } = this.props
+
         return (
             <View style={AppStyles.mainContainer}>
                 <Header
                     type='Back'
+                    navigation={navigation}
                 />
                 <ScrollView>
                     <CardContainer
-                        content={this.props.navigation.state.params}
+                        content={navigation.state.params}
                     />
                 </ScrollView>
             </View>
