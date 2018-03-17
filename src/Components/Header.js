@@ -8,14 +8,30 @@ import Constants from '../Lib/Constants'
 const { height,width } = Dimensions.get('window')
 const MenuIcon = require('../Assets/Images/nav_menu.png')
 
-const Header = ({ type }) => {
+const goBackScreen = (navigation) => {
+    const { goBack } = navigation
+    goBack()
+}
+
+const Header = ({ type, navigation }) => {
     const headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
 
     return (
         <View style={styles.headerStyle}>
-            <View style={[styles.titleArea, AppStyles.vCenter]}>
-                <Text style={styles.textStyle}>{headerText}</Text>
-            </View>
+            {
+                (type === 'Back') &&
+                <View style={[styles.titleArea, AppStyles.vCenter]}>
+                    <TouchableOpacity onPress={() => goBackScreen(navigation)}>
+                        <Text style={styles.textStyle}>{headerText}</Text>
+                    </TouchableOpacity>
+                </View>
+            }
+            {
+                (type === 'Home') &&
+                <View style={[styles.titleArea, AppStyles.vCenter]}>
+                    <Text style={styles.textStyle}>{headerText}</Text>
+                </View>
+            }
             <View style={[styles.checkArea, AppStyles.center]}>
                 <Image
                     source={MenuIcon}
