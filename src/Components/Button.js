@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-nati
 
 const { height,width } = Dimensions.get('window')
 
-const ModalMenuButton = ({ label, bgColor, onPress }) => {
+const Button = ({ label, bgColor, onPress }) => {
     const inheritedStyle = {
         backgroundColor: bgColor
     }
@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ModalMenuButton
+export default Button
