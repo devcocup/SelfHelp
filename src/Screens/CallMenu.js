@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { View, Text, Dimensions, StyleSheet } from 'react-native'
 
 //Assets
-import ModalMenuButton from '../Components/ModalMenuButton'
+import Button from '../Components/Button'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -13,17 +13,17 @@ const { height,width } = Dimensions.get('window')
 const CallMenu = ({ onInternet, onCellular, onCancel }) => {
     return (
         <View style={[styles.mainContainer, AppStyles.center]}>
-            <ModalMenuButton
+            <Button
                 label="Internet ( data )"
                 bgColor="#F7A553"
                 onPress={onInternet}
             />
-            <ModalMenuButton
+            <Button
                 label="Cellular ( minutes )"
                 bgColor="#F7A553"
                 onPress={onCellular}
             />
-            <ModalMenuButton
+            <Button
                 label="Cancel"
                 bgColor="white"
                 onPress={onCancel}
