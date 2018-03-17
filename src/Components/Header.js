@@ -6,7 +6,9 @@ import AppStyles from '../Lib/AppStyles'
 import Constants from '../Lib/Constants'
 
 const { height,width } = Dimensions.get('window')
+
 const MenuIcon = require('../Assets/Images/nav_menu.png')
+const CheckMarkIcon = require('../Assets/Images/checkmark.png')
 
 const goBackScreen = (navigation) => {
     const { goBack } = navigation
@@ -34,7 +36,7 @@ const Header = ({ type, navigation }) => {
             }
             <View style={[styles.checkArea, AppStyles.center]}>
                 <Image
-                    source={MenuIcon}
+                    source={CheckMarkIcon}
                     style={styles.checkIcon}
                 />
             </View>
@@ -75,8 +77,8 @@ const styles = StyleSheet.create({
     },
 
     checkIcon: {
-        width: 20,
-        height: 20
+        width: 35,
+        height: 35
     },
 
     menuArea: {
@@ -86,8 +88,8 @@ const styles = StyleSheet.create({
     },
 
     menuIcon: {
-        width: 30,
-        height: 20
+        width: 35,
+        height: 25
     }
 
 })
