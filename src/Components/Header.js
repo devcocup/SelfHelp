@@ -23,14 +23,17 @@ const Header = ({ type, navigation }) => {
             {
                 (type === 'Back') &&
                 <View style={[styles.titleArea, AppStyles.vCenter]}>
-                    <TouchableOpacity onPress={() => goBackScreen(navigation)}>
-                        <Text style={styles.textStyle}>{headerText}</Text>
-                    </TouchableOpacity>
+                    <View style={[styles.backArea, AppStyles.center]}>
+                        <TouchableOpacity onPress={() => goBackScreen(navigation)}>
+                            <Text style={styles.textStyle}>{headerText}</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.restArea}></View>
                 </View>
             }
             {
                 (type === 'Home') &&
-                <View style={[styles.titleArea, AppStyles.vCenter]}>
+                <View style={[styles.titleArea, AppStyles.hCenter]}>
                     <Text style={styles.textStyle}>{headerText}</Text>
                 </View>
             }
@@ -67,7 +70,18 @@ const styles = StyleSheet.create({
 
     titleArea: {
         flex: .66,
+        flexDirection: 'row',
         paddingLeft: 10,
+    },
+
+    backArea: {
+        flex: .5,
+        borderRightWidth: 2,
+        borderRightColor: Constants.Colors.lightGreen
+    },
+
+    restArea: {
+        flex: .5
     },
 
     checkArea: {
