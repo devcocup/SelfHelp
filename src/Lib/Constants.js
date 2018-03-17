@@ -72,10 +72,23 @@ const LearnLabels = [
     }
 ]
 
+const WhatCanIDoToHelpLabels = [
+    'The following five scenarios provide helpful ways to step in to support others.\
+     The Scenarios cover a range of harmful behavior in the spectrum of sexual assault\
+     and harassment. Each scenario includes different courses of action and how or why\
+     that action can be helpful. Every stuation is different, but hopefully this \
+     tool can help prepare you to support people at rist. You don\'t have to be a hero \
+    to make a big difference in someone\'s life.',
+    'If you need additional support about a situation you are dealing with, you can \
+    reach out to a Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. \
+    A trained Safe Helpline staff member is available to support you 24/7.'
+]
+
 const Constants = {
     Colors,
     FontSizes,
-    LearnLabels
+    LearnLabels,
+    WhatCanIDoToHelpLabels
 }
 
 export default Constants
