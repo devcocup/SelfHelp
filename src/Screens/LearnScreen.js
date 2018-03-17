@@ -30,7 +30,14 @@ const goToScreen = (ScreenName, navigation, subTopic, subContent) => {
 }
 
 const onLearnDetail = (navigation, subTopic, subContent) => {
-    goToScreen('LearnDetailScreen', navigation, subTopic, subContent)
+    switch (subTopic) {
+        case 'What can I do to help?':
+            goToScreen('WhatCanIDoScreen', navigation, subTopic, subContent)
+            break
+        default:
+            goToScreen('LearnDetailScreen', navigation, subTopic, subContent)
+            break
+    }
 }
 
 const CardContainer = ({ navigation }) => {
