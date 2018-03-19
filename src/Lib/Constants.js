@@ -2,6 +2,7 @@ const Colors = {
     primaryBgColor: 'rgb(0 , 131, 105)',
     secondaryBgColor: 'rgb(0, 143, 120)',
     lightGreen: 'rgb(58, 152, 132)',
+    darkGreen: '#205547',
     orange: '#F7A553',
     gray: '#6D6F72'
 }
@@ -11,7 +12,9 @@ const FontSizes = {
     headingFS: 32,
     topicFS: 18,
     quizTitleFS: 20,
-    quizQuestionFS: 16
+    quizCaptionFS: 22,
+    quizQuestionFS: 16,
+    quizAnswerFS: 14
 }
 
 const BorderRadii = {
@@ -102,7 +105,7 @@ const QuizLabels = [
         question: 'You are at a bar with some people in your training uint. \
         Some of the guys start saying lewd and disrespectful comments about \
         the women in your unit who aren\'t there. What can you do to intervene?',
-        Answers: [
+        answers: [
             {
                 choiceCaption: 'A',
                 content: 'Interject and refocus the conversation on something else: \
