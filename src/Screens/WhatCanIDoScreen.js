@@ -33,8 +33,13 @@ const DescriptionTextContainer = () => {
 
 
 export default class WhatCanIDoScreen extends Component {
+    goToScreen = (ScreeenName) => {
+        const { navigate } = this.props.navigation
+        navigate(ScreeenName)
+    }
+
     onContinue = () => {
-        console.log('continue clicked')
+        this.goToScreen('QuizScenarioScreen')
     }
 
     render() {
