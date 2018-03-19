@@ -1,3 +1,4 @@
+// React
 import React, { Component } from 'react'
 import { View, Text, Image, StyleSheet, Dimensions } from 'react-native'
 
@@ -20,7 +21,7 @@ const HeadingContainer = ({ headingImage, headingText }) => {
     )
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
     headingContainer: {
         flexDirection: 'row',
         height: height / 4,

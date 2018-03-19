@@ -10,7 +10,17 @@ const FontSizes = {
     menuFS: 23,
     headingFS: 32,
     topicFS: 18,
-    quizTitleFS: 20
+    quizTitleFS: 20,
+    quizQuestionFS: 16
+}
+
+const BorderRadii = {
+    boxBR: 5
+}
+
+const Paddings = {
+    elementP: 10,
+    containerP: 20
 }
 
 const LearnLabels = [
@@ -86,11 +96,44 @@ const WhatCanIDoToHelpLabels = [
     A trained Safe Helpline staff member is available to support you 24/7.'
 ]
 
+const QuizLabels = [
+    {
+        title: 'At a bar',
+        question: 'You are at a bar with some people in your training uint. \
+        Some of the guys start saying lewd and disrespectful comments about \
+        the women in your unit who aren\'t there. What can you do to intervene?',
+        Answers: [
+            {
+                choiceCaption: 'A',
+                content: 'Interject and refocus the conversation on something else: \
+                \"Did you all watch the game last night?',
+                subContent: 'Distraction can be a good option in the moment \
+                if you\'re not sure how to address their comments long-term or don\'t feel safe \
+                discussing why it\'s not okay for them to make those comments.'
+            },
+            {
+                choiceCaption: 'B',
+                content: 'Interrupt the conversation and tell them that what \
+                they\'re saying isn\'t okay: \"Why would you say that about Sue or Julia? \
+                You would\'t say that about me. That\'s messed up.\"'
+            },
+            {
+                choiceCaption: 'C',
+                content: 'Tell your commanding officer or your training instructor \
+                about what you witnessed.'
+            }
+        ]
+    }
+]
+
 const Constants = {
     Colors,
     FontSizes,
+    BorderRadii,
+    Paddings,
     LearnLabels,
-    WhatCanIDoToHelpLabels
+    WhatCanIDoToHelpLabels,
+    QuizLabels
 }
 
 export default Constants
