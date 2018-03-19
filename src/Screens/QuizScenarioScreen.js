@@ -8,6 +8,8 @@ import Constants from '../Lib/Constants'
 
 // Assets
 import Header from '../Components/Header'
+import QuestionBox from '../Components/QuestionBox'
+import AnswerBox from '../Components/AnswerBox'
 
 const { height, width } = Dimensions.get('window')
 
@@ -29,8 +31,33 @@ const QuizHeadingContainer = () => {
 }
 
 const CardContainer = () => {
+    const cardList = Constants.QuizLabels.map((item, index) => {
+        return (
+            <View
+                key={index}
+                style={[styles.cardContainer, AppStyles.hCenter]}
+            >
+                <QuestionBox
+                    content={item.question}
+                />
+                {
+                    item.answers.map((cardItem, cardIndex) => {
+                        return (
+                            <AnswerBox
+                                key={cardIndex}
+                                content={cardItem}
+                            />
+                        )
+                    })
+                }
+            </View>
+        )
+    })
+
     return (
-        <View></View>
+        <View>
+            {cardList}
+        </View>
     )
 }
 
@@ -77,5 +104,9 @@ const styles = StyleSheet.create({
         fontSize: Constants.FontSizes.quizTitleFS,
         fontWeight: '600',
         marginTop: 10
+    },
+
+    cardContainer: {
+        paddingTop: 20
     }
 })
