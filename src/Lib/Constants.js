@@ -2,13 +2,15 @@ const Colors = {
     primaryBgColor: 'rgb(0 , 131, 105)',
     secondaryBgColor: 'rgb(0, 143, 120)',
     lightGreen: 'rgb(58, 152, 132)',
-    orange: '#F7A553'
+    orange: '#F7A553',
+    gray: '#6D6F72'
 }
 
 const FontSizes = {
     menuFS: 23,
     headingFS: 32,
-    topicFS: 18
+    topicFS: 18,
+    quizTitleFS: 20
 }
 
 const LearnLabels = [
