@@ -15,6 +15,25 @@ const ExercisesIcon = require('../Assets/Images/exercises_orange.png')
 
 const { height, width } = Dimensions.get('window')
 
+const goToScreen = (ScreenName, navigation) => {
+    const { navigate } = navigation
+    navigate(ScreenName)
+}
+
+const onCardSelected = (subTopic, navigation) => {
+    let ScreenName = ''
+
+    switch (subTopic) {
+        case 'At the Beach':
+            ScreenName = 'AtTheBeachScreen'
+            break
+        default:
+            break
+    }
+
+    goToScreen(ScreenName, navigation)
+}
+
 const CardContainer = ({ navigation }) => {
     const cardList = Constants.ExercisesLabels.map((item, index) => {
         return (
@@ -28,6 +47,7 @@ const CardContainer = ({ navigation }) => {
                         <SingleCard
                             key={cardIndex}
                             cardContent={cardItem}
+                            onPress={() => onCardSelected(cardItem.subTopic, navigation)}
                         />
                     )
                 })
@@ -72,6 +92,7 @@ const styles = StyleSheet.create({
     cardContainer: {
         flex: 1,
         paddingHorizontal: 10,
+        paddingBottom: Constants.Paddings.containerP,
         backgroundColor: Constants.Colors.primaryBgColor
     },
 
