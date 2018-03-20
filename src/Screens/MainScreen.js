@@ -19,8 +19,10 @@ const Menu = require('../Assets/Images/menu.png')
 const Chat = require('../Assets/Images/ic_chat_white_3x.png')
 const Learn = require('../Assets/Images/ic_school_white_3x.png')
 const SelfCare = require('../Assets/Images/self_care.png')
+const Exercises = require('../Assets/Images/exercises.png')
 
 const { height,width } = Dimensions.get('window')
+
 
 export default class MainScreen extends Component {
     static navigationOptions = {      
@@ -124,9 +126,10 @@ export default class MainScreen extends Component {
                             />    
                         </View>  
                         <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
-                            <HomeButton 
+                            <HomeButton
+                                source={Exercises}
                                 Label='Exercises' 
-                                onPress={() => this.goToScreen("ExercisesScreen")}  
+                                onPress={() => this.goToScreen('ExercisesScreen')}  
                             />
                             <HomeButton 
                                 Label='Search' 
