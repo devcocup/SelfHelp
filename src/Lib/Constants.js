@@ -27,7 +27,8 @@ const Paddings = {
 }
 
 const Margins = {
-    elementMT: 10
+    elementMT: 10,
+    containerM: 20
 }
 
 const LearnLabels = [
@@ -150,6 +151,16 @@ const WhatCanIDoToHelpLabels = [
     A trained Safe Helpline staff member is available to support you 24/7.'
 ]
 
+const AtTheBeachLabels = {
+    title: 'At the Beach',
+    content: 'This exercise will help you visualize being at the beach, by channelling your feelings, \
+    sense of sight, smell, and touch. This exercise may elp to reduce anxiety, tension, and stress. \
+    It can make your arms or legs feel \"heavy\". You may also feel half awake or like you are \
+    \"wandering off\" mentally. These aer natural reactions to relaxation. If you feel uncomfortable \
+    at any time during the exercise, just open your eyes and remind yourself that you are in control and \
+    you are safe. Please avoid doing this exercise while driving.'
+}
+
 const QuizLabels = [
     {
         title: 'At a bar',
@@ -189,6 +200,7 @@ const Constants = {
     LearnLabels,
     ExercisesLabels,
     WhatCanIDoToHelpLabels,
+    AtTheBeachLabels,
     QuizLabels
 }
 
