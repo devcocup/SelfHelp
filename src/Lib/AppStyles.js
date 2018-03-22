@@ -13,6 +13,10 @@ const AppStyles = StyleSheet.create({
         justifyContent: 'center'
     },
 
+    vEnd: {
+        justifyContent: 'flex-end'
+    },
+
     hCenter: {
         alignItems: 'center'
     },
