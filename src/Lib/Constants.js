@@ -11,6 +11,7 @@ const FontSizes = {
     menuFS: 23,
     headingFS: 32,
     topicFS: 18,
+    contentFS: 16,
     quizTitleFS: 20,
     quizCaptionFS: 22,
     quizQuestionFS: 16,
