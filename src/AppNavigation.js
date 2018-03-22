@@ -18,6 +18,7 @@ import PastPlansScreen from './Screens/PastPlansScreen'
 import WhatCanIDoScreen from './Screens/WhatCanIDoScreen'
 import QuizScenarioScreen from './Screens/QuizScenarioScreen'
 import AtTheBeachScreen from './Screens/AtTheBeachScreen'
+import ExerciseListenScreen from './Screens/ExerciseListenScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -33,7 +34,8 @@ export const AppNavigation =  StackNavigator({
     ExercisesScreen: { screen: ExercisesScreen },
     WhatCanIDoScreen: { screen: WhatCanIDoScreen },
     QuizScenarioScreen: { screen: QuizScenarioScreen },
-    AtTheBeachScreen: { screen: AtTheBeachScreen }
+    AtTheBeachScreen: { screen: AtTheBeachScreen },
+    ExerciseListenScreen: { screen: ExerciseListenScreen }
 },
 {
     headerMode: 'none',
