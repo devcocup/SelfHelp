@@ -27,6 +27,9 @@ const onCardSelected = (subTopic, navigation) => {
         case 'At the Beach':
             ScreenName = 'AtTheBeachScreen'
             break
+        case 'Listening to Soothing Sounds'
+            ScreenName = 'SoothingSoundsScreen'
+            break
         default:
             break
     }
