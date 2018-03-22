@@ -11,6 +11,10 @@ import Header from '../Components/Header'
 import TopicButton from '../Components/TopicButton'
 import SingleCard from '../Components/SingleCard'
 
+const onCardSelected = (content) => {
+    console.log('content clicked')
+}
+
 const CardContainer = ({ navigation }) => {
     const subTopic = navigation.state.params.subTopic
 
