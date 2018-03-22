@@ -141,39 +141,43 @@ const ExercisesLabels = [
 
 const SoothingSoundsLabels = [
     {
-        icon: require('../Assets/Images/crickets.png'),
-        subTopic: 'Crickets',
-        description: 'Listen to the sound of crickets chirping in the night.'   
-    },
-    {
-        icon: require('../Assets/Images/forest.png'),
-        subTopic: 'Forest',
-        description: 'Embrace the nature filled sounds of the forest.'
-    },
-    {
-        icon: require('../Assets/Images/harp.png'),
-        subTopic: 'Harp',
-        description: 'Listen to the beautiful sounds of a soothing harp.'
-    },
-    {
-        icon: require('../Assets/Images/ocean.png'),
-        subTopic: 'Ocean',
-        description: 'Listen to the sounds of the waves by the ocean.'
-    },
-    {
-        icon: require('../Assets/Images/rain.png'),
-        subTopic: 'Rain',
-        description: 'Listen to the sounds of rain falling.'
-    },
-    {
-        icon: require('../Assets/Images/white_noise.png'),
-        subTopic: 'White Noise',
-        description: 'Listen to the soothing sound of white noise.'
-    },
-    {
-        icon: require('../Assets/Images/wind_chimes.png'),
-        subTopic: 'Wind Chimes',
-        description: 'Listen to the rings of wind chimes moving in the wind.'
+        content: [
+            {
+                icon: require('../Assets/Images/crickets.png'),
+                subTopic: 'Crickets',
+                description: 'Listen to the sound of crickets chirping in the night.'   
+            },
+            {
+                icon: require('../Assets/Images/forest.png'),
+                subTopic: 'Forest',
+                description: 'Embrace the nature filled sounds of the forest.'
+            },
+            {
+                icon: require('../Assets/Images/harp.png'),
+                subTopic: 'Harp',
+                description: 'Listen to the beautiful sounds of a soothing harp.'
+            },
+            {
+                icon: require('../Assets/Images/ocean.png'),
+                subTopic: 'Ocean',
+                description: 'Listen to the sounds of the waves by the ocean.'
+            },
+            {
+                icon: require('../Assets/Images/rain.png'),
+                subTopic: 'Rain',
+                description: 'Listen to the sounds of rain falling.'
+            },
+            {
+                icon: require('../Assets/Images/white_noise.png'),
+                subTopic: 'White Noise',
+                description: 'Listen to the soothing sound of white noise.'
+            },
+            {
+                icon: require('../Assets/Images/wind_chimes.png'),
+                subTopic: 'Wind Chimes',
+                description: 'Listen to the rings of wind chimes moving in the wind.'
+            }
+        ]
     }
 ]
 
@@ -237,6 +241,7 @@ const Constants = {
     Margins,
     LearnLabels,
     ExercisesLabels,
+    SoothingSoundsLabels,
     WhatCanIDoToHelpLabels,
     AtTheBeachLabels,
     QuizLabels
