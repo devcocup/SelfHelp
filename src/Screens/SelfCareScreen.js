@@ -9,6 +9,7 @@ import Constants from '../Lib/Constants'
 // Assets
 import Header from '../Components/Header'
 import HeadingContainer from '../Components/HeadingContainer'
+import CardWithImage from '../Components/CardWithImage'
 
 const SelfCareIcon = require('../Assets/Images/self_care_orange.png')
 const NewPlanIcon = require('../Assets/Images/create_a_plan.png')
@@ -28,21 +29,6 @@ onBrowse = (navigation) => {
 
 onJournalClicked = (navigation) => {
     goToScreen('JournalScreen', navigation)
-}
-
-const CardWithImage = ({ cardImage, text, onPress }) => {
-    return (
-        <TouchableOpacity onPress={onPress}>
-            <View style={[styles.buttonWithImage, AppStyles.center]}>
-                <View style={[styles.cardImageArea, AppStyles.center]}>
-                    <Image source={cardImage} style={styles.cardImageStyle} />
-                </View>
-                <View style={styles.cardTextArea}>
-                    <Text style={styles.buttonText}>{text}</Text>
-                </View>
-            </View>
-        </TouchableOpacity>
-    )
 }
 
 const CardWithoutImage = ({ text, onPress }) => {
@@ -113,28 +99,6 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: 10,
         backgroundColor: Colors.primaryBgColor
-    },
-
-    buttonWithImage: {
-        flexDirection: 'row',
-        height: height / 6,
-        marginTop: 15,
-        width: width - 40,
-        backgroundColor: Colors.lightGreen,
-        borderRadius: 4
-    },
-
-    cardImageArea: {
-        flex: .33
-    },
-
-    cardImageStyle: {
-        width: 60,
-        height: 60
-    },
-
-    cardTextArea: {
-        flex: .67
     },
 
     boxWithoutImageArea: {
