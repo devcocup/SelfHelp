@@ -20,6 +20,7 @@ import QuizScenarioScreen from './Screens/QuizScenarioScreen'
 import AtTheBeachScreen from './Screens/AtTheBeachScreen'
 import ExerciseListenScreen from './Screens/ExerciseListenScreen'
 import SoothingSoundsScreen from './Screens/SoothingSoundsScreen'
+import JournalScreen from './Screens/JournalScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -37,7 +38,8 @@ export const AppNavigation =  StackNavigator({
     QuizScenarioScreen: { screen: QuizScenarioScreen },
     AtTheBeachScreen: { screen: AtTheBeachScreen },
     ExerciseListenScreen: { screen: ExerciseListenScreen },
-    SoothingSoundsScreen: { screen: SoothingSoundsScreen }
+    SoothingSoundsScreen: { screen: SoothingSoundsScreen },
+    JournalScreen: { screen: JournalScreen }
 },
 {
     headerMode: 'none',

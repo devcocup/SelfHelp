@@ -69,7 +69,7 @@ export default class ExercisesScreen extends Component {
     render() {
         const { navigation } = this.props
 
-        return(
+        return (
             <View style={AppStyles.mainContainer}>
                 <Header
                     type='Home'

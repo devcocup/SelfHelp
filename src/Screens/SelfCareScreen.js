@@ -26,6 +26,10 @@ onBrowse = (navigation) => {
     goToScreen('PastPlansScreen', navigation)
 }
 
+onJournalClicked = (navigation) => {
+    goToScreen('JournalScreen', navigation)
+}
+
 const CardWithImage = ({ cardImage, text, onPress }) => {
     return (
         <TouchableOpacity onPress={onPress}>
@@ -41,9 +45,9 @@ const CardWithImage = ({ cardImage, text, onPress }) => {
     )
 }
 
-const CardWithoutImage = ({ text }) => {
+const CardWithoutImage = ({ text, onPress }) => {
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPress}>
             <View style={[styles.buttonWithoutImage, AppStyles.center]}>
                 <Text style={styles.buttonText}>{text}</Text>
             </View>
@@ -64,7 +68,10 @@ const CardContainer = ({ navigation }) => {
                 onPress={() => onBrowse(navigation)}
             />
             <View style={styles.boxWithoutImageArea}>
-                <CardWithoutImage text='Journal' />
+                <CardWithoutImage
+                    text='Journal'
+                    onPress={() => onJournalClicked(navigation)}
+                />
                 <CardWithoutImage text='Coloring Book' />
             </View>
         </View>
