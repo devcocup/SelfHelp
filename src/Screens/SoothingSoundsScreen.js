@@ -54,7 +54,7 @@ export default class SoothingSoundsScreen extends Component {
             <View style={AppStyles.mainContainer}>
                 <Header
                     type='Back'
-                    navigation='navigation'
+                    navigation={navigation}
                 />
                 <View style={{ flex: 1 }}>
                     <ScrollView>
