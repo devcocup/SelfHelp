@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, ScrollView, Image, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -32,19 +32,40 @@ const NoteContainer = () => {
     )
 }
 
-const GenderBox = ({ imgSrc }) => {
+const GenderBox = ({ imgSrc, onPress }) => {
     return (
-        <View style={[styles.genderBox, AppStyles.center]}>
-            <Image source={imgSrc} style={styles.avatar}/>
-        </View>
+        <TouchableOpacity onPress={onPress}>
+            <View style={[styles.genderBox, AppStyles.center]}>
+                <Image source={imgSrc} style={styles.avatar}/>
+            </View>
+        </TouchableOpacity>
     )
 }
 
-const GenderBoxContainer = () => {
+const goToScreen = (ScreenName, navigation) => {
+    const { navigate } = navigation
+    navigate(ScreenName)
+}
+
+const onMaleSelected = (navigation) => {
+    goToScreen('ExerciseListenScreen', navigation)
+}
+
+const onFemaleSelected = (navigation) => {
+    goToScreen('ExerciseListenScreen', navigation)
+}
+
+const GenderBoxContainer = ({ navigation }) => {
     return (
         <View style={styles.genderBoxContainer}>
-            <GenderBox imgSrc={maleIcon} />
-            <GenderBox imgSrc={femaleIcon} />
+            <GenderBox
+                imgSrc={maleIcon}
+                onPress={() => onMaleSelected(navigation)}
+            />
+            <GenderBox
+                imgSrc={femaleIcon}
+                onPress={() => onFemaleSelected(navigation)}
+            />
         </View>
     )
 }
@@ -67,7 +88,9 @@ export default class AtTheBeachScreen extends Component {
                                 <NoteContainer />
                             </View>
                             <View style={[{ flex: .25}, AppStyles.hCenter, AppStyles.vEnd]}>
-                                <GenderBoxContainer />
+                                <GenderBoxContainer
+                                    navigation={navigation}
+                                />
                             </View>
                         </View>
                     </View>
