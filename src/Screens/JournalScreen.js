@@ -21,13 +21,13 @@ const { height, width } = Dimensions.get('window')
 const cardHeadTitle = 'Current Journal Prompt'
 const cardContentText = 'How are you feeling today?'
 
-const goToScreen = (ScreenName, navigation) => {
+const goToScreen = (ScreenName, headerTitle, headerContent, navigation) => {
     const { navigate } = navigation
-    navigate(ScreenName)
+    navigate(ScreenName, { headerTitle, headerContent })
 }
 
-const onCurrentJournal = (navigation) => {
-    console.log('current journal clicked')
+const onCurrentJournal = (navigation, headerTitle, headerContent) => {
+    goToScreen('CurrentJournalPromptScreen', headerTitle, headerContent, navigation)
 }
 
 const onBrowseJournal = (navigation) => {
@@ -44,7 +44,7 @@ const CardContainer = ({ navigation }) => {
             <CardWithImage
                 cardImage={AnswerJournalIcon}
                 text='Answer Current Journal'
-                onPress={() => onCurrentJournal(navigation)}
+                onPress={() => onCurrentJournal(navigation, cardHeadTitle, cardContentText)}
             />
             <CardWithImage
                 cardImage={BrowseJournalIcon}

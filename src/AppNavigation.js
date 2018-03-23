@@ -21,6 +21,7 @@ import AtTheBeachScreen from './Screens/AtTheBeachScreen'
 import ExerciseListenScreen from './Screens/ExerciseListenScreen'
 import SoothingSoundsScreen from './Screens/SoothingSoundsScreen'
 import JournalScreen from './Screens/JournalScreen'
+import CurrentJournalPromptScreen from './Screens/CurrentJournalPromptScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -39,7 +40,8 @@ export const AppNavigation =  StackNavigator({
     AtTheBeachScreen: { screen: AtTheBeachScreen },
     ExerciseListenScreen: { screen: ExerciseListenScreen },
     SoothingSoundsScreen: { screen: SoothingSoundsScreen },
-    JournalScreen: { screen: JournalScreen }
+    JournalScreen: { screen: JournalScreen },
+    CurrentJournalPromptScreen: { screen: CurrentJournalPromptScreen }
 },
 {
     headerMode: 'none',
