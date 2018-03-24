@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
-import Constans from '../Lib/Constants'
+import Constants from '../Lib/Constants'
 import AppStyles from '../Lib/AppStyles'
 
 const { height, width } = Dimensions.get('window')
