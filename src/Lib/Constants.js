@@ -15,7 +15,8 @@ const FontSizes = {
     quizTitleFS: 20,
     quizCaptionFS: 22,
     quizQuestionFS: 16,
-    quizAnswerFS: 14
+    quizAnswerFS: 14,
+    listFS: 16
 }
 
 const BorderRadii = {
@@ -24,7 +25,9 @@ const BorderRadii = {
 
 const Paddings = {
     elementP: 10,
-    containerP: 20
+    containerP: 20,
+    listPV: 20,
+    listPH: 10
 }
 
 const Margins = {
@@ -272,6 +275,7 @@ const Constants = {
     SoothingSoundsLabels,
     WhatCanIDoToHelpLabels,
     AtTheBeachLabels,
+    PastJournalsLabels,
     QuizLabels
 }
 
