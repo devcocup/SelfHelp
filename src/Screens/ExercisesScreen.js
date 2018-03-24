@@ -1,4 +1,4 @@
-//React
+// React
 import React, { Component } from 'react'
 import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
 
