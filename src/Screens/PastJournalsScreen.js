@@ -8,6 +8,29 @@ import Constants from '../Lib/Constants'
 
 // Assets
 import Header from '../Components/Header'
+import JournalTitleListItem from '../Components/JournalTitleListItem'
+
+const onListClick = () => {
+    console.log('list item clicked')
+}
+
+const ListContainer = () => {
+    const list = Constants.PastJournalsLabels.map((item, index) => {
+        return (
+            <View key={index}>
+                <JournalTitleListItem
+                    checked={item.checked}
+                    label={item.label}
+                    onPress={onListClick}
+                />
+            </View>
+        )
+    })
+
+    return (
+        <View>{list}</View>
+    )
+}
 
 
 export default class PastJournalsScreen extends Component {
@@ -20,6 +43,11 @@ export default class PastJournalsScreen extends Component {
                     type='Back'
                     navigation={navigation}
                 />
+                <ScrollView>
+                    <ListContainer
+                        navigation={navigation}
+                    />
+                </ScrollView>
             </View>
         )
     }
