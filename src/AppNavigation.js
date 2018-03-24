@@ -22,6 +22,7 @@ import ExerciseListenScreen from './Screens/ExerciseListenScreen'
 import SoothingSoundsScreen from './Screens/SoothingSoundsScreen'
 import JournalScreen from './Screens/JournalScreen'
 import CurrentJournalPromptScreen from './Screens/CurrentJournalPromptScreen'
+import PastJournalsScreen from './Screens/PastJournalsScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -41,7 +42,8 @@ export const AppNavigation =  StackNavigator({
     ExerciseListenScreen: { screen: ExerciseListenScreen },
     SoothingSoundsScreen: { screen: SoothingSoundsScreen },
     JournalScreen: { screen: JournalScreen },
-    CurrentJournalPromptScreen: { screen: CurrentJournalPromptScreen }
+    CurrentJournalPromptScreen: { screen: CurrentJournalPromptScreen },
+    PastJournalsScreen: { screen: PastJournalsScreen }
 },
 {
     headerMode: 'none',

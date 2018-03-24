@@ -31,7 +31,7 @@ const onCurrentJournal = (navigation, headerTitle, headerContent) => {
 }
 
 const onBrowseJournal = (navigation) => {
-    console.log('browse journal clicked')
+    goToScreen('PastJournalsScreen', '', '', navigation)
 }
 
 const CardContainer = ({ navigation }) => {
