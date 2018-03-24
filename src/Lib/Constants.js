@@ -182,6 +182,33 @@ const SoothingSoundsLabels = [
     }
 ]
 
+const PastJournalsLabels = [
+    {
+        checked: false,
+        label: 'How are you feeling today?'
+    },
+    {
+        checked: true,
+        label: 'What is your favorite thing about life?'
+    },
+    {
+        checked: false,
+        label: 'How long are prompts going to be?'
+    },
+    {
+        checked: true,
+        label: 'Are we going to ask long questions that take up 2 lines?'
+    },
+    {
+        checked: false,
+        label: 'What is your dream job?'
+    },
+    {
+        checked: false,
+        label: 'Do you feel lucky punk? Do you?'
+    }
+]
+
 const WhatCanIDoToHelpLabels = [
     'The following five scenarios provide helpful ways to step in to support others.\
      The Scenarios cover a range of harmful behavior in the spectrum of sexual assault\
