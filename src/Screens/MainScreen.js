@@ -131,7 +131,8 @@ export default class MainScreen extends Component {
                                 Label='Exercises' 
                                 onPress={() => this.goToScreen('ExercisesScreen')}  
                             />
-                            <HomeButton 
+                            <HomeButton
+                                source={Search}
                                 Label='Search' 
                                 onPress={() => this.goToScreen("SearchScreen")}   
                             />   
