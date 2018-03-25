@@ -212,6 +212,25 @@ const PastJournalsLabels = [
     }
 ]
 
+const SearchLabels = [
+    {
+        content: [
+            {
+                icon: '',
+                label: 'Local Resources'
+            },
+            {
+                icon: '',
+                label: 'Transitioning Service Resources'
+            },
+            {
+                icon: require('../Assets/Images/talk_to_someone.png'),
+                label: 'Talk to Someone'
+            }
+        ]
+    }
+]
+
 const WhatCanIDoToHelpLabels = [
     'The following five scenarios provide helpful ways to step in to support others.\
      The Scenarios cover a range of harmful behavior in the spectrum of sexual assault\
@@ -276,7 +295,8 @@ const Constants = {
     WhatCanIDoToHelpLabels,
     AtTheBeachLabels,
     PastJournalsLabels,
-    QuizLabels
+    QuizLabels,
+    SearchLabels
 }
 
 export default Constants
