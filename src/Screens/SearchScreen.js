@@ -1,6 +1,18 @@
 //React
 import React, { Component } from 'react'
-import { View,Text  } from 'react-native'
+import { View, Text, StyleSheet, Dimensions } from 'react-native'
+
+// Global Styles & Constants
+import AppStyles from '../Lib/AppStyles'
+import Constants from '../Lib/Constants'
+
+// Assets
+import Header from '../Components/Header'
+
+const SearchIcon = require('../Assets/Images/search_orange.png')
+
+const { height, width } = Dimensions.get('window')
+
 
 export default class SearchScreen extends Component {
     static navigationOptions = {
@@ -11,10 +23,19 @@ export default class SearchScreen extends Component {
     }
 
     render() {
+        const { navigation } = this.props
+
         return(
-           <View style={{ backgroundColor: '#1F618D', flex:1 }}>
-               <Text style={{ fontSize: 30, color: 'white' }}>Search Screen </Text>
-           </View>    
+            <View style={AppStyles.mainContainer}>
+                <Header
+                    type='Home'
+                    navigation={navigation}
+                />
+            </View>    
         )
     }
 }
+
+const style = StyleSheet.create({
+
+})
