@@ -13,6 +13,7 @@ import HeadingContainer from '../Components/HeadingContainer'
 const SearchIcon = require('../Assets/Images/search_orange.png')
 
 const { height, width } = Dimensions.get('window')
+const { Paddings, FontSizes } = Constants
 
 
 export default class LocalResourcesScreen extends Component {
@@ -30,6 +31,15 @@ export default class LocalResourcesScreen extends Component {
                         headingImage={SearchIcon}
                         headingText={navigation.state.params.cardTitle}
                     />
+                    <View style={[styles.inputContainer, AppStyles.hCenter]}>
+                        <View style={styles.locationInputArea}>
+                            <Text style={styles.hintText}>Enter your location info:</Text>
+                        </View>
+                        <View style={styles.categortyInputArea}>
+                        </View>
+                        <View style={styles.buttonArea}>
+                        </View>
+                    </View>
                 </ScrollView>
             </View>
         )
@@ -37,5 +47,26 @@ export default class LocalResourcesScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+    inputContainer: {
+        flex: 1,
+        padding: Paddings.containerP
+    },
 
+    locationInputArea: {
+
+    },
+
+    hintText: {
+        color: 'white',
+        fontSize: FontSizes.hintFS,
+        fontWeight: '600'
+    },
+
+    categortyInputArea: {
+
+    },
+
+    buttonArea: {
+
+    }
 })
