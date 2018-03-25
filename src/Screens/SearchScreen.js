@@ -16,8 +16,23 @@ const SearchIcon = require('../Assets/Images/search_orange.png')
 const { height, width } = Dimensions.get('window')
 const { SearchLabels, Paddings, Colors } = Constants
 
-const onPress = (navigation) => {
-    console.log('card clicked')
+const goToScreen = (ScreenName, cardTitle, navigation) => {
+    const { navigate } = navigation
+    navigate(ScreenName, { cardTitle })
+}
+
+const onPress = (cardTitle, navigation) => {
+    let ScreenName = ''
+
+    switch (cardTitle) {
+        case 'Local Resources':
+            ScreenName = 'LocalResourcesScreen'
+            break
+        default:
+            break
+    }
+
+    goToScreen(ScreenName, cardTitle, navigation)
 }
 
 const CardContainer = ({ navigation }) => {
@@ -34,7 +49,7 @@ const CardContainer = ({ navigation }) => {
                                 key={cardIndex}
                                 cardImage={cardItem.icon}
                                 text={cardItem.label}
-                                onPress={() => onPress(navigation)}
+                                onPress={() => onPress(cardItem.label, navigation)}
                             />
                         )
                     })
