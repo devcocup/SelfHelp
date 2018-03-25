@@ -23,6 +23,7 @@ import SoothingSoundsScreen from './Screens/SoothingSoundsScreen'
 import JournalScreen from './Screens/JournalScreen'
 import CurrentJournalPromptScreen from './Screens/CurrentJournalPromptScreen'
 import PastJournalsScreen from './Screens/PastJournalsScreen'
+import LocalResourcesScreen from './Screens/LocalResourcesScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -43,7 +44,8 @@ export const AppNavigation =  StackNavigator({
     SoothingSoundsScreen: { screen: SoothingSoundsScreen },
     JournalScreen: { screen: JournalScreen },
     CurrentJournalPromptScreen: { screen: CurrentJournalPromptScreen },
-    PastJournalsScreen: { screen: PastJournalsScreen }
+    PastJournalsScreen: { screen: PastJournalsScreen },
+    LocalResourcesScreen: { screen: LocalResourcesScreen }
 },
 {
     headerMode: 'none',
