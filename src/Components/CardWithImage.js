@@ -15,7 +15,10 @@ const CardWithImage = ({ cardImage, text, onPress }) => {
         <TouchableOpacity onPress={onPress}>
             <View style={[styles.buttonWithImage, AppStyles.center]}>
                 <View style={[styles.cardImageArea, AppStyles.center]}>
-                    <Image source={cardImage} style={styles.cardImageStyle} />
+                    {
+                        (cardImage !== '') &&
+                        <Image source={cardImage} style={styles.cardImageStyle} />
+                    }
                 </View>
                 <View style={styles.cardTextArea}>
                     <Text style={styles.buttonText}>{text}</Text>
