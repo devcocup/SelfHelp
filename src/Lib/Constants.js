@@ -33,6 +33,7 @@ const Paddings = {
 
 const Margins = {
     elementMT: 10,
+    elementMB: 10,
     containerM: 20
 }
 
@@ -232,6 +233,34 @@ const SearchLabels = [
     }
 ]
 
+const LocalSearchCategoryLabels = [
+    {
+        content: [
+            {
+                label: 'Army'
+            },
+            {
+                label: 'Navy'
+            },
+            {
+                label: 'Air Force'
+            },
+            {
+                label: 'Marines'
+            },
+            {
+                label: 'National Guard'
+            },
+            {
+                label: 'Reserves'
+            },
+            {
+                label: 'Coast Guard'
+            }
+        ]
+    }
+]
+
 const WhatCanIDoToHelpLabels = [
     'The following five scenarios provide helpful ways to step in to support others.\
      The Scenarios cover a range of harmful behavior in the spectrum of sexual assault\
@@ -297,7 +326,8 @@ const Constants = {
     AtTheBeachLabels,
     PastJournalsLabels,
     QuizLabels,
-    SearchLabels
+    SearchLabels,
+    LocalSearchCategoryLabels
 }
 
 export default Constants
