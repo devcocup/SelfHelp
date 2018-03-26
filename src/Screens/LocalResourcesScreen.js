@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, TextInput, ScrollView, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, TextInput, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -30,6 +30,10 @@ export default class LocalResourcesScreen extends Component {
         this.state = {
             locationSearchText: ''
         }
+    }
+
+    onCategorySelected = (cardText) => {
+        console.log('card clicked')
     }
 
     render() {
@@ -62,12 +66,15 @@ export default class LocalResourcesScreen extends Component {
                                 return (
                                     item.content.map((cardItem, cardIndex) => {
                                         return (
-                                            <View
+                                            <TouchableOpacity
                                                 key={cardIndex}
-                                                style={[styles.categoryCard, AppStyles.center]}
-                                            >
-                                                <Text style={styles.cardText}>{cardItem.label}</Text>
-                                            </View>
+                                                onPress={() => this.onCategorySelected(cardItem.label)}>
+                                                <View
+                                                    style={[styles.categoryCard, AppStyles.center]}
+                                                >
+                                                    <Text style={styles.cardText}>{cardItem.label}</Text>
+                                                </View>
+                                            </TouchableOpacity>
                                         )
                                     })
                                 )
