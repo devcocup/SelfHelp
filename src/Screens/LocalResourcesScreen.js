@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, TextInput, ScrollView, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -13,10 +13,25 @@ import HeadingContainer from '../Components/HeadingContainer'
 const SearchIcon = require('../Assets/Images/search_orange.png')
 
 const { height, width } = Dimensions.get('window')
-const { Paddings, FontSizes } = Constants
+const {
+    Paddings,
+    Margins,
+    FontSizes,
+    Colors,
+    BorderRadii,
+    LocalSearchCategoryLabels
+} = Constants
 
 
 export default class LocalResourcesScreen extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            locationSearchText: ''
+        }
+    }
+
     render() {
         const { navigation } = this.props
 
@@ -34,8 +49,30 @@ export default class LocalResourcesScreen extends Component {
                     <View style={[styles.inputContainer, AppStyles.hCenter]}>
                         <View style={styles.locationInputArea}>
                             <Text style={styles.hintText}>Enter your location info:</Text>
+                            <TextInput
+                                style={styles.inputBox}
+                                placeholder='Zip Code, State, Country, Installation/Base'
+                                onChangeText={(locationSearchText) => this.setState({ locationSearchText })}
+                                value={this.state.locationSearchText}
+                            />
                         </View>
                         <View style={styles.categortyInputArea}>
+                        {
+                            LocalSearchCategoryLabels.map((item, index) => {
+                                return (
+                                    item.content.map((cardItem, cardIndex) => {
+                                        return (
+                                            <View
+                                                key={cardIndex}
+                                                style={[styles.categoryCard, AppStyles.center]}
+                                            >
+                                                <Text style={styles.cardText}>{cardItem.label}</Text>
+                                            </View>
+                                        )
+                                    })
+                                )
+                            })
+                        }
                         </View>
                         <View style={styles.buttonArea}>
                         </View>
@@ -53,17 +90,43 @@ const styles = StyleSheet.create({
     },
 
     locationInputArea: {
-
+        flexDirection: 'column'
     },
 
     hintText: {
         color: 'white',
         fontSize: FontSizes.hintFS,
-        fontWeight: '600'
+        fontWeight: '600',
+        textAlign: 'center',
+        marginBottom: Margins.elementMB
+    },
+
+    inputBox: {
+        height: 40,
+        width: width - 50,
+        backgroundColor: 'white',
+        textAlign: 'center'
     },
 
     categortyInputArea: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        marginTop: Margins.elementMT
+    },
 
+    categoryCard: {
+        width: width / 4 - 20,
+        height: height / 10,
+        backgroundColor: Colors.darkGreen,
+        borderRadius: BorderRadii.boxBR,
+        margin: 5
+    },
+
+    cardText: {
+        color: 'white',
+        textAlign: 'center',
+        fontSize: FontSizes.listFS,
+        fontWeight: '600'
     },
 
     buttonArea: {
