@@ -32,14 +32,19 @@ export default class LocalResourcesScreen extends Component {
         }
     }
 
+    goToScreen = (ScreenName, navigation) => {
+        const { navigate } = navigation
+        navigate(ScreenName)
+    }
+
     onCategorySelected = (cardText) => {
         console.log('card clicked')
     }
 
-    onSearchClicked = () => {
-        console.log('search button clicked')
+    onSearchClicked = (navigation) => {
+        this.goToScreen('SearchResultScreen', navigation)
     }
-    
+
     render() {
         const { navigation } = this.props
 
@@ -87,7 +92,7 @@ export default class LocalResourcesScreen extends Component {
                         </View>
                         <View style={styles.buttonArea}>
                             <TouchableOpacity
-                                onPress={this.onSearchClicked}
+                                onPress={() => this.onSearchClicked(navigation)}
                             >
                                 <View style={[styles.searchButton, AppStyles.center]}>
                                     <Text style={styles.searchButtonText}>Search</Text>
