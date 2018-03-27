@@ -36,6 +36,10 @@ export default class LocalResourcesScreen extends Component {
         console.log('card clicked')
     }
 
+    onSearchClicked = () => {
+        console.log('search button clicked')
+    }
+    
     render() {
         const { navigation } = this.props
 
@@ -82,6 +86,13 @@ export default class LocalResourcesScreen extends Component {
                         }
                         </View>
                         <View style={styles.buttonArea}>
+                            <TouchableOpacity
+                                onPress={this.onSearchClicked}
+                            >
+                                <View style={[styles.searchButton, AppStyles.center]}>
+                                    <Text style={styles.searchButtonText}>Search</Text>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </ScrollView>
@@ -93,10 +104,12 @@ export default class LocalResourcesScreen extends Component {
 const styles = StyleSheet.create({
     inputContainer: {
         flex: 1,
+        height: height * 3 / 4 - 64,
         padding: Paddings.containerP
     },
 
     locationInputArea: {
+        flex: .2,
         flexDirection: 'column'
     },
 
@@ -116,6 +129,7 @@ const styles = StyleSheet.create({
     },
 
     categortyInputArea: {
+        flex: .5,
         flexDirection: 'row',
         flexWrap: 'wrap',
         marginTop: Margins.elementMT
@@ -137,6 +151,19 @@ const styles = StyleSheet.create({
     },
 
     buttonArea: {
+        flex: .3
+    },
 
+    searchButton: {
+        width: width - 50,
+        height: height / 6,
+        backgroundColor: Colors.lightGreen,
+        borderRadius: BorderRadii.boxBR
+    },
+
+    searchButtonText: {
+        color: 'white',
+        fontSize: 22,
+        fontWeight: '600'
     }
 })
