@@ -24,6 +24,7 @@ import JournalScreen from './Screens/JournalScreen'
 import CurrentJournalPromptScreen from './Screens/CurrentJournalPromptScreen'
 import PastJournalsScreen from './Screens/PastJournalsScreen'
 import LocalResourcesScreen from './Screens/LocalResourcesScreen'
+import SearchResultScreen from './Screens/SearchResultScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -45,7 +46,8 @@ export const AppNavigation =  StackNavigator({
     JournalScreen: { screen: JournalScreen },
     CurrentJournalPromptScreen: { screen: CurrentJournalPromptScreen },
     PastJournalsScreen: { screen: PastJournalsScreen },
-    LocalResourcesScreen: { screen: LocalResourcesScreen }
+    LocalResourcesScreen: { screen: LocalResourcesScreen },
+    SearchResultScreen: { screen: SearchResultScreen }
 },
 {
     headerMode: 'none',
