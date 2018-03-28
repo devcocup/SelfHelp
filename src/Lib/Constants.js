@@ -266,7 +266,7 @@ const SearchResultLabels = [
         content: [
             {
                 label: 'Sexual Assault Response Coordinator (SARC)',
-                content: [
+                subContent: [
                     {
                         subLabel: 'Reserve Training Centers (RTC) in Utah',
                         phoneNumber: '1-877-432-2215',
