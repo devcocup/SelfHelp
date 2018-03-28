@@ -19,50 +19,6 @@ const {
     FontSizes
 } = Constants
 
-const ListContainer = ({ navigation }) => {
-    const list = SearchResultLabels.map((item, index) => {
-        return (
-            <View
-                key={index}
-                style={[styles.cardContainer, AppStyles.hCenter]}
-            >
-            {/*
-                item.content.map((cardItem, cardIndex) => {
-                    return (
-                        <View
-                            key={cardIndex}
-                            style={[styles.cardItem, AppStyles.hCenter]}>
-                            <View style={styles.cardTitleArea}>
-                                <View style={[styles.checkMarkArea, AppStyles.center]}>
-                                    <TouchableOpacity
-                                        onPress={() => onItemSelected}
-                                    >
-                                        <Image source={DownArrowIcon} style={styles.checkMark} />
-                                    </TouchableOpacity>
-                                </View>
-                                <View style={styles.textArea}>
-                                    <Text style={styles.cardText}>{ cardItem.label }</Text>
-                                </View>
-                            </View>
-                        </View>
-                    )
-                })
-            */}
-
-                <Accordion
-                    sections={item.content}
-                    renderHeader={renderHeader}
-                    renderContent={renderContent}
-                />
-            </View>
-        )
-    })
-
-    return (
-        <View>{list}</View>
-    )
-}
-
 
 export default class SearchResultScreen extends Component {
     renderHeader = (section) => {
@@ -99,47 +55,31 @@ export default class SearchResultScreen extends Component {
                     navigation={navigation}
                 />
                 <ScrollView>
-                    {/*
-                        SearchResultLabels.map((item, index) => {
-                            return (
-                                <View
-                                    key={index}
-                                    style={[styles.cardContainer, AppStyles.hCenter]}
-                                >
-                                    <Accordion
-                                        sections={item.content}
-                                        renderHeader={this.renderHeader}
-                                        renderContent={this.renderContent}
-                                    />
-                                </View>
-                            )
-                        })
-                    */}
-                    {
-                        SearchResultLabels.map((item, index) => {
-                            return (
-                                <View
-                                    key={index}
-                                >
-                                    {
-                                        item.content.map((cardItem, cardIndex) => {
-                                            return (
-                                                <View
-                                                    key={cardIndex}
+                {
+                    SearchResultLabels.map((item, index) => {
+                        return (
+                            <View
+                                key={index}
+                            >
+                                {
+                                    item.content.map((cardItem, cardIndex) => {
+                                        return (
+                                            <View
+                                                key={cardIndex}
+                                            >
+                                                <SearchResultPanel
+                                                    title={cardItem.label}
                                                 >
-                                                    <SearchResultPanel
-                                                        title={cardItem.label}
-                                                    >
-                                                        <Text>Content</Text>
-                                                    </SearchResultPanel>
-                                                </View>
-                                            )
-                                        })
-                                    }
-                                </View>
-                            )
-                        })
-                    }
+                                                    <Text>Content</Text>
+                                                </SearchResultPanel>
+                                            </View>
+                                        )
+                                    })
+                                }
+                            </View>
+                        )
+                    })
+                }
                 </ScrollView>
             </View>
         )
