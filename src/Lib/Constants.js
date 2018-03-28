@@ -261,6 +261,40 @@ const LocalSearchCategoryLabels = [
     }
 ]
 
+const SearchResultLabels = [
+    {
+        content: [
+            {
+                label: 'Sexual Assault Response Coordinator (SARC)',
+                content: [
+                    {
+                        subLabel: 'Reserve Training Centers (RTC) in Utah',
+                        phoneNumber: '1-877-432-2215',
+                        location: 'SLAT LAKE CITY, UT'
+                    },
+                    {
+                        subLabel: 'Utah Reserves',
+                        phoneNumber: '1-844-663-3269',
+                        location: 'SALT LAKE CITY, UT'
+                    }
+                ]
+            },
+            {
+                label: 'Military Chaplain'
+            },
+            {
+                label: 'Jusdge Advocate General (JAG)'
+            },
+            {
+                label: 'Medical Personnel'
+            },
+            {
+                label: 'Civilian Sexual Assault Service Provider'
+            }
+        ]
+    }
+]
+
 const WhatCanIDoToHelpLabels = [
     'The following five scenarios provide helpful ways to step in to support others.\
      The Scenarios cover a range of harmful behavior in the spectrum of sexual assault\
@@ -327,7 +361,8 @@ const Constants = {
     PastJournalsLabels,
     QuizLabels,
     SearchLabels,
-    LocalSearchCategoryLabels
+    LocalSearchCategoryLabels,
+    SearchResultLabels
 }
 
 export default Constants
