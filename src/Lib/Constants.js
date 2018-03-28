@@ -4,7 +4,8 @@ const Colors = {
     lightGreen: 'rgb(58, 152, 132)',
     darkGreen: '#205547',
     orange: '#F7A553',
-    gray: '#6D6F72'
+    gray: '#6D6F72',
+    lightGray: '#E6E6E6'
 }
 
 const FontSizes = {
