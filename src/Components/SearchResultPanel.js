@@ -8,7 +8,7 @@ import Constants from '../Lib/Constants'
 
 const UpIcon = require('../Assets/Images/down_arrow.png')
 const DownIcon = require('../Assets/Images/down_arrow.png')
-const { Paddings, Margins, Colors } = Constants
+const { Paddings, Margins, Colors, FontSizes } = Constants
 
 
 export default class SearchResultPanel extends Component {
@@ -119,6 +119,7 @@ const styles = StyleSheet.create({
         padding: 10,
         marginBottom: Margins.elementMB,
         color: 'white',
+        fontSize: FontSizes.listFS,
         fontWeight: 'bold'
     },
 
