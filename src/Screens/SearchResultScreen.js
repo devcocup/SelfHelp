@@ -78,11 +78,11 @@ export default class SearchResultScreen extends Component {
                                                                 key={subIndex}
                                                                 style={styles.panelItem}>
                                                                 <View style={styles.panelItemTextArea}>
-                                                                    <Text>{subItem.subLabel}</Text>
-                                                                    <Text>{subItem.phoneNumber}</Text>
-                                                                    <Text>{subItem.location}</Text>
+                                                                    <Text style={styles.subLabelText}>{subItem.subLabel}</Text>
+                                                                    <Text style={styles.phoneNumberText}>{subItem.phoneNumber}</Text>
+                                                                    <Text style={styles.locationText}>{subItem.location}</Text>
                                                                 </View>
-                                                                <View style={styles.panelItemButton}>
+                                                                <View style={[styles.panelItemButton, AppStyles.center]}>
                                                                     <TouchableOpacity
                                                                         style={[styles.callButton, AppStyles.center]}
                                                                     >
@@ -147,15 +147,34 @@ const styles = StyleSheet.create({
     panelItem: {
         flex: 1,
         flexDirection: 'row',
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        padding: Paddings.elementP,
+        borderBottomWidth: 2,
+        borderBottomColor: Colors.lightGray
     },
 
     panelItemTextArea: {
-        flex: .8
+        flex: .85
+    },
+
+    subLabelText: {
+        color: 'black',
+        fontSize: FontSizes.listFS,
+        fontWeight: '600'
+    },
+
+    phoneNumberText: {
+        color: 'black',
+        fontSize: FontSizes.listFS
+    },
+
+    locationText: {
+        color: 'black',
+        fontSize: FontSizes.listFS
     },
 
     panelItemButton: {
-        flex: .2
+        flex: .15
     },
 
     callButton: {
