@@ -9,8 +9,7 @@ import Constants from '../Lib/Constants'
 
 // Assets
 import Header from '../Components/Header'
-
-const DownArrowIcon = require('../Assets/Images/down_arrow.png')
+import SearchResultPanel from '../Components/SearchResultPanel'
 
 const { height, width } = Dimensions.get('window')
 const {
@@ -20,17 +19,6 @@ const {
     FontSizes
 } = Constants
 
-
-const cardContent = () => {
-    return (
-        <View>
-            {
-
-            }
-        </View>
-    )
-}
-
 const ListContainer = ({ navigation }) => {
     const list = SearchResultLabels.map((item, index) => {
         return (
@@ -38,7 +26,7 @@ const ListContainer = ({ navigation }) => {
                 key={index}
                 style={[styles.cardContainer, AppStyles.hCenter]}
             >
-            {
+            {/*
                 item.content.map((cardItem, cardIndex) => {
                     return (
                         <View
@@ -56,15 +44,16 @@ const ListContainer = ({ navigation }) => {
                                     <Text style={styles.cardText}>{ cardItem.label }</Text>
                                 </View>
                             </View>
-                            {
-                                <View>
-                                    {cardContent}
-                                </View>
-                            }
                         </View>
                     )
                 })
-            }
+            */}
+
+                <Accordion
+                    sections={item.content}
+                    renderHeader={renderHeader}
+                    renderContent={renderContent}
+                />
             </View>
         )
     })
@@ -76,6 +65,30 @@ const ListContainer = ({ navigation }) => {
 
 
 export default class SearchResultScreen extends Component {
+    renderHeader = (section) => {
+        return (
+            <View style={styles.header}>
+                <Text style={styles.headerText}>{section.label}</Text>
+            </View>
+        )
+    }
+
+    renderContent = (section) => {
+        return (
+            <View style={styles.content}>
+            {
+                section.subContent.map((item, index) => {
+                    return (
+                        <View>
+                            <Text>{item.subLabel}</Text>
+                        </View>
+                    )
+                })
+            }
+            </View>
+        )
+    }
+
     render() {
         const { navigation } = this.props
 
@@ -86,9 +99,47 @@ export default class SearchResultScreen extends Component {
                     navigation={navigation}
                 />
                 <ScrollView>
-                    <ListContainer
-                        navigation={navigation}
-                    />
+                    {/*
+                        SearchResultLabels.map((item, index) => {
+                            return (
+                                <View
+                                    key={index}
+                                    style={[styles.cardContainer, AppStyles.hCenter]}
+                                >
+                                    <Accordion
+                                        sections={item.content}
+                                        renderHeader={this.renderHeader}
+                                        renderContent={this.renderContent}
+                                    />
+                                </View>
+                            )
+                        })
+                    */}
+                    {
+                        SearchResultLabels.map((item, index) => {
+                            return (
+                                <View
+                                    key={index}
+                                >
+                                    {
+                                        item.content.map((cardItem, cardIndex) => {
+                                            return (
+                                                <View
+                                                    key={cardIndex}
+                                                >
+                                                    <SearchResultPanel
+                                                        title={cardItem.label}
+                                                    >
+                                                        <Text>Content</Text>
+                                                    </SearchResultPanel>
+                                                </View>
+                                            )
+                                        })
+                                    }
+                                </View>
+                            )
+                        })
+                    }
                 </ScrollView>
             </View>
         )
