@@ -8,6 +8,7 @@ import Constants from '../Lib/Constants'
 
 const UpIcon = require('../Assets/Images/down_arrow.png')
 const DownIcon = require('../Assets/Images/down_arrow.png')
+const { Paddings, Margins, Colors } = Constants
 
 
 export default class SearchResultPanel extends Component {
@@ -21,17 +22,43 @@ export default class SearchResultPanel extends Component {
 
         this.state = {
             title: props.title,
-            expanded: true
+            expanded: false,
+            animation: new Animated.Value()
         }
     }
 
     toggle() {
+        const initialValue = this.state.expanded ? this.state.maxHeight + this.state.minHeight : this.state.minHeight,
+              finalValue = this.state.expanded ? this.state.minHeight : this.state.maxHeight + this.state.minHeight
 
+        this.setState({
+            expanded: !this.state.expanded
+        })
+
+        this.state.animation.setValue(initialValue)
+        Animated.spring(
+            this.state.animation,
+            {
+                toValue: finalValue
+            }
+        ).start()
+    }
+
+    setMaxHeight(event) {
+        this.setState({
+            maxHeight: event.nativeEvent.layout.height
+        })
+    }
+
+    setMinHeight(event) {
+        this.setState({
+            minHeight: event.nativeEvent.layout.height
+        })
     }
 
     render() {
         const { icons } = this
-        const { expanded } = this.state
+        const { expanded, animation } = this.state
 
         let icon = this.icons['down']
 
@@ -40,25 +67,32 @@ export default class SearchResultPanel extends Component {
         }
 
         return (
-             <View style={styles.container} >
-                <View style={styles.titleContainer}>
-                    <Text style={styles.title}>{this.state.title}</Text>
-                    <TouchableHighlight 
-                        style={styles.button} 
+            <Animated.View
+                style={[styles.container, {height: animation}]}
+            >
+                <View
+                    style={[styles.titleContainer, AppStyles.vCenter]}
+                    onLayout={this.setMinHeight.bind(this)}
+                >
+                    <TouchableOpacity
+                        style={[styles.button, AppStyles.center]} 
                         onPress={this.toggle.bind(this)}
-                        underlayColor='#f1f1f1'
                     >
                         <Image
                             style={styles.buttonImage}
                             source={icon}
                         />
-                    </TouchableHighlight>
+                    </TouchableOpacity>
+                    <Text style={styles.title}>{this.state.title}</Text>
                 </View>
                 
-                <View style={styles.body}>
+                <View
+                    style={styles.body}
+                    onLayout={this.setMaxHeight.bind(this)}
+                >
                     {this.props.children}
                 </View>
-            </View>
+            </Animated.View>
         )
 
     }
@@ -66,24 +100,28 @@ export default class SearchResultPanel extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fff',
-        margin: 10,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        borderBottomWidth: 2,
+        borderBottomColor: Colors.lightGreen
     },
 
     titleContainer: {
-        flexDirection: 'row'
+        flex: 1,
+        flexDirection: 'row',
+        paddingVertical: Paddings.elementP
     },
 
     title: {
-        flex: 1,
+        flex: .9,
         padding: 10,
-        color: '#2a2f43',
+        marginBottom: Margins.elementMB,
+        color: 'white',
         fontWeight: 'bold'
     },
 
     button: {
-
+        flex: .1,
+        marginBottom: Margins.elementMB,
     },
 
     buttonImage: {
