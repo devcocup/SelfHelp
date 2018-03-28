@@ -1,7 +1,6 @@
 // React
 import React, { Component } from 'react'
 import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
-import Accordion from 'react-native-collapsible/Accordion'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -10,6 +9,8 @@ import Constants from '../Lib/Constants'
 // Assets
 import Header from '../Components/Header'
 import SearchResultPanel from '../Components/SearchResultPanel'
+
+const CallIcon = require('../Assets/Images/call_button.png')
 
 const { height, width } = Dimensions.get('window')
 const {
@@ -70,7 +71,31 @@ export default class SearchResultScreen extends Component {
                                                 <SearchResultPanel
                                                     title={cardItem.label}
                                                 >
-                                                    <Text>Content</Text>
+                                                {
+                                                    cardItem.subContent && cardItem.subContent.map((subItem, subIndex) => {
+                                                        return (
+                                                            <View
+                                                                key={subIndex}
+                                                                style={styles.panelItem}>
+                                                                <View style={styles.panelItemTextArea}>
+                                                                    <Text>{subItem.subLabel}</Text>
+                                                                    <Text>{subItem.phoneNumber}</Text>
+                                                                    <Text>{subItem.location}</Text>
+                                                                </View>
+                                                                <View style={styles.panelItemButton}>
+                                                                    <TouchableOpacity
+                                                                        style={[styles.callButton, AppStyles.center]}
+                                                                    >
+                                                                        <Image
+                                                                            source={CallIcon}
+                                                                            style={styles.callButtonImage}
+                                                                        />
+                                                                    </TouchableOpacity>
+                                                                </View>
+                                                            </View>
+                                                        )
+                                                    })
+                                                }
                                                 </SearchResultPanel>
                                             </View>
                                         )
@@ -117,5 +142,31 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: FontSizes.listFS,
         fontWeight: '600'
+    },
+
+    panelItem: {
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: 'white'
+    },
+
+    panelItemTextArea: {
+        flex: .8
+    },
+
+    panelItemButton: {
+        flex: .2
+    },
+
+    callButton: {
+        backgroundColor: Colors.lightGray,
+        width: 50,
+        height: 50,
+        borderRadius: 50
+    },
+
+    callButtonImage: {
+        width: 40,
+        height: 40
     }
 })
