@@ -22,7 +22,7 @@ export default class SearchResultPanel extends Component {
 
         this.state = {
             title: props.title,
-            expanded: false,
+            expanded: true,
             animation: new Animated.Value()
         }
     }
@@ -66,12 +66,16 @@ export default class SearchResultPanel extends Component {
             icon = icons['up']
         }
 
+        const activeTitleStyle = {
+            backgroundColor: expanded ? Colors.orange : Colors.primaryBgColor
+        }
+
         return (
             <Animated.View
                 style={[styles.container, {height: animation}]}
             >
                 <View
-                    style={[styles.titleContainer, AppStyles.vCenter]}
+                    style={[styles.titleContainer, AppStyles.vCenter, activeTitleStyle]}
                     onLayout={this.setMinHeight.bind(this)}
                 >
                     <TouchableOpacity
@@ -84,8 +88,7 @@ export default class SearchResultPanel extends Component {
                         />
                     </TouchableOpacity>
                     <Text style={styles.title}>{this.state.title}</Text>
-                </View>
-                
+                </View>                
                 <View
                     style={styles.body}
                     onLayout={this.setMaxHeight.bind(this)}
