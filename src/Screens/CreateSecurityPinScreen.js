@@ -36,16 +36,38 @@ const PinDots = ({ dotIndex }) => {
 
 
 export default class CreateSecurityPinScreen extends Component {
-    onNumberClicked = (label) => {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            completed: false
+        }
+    }
+
+    goToScreen = (ScreenName, navigation) => {
+        const { navigate } = navigation
+        navigate(ScreenName)
+    }
+
+    onNumberClicked = (label, navigation) => {
         console.log(label)
+        this.setState({
+            completed: true
+        })
+        this.goToScreen('ConfirmSecurityPinScreen', navigation)
     }
 
     render() {
         const dotIndex = 2
+        const { navigation } = this.props
 
         return (
             <View style={AppStyles.mainContainer}>
-                <SecurityPinHeader />
+                <SecurityPinHeader
+                    headerType='FLOW'
+                    flowIndex={1}
+                    navigation={navigation}
+                />
                 <View style={[styles.bodyContainer, AppStyles.hCenter]}>
                     <Text style={styles.title}>Create a Security Pin</Text>
                     <View style={styles.dotArea}>
@@ -58,7 +80,7 @@ export default class CreateSecurityPinScreen extends Component {
                                 <TouchableOpacity
                                     key={index}
                                     style={[styles.panel, AppStyles.center]}
-                                    onPress={() => this.onNumberClicked(item)}
+                                    onPress={() => this.onNumberClicked(item, navigation)}
                                 >
                                     <Text style={styles.title}>{item}</Text>
                                 </TouchableOpacity>
