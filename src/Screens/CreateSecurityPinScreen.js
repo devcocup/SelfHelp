@@ -8,7 +8,7 @@ import AppStyles from '../Lib/AppStyles'
 import Constants from '../Lib/Constants'
 
 // Assets
-// import SecurityPinHeader from '../Components/SecurityPinHeader'
+import SecurityPinHeader from '../Components/SecurityPinHeader'
 
 const { height, width } = Dimensions.get('window')
 
@@ -17,6 +17,7 @@ export default class CreateSecurityPinScreen extends Component {
     render() {
         return (
             <View style={AppStyles.mainContainer}>
+                <SecurityPinHeader />
             </View>
         )
     }
