@@ -56,10 +56,8 @@ const Header = ({ type, navigation }) => {
 
 const styles = StyleSheet.create({
     headerStyle: {
-        display: 'flex',
         flexDirection: 'row',
         height: 50,
-        width,
         backgroundColor: Constants.Colors.secondaryBgColor
     },
 
