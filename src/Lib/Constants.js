@@ -23,7 +23,8 @@ const FontSizes = {
 }
 
 const BorderRadii = {
-    boxBR: 4
+    boxBR: 4,
+    buttonBR: 8
 }
 
 const Paddings = {
