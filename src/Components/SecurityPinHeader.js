@@ -7,7 +7,7 @@ import AppStyles from '../Lib/AppStyles'
 import Constants from '../Lib/Constants'
 
 const { height, width } = Dimensions.get('window')
-const { Colors, FontSizes } = Constants
+const { Colors, FontSizes, BorderRadii, Paddings } = Constants
 
 const Circle = ({ color }) => {
     return (
@@ -31,22 +31,48 @@ const FlowLine = ({ flowIndex }) => {
     )
 }
 
+const onResetClicked = () => {
+    console.log('reset button clicked')
+}
+
+const ResetButton = () => {
+    return (
+        <View style={[styles.resetBtnArea, AppStyles.hEnd]}>
+            <TouchableOpacity
+                onPress={() => onResetClicked}
+            >
+                <View style={[styles.resetBtn, AppStyles.center]}>
+                    <Text style={styles.headerText}>Reset</Text>
+                </View>
+            </TouchableOpacity>
+        </View>
+    )
+}
+
+const onCancelClicked = () => {
+    console.log('cancel button clicked')
+}
+
 
 const SecurityPinHeader = ({ headerType, flowIndex, navigation }) => {
     flowIndex = 1
-    headerType = 'flow'
+    headerType = 'FLOW'
 
     return (
         <View style={styles.headerStyle}>
             <View style={[styles.leftArea, AppStyles.center]}>
-                <TouchableOpacity>
-                    <Text style={styles.cancelText}>Cancel</Text>
+                <TouchableOpacity onPress={() => onCancelClicked}>
+                    <Text style={styles.headerText}>Cancel</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.rightArea}>
             {
-                headerType === 'flow' &&
+                headerType === 'FLOW' &&
                 <FlowLine flowIndex={flowIndex} />
+            }
+            {
+                headerType === 'RESET' &&
+                <ResetButton />
             }
             </View>
         </View>
@@ -65,7 +91,7 @@ const styles = StyleSheet.create({
         flex: .3,
     },
 
-    cancelText: {
+    headerText: {
         color: 'white',
         fontSize: FontSizes.menuFS,
         fontWeight: 'bold'
@@ -88,9 +114,21 @@ const styles = StyleSheet.create({
     },
 
     line: {
-        width: 30,
+        width: width / 10,
         height: 2,
         backgroundColor: 'white'
+    },
+
+    resetBtnArea: {
+        flex: 1,
+        paddingRight: Paddings.elementP
+    },
+
+    resetBtn: {
+        width: width / 3,
+        height: 40,
+        backgroundColor: Colors.red,
+        borderRadius: BorderRadii.boxBR
     }
 })
 
