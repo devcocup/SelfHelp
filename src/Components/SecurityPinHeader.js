@@ -55,8 +55,6 @@ const onCancelClicked = () => {
 
 
 const SecurityPinHeader = ({ headerType, flowIndex, navigation }) => {
-    flowIndex = 1
-
     return (
         <View style={styles.headerStyle}>
             <View style={[styles.leftArea, AppStyles.center]}>
