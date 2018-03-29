@@ -55,16 +55,13 @@ export default class CreateSecurityPinScreen extends Component {
                     {
                         PanelLabels.map((item, index) => {
                             return (
-                                <View
+                                <TouchableOpacity
                                     key={index}
                                     style={[styles.panel, AppStyles.center]}
+                                    onPress={() => this.onNumberClicked(item)}
                                 >
-                                    <TouchableOpacity
-                                        onPress={() => this.onNumberClicked(item)}
-                                    >
-                                        <Text style={styles.title}>{item}</Text>
-                                    </TouchableOpacity>
-                                </View>
+                                    <Text style={styles.title}>{item}</Text>
+                                </TouchableOpacity>
                             )
                         })
                     }
