@@ -30,7 +30,8 @@ const Paddings = {
     elementP: 10,
     containerP: 20,
     listPV: 20,
-    listPH: 10
+    listPH: 10,
+    lP: 30
 }
 
 const Margins = {
@@ -38,6 +39,10 @@ const Margins = {
     elementMB: 10,
     containerM: 20
 }
+
+const PanelLabels = [
+    '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Clear', '0'
+]
 
 const LearnLabels = [
     {
@@ -355,6 +360,7 @@ const Constants = {
     BorderRadii,
     Paddings,
     Margins,
+    PanelLabels,
     LearnLabels,
     ExercisesLabels,
     SoothingSoundsLabels,
