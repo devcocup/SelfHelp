@@ -21,6 +21,10 @@ const AppStyles = StyleSheet.create({
         alignItems: 'center'
     },
 
+    hEnd: {
+        alignItems: 'flex-end'
+    },
+
     mainContainer: {
         height: height,
         backgroundColor: Constants.Colors.primaryBgColor,
