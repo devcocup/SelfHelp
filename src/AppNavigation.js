@@ -25,6 +25,7 @@ import CurrentJournalPromptScreen from './Screens/CurrentJournalPromptScreen'
 import PastJournalsScreen from './Screens/PastJournalsScreen'
 import LocalResourcesScreen from './Screens/LocalResourcesScreen'
 import SearchResultScreen from './Screens/SearchResultScreen'
+import CreateSecurityPinScreen from './Screens/CreateSecurityPinScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -47,7 +48,8 @@ export const AppNavigation =  StackNavigator({
     CurrentJournalPromptScreen: { screen: CurrentJournalPromptScreen },
     PastJournalsScreen: { screen: PastJournalsScreen },
     LocalResourcesScreen: { screen: LocalResourcesScreen },
-    SearchResultScreen: { screen: SearchResultScreen }
+    SearchResultScreen: { screen: SearchResultScreen },
+    CreateSecurityPinScreen: { screen: CreateSecurityPinScreen }
 },
 {
     headerMode: 'none',
