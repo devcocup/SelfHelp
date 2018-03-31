@@ -47,10 +47,13 @@ const PanelLabels = [
 
 const SecurityQuestions = [
     {
-        value: 'What was the name of your first pet?',
+        value: 'What was the name of your first pet?'
     },
     {
-        value: 'What is your favorite sport?',
+        value: 'What is your favorite sport?'
+    },
+    {
+        value: 'What was the name of the street that you grew up on?'
     }
 ]
 
