@@ -2,6 +2,7 @@ import { StyleSheet, Dimensions } from 'react-native'
 import Constants from './Constants'
 
 const { height,width } = Dimensions.get('window')
+const { Colors, Paddings } = Constants
 
 const AppStyles = StyleSheet.create({
     center: {
@@ -27,8 +28,8 @@ const AppStyles = StyleSheet.create({
 
     mainContainer: {
         height: height,
-        backgroundColor: Constants.Colors.primaryBgColor,
-        paddingTop: 20
+        backgroundColor: Colors.primaryBgColor,
+        paddingTop: Paddings.containerP
     }
 })
 
