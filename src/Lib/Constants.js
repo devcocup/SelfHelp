@@ -45,6 +45,15 @@ const PanelLabels = [
     '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Clear', '0'
 ]
 
+const SecurityQuestions = [
+    {
+        value: 'What was the name of your first pet?',
+    },
+    {
+        value: 'What is your favorite sport?',
+    }
+]
+
 const LearnLabels = [
     {
         topic: 'Understanding Sexual Assault',
@@ -362,6 +371,7 @@ const Constants = {
     Paddings,
     Margins,
     PanelLabels,
+    SecurityQuestions,
     LearnLabels,
     ExercisesLabels,
     SoothingSoundsLabels,
