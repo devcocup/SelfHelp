@@ -30,7 +30,6 @@ export default class CreateSecurityQuestionScreen extends Component {
     }
 
     onNextClicked = (navigation) => {
-        console.log('next button clicked')
         this.goToScreen('ReviewInfoScreen', navigation)
     }
 
@@ -146,7 +145,5 @@ const styles = StyleSheet.create({
 
     buttonArea: {
         paddingTop: Paddings.containerP
-    },
-
-
+    }
 })
