@@ -28,6 +28,7 @@ import SearchResultScreen from './Screens/SearchResultScreen'
 import CreateSecurityPinScreen from './Screens/CreateSecurityPinScreen'
 import ConfirmSecurityPinScreen from './Screens/ConfirmSecurityPinScreen'
 import CreateSecurityQuestionScreen from './Screens/CreateSecurityQuestionScreen'
+import ReviewInfoScreen from './Screens/ReviewInfoScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -53,7 +54,8 @@ export const AppNavigation =  StackNavigator({
     SearchResultScreen: { screen: SearchResultScreen },
     CreateSecurityPinScreen: { screen: CreateSecurityPinScreen },
     ConfirmSecurityPinScreen: { screen: ConfirmSecurityPinScreen },
-    CreateSecurityQuestionScreen: { screen: CreateSecurityQuestionScreen }
+    CreateSecurityQuestionScreen: { screen: CreateSecurityQuestionScreen },
+    ReviewInfoScreen: { screen: ReviewInfoScreen }
 },
 {
     headerMode: 'none',
