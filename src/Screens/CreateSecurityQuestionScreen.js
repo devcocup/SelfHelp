@@ -24,8 +24,14 @@ export default class CreateSecurityQuestionScreen extends Component {
         }
     }
 
-    onNext = () => {
+    goToScreen = (ScreenName, navigation) => {
+        const { navigate } = navigation
+        navigate(ScreenName)
+    }
+
+    onNextClicked = (navigation) => {
         console.log('next button clicked')
+        this.goToScreen('ReviewInfoScreen', navigation)
     }
 
     render() {
@@ -73,7 +79,7 @@ export default class CreateSecurityQuestionScreen extends Component {
                         <Button
                             label="Next"
                             bgColor="white"
-                            onPress={() => this.onNext}
+                            onPress={() => this.onNextClicked(navigation)}
                         />
                     </View>
                 </ScrollView>
