@@ -30,6 +30,8 @@ import ConfirmSecurityPinScreen from './Screens/ConfirmSecurityPinScreen'
 import CreateSecurityQuestionScreen from './Screens/CreateSecurityQuestionScreen'
 import ReviewInfoScreen from './Screens/ReviewInfoScreen'
 import SecurityPinFinishScreen from './Screens/SecurityPinFinishScreen'
+import EnterSecurityPinScreen from './Screens/EnterSecurityPinScreen'
+import AnswerSecurityQuestionScreen from './Screens/AnswerSecurityQuestionScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -57,7 +59,9 @@ export const AppNavigation =  StackNavigator({
     ConfirmSecurityPinScreen: { screen: ConfirmSecurityPinScreen },
     CreateSecurityQuestionScreen: { screen: CreateSecurityQuestionScreen },
     ReviewInfoScreen: { screen: ReviewInfoScreen },
-    SecurityPinFinishScreen: { screen: SecurityPinFinishScreen }
+    SecurityPinFinishScreen: { screen: SecurityPinFinishScreen },
+    EnterSecurityPinScreen: { screen: EnterSecurityPinScreen },
+    AnswerSecurityQuestionScreen: { screen: AnswerSecurityQuestionScreen }
 },
 {
     headerMode: 'none',
