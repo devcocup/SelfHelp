@@ -19,7 +19,9 @@ const FontSizes = {
     quizQuestionFS: 16,
     quizAnswerFS: 14,
     listFS: 16,
-    hintFS: 14
+    hintFS: 14,
+    pinHeaderFS: 22,
+    pinContentFS: 16
 }
 
 const BorderRadii = {
