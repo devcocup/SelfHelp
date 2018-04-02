@@ -76,8 +76,8 @@ export default class CreateSecurityQuestionScreen extends Component {
                     </View>
                     <View style={[styles.buttonArea, AppStyles.hCenter]}>
                         <Button
-                            label="Next"
-                            bgColor="white"
+                            label='Next'
+                            bgColor='white'
                             onPress={() => this.onNextClicked(navigation)}
                         />
                     </View>
