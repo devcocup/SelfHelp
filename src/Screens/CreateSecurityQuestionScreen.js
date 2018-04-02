@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { View, Text, TextInput, ScrollView, KeyboardAvoidingView, StyleSheet, Dimensions } from 'react-native'
 import { Dropdown } from 'react-native-material-dropdown'
 
-// Glbal Styles & Constants
+// Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
 import Constants from '../Lib/Constants'
 
