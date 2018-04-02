@@ -21,7 +21,9 @@ const FontSizes = {
     listFS: 16,
     hintFS: 14,
     pinHeaderFS: 22,
-    pinContentFS: 16
+    pinContentFS: 16,
+    textHeaderFS: 23,
+    textContentFS: 18
 }
 
 const BorderRadii = {
@@ -40,7 +42,9 @@ const Paddings = {
 const Margins = {
     elementMT: 10,
     elementMB: 10,
-    containerM: 20
+    containerM: 20,
+    lM: 30,
+    xlM: 40
 }
 
 const PanelLabels = [
