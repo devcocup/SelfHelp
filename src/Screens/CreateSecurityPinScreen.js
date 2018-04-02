@@ -9,30 +9,11 @@ import Constants from '../Lib/Constants'
 
 // Assets
 import SecurityPinHeader from '../Components/SecurityPinHeader'
+import Circle from '../Components/Circle'
+import PinDots from '../Components/PinDots'
 
 const { height, width } = Dimensions.get('window')
 const { PanelLabels, Paddings, FontSizes, Colors, BorderRadii } = Constants
-
-const Circle = ({ color }) => {
-    return (
-        <View style={[styles.circle, { backgroundColor: color }]}></View>
-    )
-}
-
-const PinDots = ({ dotIndex }) => {
-    const defaultColor = Colors.primaryBgColor
-
-    return (
-        <View style={[styles.dotBox, AppStyles.hCenter]}>
-            <Circle color={dotIndex >= 1 ? 'white' : defaultColor} />
-            <Circle color={dotIndex >= 2 ? 'white' : defaultColor} />
-            <Circle color={dotIndex >= 3 ? 'white' : defaultColor} />
-            <Circle color={dotIndex >= 4 ? 'white' : defaultColor} />
-            <Circle color={dotIndex >= 5 ? 'white' : defaultColor} />
-            <Circle color={dotIndex >= 6 ? 'white' : defaultColor} />
-        </View>
-    )
-}
 
 
 export default class CreateSecurityPinScreen extends Component {
@@ -108,20 +89,6 @@ const styles = StyleSheet.create({
     dotArea: {
         width: width - 140,
         height: 60
-    },
-
-    dotBox: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between'
-    },
-
-    circle: {
-        width: 18,
-        height: 18,
-        borderRadius: 18,
-        borderWidth: 2,
-        borderColor: 'white'
     },
 
     panelArea: {
