@@ -60,7 +60,6 @@ export default class CreateSecurityPinScreen extends Component {
                 {
                     !mismatched &&
                     <SecurityPinHeader
-                        flowIndex={1}
                         navigation={navigation}
                     />
                 }
@@ -68,7 +67,6 @@ export default class CreateSecurityPinScreen extends Component {
                     mismatched &&
                     <SecurityPinHeader
                         headerType='RESET'
-                        flowIndex={1}
                         navigation={navigation}
                     />   
                 }

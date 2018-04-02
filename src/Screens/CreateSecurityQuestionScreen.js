@@ -35,6 +35,7 @@ export default class CreateSecurityQuestionScreen extends Component {
 
     render() {
         const { navigation } = this.props
+        const { securityAnswer} = this.state
 
         return (
             <KeyboardAvoidingView
@@ -70,7 +71,7 @@ export default class CreateSecurityQuestionScreen extends Component {
                                 placeholder=''
                                 underlineColorAndroid='rgba(0,0,0,0)'
                                 onChangeText={(securityAnswer) => this.setState({ securityAnswer })}
-                                value={this.state.securityAnswer}
+                                value={securityAnswer}
                             />
                         </View>
                     </View>
