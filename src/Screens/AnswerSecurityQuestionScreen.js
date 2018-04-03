@@ -43,7 +43,7 @@ export default class AnswerSecurityQuestionScreen extends Component {
         this.goToScreen('', navigation)
     }
 
-    onRest = (navigation) => {
+    onReset = (navigation) => {
         console.log('reset button clicked')
         this.goToScreen('ResetConfirmScreen', navigation)
     }
@@ -172,6 +172,7 @@ const styles = StyleSheet.create({
     },
 
     buttonText: {
+        color: 'white',
         fontSize: FontSizes.textHeaderFS,
         fontFamily: 'Arial-BoldMT',
         fontWeight: 'bold',
