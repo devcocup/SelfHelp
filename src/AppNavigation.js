@@ -32,6 +32,7 @@ import ReviewInfoScreen from './Screens/ReviewInfoScreen'
 import SecurityPinFinishScreen from './Screens/SecurityPinFinishScreen'
 import EnterSecurityPinScreen from './Screens/EnterSecurityPinScreen'
 import AnswerSecurityQuestionScreen from './Screens/AnswerSecurityQuestionScreen'
+import ResetConfirmScreen from './Screens/ResetConfirmScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -61,7 +62,8 @@ export const AppNavigation =  StackNavigator({
     ReviewInfoScreen: { screen: ReviewInfoScreen },
     SecurityPinFinishScreen: { screen: SecurityPinFinishScreen },
     EnterSecurityPinScreen: { screen: EnterSecurityPinScreen },
-    AnswerSecurityQuestionScreen: { screen: AnswerSecurityQuestionScreen }
+    AnswerSecurityQuestionScreen: { screen: AnswerSecurityQuestionScreen },
+    ResetConfirmScreen: { screen: ResetConfirmScreen }
 },
 {
     headerMode: 'none',
