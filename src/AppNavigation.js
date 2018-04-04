@@ -34,6 +34,7 @@ import EnterSecurityPinScreen from './Screens/EnterSecurityPinScreen'
 import AnswerSecurityQuestionScreen from './Screens/AnswerSecurityQuestionScreen'
 import ResetConfirmScreen from './Screens/ResetConfirmScreen'
 import ColoringBookScreen from './Screens/ColoringBookScreen'
+import SelectPageToColorScreen from './Screens/SelectPageToColorScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -65,7 +66,8 @@ export const AppNavigation =  StackNavigator({
     EnterSecurityPinScreen: { screen: EnterSecurityPinScreen },
     AnswerSecurityQuestionScreen: { screen: AnswerSecurityQuestionScreen },
     ResetConfirmScreen: { screen: ResetConfirmScreen },
-    ColoringBookScreen: { screen: ColoringBookScreen }
+    ColoringBookScreen: { screen: ColoringBookScreen },
+    SelectPageToColorScreen: { screen: SelectPageToColorScreen }
 },
 {
     headerMode: 'none',
