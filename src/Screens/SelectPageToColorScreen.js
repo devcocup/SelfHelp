@@ -8,6 +8,7 @@ import Constants from '../Lib/Constants'
 
 // Assets
 import Header from '../Components/Header'
+import TopicButton from '../Components/TopicButton'
 
 const { height, width } = Dimensions.get('window')
 const {} = Constants
@@ -23,11 +24,18 @@ export default class SelectPageToColorScreen extends Component {
                     type='Back'
                     navigation={navigation}
                 />
+                <View style={[styles.cardContainer, AppStyles.hCenter]}>
+                    <TopicButton text='Select a page to color' />
+                    <ScrollView>                        
+                    </ScrollView>
+                </View>
             </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
-
+    cardContainer: {
+        flex: 1
+    }
 })
