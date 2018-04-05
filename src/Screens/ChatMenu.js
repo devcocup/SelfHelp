@@ -14,7 +14,7 @@ const ChatMenu = ({ onChat, onGroupChat, onCancel }) => {
     return (
         <View style={[styles.mainContainer, AppStyles.center]}>
             <Button
-                label="Chat"
+                label="One-on-one Chat"
                 bgColor="#F7A553"
                 onPress={onChat}
             />
