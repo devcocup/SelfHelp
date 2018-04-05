@@ -1,6 +1,16 @@
 //React
 import React, { Component } from 'react'
-import { View,Text  } from 'react-native'
+import { View, Text, WebView, StyleSheet, Dimensions  } from 'react-native'
+
+// Global Styles & Constants
+import AppStyles from '../Lib/AppStyles'
+import Constants from '../Lib/Constants'
+
+// Assets
+import Header from '../Components/Header'
+
+const { height, width } = Dimensions.get('window')
+
 
 export default class ChatScreen extends Component {
     static navigationOptions = {
@@ -11,10 +21,22 @@ export default class ChatScreen extends Component {
     }
 
     render() {
+        const { navigation } = this.props
+
         return(
-           <View style={{ backgroundColor:'#CB4335', flex:1 }}>
-               <Text style={{ fontSize: 30, color: 'white' }}>Chat Screen </Text>
-           </View>    
+            <View style={AppStyles.mainContainer}>
+                <Header
+                    type='Back'
+                    navigation={navigation}
+                />
+                <WebView
+                    source={{ url: 'https://safe-helproom.safehelpline.org' }}
+                />
+            </View>   
         )
     }
 }
+
+const styles = StyleSheet.create({
+
+})
