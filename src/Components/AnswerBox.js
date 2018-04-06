@@ -7,34 +7,62 @@ import AppStyles from '../Lib/AppStyles'
 import Constants from '../Lib/Constants'
 
 const { height, width } = Dimensions.get('window')
+const { Margins, Paddings, FontSizes, BorderRadii, Colors } = Constants
 
 
-const AnswerBox = ({ content }) => {
-    return (
-        <TouchableOpacity>
-            <View style={styles.boxContainer}>
-                <View style={[styles.captionArea, AppStyles.center]}>
-                    <Text style={styles.captionText}>
-                        {content.choiceCaption}
-                    </Text>
-                </View>
-                <View style={styles.contentArea}>
-                    <Text style={styles.textStyle}>
-                        {content.content}
-                    </Text>
-                </View>
+export default class AnswerBox extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            isDisplayed: false
+        }
+    }
+
+    onAnswerItemClicked = () => {
+        this.setState({
+            isDisplayed: !this.state.isDisplayed
+        })
+    }
+
+    render() {
+        const { content } = this.props
+        const { isDisplayed } = this.state
+
+        return (
+            <View>
+                <TouchableOpacity onPress={() => this.onAnswerItemClicked()}>
+                    <View style={styles.boxContainer}>
+                        <View style={[styles.captionArea, AppStyles.center]}>
+                            <Text style={styles.captionText}>
+                                {content.choiceCaption}
+                            </Text>
+                        </View>
+                        <View style={styles.contentArea}>
+                            <Text style={styles.textStyle}>
+                                {content.content}
+                            </Text>
+                        </View>
+                    </View>
+                </TouchableOpacity>
+                {
+                    isDisplayed &&
+                    <View style={styles.subContentBox}>
+                        <Text style={styles.subTextStyle}>{content.subContent}</Text>
+                    </View>
+                }
             </View>
-        </TouchableOpacity>
-    )
+        )        
+    }
 }
 
 const styles = StyleSheet.create({
     boxContainer: {
         flexDirection: 'row',
         width: width - 40,
-        backgroundColor: Constants.Colors.darkGreen,
-        borderRadius: Constants.BorderRadii.boxBR,
-        padding: Constants.Paddings.elementP,
+        backgroundColor: Colors.darkGreen,
+        borderRadius: BorderRadii.boxBR,
+        padding: Paddings.elementP,
         marginTop: 10
     },
 
@@ -44,7 +72,7 @@ const styles = StyleSheet.create({
 
     captionText: {
         color: 'white',
-        fontSize: Constants.FontSizes.quizCaptionFS,
+        fontSize: FontSizes.quizCaptionFS,
         fontWeight: '900'
     },
 
@@ -54,8 +82,20 @@ const styles = StyleSheet.create({
 
     textStyle: {
         color: 'white',
-        fontSize: Constants.FontSizes.quizAnswerFS
+        fontSize: FontSizes.quizAnswerFS
+    },
+
+    subContentBox: {
+        flexDirection: 'row',
+        width: width - 40,
+        backgroundColor: 'white',
+        borderRadius: BorderRadii.boxBR,
+        padding: Paddings.elementP,
+        marginTop: Margins.elementMT
+    },
+
+    subTextStyle: {
+        color: 'black',
+        fontSize: FontSizes.quizAnswerFS
     }
 })
-
-export default AnswerBox
