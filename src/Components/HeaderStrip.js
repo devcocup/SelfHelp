@@ -19,15 +19,18 @@ const HeaderStrip = ({ index }) => {
         {
             mainScreenIncices.map((item, itemIndex) => {
                 return (
-                    <View key={itemIndex}>
+                    <View
+                        key={itemIndex}
+                        style={styles.barArea}
+                    >
                     {
-                        (itemIndex + 1 === index) &&
+                        (item === index) &&
                         <View
                             style={[styles.barStyle, activeStyle]}
                         />
                     }
                     {
-                        (itemIndex + 1 !== index) &&
+                        (item !== index) &&
                         <View
                             style={styles.barStyle}
                         />
@@ -42,13 +45,15 @@ const HeaderStrip = ({ index }) => {
 
 const styles = StyleSheet.create({
     container: {
-        width,
+        flexDirection: 'row',
         height: 6,
-        backgroundColor: Colors.lightOrange
+    },
+
+    barArea: {
+        flex: .2,
     },
 
     barStyle: {
-        width: width / 5,
         height: 6,
         backgroundColor: Colors.lightOrange
     }
