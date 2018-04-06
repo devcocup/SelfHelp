@@ -1,6 +1,7 @@
 // React
 import React, { Component } from 'react'
 import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import { NavigationActions } from 'react-navigation'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -20,6 +21,17 @@ const goBackScreen = (navigation) => {
     const { goBack } = navigation
     goBack()
 }
+
+const goHome = (navigation) => {
+    return navigation.dispatch(NavigationActions.reset(
+    {
+        index: 0,
+        actions: [
+          NavigationActions.navigate({ routeName: 'MainScreen'})
+        ]
+    }))
+}
+
 
 const Header = ({ type, checkScreen, navigation }) => {
     const headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
@@ -55,7 +67,7 @@ const Header = ({ type, checkScreen, navigation }) => {
             </View>
             <View style={[styles.menuArea, AppStyles.center]}>
                 <TouchableOpacity
-                    onPress={() => goToScreen('Home', navigation)}
+                    onPress={() => goHome(navigation)}
                 >
                     <Image
                         source={MenuIcon}
