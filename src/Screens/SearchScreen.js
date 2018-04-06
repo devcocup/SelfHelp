@@ -8,6 +8,7 @@ import Constants from '../Lib/Constants'
 
 // Assets
 import Header from '../Components/Header'
+import HeaderStrip from '../Components/HeaderStrip'
 import HeadingContainer from '../Components/HeadingContainer'
 import CardWithImage from '../Components/CardWithImage'
 
@@ -73,6 +74,9 @@ export default class SearchScreen extends Component {
                 <Header
                     type='Home'
                     navigation={navigation}
+                />
+                <HeaderStrip
+                    index={5}
                 />
                 <ScrollView>
                     <HeadingContainer
