@@ -16,6 +16,7 @@ import Constants from '../Lib/Constants'
 
 // Assets
 import Header from '../Components/Header'
+import HeaderStrip from '../Components/HeaderStrip'
 import HeadingContainer from '../Components/HeadingContainer'
 import TopicButton from '../Components/TopicButton'
 import SingleCard from '../Components/SingleCard'
@@ -84,6 +85,9 @@ export default class LearnScreen extends Component {
                 <Header
                     type='Home'
                     navigation={navigation}
+                />
+                <HeaderStrip
+                    index={2}
                 />
                 <View style={{ backgroundColor: "#208167", flex: 1 }}>
                     <View style={{ height: height - 64, width }}>
