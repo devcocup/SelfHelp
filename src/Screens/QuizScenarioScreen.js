@@ -57,6 +57,7 @@ export default class QuizScenarioScreen extends Component {
             <View style={AppStyles.mainContainer}>
                 <Header
                     type='Back'
+                    checkScreen='JournalScreen'
                     navigation={navigation}
                 />
                 <ScrollView>
