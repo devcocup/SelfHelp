@@ -8,6 +8,7 @@ import Constants from '../Lib/Constants'
 
 // Assets
 import Header from '../Components/Header'
+import HeaderStrip from '../Components/HeaderStrip'
 import HeadingContainer from '../Components/HeadingContainer'
 import SingleCard from '../Components/SingleCard'
 
@@ -74,6 +75,9 @@ export default class ExercisesScreen extends Component {
                 <Header
                     type='Home'
                     navigation={navigation}
+                />
+                <HeaderStrip
+                    index={4}
                 />
                 <View style={{ flex: 1 }}>
                     <ScrollView>
