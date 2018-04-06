@@ -8,6 +8,7 @@ import Constants from '../Lib/Constants'
 
 // Assets
 import Header from '../Components/Header'
+import HeaderStrip from '../Components/HeaderStrip'
 import HeadingContainer from '../Components/HeadingContainer'
 import CardWithImage from '../Components/CardWithImage'
 
@@ -28,7 +29,12 @@ onBrowse = (navigation) => {
 }
 
 onJournalClicked = (navigation) => {
-    goToScreen('JournalScreen', navigation)
+    // goToScreen('JournalScreen', navigation)
+    goToScreen('CreateSecurityPinScreen', navigation)
+}
+
+onColoringBookClicked = (navigation) => {
+    goToScreen('ColoringBookScreen', navigation)
 }
 
 const CardWithoutImage = ({ text, onPress }) => {
@@ -58,7 +64,10 @@ const CardContainer = ({ navigation }) => {
                     text='Journal'
                     onPress={() => onJournalClicked(navigation)}
                 />
-                <CardWithoutImage text='Coloring Book' />
+                <CardWithoutImage
+                    text='Coloring Book'
+                    onPress={() => onColoringBookClicked(navigation)}
+                />
             </View>
         </View>
     )
@@ -74,11 +83,15 @@ export default class SelfCareScreen extends Component {
 
     render() {
         const { navigation } = this.props
+
         return(
             <View style={AppStyles.mainContainer}>
                 <Header
                     type='Home'
                     navigation={navigation}
+                />
+                <HeaderStrip
+                    index={3}
                 />
                 <ScrollView>
                     <HeadingContainer
