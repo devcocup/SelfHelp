@@ -55,7 +55,7 @@ const Header = ({ type, checkScreen, navigation }) => {
             </View>
             <View style={[styles.menuArea, AppStyles.center]}>
                 <TouchableOpacity
-                    onPress={() => goToScreen('Home, navigation')}
+                    onPress={() => goToScreen('Home', navigation)}
                 >
                     <Image
                         source={MenuIcon}
