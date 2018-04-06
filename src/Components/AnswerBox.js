@@ -28,11 +28,14 @@ export default class AnswerBox extends Component {
     render() {
         const { content } = this.props
         const { isDisplayed } = this.state
+        const answerItemBgStyle = {
+            backgroundColor: isDisplayed ? Colors.orange : Colors.darkGreen
+        }
 
         return (
             <View>
                 <TouchableOpacity onPress={() => this.onAnswerItemClicked()}>
-                    <View style={styles.boxContainer}>
+                    <View style={[styles.boxContainer, answerItemBgStyle]}>
                         <View style={[styles.captionArea, AppStyles.center]}>
                             <Text style={styles.captionText}>
                                 {content.choiceCaption}
@@ -60,7 +63,6 @@ const styles = StyleSheet.create({
     boxContainer: {
         flexDirection: 'row',
         width: width - 40,
-        backgroundColor: Colors.darkGreen,
         borderRadius: BorderRadii.boxBR,
         padding: Paddings.elementP,
         marginTop: 10
