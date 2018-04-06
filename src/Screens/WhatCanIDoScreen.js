@@ -50,6 +50,7 @@ export default class WhatCanIDoScreen extends Component {
             <View style={AppStyles.mainContainer}>
                 <Header
                     type='Back'
+                    checkScreen='JournalScreen'
                     navigation={navigation}
                 />
                 <ScrollView>

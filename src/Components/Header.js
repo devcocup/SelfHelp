@@ -11,12 +11,17 @@ const { height,width } = Dimensions.get('window')
 const MenuIcon = require('../Assets/Images/nav_menu.png')
 const CheckMarkIcon = require('../Assets/Images/checkmark.png')
 
+const goToScreen = (ScreenName, navigation) => {
+    const { navigate } = navigation
+    navigate(ScreenName ? ScreenName : '')
+}
+
 const goBackScreen = (navigation) => {
     const { goBack } = navigation
     goBack()
 }
 
-const Header = ({ type, navigation }) => {
+const Header = ({ type, checkScreen, navigation }) => {
     const headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
 
     return (
@@ -39,16 +44,24 @@ const Header = ({ type, navigation }) => {
                 </View>
             }
             <View style={[styles.checkArea, AppStyles.center]}>
-                <Image
-                    source={CheckMarkIcon}
-                    style={styles.checkIcon}
-                />
+                <TouchableOpacity
+                    onPress={() => goToScreen(checkScreen, navigation)}
+                >
+                    <Image
+                        source={CheckMarkIcon}
+                        style={styles.checkIcon}
+                    />
+                </TouchableOpacity>
             </View>
             <View style={[styles.menuArea, AppStyles.center]}>
-                <Image
-                    source={MenuIcon}
-                    style={styles.menuIcon}
-                />
+                <TouchableOpacity
+                    onPress={() => goToScreen('Home, navigation')}
+                >
+                    <Image
+                        source={MenuIcon}
+                        style={styles.menuIcon}
+                    />
+                </TouchableOpacity>
             </View>
         </View>
     )
