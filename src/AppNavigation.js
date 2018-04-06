@@ -35,10 +35,12 @@ import AnswerSecurityQuestionScreen from './Screens/AnswerSecurityQuestionScreen
 import ResetConfirmScreen from './Screens/ResetConfirmScreen'
 import ColoringBookScreen from './Screens/ColoringBookScreen'
 import SelectPageToColorScreen from './Screens/SelectPageToColorScreen'
+import ComingSoonScreen from './Screens/ComingSoon'
 
 
 export const AppNavigation =  StackNavigator({
     Home: { screen: Home },
+    ComingSoonScreen: { screen: ComingSoonScreen },
     MainScreen: { screen: MainScreen },
     ChatScreen: { screen: ChatScreen },
     CallScreen: { screen: CallScreen },
