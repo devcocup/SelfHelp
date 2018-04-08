@@ -58,12 +58,17 @@ export default class SelfCareQuizScreen extends Component {
         })
     }
 
+    goToScreen = (ScreenName, navigation) => {
+        const { navigate } = navigation
+        navigate(ScreenName)
+    }
+
     onSkip = (navigation) => {
         console.log('skip clicked')
     }
 
     onContinue = (navigation) => {
-        console.log('continue clicked')
+        this.goToScreen('SelfCareQuizResultsScreen', navigation)
     }
 
     render() {
