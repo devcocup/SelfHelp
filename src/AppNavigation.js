@@ -6,6 +6,7 @@ import { StackNavigator } from 'react-navigation'
 
 //Screens
 import Home from './Screens/Home'
+import ComingSoonScreen from './Screens/ComingSoon'
 import MainScreen from './Screens/MainScreen'
 import ChatScreen from './Screens/ChatScreen'
 import CallScreen from './Screens/CallScreen'
@@ -35,7 +36,7 @@ import AnswerSecurityQuestionScreen from './Screens/AnswerSecurityQuestionScreen
 import ResetConfirmScreen from './Screens/ResetConfirmScreen'
 import ColoringBookScreen from './Screens/ColoringBookScreen'
 import SelectPageToColorScreen from './Screens/SelectPageToColorScreen'
-import ComingSoonScreen from './Screens/ComingSoon'
+import SelfCareQuizScreen from './Screens/SelfCareQuizScreen'
 
 
 export const AppNavigation =  StackNavigator({
@@ -69,7 +70,8 @@ export const AppNavigation =  StackNavigator({
     AnswerSecurityQuestionScreen: { screen: AnswerSecurityQuestionScreen },
     ResetConfirmScreen: { screen: ResetConfirmScreen },
     ColoringBookScreen: { screen: ColoringBookScreen },
-    SelectPageToColorScreen: { screen: SelectPageToColorScreen }
+    SelectPageToColorScreen: { screen: SelectPageToColorScreen },
+    SelfCareQuizScreen: { screen: SelfCareQuizScreen }
 },
 {
     headerMode: 'none',
