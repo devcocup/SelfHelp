@@ -43,6 +43,7 @@ const Paddings = {
 const Margins = {
     elementMT: 10,
     elementMB: 10,
+    elementM: 10,
     containerM: 20,
     lM: 30,
     xlM: 40
@@ -374,6 +375,29 @@ const QuizLabels = [
     }
 ]
 
+const PastPlansLabels = [
+    {
+        date: 'January 15, 2018',
+        time: '22: 41'
+    },
+    {
+        date: 'January 12, 2018',
+        time: '12: 41'
+    },
+    {
+        date: 'January 12, 2018',
+        time: '15: 41'
+    },
+    {
+        date: 'January 11, 2018',
+        time: '17: 41'
+    },
+    {
+        date: 'January 5, 2018',
+        time: '09: 41'
+    },
+]
+
 const Constants = {
     Colors,
     FontSizes,
@@ -391,7 +415,8 @@ const Constants = {
     QuizLabels,
     SearchLabels,
     LocalSearchCategoryLabels,
-    SearchResultLabels
+    SearchResultLabels,
+    PastPlansLabels
 }
 
 export default Constants
