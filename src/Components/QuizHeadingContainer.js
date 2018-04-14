@@ -12,14 +12,20 @@ const { height, width } = Dimensions.get('window')
 const { Colors, FontSizes } = Constants
 
 
-const QuizHeadingContainer = ({ quizTitle, quizSubTitle }) => {
+const QuizHeadingContainer = ({ quizTitle, quizSubTitle, subTitleType }) => {
+    const contentStyle = {
+        fontSize: 16,
+        color: 'black'
+    }
+    const fontStyle = subTitleType ? contentStyle : ''
+
     return (
         <View style={[styles.headingContainer, AppStyles.center]}>
             <Text style={styles.titleText}>
                 {quizTitle}
             </Text>
             <View style={styles.separateBar}></View>
-            <Text style={styles.subTitleText}>
+            <Text style={[styles.subTitleText, contentStyle]}>
                 {quizSubTitle}
             </Text>
         </View>
