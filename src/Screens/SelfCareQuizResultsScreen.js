@@ -11,14 +11,26 @@ import Header from '../Components/Header'
 import  QuizHeadingContainer from '../Components/QuizHeadingContainer'
 
 const { height, width } = Dimensions.get('window')
-const { Margins, Paddings, Colors, FontSizes } = Constants
+const { QuizResultsLabels, Margins, Paddings, Colors, FontSizes } = Constants
+
+const StatusCard = ({ status, frequency, onPress }) => {
+    return (
+        <TouchableOpacity onPress={onPress}>
+            <View style={styles.cardStyle}>
+                <Text style={styles.statusText}>{status}</Text>
+                <View style={styles.separator}></View>
+                <Text style={styles.frequencyText}>{frequency}</Text>
+            </View>
+        </TouchableOpacity>
+    )
+}
 
 
 export default class SelfCareQuizResultScreen extends Component {
     render() {
         const { navigation } = this.props
         const quizTitle = 'Results'
-        const subQuizTitle = ' CLick buttons below to see suggestions for exercises that may help with those issues.'
+        const quizSubTitle = ' Click buttons below to see suggestions for exercises that may help with those issues.'
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -29,8 +41,23 @@ export default class SelfCareQuizResultScreen extends Component {
                 <ScrollView>
                     <QuizHeadingContainer
                         quizTitle={quizTitle}
-                        subQuizTitle={subQuizTitle}
+                        quizSubTitle={quizSubTitle}
+                        subTitleType='Description'
                     />
+                    <View style={styles.cardArea}>
+                    {
+                        QuizResultsLabels.map((item, index) => {
+                            return (
+                                <StatusCard
+                                    key={index}
+                                    status={item.status}
+                                    frequency={item.frequency}
+                                    onPress={this.onCardClicked}
+                                />
+                            )
+                        })
+                    }
+                    </View>
                 </ScrollView>
             </View>
         )
@@ -38,5 +65,7 @@ export default class SelfCareQuizResultScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-
+    cardArea: {
+        flexWrap: 'wrap'
+    }
 })
