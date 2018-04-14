@@ -11,7 +11,6 @@ import Header from '../Components/Header'
 import TopicButton from '../Components/TopicButton'
 
 const { height, width } = Dimensions.get('window')
-const {} = Constants
 
 
 export default class SelectPageToColorScreen extends Component {
