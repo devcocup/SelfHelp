@@ -37,9 +37,10 @@ import ResetConfirmScreen from './Screens/ResetConfirmScreen'
 import ColoringBookScreen from './Screens/ColoringBookScreen'
 import SelectPageToColorScreen from './Screens/SelectPageToColorScreen'
 import SelfCareQuizScreen from './Screens/SelfCareQuizScreen'
+import SelfCareQuizResultsScreen from './Screens/SelfCareQuizResultsScreen'
 
 
-export const AppNavigation =  StackNavigator({
+export const AppNavigation = StackNavigator({
     Home: { screen: Home },
     ComingSoonScreen: { screen: ComingSoonScreen },
     MainScreen: { screen: MainScreen },
@@ -71,7 +72,8 @@ export const AppNavigation =  StackNavigator({
     ResetConfirmScreen: { screen: ResetConfirmScreen },
     ColoringBookScreen: { screen: ColoringBookScreen },
     SelectPageToColorScreen: { screen: SelectPageToColorScreen },
-    SelfCareQuizScreen: { screen: SelfCareQuizScreen }
+    SelfCareQuizScreen: { screen: SelfCareQuizScreen },
+    SelfCareQuizResultsScreen: { screen: SelfCareQuizResultsScreen }
 },
 {
     headerMode: 'none',
