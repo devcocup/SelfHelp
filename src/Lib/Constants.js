@@ -398,6 +398,33 @@ const PastPlansLabels = [
     },
 ]
 
+const QuizResultsLabels = [
+    {
+        status: 'Sadness',
+        frequency: 'Sometimes'
+    },
+    {
+        status: 'Anxiety',
+        frequency: 'Always'
+    },
+    {
+        status: 'Sleep issues',
+        frequency: 'Never'
+    },
+    {
+        status: 'Loneliness',
+        frequency: 'Sometimes'
+    },
+    {
+        status: 'Stress & Fear',
+        frequency: 'Sometimes'
+    },
+    {
+        status: 'Hopelessness',
+        frequency: 'Sometimes'
+    }
+]
+
 const Constants = {
     Colors,
     FontSizes,
@@ -416,7 +443,8 @@ const Constants = {
     SearchLabels,
     LocalSearchCategoryLabels,
     SearchResultLabels,
-    PastPlansLabels
+    PastPlansLabels,
+    QuizResultsLabels
 }
 
 export default Constants
