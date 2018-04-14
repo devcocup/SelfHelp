@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 
     warningMessageArea: {
         flex: .4,
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
         borderBottomWidth: 2,
         borderBottomColor: Colors.lightGreen
     },
