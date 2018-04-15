@@ -8,6 +8,7 @@ import Constants from '../Lib/Constants'
 
 //Assets
 import Header from '../Components/Header'
+import HeaderStrip from '../Components/HeaderStrip'
 import HomeButton from '../Components/HomeButton'
 import ChatMenu from './ChatMenu'
 import CallMenu from './CallMenu'
@@ -56,13 +57,15 @@ export default class MainScreen extends Component {
     }
 
     onChat = () => {
+        const { navigate } = this.props.navigation
         this.dismissModal()
-        this.goToScreen('ChatScreen')
+        navigate('ChatScreen', { chatType: 'OneOnOne' })
     }
 
     onGroupChat = () => {
+        const { navigate } = this.props.navigation
         this.dismissModal()
-        this.goToScreen('ChatScreen')
+        navigate('ChatScreen', { chatType: 'Group' })
     }
 
     onCancel = () => {
@@ -77,10 +80,14 @@ export default class MainScreen extends Component {
 
     onInternet = () => {
         this.dismissModal()
+        // this.goToScreen('CallScreen')
+        this.goToScreen('ComingSoonScreen')
     }
 
     onCellular = () => {
         this.dismissModal()
+        // this.goToScreen('CallScreen')
+        this.goToScreen('ComingSoonScreen')
     }
 
     render() {
@@ -96,11 +103,14 @@ export default class MainScreen extends Component {
                     type='Home'
                     navigation={navigation}
                 />
+                <HeaderStrip
+                    index={1}
+                />
                 <ScrollView style={{ backgroundColor:'rgb(0,131,105)' }}>  
                     <View style={{ backgroundColor:'white', height:height/5, justifyContent:'center',alignItems:'center' }}>
                         <Image source={Logo} style={{ height:100, width:width }} />
-                        </View>   
-                        <View style={{margin:10}}>
+                    </View>   
+                    <View style={{margin:10}}>
                         <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
                             <HomeButton 
                                 source={Chat} 
