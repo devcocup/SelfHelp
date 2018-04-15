@@ -22,6 +22,35 @@ const {
 
 
 export default class SearchResultScreen extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            services: []
+        }
+    }
+
+    componentWillMount() {
+        const { navigation } = this.props
+        const { params } = navigation.state
+        const { locationSearchText, servicesQuery } = params
+        this.getLocalResources(locationSearchText, servicesQuery)
+    }
+
+    getLocalResources = (locationSearchText, servicesQuery) => {
+        const jsonPath = 'https://safehelpline.org/cfc/Ajax.cfc?method=search2&query=' + locationSearchText + '&services=' + servicesQuery
+        fetch(jsonPath)
+            .then((response) => response.json())
+            .then((responseJson) => {
+                this.setState({
+                    services: responseJson
+                })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
     renderHeader = (section) => {
         return (
             <View style={styles.header}>
@@ -48,6 +77,7 @@ export default class SearchResultScreen extends Component {
 
     render() {
         const { navigation } = this.props
+        const { services } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -57,50 +87,59 @@ export default class SearchResultScreen extends Component {
                 />
                 <ScrollView>
                 {
-                    SearchResultLabels.map((item, index) => {
+                    services.map((cardItem, cardIndex) => {
                         return (
                             <View
-                                key={index}
+                                key={cardIndex}
                             >
-                                {
-                                    item.content.map((cardItem, cardIndex) => {
-                                        return (
-                                            <View
-                                                key={cardIndex}
-                                            >
-                                                <SearchResultPanel
-                                                    title={cardItem.label}
-                                                >
-                                                {
-                                                    cardItem.subContent && cardItem.subContent.map((subItem, subIndex) => {
-                                                        return (
-                                                            <View
-                                                                key={subIndex}
-                                                                style={styles.panelItem}>
-                                                                <View style={styles.panelItemTextArea}>
-                                                                    <Text style={styles.subLabelText}>{subItem.subLabel}</Text>
-                                                                    <Text style={styles.phoneNumberText}>{subItem.phoneNumber}</Text>
-                                                                    <Text style={styles.locationText}>{subItem.location}</Text>
-                                                                </View>
-                                                                <View style={[styles.panelItemButton, AppStyles.center]}>
-                                                                    <TouchableOpacity
-                                                                        style={[styles.callButton, AppStyles.center]}
-                                                                    >
-                                                                        <Image
-                                                                            source={CallIcon}
-                                                                            style={styles.callButtonImage}
-                                                                        />
-                                                                    </TouchableOpacity>
-                                                                </View>
-                                                            </View>
-                                                        )
-                                                    })
-                                                }
-                                                </SearchResultPanel>
-                                            </View>
-                                        )
-                                    })
-                                }
+                                <View
+                                    key={cardIndex}
+                                    style={styles.panelItem}>
+                                    <View style={styles.panelItemTextArea}>
+                                        <Text style={styles.subLabelText}>{cardItem.NAME}</Text>
+                                        <Text style={styles.phoneNumberText}>{cardItem.PHONE1}</Text>
+                                        <Text style={styles.locationText}>{cardItem.CITY}, {cardItem.STATE}</Text>
+                                    </View>
+                                    <View style={[styles.panelItemButton, AppStyles.center]}>
+                                        <TouchableOpacity
+                                            style={[styles.callButton, AppStyles.center]}
+                                        >
+                                            <Image
+                                                source={CallIcon}
+                                                style={styles.callButtonImage}
+                                            />
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+                                {/*<SearchResultPanel
+                                                                            title={cardItem.label}
+                                                                        >
+                                                                        {
+                                                                            cardItem.subContent && cardItem.subContent.map((subItem, subIndex) => {
+                                                                                return (
+                                                                                    <View
+                                                                                        key={subIndex}
+                                                                                        style={styles.panelItem}>
+                                                                                        <View style={styles.panelItemTextArea}>
+                                                                                            <Text style={styles.subLabelText}>{subItem.subLabel}</Text>
+                                                                                            <Text style={styles.phoneNumberText}>{subItem.phoneNumber}</Text>
+                                                                                            <Text style={styles.locationText}>{subItem.location}</Text>
+                                                                                        </View>
+                                                                                        <View style={[styles.panelItemButton, AppStyles.center]}>
+                                                                                            <TouchableOpacity
+                                                                                                style={[styles.callButton, AppStyles.center]}
+                                                                                            >
+                                                                                                <Image
+                                                                                                    source={CallIcon}
+                                                                                                    style={styles.callButtonImage}
+                                                                                                />
+                                                                                            </TouchableOpacity>
+                                                                                        </View>
+                                                                                    </View>
+                                                                                )
+                                                                            })
+                                                                        }
+                                                                        </SearchResultPanel>*/}
                             </View>
                         )
                     })
