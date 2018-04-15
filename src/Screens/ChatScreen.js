@@ -20,8 +20,32 @@ export default class ChatScreen extends Component {
         headerTitleStyle : {alignSelf:'flex-start'}
     }
 
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            chatUrl: ''
+        }
+    }
+
+    componentWillMount() {
+        const { navigation } = this.props
+        const { chatType } = navigation.state.params
+        let tempChatUrl = ''
+
+        if (chatType === 'OneOnOne') {
+            tempChatUrl = 'https://hotline.safehelpline.org/safe-helpline/'
+        } else {
+            tempChatUrl = 'https://safe-helproom.safehelpline.org'
+        }
+        this.setState({
+            chatUrl: tempChatUrl
+        })
+    }
+
     render() {
         const { navigation } = this.props
+        const { chatUrl } = this.state
 
         return(
             <View style={AppStyles.mainContainer}>
@@ -30,7 +54,7 @@ export default class ChatScreen extends Component {
                     navigation={navigation}
                 />
                 <WebView
-                    source={{ url: 'https://safe-helproom.safehelpline.org' }}
+                    source={{ url: chatUrl}}
                 />
             </View>   
         )
