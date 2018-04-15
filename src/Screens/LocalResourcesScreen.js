@@ -9,6 +9,7 @@ import Constants from '../Lib/Constants'
 // Assets
 import Header from '../Components/Header'
 import HeadingContainer from '../Components/HeadingContainer'
+import LocalSearchLabelCard from '../Components/LocalSearchLabelCard'
 
 const SearchIcon = require('../Assets/Images/search_orange.png')
 
@@ -22,27 +23,31 @@ const {
     LocalSearchCategoryLabels
 } = Constants
 
+let searchLabelActives = []
 
 export default class LocalResourcesScreen extends Component {
     constructor(props) {
         super(props)
     
         this.state = {
-            locationSearchText: ''
+            locationSearchText: '',
+            services: []
         }
     }
 
-    goToScreen = (ScreenName, navigation) => {
-        const { navigate } = navigation
-        navigate(ScreenName)
-    }
-
-    onCategorySelected = (cardText) => {
-        console.log('card clicked')
-    }
-
     onSearchClicked = (navigation) => {
-        this.goToScreen('SearchResultScreen', navigation)
+        const { navigate } = navigation
+        const { locationSearchText, services } = this.state
+        const servicesQuery = searchLabelActives.join(',')
+        navigate('SearchResultScreen', {locationSearchText, servicesQuery})
+    }
+
+    onCardSelected = (cardIndex) => {
+        if (searchLabelActives.indexOf((cardIndex + 1).toString()) < 0) {
+            searchLabelActives.push((cardIndex + 1).toString())
+        } else {
+            searchLabelActives.splice(cardIndex, 1)
+        }
     }
 
     render() {
@@ -64,6 +69,7 @@ export default class LocalResourcesScreen extends Component {
                             <Text style={styles.hintText}>Enter your location info:</Text>
                             <TextInput
                                 style={styles.inputBox}
+                                underlineColorAndroid='rgba(0, 0, 0, 0)'
                                 placeholder='Zip Code, State, Country, Installation/Base'
                                 onChangeText={(locationSearchText) => this.setState({ locationSearchText })}
                                 value={this.state.locationSearchText}
@@ -75,15 +81,11 @@ export default class LocalResourcesScreen extends Component {
                                 return (
                                     item.content.map((cardItem, cardIndex) => {
                                         return (
-                                            <TouchableOpacity
+                                            <LocalSearchLabelCard
                                                 key={cardIndex}
-                                                onPress={() => this.onCategorySelected(cardItem.label)}>
-                                                <View
-                                                    style={[styles.categoryCard, AppStyles.center]}
-                                                >
-                                                    <Text style={styles.cardText}>{cardItem.label}</Text>
-                                                </View>
-                                            </TouchableOpacity>
+                                                content={cardItem.label}
+                                                onCardSelect={() => this.onCardSelected(cardIndex)}
+                                            />
                                         )
                                     })
                                 )
@@ -138,21 +140,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         marginTop: Margins.elementMT
-    },
-
-    categoryCard: {
-        width: width / 4 - 20,
-        height: height / 10,
-        backgroundColor: Colors.darkGreen,
-        borderRadius: BorderRadii.boxBR,
-        margin: 5
-    },
-
-    cardText: {
-        color: 'white',
-        textAlign: 'center',
-        fontSize: FontSizes.listFS,
-        fontWeight: '600'
     },
 
     buttonArea: {
