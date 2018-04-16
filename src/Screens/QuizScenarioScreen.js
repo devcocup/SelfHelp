@@ -38,14 +38,22 @@ export default class QuizScenarioScreen extends Component {
         super(props)
     
         this.state = {
-            quizIndex: 1
+            quizIndex: 1,
+            titleText: 'Scenario 1',
+            subTitleText: 'At a bar'
         }
     }
 
-    onContinue = () => {
-        this.setState({
-            quizIndex: this.state.quizIndex + 1
-        })
+    onContinue = (navigation) => {
+        const { navigate } = navigation
+
+        if (this.state.quizIndex >= 5) {
+            navigate('LearnScreen')
+        } else {
+            this.setState({
+                quizIndex: this.state.quizIndex + 1
+            })
+        }
     }
 
     render() {
@@ -94,7 +102,7 @@ export default class QuizScenarioScreen extends Component {
                         <Button
                             label='Continue'
                             bgColor='white'
-                            onPress={onContinue}
+                            onPress={() => this.onContinue(navigation)}
                         />
                     </View>
                 </ScrollView>
