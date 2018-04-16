@@ -49,8 +49,9 @@ const ResetButton = () => {
     )
 }
 
-const onCancelClicked = () => {
-    console.log('cancel button clicked')
+const onCancelClicked = (navigation) => {
+    const { goBack } = navigation
+    goBack()    
 }
 
 
@@ -58,7 +59,7 @@ const SecurityPinHeader = ({ headerType, flowIndex, navigation }) => {
     return (
         <View style={styles.headerStyle}>
             <View style={[styles.leftArea, AppStyles.center]}>
-                <TouchableOpacity onPress={() => onCancelClicked}>
+                <TouchableOpacity onPress={() => onCancelClicked(navigation)}>
                     <Text style={styles.headerText}>Cancel</Text>
                 </TouchableOpacity>
             </View>
