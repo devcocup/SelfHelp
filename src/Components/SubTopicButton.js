@@ -21,18 +21,18 @@ const SubTopicButton = ({ text }) => {
 
 const styles = StyleSheet.create({
     button: {
-        height: height / 14,
         marginTop: 10,
         width: width - 40,
         backgroundColor: Colors.lightGreen,
         borderRadius: 4,
-        paddingHorizontal: Paddings.elementP
+        padding: Paddings.elementP
     },
 
     buttonText: {
         color: 'white',
         fontWeight: "600",
-        fontSize: 18
+        fontSize: 18,
+        textAlign: 'center'
     }
 })
 
