@@ -80,14 +80,12 @@ export default class MainScreen extends Component {
 
     onInternet = () => {
         this.dismissModal()
-        // this.goToScreen('CallScreen')
-        this.goToScreen('ComingSoonScreen')
+        this.goToScreen('CallScreen')
     }
 
     onCellular = () => {
         this.dismissModal()
-        // this.goToScreen('CallScreen')
-        this.goToScreen('ComingSoonScreen')
+        this.goToScreen('CallScreen')
     }
 
     render() {
