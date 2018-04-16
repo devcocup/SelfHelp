@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View,ScrollView,Text, Dimensions, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import Overlay from 'react-native-modal-overlay'
+import Communications from 'react-native-communications'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -85,7 +86,8 @@ export default class MainScreen extends Component {
 
     onCellular = () => {
         this.dismissModal()
-        this.goToScreen('CallScreen')
+        // this.goToScreen('CallScreen')
+        Communications.phonecall('18779955247', true)
     }
 
     render() {
