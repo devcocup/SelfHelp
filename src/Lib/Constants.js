@@ -132,42 +132,50 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/at_the_beach.png'),
                 subTopic: 'At the Beach',
-                description: 'Reduce, anxiety, tension, and stress with this guided audio exercies.'
+                description: 'Reduce, anxiety, tension, and stress with this guided audio exercies.',
+                bgImage: require('../Assets/Images/at_the_beach_bg.png')
             },
             {
                 icon: require('../Assets/Images/focusing_on_the_present.png'),
                 subTopic: 'Focusing on the Present',
-                description: 'An exercise to ground yourself in the Pressent to reduce stress'
+                description: 'An exercise to ground yourself in the Pressent to reduce stress',
+                bgImage: require('../Assets/Images/focusing_on_the_present_bg.png')
             },
             {
                 icon: require('../Assets/Images/guided_breathing.png'),
                 subTopic: 'Guided Breathing',
-                description: 'Breathing techniques to help you relax when you are overwhelmed.'
+                description: 'Breathing techniques to help you relax when you are overwhelmed.',
+                bgImage: require('../Assets/Images/guided_breathing_bg.png')
             },
             {
                 icon: require('../Assets/Images/guided_muscle_relaxation.png'),
                 subTopic: ' Guided Muscle Relaxation',
-                description: 'Reduce tension with this audio guided muscle relaxationexercise.'
+                description: 'Reduce tension with this audio guided muscle relaxationexercise.',
+                bgImage: require('../Assets/Images/guided_muscle_relaxation_bg.png')
             },
             {
                 icon: require('../Assets/Images/listening_to_soothing_sounds.png'),
                 subTopic: 'Listening to Soothing Sounds',
-                description: 'Feel more relaxed by listening to these soothing sounds.'
+                description: 'Feel more relaxed by listening to these soothing sounds.',
+                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg.png')
             },
             {
                 icon: require('../Assets/Images/my_safe_place.png'),
                 subTopic: 'My Safe Place',
-                description: 'This exercise will help you visualize being at the beach to reduce stress.'
+                description: 'This exercise will help you visualize being at the beach to reduce stress.',
+                bgImage: require('../Assets/Images/my_safe_place_bg.png')
             },
             {
                 icon: require('../Assets/Images/people_I_can_call.png'),
                 subTopic: 'People I Can Call',
-                description: 'Make a list of the people you can call wehn you need to talk to them.'
+                description: 'Make a list of the people you can call when you need to talk to them.',
+                bgImage: require('../Assets/Images/people_I_can_call_bg.png')
             },
             {
                 icon: require('../Assets/Images/things_that_make_me_smile.png'),
                 subTopic: 'Things that make me smile',
-                description: 'Make a gallery of your favorite things that make you smile and happy.'
+                description: 'Make a gallery of your favorite things that make you smile and happy.',
+                bgImage: require('../Assets/Images/things_that_make_me_smile_bg.png')
             }
         ]
     }
