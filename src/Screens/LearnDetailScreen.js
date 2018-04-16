@@ -12,13 +12,13 @@ import TopicButton from '../Components/TopicButton'
 import SubTopicButton from '../Components/SubTopicButton'
 
 const CardContainer = ({ content }) => {
-    const cardList = content.subContent.map((item, index) => {
+    const cardList = content.subContent.subCategories.map((item, index) => {
         return (
             <View
                 key={index}
                 style={[styles.cardContainer, AppStyles.hCenter]}
             >
-                <SubTopicButton text={item} />
+                <SubTopicButton text={item.categoryTitle} />
             </View>
         )
     })
