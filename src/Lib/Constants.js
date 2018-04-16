@@ -117,7 +117,12 @@ const LearnLabels = [
                 icon: require('../Assets/Images/building_hope.png'),
                 subTopic: 'Building Hope & Resiliency',
                 description: 'A self guided education program that helps you begin to recover and heal.',
-                subContent: []
+                subContent: {
+                    subDescription: [
+                    ],
+                    subCategories: [
+                    ]
+                }
             },
             {
                 icon: require('../Assets/Images/what_to_do.png'),
@@ -212,7 +217,10 @@ const LearnLabels = [
                 icon: require('../Assets/Images/reduce_your_risk.png'),
                 subTopic: 'Reduce Your Risk',
                 description: 'Tips on how to reduce your risk of being sexually assaulted.',
-                subContent: []
+                subContent: {
+                    subDescription: [],
+                    subCategories: []
+                }
             }
         ]
     },
