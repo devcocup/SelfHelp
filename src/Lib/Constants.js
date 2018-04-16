@@ -73,19 +73,19 @@ const LearnLabels = [
                 icon: require('../Assets/Images/what_can_I_do_to_help.png'),
                 subTopic: 'What can I do to help?',
                 description: 'Learn how to help someone who has been harassed or sexual assaulted.',
-                subContent: [
+                subContent: {
                     subDescription: [
                         'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every stuation is different, but hopefully this tool can help prepare you to support people at rist. You don\'t have to be a hero to make a big difference in someone\'s life.',
                         'If you need additional support about a situation you are dealing with, you can reach out to a Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
                     ],
                     subCategories: []
-                ]
+                }
             },
             {
                 icon: require('../Assets/Images/learn.png'),
                 subTopic: 'Educational Programs',
                 description: 'Summary goes here',
-                subContent: [
+                subContent: {
                     subDescription: [
                         'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault. Each program was built with a particular audience in mind, but all programs provide valuable information for anyone looking to learn more about sexual assault, its effects, and the support available.',
                         'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',
@@ -94,18 +94,24 @@ const LearnLabels = [
                     subCategories: [
                         {
                             categoryTitle: 'Building Hope and Resiliency',
-                            categoryContent: 'Addressing the Effects of Sexual Assault: This program seeks to help survivors begin to recover, heal, and build resiliency after a sexual assault. Recognizing the effect that trauma can have, this program is part of a comprehensive effort to enhance resilience and improve readiness across the Total Force. Users will learn about sexual assault and its effects, assess their current coping skills, and find information about additional support and resources available. This program may be especially helpful for survivors that are not yet ready to connect directly with anyone or for those that prefer to do their own research before taking the next step.'
+                            categoryContent: [
+                                'Addressing the Effects of Sexual Assault: This program seeks to help survivors begin to recover, heal, and build resiliency after a sexual assault. Recognizing the effect that trauma can have, this program is part of a comprehensive effort to enhance resilience and improve readiness across the Total Force. Users will learn about sexual assault and its effects, assess their current coping skills, and find information about additional support and resources available. This program may be especially helpful for survivors that are not yet ready to connect directly with anyone or for those that prefer to do their own research before taking the next step.'
+                            ]
                         },
                         {
                             categoryTitle: 'How to Support a Survivor',
-                            categoryContent: 'The How to Support a Survivor program provides concrete tools that can help friends, family members, and colleagues of survivors of sexual assault support the course of a survivor\'s recovery. This program identifies helping behaviors that support survivors of sexual assault while also educating supporters about behaviors that can be harmful and how to avoid them.'
+                            categoryContent: [
+                                'The How to Support a Survivor program provides concrete tools that can help friends, family members, and colleagues of survivors of sexual assault support the course of a survivor\'s recovery. This program identifies helping behaviors that support survivors of sexual assault while also educating supporters about behaviors that can be harmful and how to avoid them.'
+                            ]
                         },
                         {
                             categoryTitle: 'Safe Helpline 101',
-                            categoryContent: 'This program provides an overview of Safe Helpline, including services offered, information about the secure technology platform, and steps taken to protect the anonymity and confidentiality of users. Most important, this program describes how Safe Helpline services augment and support Sexual Assault Response Coordinators and Victim Advocates (SARC/SAPR VA) in their efforts to meet the needs of sexual assault survivors. The target audience for this program is SARCs, SAPR VAs, and other responders interested in learning more about Safe Helpline.'
+                            categoryContent: [
+                                'This program provides an overview of Safe Helpline, including services offered, information about the secure technology platform, and steps taken to protect the anonymity and confidentiality of users. Most important, this program describes how Safe Helpline services augment and support Sexual Assault Response Coordinators and Victim Advocates (SARC/SAPR VA) in their efforts to meet the needs of sexual assault survivors. The target audience for this program is SARCs, SAPR VAs, and other responders interested in learning more about Safe Helpline.'
+                            ]
                         }
                     ]
-                ]
+                }
             },
             {
                 icon: require('../Assets/Images/building_hope.png'),
@@ -117,41 +123,51 @@ const LearnLabels = [
                 icon: require('../Assets/Images/what_to_do.png'),
                 subTopic: 'What to do',
                 description: 'Learn what to do if you or someone you know has been sexually assaulted.',
-                subContent: [
-                    {
-                        subDescription: [
-                            'It can be hard to know what to do, how to feel, or what your options are after a sexual assault. Please know that you\'re not alone.  Safe Helpline can help you get the information and support that you need to heal.',
-                            'If you are in immediate danger or need immediate medical care, call 911 or contact military law enforcement.',
-                            'Below are some things to keep in mind.'                            
-                        ],
-                        subCategories: [
-                            {
-                                categoryTitle: 'Your safety is important.',
-                                categoryContent: 'Are you in a safe place? If you\'re not feeling safe, consider reaching out to someone you trust for support. You can contact the Safe Helpline to discuss safety planning and some options including Military and Civilian Protection Orders that may be available to you to help keep you safe. You don\'t have to go through this alone.'
-                            },
-                            {
-                                categoryTitle: 'Consider seeking medical care as soon as possible.',
-                                categoryContent: 'After experiencing a sexual assault, you may be feeling disoriented, confused, or unsure of how you want to proceed.  Seeking medical care may not feel like a priority, especially if you do not have any visible physical injuries. However, it can be helpful to assess less visible injuries, as well as any risk of sexually transmitted disease or pregnancy. Time can also be a factor if you\'d like to ask healthcare personnel to conduct a sexual assault forensic examination (SAFE) to save evidence for a potential future investigation or if you suspect you have been drugged. It is important to know that even if you have not decided if you want to report to law enforcement or not, you can still get medical care as well as have forensic evidence collected and stored anonymously until you decide.'
-                            },
-                            {
-                                categoryTitle: 'Call the DoD Safe Helpline.',
-                                categoryContent: 'If you aren\'t sure of what to do or just want to talk to someone, you can reach out to the Safe Helpline. You\'ll be connected to a trained staff member that can provide support, walk you through your options, and when you\'re ready, connect you directly with local resources.'
-                            },
-                            {
-                                categoryTitle: 'What happened was not your fault.',
-                                categoryContent: 'Something happened to you that you didn\'t want to happen—and that\'s not OK. There is nothing you did or did not do that caused this to happen. You can learn more about the short and long-term emotional and physical effects of sexual assault here.'
-                            },
-                            {
-                                categoryTitle: 'What if my assault happened years ago?',
-                                categoryContent: 'Many victims don\'t choose to access help until months or years later. Healing is a process that is different for everyone. Remember, it's never too late to get help; Safe Helpline is always here to help online or over the phone at 877-995-5247.'
-                            },
-                            {
-                                categoryTitle: 'Additional Resources:',
-                                categoryContent: 'You can get more information about coping mechanisms and ways to heal with the self-paced educational course, Building Hope and Resiliency: Addressing the effects of Sexual Assault. If you are a friend of family member of a survivor learn more about what you can do with the self-paced educational course, How to Support a Survivor.'
-                            }
-                        ]
-                    }
-                ]
+                subContent: {
+                    subDescription: [
+                        'It can be hard to know what to do, how to feel, or what your options are after a sexual assault. Please know that you\'re not alone.  Safe Helpline can help you get the information and support that you need to heal.',
+                        'If you are in immediate danger or need immediate medical care, call 911 or contact military law enforcement.',
+                        'Below are some things to keep in mind.'                            
+                    ],
+                    subCategories: [
+                        {
+                            categoryTitle: 'Your safety is important.',
+                            categoryContent: [
+                                'Are you in a safe place? If you\'re not feeling safe, consider reaching out to someone you trust for support. You can contact the Safe Helpline to discuss safety planning and some options including Military and Civilian Protection Orders that may be available to you to help keep you safe. You don\'t have to go through this alone.'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'Consider seeking medical care as soon as possible.',
+                            categoryContent: [
+                                'After experiencing a sexual assault, you may be feeling disoriented, confused, or unsure of how you want to proceed.  Seeking medical care may not feel like a priority, especially if you do not have any visible physical injuries. However, it can be helpful to assess less visible injuries, as well as any risk of sexually transmitted disease or pregnancy. Time can also be a factor if you\'d like to ask healthcare personnel to conduct a sexual assault forensic examination (SAFE) to save evidence for a potential future investigation or if you suspect you have been drugged. It is important to know that even if you have not decided if you want to report to law enforcement or not, you can still get medical care as well as have forensic evidence collected and stored anonymously until you decide.'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'Call the DoD Safe Helpline.',
+                            categoryContent: [
+                                'If you aren\'t sure of what to do or just want to talk to someone, you can reach out to the Safe Helpline. You\'ll be connected to a trained staff member that can provide support, walk you through your options, and when you\'re ready, connect you directly with local resources.'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'What happened was not your fault.',
+                            categoryContent: [
+                                'Something happened to you that you didn\'t want to happen—and that\'s not OK. There is nothing you did or did not do that caused this to happen. You can learn more about the short and long-term emotional and physical effects of sexual assault here.'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'What if my assault happened years ago?',
+                            categoryContent: [
+                                'Many victims don\'t choose to access help until months or years later. Healing is a process that is different for everyone. Remember, it\'s never too late to get help; Safe Helpline is always here to help online or over the phone at 877-995-5247.'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'Additional Resources:',
+                            categoryContent: [
+                                'You can get more information about coping mechanisms and ways to heal with the self-paced educational course, Building Hope and Resiliency: Addressing the effects of Sexual Assault. If you are a friend of family member of a survivor learn more about what you can do with the self-paced educational course, How to Support a Survivor.'
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 icon: require('../Assets/Images/effects_of_sexual_assault.png'),
@@ -174,21 +190,111 @@ const LearnLabels = [
                 icon: require('../Assets/Images/tsm_overview.png'),
                 subTopic: 'TSM Overview',
                 description: 'Sexual assault Information for Transitioning Service Members.',
-                subContent: []
+                subContent: {
+                    subDescription: [
+                        'Transitioning out of the military can be a stressful time but may be especially difficult for survivors of sexual assault who may feel overwhelmed by the process or unsure about how to access care after they transition out.',
+                        'Anyone affected by sexual assault, whether it happened to you or someone you care about can find support through Safe Helpline. You can call 877-995-5247 to be connected with trained Safe Helpline staff members who can help.  You can also visit Safe Helpline to receive support via a confidential online chat.',
+                        'Below is some additional information that may be helpful as you go through this process.'
+                    ],
+                    subCategories: [
+                        {
+                            categoryTitle: 'How do I know if I can be classified as a TSM?',
+                            categoryContent: [
+                                'You are a Transitioning Service Member (TSM) if you are a Service member separating from the Army, Navy, Marine Corps, Air Force, National Guard, Reserve Component or the Coast Guard for the following reasons:',
+                                'Voluntarily or involuntarily retiring',
+                                'Service obligation is ending',
+                                'Medically discharged',
+                                'Voluntarily or involuntarily discharged'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'How long am I considered a TSM?',
+                            categoryContent: [
+                                'You are considered a TSM if you meet one of the following conditions:',
+                                'You have 12 months or fewer until you separate from the Army, Navy, Marine Corps, Air Force, National Guard, Reserve Component or the Coast Guard',
+                                'You have 24 months or fewer left before retirement'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'What are some common thoughts and feelings some Service members may have during transition?',
+                            categoryContent: [
+                                'As a TSM, you may have varying reactions to the transition experience. Some TSMs may feel positive about the transition, looking forward to new opportunities and experiences. Others may have a feeling of loss because they will no longer see their fellow Service members on a daily basis, or they may feel stressed, worried, or anxious about finding a job or affordable housing in the civilian sector.  TSMs may also be concerned or anxious about the effect the transition may have on their loved ones.',
+                                'Below is a short list of some of the thoughts, feelings, and physical symptoms you may experience:',
+                                'Being more irritable or angry than normal',
+                                'Constant fatigue',
+                                'Desire to be alone/away from other people',
+                                'Feeling nervous',
+                                'Headaches',
+                                'Inability to eat or eating more than usual',
+                                'More frequent colds or other illnesses',
+                                'Smoking or drinking more than usual',
+                                'Stomach problems',
+                                'Trouble falling asleep or sleeping too much'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'How might surviving a sexual assault affect my transition?',
+                            categoryContent: [
+                                'The transition process is full of physical changes, like relocating, and emotional changes, such as saying goodbye to your fellow Service members.  Transitioning can be a process that is full of highs and lows, which can be similar to the recovery and healing process for survivors of sexual assault.',
+                                'Regardless of when or where the sexual assault took place, the transition experience may trigger or increase stress responses for some Service members.  Sexual assault survivors may find the transition process overwhelming as they may be coping with depression, substance use, or Post-Traumatic Stress Disorder (PTSD).  Survivors may also doubt themselves and their ability to be self-reliant or strong as they struggle with the idea that they should have already \"gotten over it.\"  Some TSMs may also be worried about starting over with new care providers and knowing how to find ones that will fit their needs.',
+                                'Read more about the effects of sexual assault and stress responses.'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'What services and resources can I access?',
+                            categoryContent: [
+                                'Safe Helpline has a searchable database of Department of Defense, Veterans Affairs, and civilian resources available to you as you go through your transition.  Resources are available in the following categories:',
+                                'Accessing Benefits',
+                                'Disability Assistance',
+                                'Education and Training Assistance',
+                                'Employment Assistance',
+                                'Basic Needs',
+                                'Housing Assistance',
+                                'Medical Health Care',
+                                'Veterans Support',
+                                'Transition Assistance Programs',
+                                'Some Service members also may find it helpful to connect with support in their personal life including:',
+                                'Family members',
+                                'Friends',
+                                'Neighbors',
+                                'Colleagues',
+                                'Religious leader',
+                                'Social worker or psychologist',
+                                'Teachers or Professors',
+                                'Local civilian sexual assault service providers',
+                                'TSMs and veterans may choose to access support through the Department of Veterans Affairs. Within the VA, sexual assault and sexual harassment experiences fall under the term \"Military Sexual Trauma\" or MST.'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'What is Military Sexual Trauma (MST)?',
+                            categoryContent: [
+                                'Military Sexual Trauma (MST) is the term that the Department of Veterans Affairs uses to refer to sexual assault or repeated, threatening sexual harassment that occurred while the veteran was in the military.',
+                                'If you choose to receive support through the VA, you may be introduced to Veterans Health Affairs MST coordinators and Veterans Benefits Affairs MST Coordinators. VHA MST coordinators will help with treatment and care related to your experience of MST, and VBA MST coordinators can help with disability compensation related to MST.',
+                                'For more information on MST, visit the Veteran\'s Affairs Mental Health page.  To find your local VBA MST Coordinator go here.'
+                            ]
+                        },
+                        {
+                            categoryTitle: 'Where can I find more information for Transitioning Service Members?',
+                            categoryContent: [
+                                'Transition Assistance Program',
+                                'Veteran\'s Health Administration',
+                                'Veteran\'s Affairs Benefits Guide'
+                            ]
+                        }
+                    ]
+                }
             },
             {
                 icon: require('../Assets/Images/benefits_and_services.png'),
                 subTopic: 'Benefits and Services',
                 description: 'Services & Benefits for survivors of sexual assault who are TSMs',
-                subContent: [
+                subContent: {
                     subDescription: [
-                        {
-                            'Are you in the process of separating or retiring from Military Service? Being a survivor of sexual assault and going through the transition process can be difficult. There are a number of DoD, Veterans Affairs and civilian resources available to help you through the transition.',
-                            'DoD Safe Helpline is a service available to adult members of the DoD community. If you are 17 or under please contact your nearest Family Advocacy Program to learn more about resources available to you.'
-                        }
+                        'Are you in the process of separating or retiring from Military Service? Being a survivor of sexual assault and going through the transition process can be difficult. There are a number of DoD, Veterans Affairs and civilian resources available to help you through the transition.',
+                        'DoD Safe Helpline is a service available to adult members of the DoD community. If you are 17 or under please contact your nearest Family Advocacy Program to learn more about resources available to you.'
                     ],
                     subCategories: []
-                ]
+                }
             }
         ]
     }
