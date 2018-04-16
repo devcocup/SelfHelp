@@ -14,15 +14,24 @@ const CardWithImage = ({ cardImage, text, onPress }) => {
     return (
         <TouchableOpacity onPress={onPress}>
             <View style={[styles.buttonWithImage, AppStyles.center]}>
-                <View style={[styles.cardImageArea, AppStyles.center]}>
-                    {
-                        (cardImage !== '') &&
+                {
+                    (cardImage !== '') &&
+                    <View style={[styles.cardImageArea, AppStyles.center]}>
                         <Image source={cardImage} style={styles.cardImageStyle} />
-                    }
-                </View>
-                <View style={styles.cardTextArea}>
-                    <Text style={styles.buttonText}>{text}</Text>
-                </View>
+                    </View>
+                }
+                {
+                    (cardImage !== '') &&
+                    <View style={styles.cardTextArea}>
+                        <Text style={styles.buttonText}>{text}</Text>
+                    </View>
+                }
+                {
+                    (cardImage === '') &&
+                    <View style={styles.cardTextAreaFull}>
+                        <Text style={styles.buttonTextFull}>{text}</Text>
+                    </View>
+                }
             </View>
         </TouchableOpacity>
     )
@@ -51,10 +60,21 @@ const styles = StyleSheet.create({
         flex: .67
     },
 
+    cardTextAreaFull: {
+        flex: 1
+    },
+
     buttonText: {
         color: 'white',
         fontWeight: '600',
         fontSize: FontSizes.topicFS
+    },
+
+    buttonTextFull: {
+        color: 'white',
+        fontWeight: '600',
+        fontSize: FontSizes.topicFS,
+        textAlign: 'center'  
     }
 })
 
