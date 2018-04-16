@@ -73,13 +73,39 @@ const LearnLabels = [
                 icon: require('../Assets/Images/what_can_I_do_to_help.png'),
                 subTopic: 'What can I do to help?',
                 description: 'Learn how to help someone who has been harassed or sexual assaulted.',
-                subContent: []
+                subContent: [
+                    subDescription: [
+                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every stuation is different, but hopefully this tool can help prepare you to support people at rist. You don\'t have to be a hero to make a big difference in someone\'s life.',
+                        'If you need additional support about a situation you are dealing with, you can reach out to a Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
+                    ],
+                    subCategories: []
+                ]
             },
             {
                 icon: require('../Assets/Images/learn.png'),
                 subTopic: 'Educational Programs',
                 description: 'Summary goes here',
-                subContent: []
+                subContent: [
+                    subDescription: [
+                        'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault. Each program was built with a particular audience in mind, but all programs provide valuable information for anyone looking to learn more about sexual assault, its effects, and the support available.',
+                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',
+                        'You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these step-by-step instructions.'
+                    ],
+                    subCategories: [
+                        {
+                            categoryTitle: 'Building Hope and Resiliency',
+                            categoryContent: 'Addressing the Effects of Sexual Assault: This program seeks to help survivors begin to recover, heal, and build resiliency after a sexual assault. Recognizing the effect that trauma can have, this program is part of a comprehensive effort to enhance resilience and improve readiness across the Total Force. Users will learn about sexual assault and its effects, assess their current coping skills, and find information about additional support and resources available. This program may be especially helpful for survivors that are not yet ready to connect directly with anyone or for those that prefer to do their own research before taking the next step.'
+                        },
+                        {
+                            categoryTitle: 'How to Support a Survivor',
+                            categoryContent: 'The How to Support a Survivor program provides concrete tools that can help friends, family members, and colleagues of survivors of sexual assault support the course of a survivor’s recovery. This program identifies helping behaviors that support survivors of sexual assault while also educating supporters about behaviors that can be harmful and how to avoid them.'
+                        },
+                        {
+                            categoryTitle: 'Safe Helpline 101',
+                            categoryContent: 'This program provides an overview of Safe Helpline, including services offered, information about the secure technology platform, and steps taken to protect the anonymity and confidentiality of users. Most important, this program describes how Safe Helpline services augment and support Sexual Assault Response Coordinators and Victim Advocates (SARC/SAPR VA) in their efforts to meet the needs of sexual assault survivors. The target audience for this program is SARCs, SAPR VAs, and other responders interested in learning more about Safe Helpline.'
+                        }
+                    ]
+                ]
             },
             {
                 icon: require('../Assets/Images/building_hope.png'),
@@ -356,29 +382,21 @@ const AtTheBeachLabels = {
 const QuizLabels = [
     {
         title: 'At a bar',
-        question: 'You are at a bar with some people in your training uint. \
-        Some of the guys start saying lewd and disrespectful comments about \
-        the women in your unit who aren\'t there. What can you do to intervene?',
+        question: 'You are at a bar with some people in your training uint. Some of the guys start saying lewd and disrespectful comments about the women in your unit who aren\'t there. What can you do to intervene?',
         answers: [
             {
                 choiceCaption: 'A',
-                content: 'Interject and refocus the conversation on something else: \
-                \"Did you all watch the game last night?',
-                subContent: 'Distraction can be a good option in the moment \
-                if you\'re not sure how to address their comments long-term or don\'t feel safe \
-                discussing why it\'s not okay for them to make those comments.'
+                content: 'Interject and refocus the conversation on something else: \"Did you all watch the game last night?',
+                subContent: 'Distraction can be a good option in the moment if you\'re not sure how to address their comments long-term or don\'t feel safe discussing why it\'s not okay for them to make those comments.'
             },
             {
                 choiceCaption: 'B',
-                content: 'Interrupt the conversation and tell them that what \
-                they\'re saying isn\'t okay: \"Why would you say that about Sue or Julia? \
-                You would\'t say that about me. That\'s messed up.\"',
+                content: 'Interrupt the conversation and tell them that what they\'re saying isn\'t okay: \"Why would you say that about Sue or Julia? You would\'t say that about me. That\'s messed up.\"',
                 subContent: 'Asking why someone is saying these things is a good lead into telling them why what they\'re saying is harmful. As a peer they may be more likely to listen to what you have to say.'
             },
             {
                 choiceCaption: 'C',
-                content: 'Tell your commanding officer or your training instructor \
-                about what you witnessed.',
+                content: 'Tell your commanding officer or your training instructor about what you witnessed.',
                 subContent: 'What your coworkers are saying about other members in your unit undermines the strength of your team and can lead to a hostile working environment. Your CO may have additional ways to address the problem at hand and make it a safer working environment for everyone in your unit'
             }
         ]
