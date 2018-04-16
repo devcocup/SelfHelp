@@ -33,7 +33,7 @@ const goHome = (navigation) => {
 }
 
 
-const Header = ({ type, checkScreen, navigation }) => {
+const Header = ({ type, navigation }) => {
     const headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
 
     return (
@@ -57,7 +57,7 @@ const Header = ({ type, checkScreen, navigation }) => {
             }
             <View style={[styles.checkArea, AppStyles.center]}>
                 <TouchableOpacity
-                    onPress={() => goToScreen(checkScreen, navigation)}
+                    onPress={() => goToScreen('JournalScreen', navigation)}
                 >
                     <Image
                         source={CheckMarkIcon}
