@@ -28,8 +28,7 @@ const AppStyles = StyleSheet.create({
 
     mainContainer: {
         height: height,
-        backgroundColor: Colors.primaryBgColor,
-        paddingTop: Paddings.containerP
+        backgroundColor: Colors.primaryBgColor
     }
 })
 
