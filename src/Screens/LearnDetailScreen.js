@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, ScrollView, StyleSheet } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -11,14 +11,29 @@ import Header from '../Components/Header'
 import TopicButton from '../Components/TopicButton'
 import SubTopicButton from '../Components/SubTopicButton'
 
+const { height, width } = Dimensions.get('window')
+const { Paddings, FontSizes } = Constants
+
+
 const CardContainer = ({ content }) => {
+    const cardDescriptionBox = content.subContent.subDescription.map((item, index) => {
+        return (
+            <Text
+                key={index}
+                style={styles.descriptionText}
+            >
+                {item}
+            </Text>
+        )
+    })
+
     const cardList = content.subContent.subCategories.map((item, index) => {
         return (
             <View
                 key={index}
                 style={[styles.cardContainer, AppStyles.hCenter]}
             >
-                <SubTopicButton text={item.categoryTitle} />
+                <SubTopicButton content={item} />
             </View>
         )
     })
@@ -26,6 +41,9 @@ const CardContainer = ({ content }) => {
     return (
         <View style={AppStyles.hCenter}>
             <TopicButton text={content.subTopic} />
+            <View style={styles.descriptionArea}>
+                {cardDescriptionBox}
+            </View>
             {cardList}
         </View>
     )
@@ -52,6 +70,14 @@ export default class LearnDetailScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+    descriptionArea: {
+        padding: Paddings.containerP
+    },
+
+    descriptionText: {
+        color: 'white'
+    },
+
     cardContainer: {
         flex: 1,
         paddingHorizontal: 10,
