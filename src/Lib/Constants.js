@@ -173,7 +173,40 @@ const LearnLabels = [
                 icon: require('../Assets/Images/effects_of_sexual_assault.png'),
                 subTopic: 'Effects of Sexual Assault',
                 description: 'Here are some common effects survivors of sexual assault may face.',
-                subContent: [ 'Depression', 'Eating Disorders', 'PTSD', 'Self Harm', 'Sleep Disturbances', 'Substance Abuse', 'Suicide']
+                subContent: {
+                    subDescription: [
+                    ],
+                    subCategories: [
+                        {
+                            categoryTitle: 'Depression',
+                            categoryContent: []
+                        },
+                        {
+                            categoryTitle: 'Eating Disorders',
+                            categoryContent: []
+                        },
+                        {
+                            categoryTitle: 'PTSD',
+                            categoryContent: []
+                        },
+                        {
+                            categoryTitle: 'Self Harm',
+                            categoryContent: []
+                        },
+                        {
+                            categoryTitle: 'Sleep Disturbances',
+                            categoryContent: []
+                        },
+                        {
+                            categoryTitle: 'Substance Abuse',
+                            categoryContent: []
+                        },
+                        {
+                            categoryTitle: 'Suicide',
+                            categoryContent: []
+                        }
+                    ]
+                }
             },
             {
                 icon: require('../Assets/Images/reduce_your_risk.png'),
