@@ -6,6 +6,8 @@ import AppStyles from '../Lib/AppStyles'
 import Constants from '../Lib/Constants'
 
 const { height, width } = Dimensions.get('window')
+const { Paddings, Colors } = Constants
+
 
 const SubTopicButton = ({ text }) => {
     return (
@@ -22,8 +24,9 @@ const styles = StyleSheet.create({
         height: height / 14,
         marginTop: 10,
         width: width - 40,
-        backgroundColor: Constants.Colors.lightGreen,
-        borderRadius: 4
+        backgroundColor: Colors.lightGreen,
+        borderRadius: 4,
+        paddingHorizontal: Paddings.elementP
     },
 
     buttonText: {
