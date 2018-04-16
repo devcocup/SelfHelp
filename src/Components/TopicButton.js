@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import Constants from '../Lib/Constants'
@@ -10,11 +10,9 @@ const { height, width } = Dimensions.get('window')
 
 const TopicButton = ({ text }) => {
     return (
-        <TouchableOpacity>
-            <View style={[styles.button, AppStyles.center]}>
-                <Text style={styles.buttonText}>{text}</Text>
-            </View>
-        </TouchableOpacity>
+        <View style={[styles.button, AppStyles.center]}>
+            <Text style={styles.buttonText}>{text}</Text>
+        </View>
     )
 }
 
