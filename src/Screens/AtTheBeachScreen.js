@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, ScrollView, Image, ImageBackground, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -43,8 +43,9 @@ const GenderBox = ({ imgSrc, onPress }) => {
 }
 
 const goToScreen = (ScreenName, navigation) => {
-    const { navigate } = navigation
-    navigate(ScreenName)
+    const { navigate, state } = navigation
+    const { bgImage } = state.params
+    navigate(ScreenName, { bgImage })
 }
 
 const onMaleSelected = (navigation) => {
@@ -74,6 +75,8 @@ const GenderBoxContainer = ({ navigation }) => {
 export default class AtTheBeachScreen extends Component {
     render() {
         const { navigation } = this.props
+        const { params } = navigation.state
+        const { bgImage } = params
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -82,7 +85,10 @@ export default class AtTheBeachScreen extends Component {
                     navigation={navigation}
                 />
                 <ScrollView>
-                    <View  style={{ height: height - 64, padding: 40 }}>
+                    <ImageBackground
+                        style={styles.container}
+                        source={bgImage}
+                    >
                         <View style={{flex: 1}}>
                             <View style={[{ flex: .75 }, AppStyles.hCenter]}>
                                 <NoteContainer />
@@ -93,7 +99,7 @@ export default class AtTheBeachScreen extends Component {
                                 />
                             </View>
                         </View>
-                    </View>
+                    </ImageBackground>
                 </ScrollView>
             </View>
         )
@@ -101,6 +107,11 @@ export default class AtTheBeachScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        height: height - 64,
+        padding: 40
+    },
+
     noteContainer: {
         width: width - 40,
         marginTop: Constants.Margins.containerM,
