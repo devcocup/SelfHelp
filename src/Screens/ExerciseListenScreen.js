@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, ImageBackground, ScrollView, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -23,9 +23,14 @@ const AudioControl = () => {
 export default class ExerciseListenScreen extends Component {
     render() {
         const { navigation } = this.props
+        const { params } = navigation.state
+        const { bgImage } = params
 
         return (
-            <View style={AppStyles.mainContainer}>
+            <ImageBackground
+                style={AppStyles.mainContainer}
+                source={bgImage}
+            >
                 <Header
                     type='Back'
                     navigation={navigation}
@@ -33,7 +38,7 @@ export default class ExerciseListenScreen extends Component {
                 <View style={[{flex: 1}, AppStyles.vEnd]}>
                     <AudioControl />
                 </View>
-            </View>
+            </ImageBackground>
         )
     }
 }
