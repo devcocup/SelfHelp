@@ -1,6 +1,7 @@
 //React
 import React, { Component } from 'react'
 import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
+import Communications from 'react-native-communications'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -28,12 +29,14 @@ const onPress = (cardTitle, navigation) => {
     switch (cardTitle) {
         case 'Local Resources':
             ScreenName = 'LocalResourcesScreen'
+            goToScreen(ScreenName, cardTitle, navigation)
+            break
+        case 'Talk to Someone':
+            Communications.phonecall('18779955247', true)
             break
         default:
             break
     }
-
-    goToScreen(ScreenName, cardTitle, navigation)
 }
 
 const CardContainer = ({ navigation }) => {
