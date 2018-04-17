@@ -83,7 +83,7 @@ const LearnLabels = [
             },
             {
                 icon: require('../Assets/Images/learn.png'),
-                subTopic: 'Educational Programs',
+                subTopic: 'Self-Paced Educational Programs',
                 description: 'Summary goes here',
                 subContent: {
                     subDescription: [
@@ -112,18 +112,12 @@ const LearnLabels = [
                         }
                     ]
                 }
-            },
-            {
-                icon: require('../Assets/Images/building_hope.png'),
-                subTopic: 'Building Hope & Resiliency',
-                description: 'A self guided education program that helps you begin to recover and heal.',
-                subContent: {
-                    subDescription: [
-                    ],
-                    subCategories: [
-                    ]
-                }
-            },
+            }
+        ]
+    },
+    {
+        topic: 'More Information',
+        content: [
             {
                 icon: require('../Assets/Images/what_to_do.png'),
                 subTopic: 'What to do',
@@ -323,15 +317,6 @@ const LearnLabels = [
                             ]
                         }
                     ]
-                }
-            },
-            {
-                icon: require('../Assets/Images/reduce_your_risk.png'),
-                subTopic: 'Reduce Your Risk',
-                description: 'Tips on how to reduce your risk of being sexually assaulted.',
-                subContent: {
-                    subDescription: [],
-                    subCategories: []
                 }
             }
         ]
