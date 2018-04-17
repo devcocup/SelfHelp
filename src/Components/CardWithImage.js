@@ -10,10 +10,14 @@ const { height, width } = Dimensions.get('window')
 const { Colors, FontSizes } = Constants
 
 
-const CardWithImage = ({ cardImage, text, onPress }) => {
+const CardWithImage = ({ cardImage, text, bgColor, onPress }) => {
+    const bgColorStyle = {
+        backgroundColor: bgColor ? bgColor : Colors.lightGreen
+    }
+
     return (
         <TouchableOpacity onPress={onPress}>
-            <View style={[styles.buttonWithImage, AppStyles.center]}>
+            <View style={[styles.buttonWithImage, bgColorStyle, AppStyles.center]}>
                 {
                     (cardImage !== '') &&
                     <View style={[styles.cardImageArea, AppStyles.center]}>
@@ -43,7 +47,6 @@ const styles = StyleSheet.create({
         height: height / 6,
         marginTop: 15,
         width: width - 40,
-        backgroundColor: Colors.lightGreen,
         borderRadius: 4
     },
 
