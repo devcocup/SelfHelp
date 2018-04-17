@@ -10,17 +10,19 @@ import Constants from '../Lib/Constants'
 import Header from '../Components/Header'
 import JournalTitleListItem from '../Components/JournalTitleListItem'
 
+const { PlanQuestions } = Constants
+
 const onListClick = () => {
     console.log('list item clicked')
 }
 
 const ListContainer = () => {
-    const list = Constants.PastJournalsLabels.map((item, index) => {
+    const list = PlanQuestions.map((item, index) => {
         return (
             <View key={index}>
                 <JournalTitleListItem
-                    checked={item.checked}
-                    label={item.label}
+                    checked={true}
+                    label={item}
                     onPress={onListClick}
                 />
             </View>
