@@ -55,13 +55,25 @@ const PanelLabels = [
 
 const SecurityQuestions = [
     {
+        value: 'What is your favorite book?'
+    },
+    {
+        value: 'What street did you grow up on?'
+    },
+    {
+        value: 'What is your mother\'s maiden name?'
+    },
+    {
         value: 'What was the name of your first pet?'
     },
     {
-        value: 'What is your favorite sport?'
+        value: 'Where did you meet your spouse?'
     },
     {
-        value: 'What was the name of the street that you grew up on?'
+        value: 'Where did you go to high school?'
+    },
+    {
+        value: 'What city were you born in?'
     }
 ]
 
