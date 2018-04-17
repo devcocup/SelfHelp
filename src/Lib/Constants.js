@@ -774,26 +774,48 @@ const QuizLabels = [
 ]
 
 const PastPlansLabels = [
-    {
-        date: 'January 15, 2018',
-        time: '22: 41'
-    },
-    {
-        date: 'January 12, 2018',
-        time: '12: 41'
-    },
-    {
-        date: 'January 12, 2018',
-        time: '15: 41'
-    },
-    {
-        date: 'January 11, 2018',
-        time: '17: 41'
-    },
-    {
-        date: 'January 5, 2018',
-        time: '09: 41'
-    },
+    // {
+    //     date: 'January 15, 2018',
+    //     time: '22: 41'
+    // },
+    // {
+    //     date: 'January 12, 2018',
+    //     time: '12: 41'
+    // },
+    // {
+    //     date: 'January 12, 2018',
+    //     time: '15: 41'
+    // },
+    // {
+    //     date: 'January 11, 2018',
+    //     time: '17: 41'
+    // },
+    // {
+    //     date: 'January 5, 2018',
+    //     time: '09: 41'
+    // }
+]
+
+const PlanQuestions = [
+    'How often do you feel sad?',
+    'How often do you feel anxious?',
+    'How often do you have trouble falling or staying asleep?',
+    'How often do you feel lonely or isolated?',
+    'How often do you feel stressed or frightened?',
+    'How often do you feel angry?',
+    'How often do you feel hopeless about the present or future?'
+]
+
+const JournalPromptQuestions = [
+    'What are some things that make you smile?',
+    'What are five things you can do for yourself this week?',
+    'What are three places you want to visit? What draws you there?',
+    'What is your favorite thing to do on a day off?',
+    'What would you do if money were no object?',
+    'What\'s something you\'re grateful for this week? Why are you grateful for it?',
+    'What are some of your favorite quotes?',
+    'What is your favortie personality trait?',
+    'What is somethign you\'ve learned this week?'
 ]
 
 const QuizResultsLabels = [
@@ -842,7 +864,9 @@ const Constants = {
     LocalSearchCategoryLabels,
     SearchResultLabels,
     PastPlansLabels,
-    QuizResultsLabels
+    QuizResultsLabels,
+    PlanQuestions,
+    JournalPromptQuestions
 }
 
 export default Constants
