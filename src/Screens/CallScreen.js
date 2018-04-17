@@ -11,9 +11,29 @@ import Constants from '../Lib/Constants'
 
 // Assets
 import Header from '../Components/Header'
+import CardWithImage from '../Components/CardWithImage'
+
+const SpeakerIcon = require('../Assets/Images/speaker.png')
+const PhoneIcon = require('../Assets/Images/phone.png')
 
 const { height, width } = Dimensions.get('window')
 const { Paddings, Margins, Colors, FontSizes, BorderRadii } = Constants
+
+const HeadingContainer = ({ status }) => {
+    const titleText = 'Internet Call'
+
+    return (
+        <View style={[styles.headingContainer, AppStyles.center]}>
+            <Text style={styles.statusText}>
+                {status}
+            </Text>
+            <View style={styles.separateBar}></View>
+            <Text style={styles.titleText}>
+                {titleText}
+            </Text>
+        </View>
+    )
+}
 
 
 export default class CallScreen extends Component {
@@ -38,17 +58,23 @@ export default class CallScreen extends Component {
                     type='Back'
                     navigation={navigation}
                 />
-                <View style={[styles.container, AppStyles.hCenter]}>
-                    <View style={[styles.numberField, AppStyles.vCenter]}>
-                        <PhoneInput
-                            ref={(ref) => { this.phone = ref }}
+                <View style={AppStyles.hCenter}>
+                    <HeadingContainer
+                        status='Connecting'
+                    />
+                    <View style={styles.container}>
+                        <CardWithImage
+                            cardImage={SpeakerIcon}
+                            text='Enable Speaker Phone'
+                            onPress={() => this.enableSpeaker}
                         />
-                    </View>
-                    <TouchableOpacity onPress={this.callPhone}>
-                        <View style={[styles.callButton, AppStyles.center]}>
-                            <Text style={styles.callButtonText}>Call</Text>
-                        </View>
-                    </TouchableOpacity>
+                        <CardWithImage
+                            cardImage={PhoneIcon}
+                            text='Hang Up Call'
+                            bgColor={Colors.red}
+                            onPress={() => this.hangUpCall}
+                        />
+                    </View>                    
                 </View>
            </View>    
 
@@ -58,9 +84,35 @@ export default class CallScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        padding: Paddings.lP
+        // padding: Paddings.lP
     },
-    
+
+    headingContainer: {
+        height: height / 4,
+        width,
+        backgroundColor: 'white',
+    },
+
+    statusText: {
+        fontSize: FontSizes.quizTitleFS,
+        fontWeight: '600',
+        marginBottom: 10,
+        color: Colors.orange
+    },
+
+    separateBar: {
+        height: 2,
+        width: width - 160,
+        backgroundColor: Colors.gray
+    },
+
+    titleText: {
+        color: 'black',
+        fontSize: FontSizes.headingFS,
+        fontWeight: '600',
+        marginTop: 10
+    },
+
     numberField: {
         width: width - 80,
         height: 40,
