@@ -3,10 +3,6 @@ import React, { Component } from 'react'
 import { View, Text, ImageBackground, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import SoundPlayer from 'react-native-sound-player'
 import AudioPlayer from 'react-native-play-audio'
-import {
-    Player,
-    MediaStates
-} from 'react-native-audio-toolkit'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
