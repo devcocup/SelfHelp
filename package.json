@@ -13,6 +13,10 @@
     "react-native-elements": "^0.19.1",
     "react-native-material-dropdown": "^0.11.1",
     "react-native-modal-overlay": "^1.2.3",
+    "react-native-phone-input": "^0.2.1",
+    "react-native-sync-localstorage": "0.0.3",
+    "react-native-tab-view": "0.0.77",
+    "react-native-twilio-programmable-voice": "^3.16.0",
     "react-native-vector-icons": "^4.6.0",
     "react-navigation": "^1.5.11"
   },
