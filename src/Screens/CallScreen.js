@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import Communications from 'react-native-communications'
 import { NavigationActions } from 'react-navigation'
-import PhoneInput from 'react-native-phone-input'
+import TwilioVoice from 'react-native-twilio-programmable-voice'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -44,13 +44,68 @@ export default class CallScreen extends Component {
         headerTitleStyle : {alignSelf:'flex-start'}
     }
 
-    callPhone = () => {
-        const { formattedNumber } = this.phone.state
-        Communications.phonecall(formattedNumber, true)
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            buttonActivated: false,
+            statusText: 'Initializing'
+        }
+    }
+
+    componentWillMount() {
+        this.getAccessTokenFromServer()
+    }
+
+    // initialize the Programmable Voice SDK passing an access token obtained from the server.
+    // Listen to deviceReady and deviceNotReady events to see whether the initialization succeeded.
+    initTelephony(accessToken) {
+        try {
+            const success = TwilioVoice.initWithToken(accessToken)
+            if (success) {
+                this.setState({
+                    buttonActivated: true,
+                    statusText: 'Initialized'
+                })
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    getTokenFinished(){
+        return Promise.all(this.getAccessTokenFromServer)
+    }
+
+    getAccessTokenFromServer() {
+        const url = 'https://voip.safehelpline.org/connect.php'
+        fetch(url)
+            .then((response) => response.text())
+            .then(data => this.initTelephony(data))
+            .catch((error) => {
+                console.log(error)
+            })
+    }
+
+    enableSpeaker = () => {
+        const { buttonActivated } = this.state
+
+        if (buttonActivated) {
+            this.setState({
+                statusText: 'Connecting'
+            })
+        }
+        TwilioVoice.connect({To: '+18779955247'})
+    }
+
+    hangUpCall = () => {
+        TwilioVoice.disconnect()
     }
 
     render() {
+        const { enableSpeaker, hangUpCall } = this
         const { navigation } = this.props
+        const { buttonActivated, statusText } = this.state
 
         return(
            <View style={AppStyles.mainContainer}>
@@ -60,19 +115,22 @@ export default class CallScreen extends Component {
                 />
                 <View style={AppStyles.hCenter}>
                     <HeadingContainer
-                        status='Connecting'
+                        status={statusText}
                     />
-                    <View style={styles.container}>
+                    <View
+                        style={styles.container}
+                        pointerEvents={buttonActivated ? 'auto' : 'none'}
+                    >
                         <CardWithImage
                             cardImage={SpeakerIcon}
                             text='Enable Speaker Phone'
-                            onPress={() => this.enableSpeaker}
+                            onPress={enableSpeaker}
                         />
                         <CardWithImage
                             cardImage={PhoneIcon}
                             text='Hang Up Call'
                             bgColor={Colors.red}
-                            onPress={() => this.hangUpCall}
+                            onPress={hangUpCall}
                         />
                     </View>                    
                 </View>
