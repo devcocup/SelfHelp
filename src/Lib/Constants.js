@@ -484,6 +484,12 @@ const ExercisesLabels = [
                 bgImage: require('../Assets/Images/my_safe_place_bg-min.jpg')
             },
             {
+                icon: require('../Assets/Images/people_I_can_call.png'),
+                subTopic: 'People I Can Call',
+                description: 'Make a list of the people you can call when you need to talk to them.',
+                bgImage: require('../Assets/Images/people_I_can_call_bg-min.jpg')
+            },
+            {
                 icon: require('../Assets/Images/things_that_make_me_smile.png'),
                 subTopic: 'Things that make me smile',
                 description: 'Make a gallery of your favorite things that make you smile and happy.',
@@ -494,12 +500,6 @@ const ExercisesLabels = [
             //     subTopic: 'Listening to Soothing Sounds',
             //     description: 'Feel more relaxed by listening to these soothing sounds.',
             //     bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
-            // },
-            // {
-            //     icon: require('../Assets/Images/people_I_can_call.png'),
-            //     subTopic: 'People I Can Call',
-            //     description: 'Make a list of the people you can call when you need to talk to them.',
-            //     bgImage: require('../Assets/Images/people_I_can_call_bg-min.jpg')
             // },
         ]
     }
