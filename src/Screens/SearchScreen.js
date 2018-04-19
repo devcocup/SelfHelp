@@ -31,6 +31,10 @@ const onPress = (cardTitle, navigation) => {
             ScreenName = 'LocalResourcesScreen'
             goToScreen(ScreenName, cardTitle, navigation)
             break
+        case 'Transition Resources':
+            ScreenName = 'TransitionResourcesScreen'
+            goToScreen(ScreenName, '', navigation)
+            break
         case 'Talk to Someone':
             Communications.phonecall('18779955247', true)
             break

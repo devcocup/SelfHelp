@@ -25,6 +25,7 @@ import JournalScreen from './Screens/JournalScreen'
 import CurrentJournalPromptScreen from './Screens/CurrentJournalPromptScreen'
 import PastJournalsScreen from './Screens/PastJournalsScreen'
 import LocalResourcesScreen from './Screens/LocalResourcesScreen'
+import TransitionResourcesScreen from './Screens/TransitionResourcesScreen'
 import SearchResultScreen from './Screens/SearchResultScreen'
 import CreateSecurityPinScreen from './Screens/CreateSecurityPinScreen'
 import ConfirmSecurityPinScreen from './Screens/ConfirmSecurityPinScreen'
@@ -61,6 +62,7 @@ export const AppNavigation = StackNavigator({
     CurrentJournalPromptScreen: { screen: CurrentJournalPromptScreen },
     PastJournalsScreen: { screen: PastJournalsScreen },
     LocalResourcesScreen: { screen: LocalResourcesScreen },
+    TransitionResourcesScreen: { screen: TransitionResourcesScreen },
     SearchResultScreen: { screen: SearchResultScreen },
     CreateSecurityPinScreen: { screen: CreateSecurityPinScreen },
     ConfirmSecurityPinScreen: { screen: ConfirmSecurityPinScreen },

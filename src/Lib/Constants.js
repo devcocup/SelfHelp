@@ -583,7 +583,7 @@ const SearchLabels = [
             },
             {
                 icon: '',
-                label: 'Transitioning Service Resources'
+                label: 'Transition Resources'
             },
             {
                 icon: require('../Assets/Images/talk_to_someone.png'),
