@@ -40,11 +40,10 @@ export default class AnswerSecurityQuestionScreen extends Component {
     }
 
     onSubmit = (navigation) => {
-        this.goToScreen('', navigation)
+        this.goToScreen('ResetConfirmScreen', navigation)
     }
 
     onReset = (navigation) => {
-        console.log('reset button clicked')
         this.goToScreen('ResetConfirmScreen', navigation)
     }
 

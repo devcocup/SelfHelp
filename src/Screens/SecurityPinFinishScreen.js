@@ -1,6 +1,7 @@
 // React
 import React, { Component } from 'react'
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import localStorage from 'react-native-sync-localstorage'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -26,7 +27,7 @@ export default class SecurityPinFinishScreen extends Component {
 
     render() {
         const { navigation } = this.props
-        const pinNumber = '474789'
+        const pinNumber = localStorage.getItem('PIN')
         const descriptionHeaderText = 'Write it down in a safe place'
         const descriptionContentText = 'If you can\'t remember your pin,\
         then you can reset it by answering your security question. If you cannot\

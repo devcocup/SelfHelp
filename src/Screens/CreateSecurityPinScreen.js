@@ -21,26 +21,38 @@ export default class CreateSecurityPinScreen extends Component {
         super(props)
     
         this.state = {
-            completed: false
+            completed: false,
+            dotIndex: 0,
+            pinNumber: ''
         }
     }
 
     goToScreen = (ScreenName, navigation) => {
         const { navigate } = navigation
-        navigate(ScreenName)
+        navigate(ScreenName, {pinNumber: this.state.pinNumber.substring(0, 6)})
     }
 
     onNumberClicked = (label, navigation) => {
-        console.log(label)
+        // if (this.state.completed === true) {
+        //     this.goToScreen('ConfirmSecurityPinScreen', navigation)
+        // }
         this.setState({
-            completed: true
+            pinNumber: this.state.pinNumber + label
         })
-        this.goToScreen('ConfirmSecurityPinScreen', navigation)
+        if (this.state.dotIndex === 6) {
+            this.setState({
+                completed: true
+            })
+            this.goToScreen('ConfirmSecurityPinScreen', navigation)
+        }
+        this.setState({
+            dotIndex: this.state.dotIndex + 1
+        })
     }
 
     render() {
-        const dotIndex = 2
         const { navigation } = this.props
+        const { dotIndex } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>

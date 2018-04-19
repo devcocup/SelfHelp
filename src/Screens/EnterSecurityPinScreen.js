@@ -1,7 +1,7 @@
 // React
 import React, { Component } from 'react'
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
-
+import localStorage from 'react-native-sync-localstorage'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -24,7 +24,7 @@ export default class CreateSecurityPinScreen extends Component {
             headerText: 'Enter your Security Pin',
             completed: false,
             mismatched: false,
-            securityPin: '474789'
+            dotIndex: 0
         }
     }
 
@@ -34,14 +34,20 @@ export default class CreateSecurityPinScreen extends Component {
     }
 
     checkPin = (label, index, navigation) => {
-        const { securityPin } = this.state
-        let checkedPin = (securityPin.substr(index - 1, 1).includes(label) ? true : false)
+        const securityPin = localStorage.getItem('PIN')
+        let checkedPin =  securityPin ? (securityPin.substr(index, 1).includes(label) ? true : false) : false
 
-        if (checkedPin) {
+        if (this.state.dotIndex === 6) {
             this.setState({
                 completed: true
             })
             this.goToScreen('AnswerSecurityQuestionScreen', navigation)
+        }
+
+        if (checkedPin) {
+            this.setState({
+                dotIndex: this.state.dotIndex + 1
+            })
         } else {
             this.setState({
                 mismatched: true,
@@ -51,9 +57,8 @@ export default class CreateSecurityPinScreen extends Component {
     }
 
     render() {
-        const dotIndex = 2
         const { navigation } = this.props
-        const { mismatched, headerText } = this.state
+        const { mismatched, headerText, dotIndex } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>

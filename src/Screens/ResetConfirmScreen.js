@@ -14,15 +14,22 @@ const { Paddings, Margins, Colors, FontSizes } = Constants
 
 
 export default class ResetConfirmScreen extends Component {
-    onReset() {
-        console.log('reset clicked')
+    goToScreen = (ScreenName, navigation) => {
+        const { navigate } = navigation
+        navigate(ScreenName)
     }
 
-    onCancel() {
-        console.log('cancel clicked')
+    onReset = (navigation) => {
+        this.goToScreen('CreateSecurityPinScreen', navigation)
+    }
+
+    onCancel = (navigation) => {
+        this.goToScreen('AnswerSecurityQuestionScreen', navigation)
     }
 
     render() {
+        const { navigation } = this.props
+
         return (
             <View style={AppStyles.mainContainer}>
               <View style={styles.container}>
@@ -37,12 +44,12 @@ export default class ResetConfirmScreen extends Component {
                     <Button
                         label='Yes, reset my security pin.'
                         bgColor={Colors.red}
-                        onPress={() => this.onReset}
+                        onPress={() => this.onReset(navigation)}
                     />
                     <Button
                         label='Cancel'
                         bgColor='white'
-                        onPress={() => this.onCancel}
+                        onPress={() => this.onCancel(navigation)}
                     />
                 </View>
               </View> 
