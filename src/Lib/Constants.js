@@ -482,6 +482,12 @@ const ExercisesLabels = [
                 subTopic: 'My Safe Place',
                 description: 'This exercise will help you visualize being at the beach to reduce stress.',
                 bgImage: require('../Assets/Images/my_safe_place_bg-min.jpg')
+            },
+            {
+                icon: require('../Assets/Images/things_that_make_me_smile.png'),
+                subTopic: 'Things that make me smile',
+                description: 'Make a gallery of your favorite things that make you smile and happy.',
+                bgImage: require('../Assets/Images/things_that_make_me_smile_bg-min.jpg')
             }
             // {
             //     icon: require('../Assets/Images/listening_to_soothing_sounds.png'),
@@ -495,12 +501,6 @@ const ExercisesLabels = [
             //     description: 'Make a list of the people you can call when you need to talk to them.',
             //     bgImage: require('../Assets/Images/people_I_can_call_bg-min.jpg')
             // },
-            // {
-            //     icon: require('../Assets/Images/things_that_make_me_smile.png'),
-            //     subTopic: 'Things that make me smile',
-            //     description: 'Make a gallery of your favorite things that make you smile and happy.',
-            //     bgImage: require('../Assets/Images/things_that_make_me_smile_bg-min.jpg')
-            // }
         ]
     }
 ]
