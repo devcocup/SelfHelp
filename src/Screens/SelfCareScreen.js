@@ -1,6 +1,7 @@
 // React
 import React, { Component } from 'react'
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, Dimensions } from 'react-native'
+import localStorage from 'react-native-sync-localstorage'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -24,13 +25,22 @@ goToScreen = (ScreenName, navigation) => {
     navigate(ScreenName)
 }
 
+onCreateNew = (navigation) => {
+    goToScreen('ComingSoonScreen', navigation)
+}
+
 onBrowse = (navigation) => {
     goToScreen('PastPlansScreen', navigation)
 }
 
 onJournalClicked = (navigation) => {
-    // goToScreen('JournalScreen', navigation)
-    goToScreen('CreateSecurityPinScreen', navigation)
+    const value = localStorage.getItem('PIN')
+
+    if (value === null || value === undefined) {
+        goToScreen('CreateSecurityPinScreen', navigation)
+    } else {
+        goToScreen('EnterSecurityPinScreen', navigation)
+    }
 }
 
 onColoringBookClicked = (navigation) => {
@@ -53,6 +63,7 @@ const CardContainer = ({ navigation }) => {
             <CardWithImage
                 cardImage={NewPlanIcon}
                 text='Create a new plan'
+                onPress={() => onCreateNew(navigation)}
             />
             <CardWithImage
                 cardImage={BrowseIcon}
