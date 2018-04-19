@@ -13,7 +13,7 @@ import TopicButton from '../Components/TopicButton'
 const { height, width } = Dimensions.get('window')
 
 
-export default class SelectPageToColorScreen extends Component {
+export default class ColoringScreen extends Component {
     constructor(props) {
         super(props)
     
@@ -23,8 +23,12 @@ export default class SelectPageToColorScreen extends Component {
     }
 
     componentWillMount() {
+        const { navigation } = this.props
+        const { params } = navigation.state
+        const { url } = params
+
         this.setState({
-            newPageUrl: 'https://tester.csuw.net/cb/phone_new.html'
+            newPageUrl: url
         })
     }
 
@@ -38,12 +42,12 @@ export default class SelectPageToColorScreen extends Component {
                     type='Back'
                     navigation={navigation}
                 />
-                <View style={[styles.cardContainer, AppStyles.hCenter]}>
-                    {/*<TopicButton text='Select a page to color' />*/}
-                    <WebView
-                        source={{ url: newPageUrl }}
-                    />
-                </View>
+                <WebView
+                    source={{ url: newPageUrl }}
+                />
+                {/*<View style={[styles.cardContainer, AppStyles.hCenter]}>
+                    <TopicButton text='Select a page to color' />
+                </View>*/}
             </View>
         )
     }

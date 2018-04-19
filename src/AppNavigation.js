@@ -36,6 +36,7 @@ import EnterSecurityPinScreen from './Screens/EnterSecurityPinScreen'
 import AnswerSecurityQuestionScreen from './Screens/AnswerSecurityQuestionScreen'
 import ResetConfirmScreen from './Screens/ResetConfirmScreen'
 import ColoringBookScreen from './Screens/ColoringBookScreen'
+import ColoringScreen from './Screens/ColoringScreen'
 import SelectPageToColorScreen from './Screens/SelectPageToColorScreen'
 import SelfCareQuizScreen from './Screens/SelfCareQuizScreen'
 import SelfCareQuizResultsScreen from './Screens/SelfCareQuizResultsScreen'
@@ -73,6 +74,7 @@ export const AppNavigation = StackNavigator({
     AnswerSecurityQuestionScreen: { screen: AnswerSecurityQuestionScreen },
     ResetConfirmScreen: { screen: ResetConfirmScreen },
     ColoringBookScreen: { screen: ColoringBookScreen },
+    ColoringScreen: { screen: ColoringScreen },
     SelectPageToColorScreen: { screen: SelectPageToColorScreen },
     SelfCareQuizScreen: { screen: SelfCareQuizScreen },
     SelfCareQuizResultsScreen: { screen: SelfCareQuizResultsScreen }

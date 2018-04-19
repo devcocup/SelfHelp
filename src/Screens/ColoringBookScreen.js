@@ -18,17 +18,20 @@ const BrowseJournalIcon = require('../Assets/Images/browse_journal.png')
 const { height, width } = Dimensions.get('window')
 const { Colors, FontSizes } = Constants
 
-goToScreen = (ScreenName, navigation) => {
+const goToScreen = (ScreenName, url, navigation) => {
     const { navigate } = navigation
-    navigate(ScreenName)
+    navigate(ScreenName, { url: url })
 }
 
 onColorNewpage = (navigation) => {
-    goToScreen('SelectPageToColorScreen', navigation)
+    const url = 'https://tester.csuw.net/cb/phone_new.html'
+    // goToScreen('SelectPageToColorScreen', navigation)
+    goToScreen('ColoringScreen', url, navigation)
 }
 
 onBrowseSavedPages = (navigation) => {
-    goToScreen('BrowseSavedPages', navigation)
+    const url = 'https://tester.csuw.net/cb/phone.html'
+    goToScreen('ColoringScreen', url, navigation)
 }
 
 const CardContainer = ({ navigation }) => {
