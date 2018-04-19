@@ -31,15 +31,16 @@ const FlowLine = ({ flowIndex }) => {
     )
 }
 
-const onResetClicked = () => {
-    console.log('reset button clicked')
+const onResetClicked = (navigation) => {
+    const { navigate } = navigation
+    navigate('CreateSecurityPinScreen')
 }
 
-const ResetButton = () => {
+const ResetButton = ({ navigation }) => {
     return (
         <View style={[styles.resetBtnArea, AppStyles.hEnd]}>
             <TouchableOpacity
-                onPress={() => onResetClicked}
+                onPress={() => onResetClicked(navigation)}
             >
                 <View style={[styles.resetBtn, AppStyles.center]}>
                     <Text style={styles.headerText}>Reset</Text>
@@ -63,14 +64,16 @@ const SecurityPinHeader = ({ headerType, flowIndex, navigation }) => {
                     <Text style={styles.headerText}>Cancel</Text>
                 </TouchableOpacity>
             </View>
-            <View style={styles.rightArea}>
+            <View style={[styles.rightArea, AppStyles.vCenter]}>
             {
                 headerType === 'FLOW' &&
                 <FlowLine flowIndex={flowIndex} />
             }
             {
                 headerType === 'RESET' &&
-                <ResetButton />
+                <ResetButton
+                    navigation={navigation}
+                />
             }
             </View>
         </View>
