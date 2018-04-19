@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import { NavigationActions } from 'react-navigation'
+import localStorage from 'react-native-sync-localstorage'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -20,6 +21,16 @@ const goToScreen = (ScreenName, navigation) => {
 const goBackScreen = (navigation) => {
     const { goBack } = navigation
     goBack()
+}
+
+const goJournal = (navigation) => {
+    const securityPin = localStorage.getItem('PIN')
+
+    if (securityPin === null || securityPin === undefined) {
+        goToScreen('CreateSecurityPinScreen', navigation)
+    } else {
+        goToScreen('EnterSecurityPinScreen', navigation)
+    }
 }
 
 const goHome = (navigation) => {
@@ -57,7 +68,7 @@ const Header = ({ type, navigation }) => {
             }
             <View style={[styles.checkArea, AppStyles.center]}>
                 <TouchableOpacity
-                    onPress={() => goToScreen('JournalScreen', navigation)}
+                    onPress={() => goJournal(navigation)}
                 >
                     <Image
                         source={CheckMarkIcon}
