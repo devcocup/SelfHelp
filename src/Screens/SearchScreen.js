@@ -36,7 +36,8 @@ const onPress = (cardTitle, navigation) => {
             goToScreen(ScreenName, '', navigation)
             break
         case 'Talk to Someone':
-            Communications.phonecall('18779955247', true)
+            ScreenName = 'TalkToSomeoneScreen'
+            goToScreen(ScreenName, '', navigation)
             break
         default:
             break
