@@ -40,6 +40,7 @@ import ColoringScreen from './Screens/ColoringScreen'
 import SelectPageToColorScreen from './Screens/SelectPageToColorScreen'
 import SelfCareQuizScreen from './Screens/SelfCareQuizScreen'
 import SelfCareQuizResultsScreen from './Screens/SelfCareQuizResultsScreen'
+import TalkToSomeoneScreen from './Screens/TalkToSomeoneScreen'
 
 
 export const AppNavigation = StackNavigator({
@@ -77,7 +78,8 @@ export const AppNavigation = StackNavigator({
     ColoringScreen: { screen: ColoringScreen },
     SelectPageToColorScreen: { screen: SelectPageToColorScreen },
     SelfCareQuizScreen: { screen: SelfCareQuizScreen },
-    SelfCareQuizResultsScreen: { screen: SelfCareQuizResultsScreen }
+    SelfCareQuizResultsScreen: { screen: SelfCareQuizResultsScreen },
+    TalkToSomeoneScreen: { screen: TalkToSomeoneScreen }
 },
 {
     headerMode: 'none',
