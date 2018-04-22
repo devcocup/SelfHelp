@@ -29,10 +29,7 @@ export default class SecurityPinFinishScreen extends Component {
         const { navigation } = this.props
         const pinNumber = localStorage.getItem('PIN')
         const descriptionHeaderText = 'Write it down in a safe place'
-        const descriptionContentText = 'If you can\'t remember your pin,\
-        then you can reset it by answering your security question. If you cannot\
-        remember your security question answer or your pin, then you have the option\
-        to reset your pin, but all your data on this app will be erased.'
+        const descriptionContentText = 'If you can\'t remember your pin, then you can reset it by answering your security question. If you cannot remember your security question answer or your pin, then you have the option to reset your pin, but all your data on this app will be erased.'
 
         return (
             <View style={AppStyles.mainContainer}>
