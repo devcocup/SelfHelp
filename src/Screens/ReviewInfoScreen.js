@@ -47,8 +47,8 @@ export default class ReviewInfoScreen extends Component {
 
     render() {
         const { navigation } = this.props
-        const questionText = 'What was the name of the street that you grew up on?'
-        const answerText = 'Tovito Dr'
+        const { params } = navigation.state
+        const { securityQuestion, securityAnswer } = params
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -65,11 +65,11 @@ export default class ReviewInfoScreen extends Component {
                     </View>
                     <View style={styles.questionArea}>
                         <Text style={styles.title}>Question:</Text>
-                        <Text style={styles.content}>{questionText}</Text>
+                        <Text style={styles.content}>{securityQuestion}</Text>
                     </View>
                     <View style={styles.answerArea}>
                         <Text style={styles.title}>Answer:</Text>
-                        <Text style={styles.content}>{answerText}</Text>
+                        <Text style={styles.content}>{securityAnswer}</Text>
                     </View>
                     <View style={[styles.buttonArea, AppStyles.hCenter]}>
                         <Button

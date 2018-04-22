@@ -20,13 +20,16 @@ export default class CreateSecurityQuestionScreen extends Component {
         super(props)
     
         this.state = {
+            securityQuestion: '',
             securityAnswer: ''
         }
     }
 
     goToScreen = (ScreenName, navigation) => {
+        const { securityQuestion, securityAnswer } = this.state
         const { navigate } = navigation
-        navigate(ScreenName)
+
+        navigate(ScreenName, { securityQuestion, securityAnswer })
     }
 
     onNextClicked = (navigation) => {
@@ -60,6 +63,7 @@ export default class CreateSecurityQuestionScreen extends Component {
                                 data={SecurityQuestions}
                                 baseColor='white'
                                 textColor={Colors.gray}
+                                onChangeText={(securityQuestion) => this.setState({ securityQuestion })}
                             />
                         </View>
                     </View>
