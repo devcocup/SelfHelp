@@ -1,6 +1,7 @@
 // React
 import React, { Component } from 'react'
 import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
+import localStorage from 'react-native-sync-localstorage'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -20,6 +21,7 @@ export default class ResetConfirmScreen extends Component {
     }
 
     onReset = (navigation) => {
+        localStorage.removeItem('PIN')
         this.goToScreen('CreateSecurityPinScreen', navigation)
     }
 
