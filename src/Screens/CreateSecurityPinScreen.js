@@ -14,6 +14,7 @@ import PinDots from '../Components/PinDots'
 
 const { height, width } = Dimensions.get('window')
 const { PanelLabels, Paddings, FontSizes, Colors, BorderRadii } = Constants
+let pin = ''
 
 
 export default class CreateSecurityPinScreen extends Component {
@@ -36,13 +37,15 @@ export default class CreateSecurityPinScreen extends Component {
         // if (this.state.completed === true) {
         //     this.goToScreen('ConfirmSecurityPinScreen', navigation)
         // }
-        this.setState({
-            pinNumber: this.state.pinNumber + label
-        })
-        if (this.state.dotIndex === 6) {
+        pin = pin + label
+
+        if (this.state.dotIndex === 5) {
             this.setState({
                 completed: true
             })
+            this.state = {
+                pinNumber: pin
+            }
             this.goToScreen('ConfirmSecurityPinScreen', navigation)
         }
         this.setState({
