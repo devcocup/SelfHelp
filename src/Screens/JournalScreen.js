@@ -17,9 +17,9 @@ const AnswerJournalIcon = require('../Assets/Images/answer_journal.png')
 const BrowseJournalIcon = require('../Assets/Images/browse_journal.png')
 
 const { height, width } = Dimensions.get('window')
+const { JournalPromptQuestions } = Constants
 
 const cardHeadTitle = 'Current Journal Prompt'
-const cardContentText = 'How are you feeling today?'
 
 const goToScreen = (ScreenName, headerTitle, headerContent, navigation) => {
     const { navigate } = navigation
@@ -35,6 +35,8 @@ const onBrowseJournal = (navigation) => {
 }
 
 const CardContainer = ({ navigation }) => {
+    const cardContentText = JournalPromptQuestions[getRandomInt(10)]
+
     return (
         <View style={AppStyles.hCenter}>
             <JournalHeadCard
@@ -55,8 +57,18 @@ const CardContainer = ({ navigation }) => {
     )
 }
 
+const getRandomInt = (max) => {
+    return Math.floor(Math.random() * Math.floor(max))
+}
+
 
 export default class JournalScreen extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {}
+    }
+
     render() {
         const { navigation } = this.props
     
