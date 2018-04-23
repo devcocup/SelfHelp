@@ -47,7 +47,7 @@ export default class ConfirmSecurityPinScreen extends Component {
         const { confirmingPin } = this.state
         let checkedPin =  confirmingPin ? (confirmingPin.substr(index, 1).includes(label) ? true : false) : false
 
-        if (this.state.dotIndex === 6) {
+        if (this.state.dotIndex === 5) {
             this.setState({
                 completed: true
             })
