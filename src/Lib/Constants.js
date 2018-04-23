@@ -457,6 +457,7 @@ const ExercisesLabels = [
                 icon: require('../Assets/Images/at_the_beach.png'),
                 subTopic: 'At the Beach',
                 description: 'Reduce, anxiety, tension, and stress with this guided audio exercies.',
+                subDescription: 'This exercise will help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch. This exercise may elp to reduce anxiety, tension, and stress. It can make your arms or legs feel \"heavy\". You may also feel half awake or like you are \"wandering off\" mentally. These aer natural reactions to relaxation. If you feel uncomfortable at any time during the exercise, just open your eyes and remind yourself that you are in control and you are safe. Please avoid doing this exercise while driving.',
                 bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg')
             },
             {
@@ -478,6 +479,12 @@ const ExercisesLabels = [
                 bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg')
             },
             {
+                icon: require('../Assets/Images/listening_to_soothing_sounds.png'),
+                subTopic: 'Listening to Soothing Sounds',
+                description: 'Feel more relaxed by listening to these soothing sounds.',
+                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
+            },
+            {
                 icon: require('../Assets/Images/my_safe_place.png'),
                 subTopic: 'My Safe Place',
                 description: 'This exercise will help you visualize being at the beach to reduce stress.',
@@ -495,12 +502,6 @@ const ExercisesLabels = [
                 description: 'Make a gallery of your favorite things that make you smile and happy.',
                 bgImage: require('../Assets/Images/things_that_make_me_smile_bg-min.jpg')
             }
-            // {
-            //     icon: require('../Assets/Images/listening_to_soothing_sounds.png'),
-            //     subTopic: 'Listening to Soothing Sounds',
-            //     description: 'Feel more relaxed by listening to these soothing sounds.',
-            //     bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
-            // },
         ]
     }
 ]
@@ -511,37 +512,51 @@ const SoothingSoundsLabels = [
             {
                 icon: require('../Assets/Images/crickets.png'),
                 subTopic: 'Crickets',
-                description: 'Listen to the sound of crickets chirping in the night.'   
+                description: 'Listen to the sound of crickets chirping in the night.',
+                music: 'crickets',
+                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
             },
             {
                 icon: require('../Assets/Images/forest.png'),
                 subTopic: 'Forest',
-                description: 'Embrace the nature filled sounds of the forest.'
+                description: 'Embrace the nature filled sounds of the forest.',
+                music: 'forest',
+                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
             },
             {
                 icon: require('../Assets/Images/harp.png'),
                 subTopic: 'Harp',
-                description: 'Listen to the beautiful sounds of a soothing harp.'
+                description: 'Listen to the beautiful sounds of a soothing harp.',
+                music: 'harp',
+                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
             },
             {
                 icon: require('../Assets/Images/ocean.png'),
                 subTopic: 'Ocean',
-                description: 'Listen to the sounds of the waves by the ocean.'
+                description: 'Listen to the sounds of the waves by the ocean.',
+                music: 'ocean',
+                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
             },
             {
                 icon: require('../Assets/Images/rain.png'),
                 subTopic: 'Rain',
-                description: 'Listen to the sounds of rain falling.'
+                description: 'Listen to the sounds of rain falling.',
+                music: 'rain',
+                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
             },
             {
                 icon: require('../Assets/Images/white_noise.png'),
                 subTopic: 'White Noise',
-                description: 'Listen to the soothing sound of white noise.'
+                description: 'Listen to the soothing sound of white noise.',
+                music: 'white_noise',
+                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
             },
             {
                 icon: require('../Assets/Images/wind_chimes.png'),
                 subTopic: 'Wind Chimes',
-                description: 'Listen to the rings of wind chimes moving in the wind.'
+                description: 'Listen to the rings of wind chimes moving in the wind.',
+                music: 'chimes',
+                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
             }
         ]
     }
