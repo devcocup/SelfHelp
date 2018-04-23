@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import Communications from 'react-native-communications'
+import Overlay from 'react-native-modal-overlay'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -11,6 +12,7 @@ import Constants from '../Lib/Constants'
 import Header from '../Components/Header'
 import HeadingContainer from '../Components/HeadingContainer'
 import TopicButton from '../Components/TopicButton'
+import ChatMenu from './ChatMenu'
 
 const SearchIcon = require('../Assets/Images/search_orange.png')
 
@@ -45,20 +47,15 @@ const callPhone = (phoneNumber) => {
     Communications.phonecall(phoneNumber, true)
 }
 
-const chat = (navigation) => {
-    const { navigate } = navigation
-    navigate('ChatScreen', { chatType: 'Group' })
-}
-
 const CardContainer = ({ navigation }) => {
     return (
         <View style={[styles.cardContainer, AppStyles.hCenter]}>
-            <PhoneCard
+            {/*<PhoneCard
                 name='Stephan Smith'
                 phoneNumber='480-238-1235'
                 bgColor={Colors.gray}
                 onPress={() => callPhone('480-238-1235')}
-            />
+            />*/}
             <TopicButton
                 text='Select from contacts'
             />
@@ -72,14 +69,65 @@ const CardContainer = ({ navigation }) => {
                 name='Chat with DoD Safe Helpline'
                 onPress={() => chat(navigation)}
             />
+            <Overlay visible={chatMenuVisible}
+                closeOnTouchOutside animationType="zoomIn"
+                containerStyle={{ backgroundColor: 'rgba(0,131,105,0.78)' }}
+                childrenWrapperStyle={{ backgroundColor: 'transparent' }}
+                animationDuration={500}
+            >
+                <ChatMenu
+                    onChat={this.onChat}
+                    onGroupChat={this.onGroupChat}
+                    onCancel={this.onCancel}
+                />
+            </Overlay>
         </View>
     )
 }
 
 
 export default class TalkToSomeoneScreen extends Component {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            chatMenuVisible: false
+        }
+    }
+
+    dismissModal() {
+        this.setState({
+            chatMenuVisible: false
+        })
+    }
+
+    onChat = () => {
+        const { navigate } = this.props.navigation
+        this.dismissModal()
+        navigate('ChatScreen', { chatType: 'OneOnOne' })
+    }
+
+    onGroupChat = () => {
+        const { navigate } = this.props.navigation
+        this.dismissModal()
+        navigate('ChatScreen', { chatType: 'Group' })
+    }
+
+    onCancel = () => {
+        this.dismissModal();
+    }
+
+    onChatMenuClicked = () => {
+        // const { navigate } = navigation
+        // navigate('ChatScreen', { chatType: 'Group' })
+        this.setState({
+            chatMenuVisible: true
+        })
+    }
+
     render() {
         const { navigation } = this.props
+        const { chatMenuVisible } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -92,9 +140,36 @@ export default class TalkToSomeoneScreen extends Component {
                         headingImage={SearchIcon}
                         headingText='Talk to Someone'
                     />
-                    <CardContainer
-                        navigation={navigation}
-                    />
+                    {/*<CardContainer
+                            navigation={navigation}
+                        />*/}
+                    <View style={[styles.cardContainer, AppStyles.hCenter]}>
+                        <TopicButton
+                            text='Select from contacts'
+                        />
+                        <PhoneCard
+                            name='Call the DoD Help Line'
+                            phoneNumber='877-995-5247'
+                            bgColor={Colors.lightGreen}
+                            onPress={() => callPhone('877-995-5247')}
+                        />
+                        <ChatCard
+                            name='Chat with DoD Safe Helpline'
+                            onPress={() => this.onChatMenuClicked()}
+                        />
+                        <Overlay visible={chatMenuVisible}
+                            closeOnTouchOutside animationType="zoomIn"
+                            containerStyle={{ backgroundColor: 'rgba(0,131,105,0.78)' }}
+                            childrenWrapperStyle={{ backgroundColor: 'transparent' }}
+                            animationDuration={500}
+                        >
+                            <ChatMenu
+                                onChat={this.onChat}
+                                onGroupChat={this.onGroupChat}
+                                onCancel={this.onCancel}
+                            />
+                        </Overlay>
+                    </View>
                 </ScrollView>
             </View>
         )
