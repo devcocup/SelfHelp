@@ -28,39 +28,40 @@ export default class ExerciseListenScreen extends Component {
     }
 
     componentWillUnmount() {
+        RNSoundPlayer.stop()
     }
 
-    controlSound() {
+    onPlayButtonClicked = () => {
         const { isPlaying } = this.state
+        const { navigation } = this.props
+        const { params } = navigation.state
+        const { music } = params.content
 
-        if (isPlaying) {
+        const musicFile = music ? music : 'test'
+
+        if (!isPlaying) {
             this.setState({
-                playButtonText: 'Pause'
+                playButtonText: 'Pause',
+                isPlaying: true
             })
 
             try {
-                RNSoundPlayer.playSoundFile('test', 'mp3')
+                RNSoundPlayer.playSoundFile(musicFile, 'mp3')
             } catch (e) {
                 console.log(`cannot play the sound file`, e);
             }
-        } else {
+       } else {
             this.setState({
-                playButtonText: 'Play'
+                playButtonText: 'Play',
+                isPlaying: false
             })
 
             try {
                 RNSoundPlayer.pause()
             } catch (e) {
-                console.log(`cannot play the sound file`, e);
+                console.log(`cannot pause the sound file`, e);
             }
         }
-    }
-
-    onPlayButtonClicked = () => {
-        this.setState({
-            isPlaying: !this.state.isPlaying
-        })
-        this.controlSound()
     }
 
 
@@ -69,11 +70,12 @@ export default class ExerciseListenScreen extends Component {
         const { navigation } = this.props
         const { playButtonText } = this.state
         const { params } = navigation.state
-        const { bgImage } = params
+        const { content } = params
+        const { bgImage } = content
 
         return (
             <ImageBackground
-                style={AppStyles.mainContainer}
+                style={[AppStyles.mainContainer, styles.container]}
                 source={bgImage}
             >
                 <Header
@@ -81,8 +83,8 @@ export default class ExerciseListenScreen extends Component {
                     navigation={navigation}
                 />
                 <View style={[{flex: 1}, AppStyles.vEnd]}>
-                    <View style={[styles.audioControl, AppStyles.hCenter]}>
-                        <TouchableOpacity onPress={onPlayButtonClicked}>
+                    <View style={[styles.audioControl, AppStyles.center]}>
+                        <TouchableOpacity onPress={() => onPlayButtonClicked()}>
                             <View style={[AppStyles.center, styles.buttonArea]}>
                                 <Text style={styles.playButtonText}>{playButtonText}</Text>
                             </View>
@@ -95,6 +97,11 @@ export default class ExerciseListenScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        width,
+        height
+    },
+
     audioControl: {
         height: height / 8,
         width,
@@ -107,7 +114,6 @@ const styles = StyleSheet.create({
     },
 
     buttonArea: {
-        paddingTop: Paddings.elementP
     },
 
     playButtonText: {
