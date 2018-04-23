@@ -11,12 +11,13 @@ import Header from '../Components/Header'
 import TopicButton from '../Components/TopicButton'
 import SingleCard from '../Components/SingleCard'
 
-const onCardSelected = (content) => {
-    console.log('content clicked')
+const onCardSelected = (content, navigation) => {
+    const { navigate } = navigation
+    navigate('ExerciseListenScreen', { content })
 }
 
 const CardContainer = ({ navigation }) => {
-    const subTopic = navigation.state.params.subTopic
+    const subTopic = navigation.state.params.content.subTopic
 
     const cardList = Constants.SoothingSoundsLabels.map((item, index) => {
         return (
@@ -31,7 +32,7 @@ const CardContainer = ({ navigation }) => {
                             <SingleCard
                                 key={cardIndex}
                                 cardContent={cardItem}
-                                onPress={() => onCardSelected((cardItem.subTopic, navigation))}
+                                onPress={() => onCardSelected(cardItem, navigation)}
                             />
                         )
                     })
