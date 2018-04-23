@@ -18,7 +18,7 @@ import LearnDetailScreen from './Screens/LearnDetailScreen'
 import PastPlansScreen from './Screens/PastPlansScreen'
 import WhatCanIDoScreen from './Screens/WhatCanIDoScreen'
 import QuizScenarioScreen from './Screens/QuizScenarioScreen'
-import AtTheBeachScreen from './Screens/AtTheBeachScreen'
+import ExerciseDetailScreen from './Screens/ExerciseDetailScreen'
 import ExerciseListenScreen from './Screens/ExerciseListenScreen'
 import SoothingSoundsScreen from './Screens/SoothingSoundsScreen'
 import JournalScreen from './Screens/JournalScreen'
@@ -57,7 +57,7 @@ export const AppNavigation = StackNavigator({
     ExercisesScreen: { screen: ExercisesScreen },
     WhatCanIDoScreen: { screen: WhatCanIDoScreen },
     QuizScenarioScreen: { screen: QuizScenarioScreen },
-    AtTheBeachScreen: { screen: AtTheBeachScreen },
+    ExerciseDetailScreen: { screen: ExerciseDetailScreen },
     ExerciseListenScreen: { screen: ExerciseListenScreen },
     SoothingSoundsScreen: { screen: SoothingSoundsScreen },
     JournalScreen: { screen: JournalScreen },
