@@ -14,19 +14,18 @@ const femaleIcon = require('../Assets/Images/female.png')
 
 const { height, width } = Dimensions.get('window')
 
-const NoteContainer = () => {
-    const { title, content } = Constants.AtTheBeachLabels
+const NoteContainer = ({ header, description }) => {
 
     return (
         <View style={styles.noteContainer}>
             <Text style={styles.titleText}>
-                {title}
+                {header}
             </Text>
             <View style={AppStyles.hCenter}>
                 <View style={styles.separateBar} />
             </View>
             <Text style={styles.contentText}>
-                {content}
+                {description}
             </Text>
         </View>
     )
@@ -44,8 +43,8 @@ const GenderBox = ({ imgSrc, onPress }) => {
 
 const goToScreen = (ScreenName, navigation) => {
     const { navigate, state } = navigation
-    const { bgImage } = state.params
-    navigate(ScreenName, { bgImage })
+    const { content } = state.params
+    navigate(ScreenName, { content })
 }
 
 const onMaleSelected = (navigation) => {
@@ -72,11 +71,13 @@ const GenderBoxContainer = ({ navigation }) => {
 }
 
 
-export default class AtTheBeachScreen extends Component {
+export default class ExerciseDetailScreen extends Component {
     render() {
         const { navigation } = this.props
         const { params } = navigation.state
-        const { bgImage } = params
+        const { content } = params
+        const headerText = content.subTopic ? content.subTopic : ''
+        const descriptionText = content.subDescription ? content.subDescription : ''
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -87,11 +88,14 @@ export default class AtTheBeachScreen extends Component {
                 <ScrollView>
                     <ImageBackground
                         style={styles.container}
-                        source={bgImage}
+                        source={content.bgImage}
                     >
                         <View style={{flex: 1}}>
                             <View style={[{ flex: .75 }, AppStyles.hCenter]}>
-                                <NoteContainer />
+                                <NoteContainer
+                                    header={headerText}
+                                    description={descriptionText}
+                                />
                             </View>
                             <View style={[{ flex: .25}, AppStyles.hCenter, AppStyles.vEnd]}>
                                 <GenderBoxContainer
