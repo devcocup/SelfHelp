@@ -14,12 +14,12 @@ import HomeButton from '../Components/HomeButton'
 import ChatMenu from './ChatMenu'
 import CallMenu from './CallMenu'
 
-const Search = require('../Assets/Images/ic_search_white_3x.png')
+const Search = require('../Assets/Images/search.png')
 const Logo = require('../Assets/Images/logo.png')
-const Phone = require('../Assets/Images/ic_call_white_3x.png')
+const Phone = require('../Assets/Images/phone.png')
 const Menu = require('../Assets/Images/menu.png')
-const Chat = require('../Assets/Images/ic_chat_white_3x.png')
-const Learn = require('../Assets/Images/ic_school_white_3x.png')
+const Chat = require('../Assets/Images/chat.png')
+const Learn = require('../Assets/Images/learn.png')
 const SelfCare = require('../Assets/Images/self_care.png')
 const Exercises = require('../Assets/Images/exercises.png')
 
