@@ -16,26 +16,24 @@ const ExercisesIcon = require('../Assets/Images/exercises_orange.png')
 
 const { height, width } = Dimensions.get('window')
 
-const goToScreen = (ScreenName, subTopic, bgImage, navigation) => {
+const goToScreen = (ScreenName, content, navigation) => {
     const { navigate } = navigation
-    navigate(ScreenName, { subTopic, bgImage })
+    navigate(ScreenName, { content })
 }
 
-const onCardSelected = (subTopic, bgImage, navigation) => {
+const onCardSelected = (content, navigation) => {
     let ScreenName = ''
 
-    switch (subTopic) {
-        case 'At the Beach':
-            ScreenName = 'AtTheBeachScreen'
-            break
+    switch (content.subTopic) {
         case 'Listening to Soothing Sounds':
             ScreenName = 'SoothingSoundsScreen'
             break
         default:
+            ScreenName = 'ExerciseDetailScreen'
             break
     }
 
-    goToScreen(ScreenName, subTopic, bgImage, navigation)
+    goToScreen(ScreenName, content, navigation)
 }
 
 const CardContainer = ({ navigation }) => {
@@ -51,7 +49,7 @@ const CardContainer = ({ navigation }) => {
                         <SingleCard
                             key={cardIndex}
                             cardContent={cardItem}
-                            onPress={() => onCardSelected(cardItem.subTopic, cardItem.bgImage, navigation)}
+                            onPress={() => onCardSelected(cardItem, navigation)}
                         />
                     )
                 })
