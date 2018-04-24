@@ -45,19 +45,19 @@ const styles = StyleSheet.create({
 
     details: {
         height: height / 7,
-        width: width - height / 7 - 20,
+        width: width - height / 7 - 30,
         paddingRight: 20,
     },
 
     headingTxt: {
-        color: "white",
-        fontWeight: "600",
+        color: 'white',
+        fontWeight: '600',
         fontSize: 14
     },
 
     labelTxt: {
-        color: "white",
-        fontWeight: "400",
+        color: 'white',
+        fontWeight: '400',
         fontSize: 12,
         marginTop: 3
     }
