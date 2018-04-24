@@ -35,9 +35,10 @@ export default class ExerciseListenScreen extends Component {
         const { isPlaying } = this.state
         const { navigation } = this.props
         const { params } = navigation.state
-        const { music } = params.content
+        const { content, gender } = params
+        const { music } = content
 
-        const musicFile = music ? music : 'test'
+        const musicFile = music ? (music + '_' + gender) : 'test'
 
         if (!isPlaying) {
             this.setState({

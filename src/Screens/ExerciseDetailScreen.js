@@ -41,18 +41,18 @@ const GenderBox = ({ imgSrc, onPress }) => {
     )
 }
 
-const goToScreen = (ScreenName, navigation) => {
+const goToScreen = (ScreenName, gender, navigation) => {
     const { navigate, state } = navigation
     const { content } = state.params
-    navigate(ScreenName, { content })
+    navigate(ScreenName, { content, gender })
 }
 
 const onMaleSelected = (navigation) => {
-    goToScreen('ExerciseListenScreen', navigation)
+    goToScreen('ExerciseListenScreen', 'male', navigation)
 }
 
 const onFemaleSelected = (navigation) => {
-    goToScreen('ExerciseListenScreen', navigation)
+    goToScreen('ExerciseListenScreen', 'female', navigation)
 }
 
 const GenderBoxContainer = ({ navigation }) => {
