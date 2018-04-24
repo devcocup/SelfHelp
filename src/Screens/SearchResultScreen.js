@@ -1,6 +1,7 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, ScrollView, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, ScrollView, Image, TouchableOpacity, ActivityIndicator, StyleSheet, Dimensions } from 'react-native'
+import Communications from 'react-native-communications'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -26,7 +27,8 @@ export default class SearchResultScreen extends Component {
         super(props)
     
         this.state = {
-            services: []
+            services: [],
+            fetched: false
         }
     }
 
@@ -43,7 +45,8 @@ export default class SearchResultScreen extends Component {
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({
-                    services: responseJson
+                    services: responseJson,
+                    fetched: true
                 })
             })
             .catch((error) => {
@@ -75,9 +78,13 @@ export default class SearchResultScreen extends Component {
         )
     }
 
+    callPhone = (phoneNumber) => {
+        Communications.phonecall(phoneNumber, true)
+    }
+
     render() {
         const { navigation } = this.props
-        const { services } = this.state
+        const { services, fetched } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -86,6 +93,12 @@ export default class SearchResultScreen extends Component {
                     navigation={navigation}
                 />
                 <ScrollView>
+                {
+                    !fetched &&
+                    <View style={[styles.loading, AppStyles.center]}>
+                        <ActivityIndicator size='large' color='white' />
+                    </View>
+                }
                 {
                     services.map((cardItem, cardIndex) => {
                         return (
@@ -103,6 +116,7 @@ export default class SearchResultScreen extends Component {
                                     <View style={[styles.panelItemButton, AppStyles.center]}>
                                         <TouchableOpacity
                                             style={[styles.callButton, AppStyles.center]}
+                                            onPress={() => this.callPhone(cardItem.PHONE1)}
                                         >
                                             <Image
                                                 source={CallIcon}
@@ -153,6 +167,10 @@ export default class SearchResultScreen extends Component {
 const styles = StyleSheet.create({
     cardContainer: {
         width
+    },
+
+    loading: {
+        height: height - 100
     },
 
     cardItem: {
