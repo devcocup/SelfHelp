@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, ImageBackground, ScrollView, TouchableOpacity, StyleSheet, Dimensions, NativeModules } from 'react-native'
+import { View, Text, Image, ImageBackground, ScrollView, TouchableOpacity, StyleSheet, Dimensions, NativeModules } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -10,7 +10,7 @@ import Constants from '../Lib/Constants'
 import Header from '../Components/Header'
 
 const { height, width } = Dimensions.get('window')
-const { FontSizes, Colors, Paddings } = Constants
+const { FontSizes, Colors, Paddings, BorderRadii } = Constants
 const { RNSoundPlayer } = NativeModules
 
 
@@ -20,7 +20,8 @@ export default class ExerciseListenScreen extends Component {
     
         this.state = {
             isPlaying: false,
-            playButtonText: 'Play'
+            playButtonText: 'Play',
+            playButtonImage: require('../Assets/Images/audio_play.png')
         }
     }
 
@@ -38,12 +39,13 @@ export default class ExerciseListenScreen extends Component {
         const { content, gender } = params
         const { music } = content
 
-        const musicFile = music ? (music + '_' + gender) : 'test'
+        const musicFile = music ? (music + (gender ? '_' + gender : '')) : 'test'
 
         if (!isPlaying) {
             this.setState({
                 playButtonText: 'Pause',
-                isPlaying: true
+                isPlaying: true,
+                playButtonImage: require('../Assets/Images/audio_pause.png')
             })
 
             try {
@@ -54,7 +56,8 @@ export default class ExerciseListenScreen extends Component {
        } else {
             this.setState({
                 playButtonText: 'Play',
-                isPlaying: false
+                isPlaying: false,
+                playButtonImage: require('../Assets/Images/audio_play.png')
             })
 
             try {
@@ -69,7 +72,7 @@ export default class ExerciseListenScreen extends Component {
     render() {
         const { onPlayButtonClicked } = this
         const { navigation } = this.props
-        const { playButtonText } = this.state
+        const { playButtonText, playButtonImage } = this.state
         const { params } = navigation.state
         const { content } = params
         const { bgImage } = content
@@ -87,7 +90,10 @@ export default class ExerciseListenScreen extends Component {
                     <View style={[styles.audioControl, AppStyles.center]}>
                         <TouchableOpacity onPress={() => onPlayButtonClicked()}>
                             <View style={[AppStyles.center, styles.buttonArea]}>
-                                <Text style={styles.playButtonText}>{playButtonText}</Text>
+                                <Image
+                                    style={styles.playButton}
+                                    source={playButtonImage}
+                                />
                             </View>
                         </TouchableOpacity>
                     </View>
@@ -115,6 +121,14 @@ const styles = StyleSheet.create({
     },
 
     buttonArea: {
+        backgroundColor: Colors.lightGreen,
+        padding: Paddings.elementP,
+        borderRadius: BorderRadii.buttonBR
+    },
+
+    playButton: {
+        width: 15,
+        height: 15
     },
 
     playButtonText: {
