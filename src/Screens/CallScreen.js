@@ -49,7 +49,9 @@ export default class CallScreen extends Component {
     
         this.state = {
             buttonActivated: false,
-            statusText: 'Initializing'
+            statusText: 'Initializing',
+            isSpeakerDisabled: false,
+            speakerText: 'Enable Speaker Phone'
         }
     }
 
@@ -67,6 +69,7 @@ export default class CallScreen extends Component {
                     buttonActivated: true,
                     statusText: 'Initialized'
                 })
+                TwilioVoice.connect({To: '+19542407338'})
             }
         } catch (err) {
             console.log(err)
@@ -88,24 +91,36 @@ export default class CallScreen extends Component {
     }
 
     enableSpeaker = () => {
-        const { buttonActivated } = this.state
+        // const { buttonActivated } = this.state
 
-        if (buttonActivated) {
+        // if (buttonActivated) {
+        //     this.setState({
+        //         statusText: 'Connecting'
+        //     })
+        // }
+        if (this.state.isSpeakerDisabled) {
             this.setState({
-                statusText: 'Connecting'
+                isSpeakerDisabled: false,
+                speakerText: 'Enable Speaker Phone'
+            })
+        } else {
+            this.setState({
+                isSpeakerDisabled: true,
+                speakerText: 'Disable Speaker Phone'
             })
         }
-        TwilioVoice.connect({To: '+18779955247'})
     }
 
-    hangUpCall = () => {
+    hangUpCall = (navigation) => {
+        const { navigate } = navigation
         TwilioVoice.disconnect()
+        navigate('MainScreen')
     }
 
     render() {
         const { enableSpeaker, hangUpCall } = this
         const { navigation } = this.props
-        const { buttonActivated, statusText } = this.state
+        const { buttonActivated, statusText, speakerText } = this.state
 
         return(
            <View style={AppStyles.mainContainer}>
@@ -123,14 +138,14 @@ export default class CallScreen extends Component {
                     >
                         <CardWithImage
                             cardImage={SpeakerIcon}
-                            text='Enable Speaker Phone'
+                            text={speakerText}
                             onPress={enableSpeaker}
                         />
                         <CardWithImage
                             cardImage={PhoneIcon}
                             text='Hang Up Call'
                             bgColor={Colors.red}
-                            onPress={hangUpCall}
+                            onPress={() => hangUpCall(navigation)}
                         />
                     </View>                    
                 </View>

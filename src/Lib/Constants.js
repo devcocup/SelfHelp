@@ -522,49 +522,49 @@ const SoothingSoundsLabels = [
                 subTopic: 'Crickets',
                 description: 'Listen to the sound of crickets chirping in the night.',
                 music: 'crickets',
-                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
+                bgImage: require('../Assets/Images/sound_crickets.jpg')
             },
             {
                 icon: require('../Assets/Images/forest.png'),
                 subTopic: 'Forest',
                 description: 'Embrace the nature filled sounds of the forest.',
                 music: 'forest',
-                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
+                bgImage: require('../Assets/Images/sound_forest.jpg')
             },
             {
                 icon: require('../Assets/Images/harp.png'),
                 subTopic: 'Harp',
                 description: 'Listen to the beautiful sounds of a soothing harp.',
                 music: 'harp',
-                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
+                bgImage: require('../Assets/Images/sound_harp.jpg')
             },
             {
                 icon: require('../Assets/Images/ocean.png'),
                 subTopic: 'Ocean',
                 description: 'Listen to the sounds of the waves by the ocean.',
                 music: 'ocean',
-                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
+                bgImage: require('../Assets/Images/sound_ocean.jpg')
             },
             {
                 icon: require('../Assets/Images/rain.png'),
                 subTopic: 'Rain',
                 description: 'Listen to the sounds of rain falling.',
                 music: 'rain',
-                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
+                bgImage: require('../Assets/Images/sound_rain.jpg')
             },
             {
                 icon: require('../Assets/Images/white_noise.png'),
                 subTopic: 'White Noise',
                 description: 'Listen to the soothing sound of white noise.',
                 music: 'white_noise',
-                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
+                bgImage: require('../Assets/Images/white_noise.jpg')
             },
             {
                 icon: require('../Assets/Images/wind_chimes.png'),
                 subTopic: 'Wind Chimes',
                 description: 'Listen to the rings of wind chimes moving in the wind.',
                 music: 'chimes',
-                bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg')
+                bgImage: require('../Assets/Images/sound_windchimes.jpg')
             }
         ]
     }
