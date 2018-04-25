@@ -113,6 +113,7 @@ const styles = StyleSheet.create({
     cardContainer: {
         flex: 1,
         paddingHorizontal: 10,
+        paddingBottom: Constants.Paddings.containerP,
         backgroundColor: "#208167"
     },
 
