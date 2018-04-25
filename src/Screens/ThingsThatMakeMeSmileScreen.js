@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, ScrollView, Text, Dimensions, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import Overlay from 'react-native-modal-overlay'
+import ImagePicker from 'react-native-image-picker'
 
 // Gloabal Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -57,8 +58,36 @@ export default class ThingsThatMakeMeSmileScreen extends Component {
         })   
     }
 
+    selectPhoto = () => {
+        const options = {
+            quality: 1.0,
+            maxWidth: 500,
+            maxHeight: 500,
+            storageOptions: {
+                skipBackup: true
+            }
+        }
+
+        ImagePicker.showImagePicker(options, (response) => {
+            if (response.didCancel) {
+                console.log('canceled')
+            } else if (response.error) {
+                console.log('ImagePicker Error: ', response.error)
+            } else if (response.customButton) {
+                console.log('tapped custom button: ', response.customButton)
+            } else {
+                const source = { uri: response.uri }
+                let tempImages = this.state.imageItems
+                tempImages.push(source)
+                this.setState({
+                    imageItems: tempImages
+                })
+            }
+        })
+    }
+
     render() {
-        const { onImageItemClicked, onDeleteClicked, onCancelClicked } = this 
+        const { onImageItemClicked, onDeleteClicked, onCancelClicked, selectPhoto } = this 
         const { navigation } = this.props
         const { imageItems, modalVisible } = this.state
         const { params } = navigation.state
@@ -90,7 +119,9 @@ export default class ThingsThatMakeMeSmileScreen extends Component {
                         })
                     }
                     {
-                        <TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={selectPhoto}
+                        >
                             <View style={[styles.imageItem, AppStyles.center]}>
                                 <Text style={styles.plusSign}>+</Text>                                
                             </View>
