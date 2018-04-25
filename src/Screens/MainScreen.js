@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View,ScrollView,Text, Dimensions, Image, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, ScrollView, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native'
 import Overlay from 'react-native-modal-overlay'
 import Communications from 'react-native-communications'
 
@@ -7,7 +7,7 @@ import Communications from 'react-native-communications'
 import AppStyles from '../Lib/AppStyles'
 import Constants from '../Lib/Constants'
 
-//Assets
+// Assets
 import Header from '../Components/Header'
 import HeaderStrip from '../Components/HeaderStrip'
 import HomeButton from '../Components/HomeButton'
@@ -23,7 +23,7 @@ const Learn = require('../Assets/Images/learn.png')
 const SelfCare = require('../Assets/Images/self_care.png')
 const Exercises = require('../Assets/Images/exercises.png')
 
-const { height,width } = Dimensions.get('window')
+const { height, width } = Dimensions.get('window')
 
 
 export default class MainScreen extends Component {
