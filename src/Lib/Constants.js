@@ -477,7 +477,7 @@ const ExercisesLabels = [
             },
             {
                 icon: require('../Assets/Images/guided_muscle_relaxation.png'),
-                subTopic: ' Guided Muscle Relaxation',
+                subTopic: 'Guided Muscle Relaxation',
                 description: 'Reduce tension with this audio guided muscle relaxationexercise.',
                 bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg'),
                 music: 'guided_muscle_relaxation'

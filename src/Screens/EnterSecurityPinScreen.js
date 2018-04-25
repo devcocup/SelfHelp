@@ -41,7 +41,7 @@ export default class CreateSecurityPinScreen extends Component {
             this.setState({
                 completed: true
             })
-            this.goToScreen('AnswerSecurityQuestionScreen', navigation)
+            this.goToScreen('JournalScreen', navigation)
         }
 
         if (checkedPin) {
