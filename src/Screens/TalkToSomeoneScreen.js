@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import Communications from 'react-native-communications'
 import Overlay from 'react-native-modal-overlay'
+import Contacts from 'react-native-contacts'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -11,7 +12,8 @@ import Constants from '../Lib/Constants'
 // Assets
 import Header from '../Components/Header'
 import HeadingContainer from '../Components/HeadingContainer'
-import TopicButton from '../Components/TopicButton'
+// import TopicButton from '../Components/TopicButton'
+import Button from '../Components/Button'
 import ChatMenu from './ChatMenu'
 
 const SearchIcon = require('../Assets/Images/search_orange.png')
@@ -47,57 +49,25 @@ const callPhone = (phoneNumber) => {
     Communications.phonecall(phoneNumber, true)
 }
 
-const CardContainer = ({ navigation }) => {
-    return (
-        <View style={[styles.cardContainer, AppStyles.hCenter]}>
-            {/*<PhoneCard
-                name='Stephan Smith'
-                phoneNumber='480-238-1235'
-                bgColor={Colors.gray}
-                onPress={() => callPhone('480-238-1235')}
-            />*/}
-            <TopicButton
-                text='Select from contacts'
-            />
-            <PhoneCard
-                name='Call the DoD Help Line'
-                phoneNumber='877-995-5247'
-                bgColor={Colors.lightGreen}
-                onPress={() => callPhone('877-995-5247')}
-            />
-            <ChatCard
-                name='Chat with DoD Safe Helpline'
-                onPress={() => chat(navigation)}
-            />
-            <Overlay visible={chatMenuVisible}
-                closeOnTouchOutside animationType="zoomIn"
-                containerStyle={{ backgroundColor: 'rgba(0,131,105,0.78)' }}
-                childrenWrapperStyle={{ backgroundColor: 'transparent' }}
-                animationDuration={500}
-            >
-                <ChatMenu
-                    onChat={this.onChat}
-                    onGroupChat={this.onGroupChat}
-                    onCancel={this.onCancel}
-                />
-            </Overlay>
-        </View>
-    )
-}
-
 
 export default class TalkToSomeoneScreen extends Component {
     constructor(props) {
         super(props);
     
         this.state = {
-            chatMenuVisible: false
+            chatMenuVisible: false,
+            contactMenuVisible: false,
+            contacts: [],
+            isContactSelected: false,
+            selectedContactName: '',
+            selectedContactNumber: ''
         }
     }
 
     dismissModal() {
         this.setState({
-            chatMenuVisible: false
+            chatMenuVisible: false,
+            contactMenuVisible: false
         })
     }
 
@@ -114,7 +84,7 @@ export default class TalkToSomeoneScreen extends Component {
     }
 
     onCancel = () => {
-        this.dismissModal();
+        this.dismissModal()
     }
 
     onChatMenuClicked = () => {
@@ -125,9 +95,31 @@ export default class TalkToSomeoneScreen extends Component {
         })
     }
 
+    selectFromContacts = () => {
+        Contacts.getAll((err, contacts) => {
+            if (err) throw err
+            this.setState({
+                contacts: contacts
+            })
+        })
+        this.setState({
+            contactMenuVisible: true
+        })
+    }
+
+    onContactItemClicked = (firstname, lastname, number) => {
+        this.setState({
+            selectedContactName: firstname + ' ' + lastname,
+            selectedContactNumber: number,
+            isContactSelected: true
+        })
+        this.dismissModal()
+    }
+
     render() {
+        const { selectFromContacts, onContactItemClicked } = this
         const { navigation } = this.props
-        const { chatMenuVisible } = this.state
+        const { chatMenuVisible, contactMenuVisible, contacts, isContactSelected, selectedContactName, selectedContactNumber } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -140,12 +132,20 @@ export default class TalkToSomeoneScreen extends Component {
                         headingImage={SearchIcon}
                         headingText='Talk to Someone'
                     />
-                    {/*<CardContainer
-                            navigation={navigation}
-                        />*/}
                     <View style={[styles.cardContainer, AppStyles.hCenter]}>
-                        <TopicButton
-                            text='Select from contacts'
+                        {
+                            isContactSelected &&
+                            <PhoneCard
+                                name={selectedContactName}
+                                phoneNumber={selectedContactNumber}
+                                bgColor={Colors.gray}
+                                onPress={() => callPhone(selectedContactNumber)}
+                            />
+                        }
+                        <Button
+                            label='Select from contacts'
+                            bgColor={Colors.orange}
+                            onPress={selectFromContacts}
                         />
                         <PhoneCard
                             name='Call the DoD Help Line'
@@ -169,6 +169,35 @@ export default class TalkToSomeoneScreen extends Component {
                                 onCancel={this.onCancel}
                             />
                         </Overlay>
+                        <Overlay visible={contactMenuVisible}
+                            closeOnTouchOutside animationType="zoomIn"
+                            containerStyle={{ backgroundColor: 'rgba(0,131,105,0.78)' }}
+                            childrenWrapperStyle={{ backgroundColor: 'transparent' }}
+                            animationDuration={500}
+                        >
+                            <ScrollView>
+                                {
+                                    contacts.map((item, index) => {
+                                        return (
+                                            <TouchableOpacity
+                                                key={index}
+                                                style={[styles.contactItem, AppStyles.hCenter]}
+                                                onPress={() => onContactItemClicked(item.givenName, item.familyName, (item.phoneNumbers[0] ? item.phoneNumbers[0].number : ''))}
+                                            >
+                                            {
+                                                item &&
+                                                <Text style={styles.contactName}>{item.givenName} {item.familyName}</Text>
+                                            }
+                                            {
+                                                item &&
+                                                <Text style={styles.contactNumber}>{item.phoneNumbers ? (item.phoneNumbers[0] ? item.phoneNumbers[0].number : '') : ''}</Text>
+                                            }
+                                            </TouchableOpacity>
+                                        )
+                                    })
+                                }
+                            </ScrollView>
+                        </Overlay>
                     </View>
                 </ScrollView>
             </View>
@@ -178,14 +207,14 @@ export default class TalkToSomeoneScreen extends Component {
 
 const styles = StyleSheet.create({
     cardContainer: {
-        paddingHorizontal: Paddings.containerP
+        padding: Paddings.containerP
     },
 
     phoneCard: {
         width: width - 40,
         padding: Paddings.containerP,
         borderRadius: BorderRadii.boxBR,
-        marginTop: Margins.containerM
+        marginBottom: Margins.elementM
     },
 
     nameText: {
@@ -211,6 +240,23 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.lightGreen,
         padding: Paddings.containerP,
         borderRadius: BorderRadii.boxBR,
-        marginTop: Margins.containerM
+        marginTop: Margins.elementM
+    },
+
+    contactItem: {
+        width: width * 2 / 3,
+        backgroundColor: Colors.darkGreen,
+        padding: 5
+    },
+
+    contactName: {
+        color: 'white',
+        fontSize: FontSizes.topicFS,
+        fontWeight: '600'
+    },
+
+    contactNumber: {
+        color: 'white',
+        fontSize: FontSizes.contentFS
     }
 })
