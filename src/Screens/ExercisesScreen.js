@@ -31,6 +31,9 @@ const onCardSelected = (content, navigation) => {
         case 'People I Can Call':
             ScreenName = 'TalkToSomeoneScreen'
             break
+        case 'Things that make me smile':
+            ScreenName = 'ThingsThatMakeMeSmileScreen'
+            break
         default:
             ScreenName = 'ExerciseDetailScreen'
             break
