@@ -12,6 +12,7 @@ const { height,width } = Dimensions.get('window')
 
 const MenuIcon = require('../Assets/Images/nav_menu.png')
 const CheckMarkIcon = require('../Assets/Images/pencil.png')
+const DeleteIcon = require('../Assets/Images/delete.png')
 
 const goToScreen = (ScreenName, navigation) => {
     const { navigate } = navigation
@@ -44,7 +45,7 @@ const goHome = (navigation) => {
 }
 
 
-const Header = ({ type, navigation }) => {
+const Header = ({ type, onDelete, navigation }) => {
     const headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
 
     return (
@@ -57,7 +58,19 @@ const Header = ({ type, navigation }) => {
                             <Text style={styles.textStyle}>{headerText}</Text>
                         </TouchableOpacity>
                     </View>
-                    <View style={styles.restArea}></View>
+                    <View style={[styles.restArea, AppStyles.center]}>
+                        {
+                            onDelete &&
+                            <TouchableOpacity
+                                onPress={onDelete}
+                            >
+                                <Image
+                                    source={DeleteIcon}
+                                    style={styles.delteIcon}
+                                />
+                            </TouchableOpacity>
+                        }
+                    </View>
                 </View>
             }
             {
@@ -117,6 +130,11 @@ const styles = StyleSheet.create({
 
     restArea: {
         flex: .5
+    },
+
+    delteIcon: {
+        width: 35,
+        height: 35
     },
 
     checkArea: {
