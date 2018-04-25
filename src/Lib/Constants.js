@@ -880,6 +880,13 @@ const QuizResultsLabels = [
     }
 ]
 
+const ThingsThatMakeMeSmileImages = [
+    require('../Assets/Images/at_the_beach_bg-min.jpg'),
+    require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
+    require('../Assets/Images/guided_breathing_bg-min.jpg'),
+    require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg')
+]
+
 const Constants = {
     Colors,
     FontSizes,
@@ -901,7 +908,8 @@ const Constants = {
     PastPlansLabels,
     QuizResultsLabels,
     PlanQuestions,
-    JournalPromptQuestions
+    JournalPromptQuestions,
+    ThingsThatMakeMeSmileImages
 }
 
 export default Constants

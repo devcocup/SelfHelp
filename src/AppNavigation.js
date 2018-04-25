@@ -41,6 +41,8 @@ import SelectPageToColorScreen from './Screens/SelectPageToColorScreen'
 import SelfCareQuizScreen from './Screens/SelfCareQuizScreen'
 import SelfCareQuizResultsScreen from './Screens/SelfCareQuizResultsScreen'
 import TalkToSomeoneScreen from './Screens/TalkToSomeoneScreen'
+import ThingsThatMakeMeSmileScreen from './Screens/ThingsThatMakeMeSmileScreen'
+import ImageViewScreen from './Screens/ImageViewScreen'
 
 
 export const AppNavigation = StackNavigator({
@@ -79,7 +81,9 @@ export const AppNavigation = StackNavigator({
     SelectPageToColorScreen: { screen: SelectPageToColorScreen },
     SelfCareQuizScreen: { screen: SelfCareQuizScreen },
     SelfCareQuizResultsScreen: { screen: SelfCareQuizResultsScreen },
-    TalkToSomeoneScreen: { screen: TalkToSomeoneScreen }
+    TalkToSomeoneScreen: { screen: TalkToSomeoneScreen },
+    ThingsThatMakeMeSmileScreen: { screen: ThingsThatMakeMeSmileScreen },
+    ImageViewScreen: { screen: ImageViewScreen }
 },
 {
     headerMode: 'none',
