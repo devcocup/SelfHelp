@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     },
 
     subContentBox: {
-        flexDirection: 'row',
+        flexDirection: 'column',
         width: width - 40,
         backgroundColor: 'white',
         borderRadius: BorderRadii.boxBR,
