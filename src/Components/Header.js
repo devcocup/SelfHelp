@@ -11,7 +11,7 @@ import Constants from '../Lib/Constants'
 const { height,width } = Dimensions.get('window')
 
 const MenuIcon = require('../Assets/Images/nav_menu.png')
-const CheckMarkIcon = require('../Assets/Images/checkmark.png')
+const CheckMarkIcon = require('../Assets/Images/pencil.png')
 
 const goToScreen = (ScreenName, navigation) => {
     const { navigate } = navigation
