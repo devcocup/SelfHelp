@@ -32,17 +32,18 @@ const Button = ({ label, bgColor, onPress }) => {
 
 
 export default class ReviewInfoScreen extends Component {
-    goToScreen = (ScreenName, navigation) => {
+    goToScreen = (ScreenName, params, navigation) => {
         const { navigate } = navigation
-        navigate(ScreenName)
+        navigate(ScreenName, params)
     }
 
     onBackClicked = (navigation) => {
-        this.goToScreen('CreateSecurityQuestionScreen', navigation)
+        this.goToScreen('CreateSecurityQuestionScreen', {}, navigation)
     }
 
     onCorrectClicked = (navigation) => {
-        this.goToScreen('SecurityPinFinishScreen', navigation)
+        const { params } = navigation.state
+        this.goToScreen('SecurityPinFinishScreen', params, navigation)
     }
 
     render() {
