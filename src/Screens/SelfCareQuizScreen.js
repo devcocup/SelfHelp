@@ -11,24 +11,10 @@ import Constants from '../Lib/Constants'
 import Header from '../Components/Header'
 
 const { height, width } = Dimensions.get('window')
-const { Margins, Paddings, FontSizes, Colors, BorderRadii } = Constants
+const { SelfCareQuizLabels, Margins, Paddings, FontSizes, Colors, BorderRadii } = Constants
 
 const quizTitle = 'Question 1'
 const quizSubTitle = 'How often do you feel sad?'
-
-const QuizHeadingContainer = () => {
-    return (
-        <View style={[styles.headingContainer, AppStyles.center]}>
-            <Text style={styles.titleText}>
-                {quizTitle}
-            </Text>
-            <View style={styles.separateBar}></View>
-            <Text style={styles.subTitleText}>
-                {quizSubTitle}
-            </Text>
-        </View>
-    )
-}
 
 const Button = ({ text, onPress }) => {
     return (
@@ -48,19 +34,26 @@ export default class SelfCareQuizScreen extends Component {
         super(props)
     
         this.state = {
-            scoreValue: 0
+            scoreValues: [],
+            quizIndex: 1,
+            titleText: quizTitle,
+            subTitleText: quizSubTitle
         }
     }
 
-    onSliderChange(value) {
+    onSliderChange(value, index) {
+        const scores = this.state.scoreValues
+        tempScore = Math.floor(value)
+        scores[index] = tempScore
+
         this.setState({
-            scoreValue: Math.floor(value)
+            scoreValues: scores
         })
     }
 
-    goToScreen = (ScreenName, navigation) => {
+    goToScreen = (ScreenName, scoreValues, navigation) => {
         const { navigate } = navigation
-        navigate(ScreenName)
+        navigate(ScreenName, {scoreValues})
     }
 
     onSkip = (navigation) => {
@@ -68,11 +61,19 @@ export default class SelfCareQuizScreen extends Component {
     }
 
     onContinue = (navigation) => {
-        this.goToScreen('SelfCareQuizResultsScreen', navigation)
+        if (this.state.quizIndex >= 6) {
+            this.goToScreen('SelfCareQuizResultsScreen', this.state.scoreValues, navigation)
+        } else {
+            this.setState({
+                quizIndex: this.state.quizIndex + 1
+            })
+        }
     }
 
     render() {
+        const { onContinue, onSkip } = this
         const { navigation } = this.props
+        const { quizIndex, scoreValues } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -82,18 +83,37 @@ export default class SelfCareQuizScreen extends Component {
                 />
                 <ScrollView>
                     <View style={AppStyles.hCenter}>
-                        <QuizHeadingContainer />
+                    {
+                        SelfCareQuizLabels.map((item, index) => {
+                            return (
+                                <View key={index}>
+                                {
+                                    (index + 1) === quizIndex &&
+                                    <View style={[styles.headingContainer, AppStyles.center]}>
+                                        <Text style={styles.titleText}>
+                                            Question {quizIndex}
+                                        </Text>
+                                        <View style={styles.separateBar}></View>
+                                        <Text style={styles.subTitleText}>
+                                            {item}
+                                        </Text>
+                                    </View>
+                                }
+                                </View>
+                            )
+                        })
+                    }
                         <View style={[styles.scoreArea, AppStyles.center]}>
-                            <Text style={styles.scoreText}>{this.state.scoreValue}</Text>
+                            <Text style={styles.scoreText}>{scoreValues ? scoreValues[quizIndex - 1] : 0}</Text>
                         </View>
                         <View style={styles.sliderArea}>
                             <Slider
-                                value={this.state.scoreValue}
+                                value={scoreValues ? scoreValues[quizIndex - 1] : 0}
                                 maximumValue={5}
                                 trackStyle={styles.trackStyle}
                                 minimumTrackTintColor={Colors.orange}
                                 thumbStyle={styles.thumbStyle}
-                                onValueChange={(value) => this.onSliderChange(value)}
+                                onValueChange={(value) => this.onSliderChange(value, quizIndex - 1)}
                             />
                             <View style={styles.statusTextArea}>
                                 <Text style={styles.statusText}>Never</Text>
@@ -122,7 +142,8 @@ const styles = StyleSheet.create({
     headingContainer: {
         height: height / 4,
         width,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        paddingHorizontal: Paddings.containerP
     },
 
     titleText: {

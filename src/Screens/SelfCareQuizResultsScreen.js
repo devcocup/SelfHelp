@@ -48,6 +48,12 @@ const StatusCard = ({ status, frequency, onPress }) => {
 
 
 export default class SelfCareQuizResultScreen extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {}
+    }
+
     callPhone = (navigation) => {
         const { navigate } = navigation
         navigate('TalkToSomeoneScreen')
@@ -61,6 +67,8 @@ export default class SelfCareQuizResultScreen extends Component {
     render() {
         const { callPhone } = this 
         const { navigation } = this.props
+        const { params } = navigation.state
+        const { scoreValues } = params
         const quizTitle = 'Results'
         const quizSubTitle = ' Click buttons below to see suggestions for exercises that may help with those issues.'
 
@@ -79,11 +87,18 @@ export default class SelfCareQuizResultScreen extends Component {
                     <View style={styles.cardArea}>
                     {
                         QuizResultsLabels.map((item, index) => {
+                            let frequencyText = 'Never'
+                            if (scoreValues[index] > 0 && scoreValues[index] <= 4) {
+                                frequencyText = 'Sometimes'
+                            } else if (scoreValues[index] === 5) {
+                                frequencyText = 'Always'
+                            }
+
                             return (
                                 <StatusCard
                                     key={index}
                                     status={item.status}
-                                    frequency={item.frequency}
+                                    frequency={frequencyText}
                                     onPress={() => this.onCardClicked(navigation)}
                                 />
                             )
