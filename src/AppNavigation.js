@@ -43,6 +43,7 @@ import SelfCareQuizResultsScreen from './Screens/SelfCareQuizResultsScreen'
 import TalkToSomeoneScreen from './Screens/TalkToSomeoneScreen'
 import ThingsThatMakeMeSmileScreen from './Screens/ThingsThatMakeMeSmileScreen'
 import ImageViewScreen from './Screens/ImageViewScreen'
+import SelfCareSuggestionScreen from './Screens/SelfCareSuggestionScreen'
 
 
 export const AppNavigation = StackNavigator({
@@ -83,7 +84,8 @@ export const AppNavigation = StackNavigator({
     SelfCareQuizResultsScreen: { screen: SelfCareQuizResultsScreen },
     TalkToSomeoneScreen: { screen: TalkToSomeoneScreen },
     ThingsThatMakeMeSmileScreen: { screen: ThingsThatMakeMeSmileScreen },
-    ImageViewScreen: { screen: ImageViewScreen }
+    ImageViewScreen: { screen: ImageViewScreen },
+    SelfCareSuggestionScreen: { screen: SelfCareSuggestionScreen }
 },
 {
     headerMode: 'none',
