@@ -26,7 +26,7 @@ goToScreen = (ScreenName, navigation) => {
 }
 
 onCreateNew = (navigation) => {
-    goToScreen('ComingSoonScreen', navigation)
+    goToScreen('SelfCareQuizScreen', navigation)
 }
 
 onBrowse = (navigation) => {
