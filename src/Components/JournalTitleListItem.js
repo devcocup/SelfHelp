@@ -7,6 +7,7 @@ import Constants from '../Lib/Constants'
 import AppStyles from '../Lib/AppStyles'
 
 const DisabledIcon = require('../Assets/Images/checkmark.png')
+const ActivatedIcon = require('../Assets/Images/journal_orange.png')
 
 const { height, width } = Dimensions.get('window')
 const { Paddings, Colors, FontSizes } = Constants
@@ -17,10 +18,20 @@ const JournalTitleListItem = ({ checked, label, onPress }) => {
         <TouchableOpacity onPress={onPress}>
             <View style={styles.itemContainer}>
                 <View style={[styles.markArea, AppStyles.center]}>
-                    <Image
-                        source={DisabledIcon}
-                        style={styles.checkIcon}
-                    />
+                    {
+                        checked &&
+                        <Image
+                            source={ActivatedIcon}
+                            style={styles.checkIcon}
+                        />
+                    }
+                    {
+                        !checked &&
+                        <Image
+                            source={DisabledIcon}
+                            style={styles.checkIcon}
+                        />
+                    }
                 </View>
                 <View style={[styles.labelArea, AppStyles.vCenter]}>
                     <Text style={styles.label}>{label}</Text>
