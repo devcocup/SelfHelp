@@ -35,7 +35,7 @@ const onBrowseJournal = (navigation) => {
 }
 
 const CardContainer = ({ navigation }) => {
-    const cardContentText = JournalPromptQuestions[getRandomInt(10)]
+    const cardContentText = JournalPromptQuestions[getRandomInt(9)]
 
     return (
         <View style={AppStyles.hCenter}>
