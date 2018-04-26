@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import { Slider } from 'react-native-elements'
+import SQLite from 'react-native-sqlite-2'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -12,9 +13,6 @@ import Header from '../Components/Header'
 
 const { height, width } = Dimensions.get('window')
 const { SelfCareQuizLabels, Margins, Paddings, FontSizes, Colors, BorderRadii } = Constants
-
-const quizTitle = 'Question 1'
-const quizSubTitle = 'How often do you feel sad?'
 
 const Button = ({ text, onPress }) => {
     return (
@@ -36,8 +34,8 @@ export default class SelfCareQuizScreen extends Component {
         this.state = {
             scoreValues: [],
             quizIndex: 1,
-            titleText: quizTitle,
-            subTitleText: quizSubTitle
+            titleText: 'Quetsion 1',
+            subTitleText: ''
         }
     }
 
