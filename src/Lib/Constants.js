@@ -4,8 +4,10 @@ const Colors = {
     lightGreen: 'rgb(58, 152, 132)',
     darkGreen: '#205547',
     orange: '#F7A553',
+    secondaryOrange: '#D0A77A',
     lightOrange: '#E9EED7',
     gray: '#6D6F72',
+    secondaryGray: '#A7A8AC',
     lightGray: '#E6E6E6',
     red: '#FF3739'
 }
