@@ -16,12 +16,23 @@ const { Margins, Paddings, FontSizes, Colors, BorderRadii } = Constants
 
 
 export default class SecurityPinFinishScreen extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {}
+    }
+
     goToScreen = (ScreenName, navigation) => {
         const { navigate } = navigation
         navigate(ScreenName)
     }
 
     onDoneClicked = (navigation) => {
+        const { params } = navigation.state
+        const { securityQuestion, securityAnswer } = params
+        const pinNumber = localStorage.getItem('PIN')
+        localStorage.setItem('SecurityQuestion', securityQuestion)
+        localStorage.setItem('SecurityAnswer', securityAnswer)
         this.goToScreen('JournalScreen', navigation)
     }
 
