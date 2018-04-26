@@ -35,7 +35,10 @@ const StatusCard = ({ status, frequency, onPress }) => {
     }
 
     return (
-        <TouchableOpacity style={[styles.cardStyle, AppStyles.center, {backgroundColor: bgColor}]}>
+        <TouchableOpacity
+            style={[styles.cardStyle, AppStyles.center, {backgroundColor: bgColor}]}
+            onPress={onPress}
+        >
             <Text style={styles.statusText}>{status}</Text>
             <View style={styles.separator}></View>
             <Text style={styles.frequencyText}>{frequency}</Text>
@@ -48,6 +51,11 @@ export default class SelfCareQuizResultScreen extends Component {
     callPhone = (navigation) => {
         const { navigate } = navigation
         navigate('TalkToSomeoneScreen')
+    }
+
+    onCardClicked = (navigation) => {
+        const { navigate } = navigation
+        navigate('SelfCareSuggestionScreen')
     }
 
     render() {
@@ -76,7 +84,7 @@ export default class SelfCareQuizResultScreen extends Component {
                                     key={index}
                                     status={item.status}
                                     frequency={item.frequency}
-                                    onPress={this.onCardClicked}
+                                    onPress={() => this.onCardClicked(navigation)}
                                 />
                             )
                         })
