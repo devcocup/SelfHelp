@@ -1,6 +1,7 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, TextInput, ScrollView, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, TextInput, ScrollView, KeyboardAvoidingView, StyleSheet, Dimensions } from 'react-native'
+import SQLite from 'react-native-sqlite-2'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -20,12 +21,29 @@ export default class CurrentJournalPromptScreen extends Component {
         super(props)
     
         this.state = {
-            journalText: 'I am feeling good.'
+            journalText: 'I am feeling good.',
+            progress: []
         }
     }
 
-    onDone = () => {
-        console.log('done clicked')
+
+    runSQL(currentTime, journalQuestion, journalAnswer) {
+        const db = SQLite.openDatabase({name: 'journalsDB', createFromLocatoin: '/data/journalsDB.sqlite'})
+        db.transaction((txn) => {
+            txn.executeSql('DROP TABLE IF EXISTS Journals', [])
+            txn.executeSql('CREATE TABLE IF NOT EXISTS Journals(journal_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, journal_date VARCHAR(30), journal_question VARCHAR(100), journal_answer VARCHAR(200))')
+            txn.executeSql(`INSERT INTO Journals (journal_date, journal_question, journal_answer) VALUES("${currentTime}", "${journalQuestion}", "${journalAnswer}")`, [])
+        })
+    }
+
+    onDone = (navigation) => {
+        const { journalText } = this.state
+        const { navigate, state } = navigation
+        const { params } = state
+        const { headerContent } = params
+        const currentTime = new Date().toLocaleString()
+        this.runSQL(currentTime, headerContent, journalText)
+        navigate('JournalScreen')
     }
 
     render() {
@@ -33,7 +51,7 @@ export default class CurrentJournalPromptScreen extends Component {
         const { headerTitle, headerContent } = navigation.state.params
 
         return (
-            <View style={AppStyles.mainContainer}>
+            <KeyboardAvoidingView style={AppStyles.mainContainer}>
                 <Header
                     type='Back'
                     navigation={navigation}
@@ -57,13 +75,13 @@ export default class CurrentJournalPromptScreen extends Component {
                                 <Button
                                     label='Done'
                                     bgColor='white'
-                                    onPress={this.onDone}
+                                    onPress={() => this.onDone(navigation)}
                                 />
                             </View>
                         </View>
                     </View>
                 </ScrollView>
-            </View>
+            </KeyboardAvoidingView>
         )
     }
 }
