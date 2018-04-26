@@ -833,13 +833,13 @@ const PastPlansLabels = [
     // }
 ]
 
-const PlanQuestions = [
+const SelfCareQuizLabels = [
     'How often do you feel sad?',
     'How often do you feel anxious?',
     'How often do you have trouble falling or staying asleep?',
     'How often do you feel lonely or isolated?',
     'How often do you feel stressed or frightened?',
-    'How often do you feel angry?',
+    // 'How often do you feel angry?',
     'How often do you feel hopeless about the present or future?'
 ]
 
@@ -852,7 +852,7 @@ const JournalPromptQuestions = [
     'What\'s something you\'re grateful for this week? Why are you grateful for it?',
     'What are some of your favorite quotes?',
     'What is your favortie personality trait?',
-    'What is somethign you\'ve learned this week?'
+    'What is something you\'ve learned this week?'
 ]
 
 const QuizResultsLabels = [
@@ -941,7 +941,7 @@ const Constants = {
     SearchResultLabels,
     PastPlansLabels,
     QuizResultsLabels,
-    PlanQuestions,
+    SelfCareQuizLabels,
     JournalPromptQuestions,
     ThingsThatMakeMeSmileImages,
     SelfCareSuggestionLabels
