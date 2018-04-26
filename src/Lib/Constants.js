@@ -889,6 +889,38 @@ const ThingsThatMakeMeSmileImages = [
     require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg')
 ]
 
+const SelfCareSuggestionLabels = [
+    {
+        icon: require('../Assets/Images/at_the_beach.png'),
+        subTopic: 'At the Beach',
+        description: 'Reduce, anxiety, tension, and stress with this guided audio exercies.',
+        subDescription: 'This exercise will help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch. This exercise may elp to reduce anxiety, tension, and stress. It can make your arms or legs feel \"heavy\". You may also feel half awake or like you are \"wandering off\" mentally. These aer natural reactions to relaxation. If you feel uncomfortable at any time during the exercise, just open your eyes and remind yourself that you are in control and you are safe. Please avoid doing this exercise while driving.',
+        bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg'),
+        music: 'at_the_beach'
+    },
+    {
+        icon: require('../Assets/Images/focusing_on_the_present.png'),
+        subTopic: 'Focusing on the Present',
+        description: 'An exercise to ground yourself in the Pressent to reduce stress',
+        bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
+        music: 'focusing_on_present'
+    },
+    {
+        icon: require('../Assets/Images/guided_breathing.png'),
+        subTopic: 'Guided Breathing',
+        description: 'Breathing techniques to help you relax when you are overwhelmed.',
+        bgImage: require('../Assets/Images/guided_breathing_bg-min.jpg'),
+        music: 'guided_breathing'
+    },
+    {
+        icon: require('../Assets/Images/guided_muscle_relaxation.png'),
+        subTopic: 'Guided Muscle Relaxation',
+        description: 'Reduce tension with this audio guided muscle relaxationexercise.',
+        bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg'),
+        music: 'guided_muscle_relaxation'
+    }
+]
+
 const Constants = {
     Colors,
     FontSizes,
@@ -911,7 +943,8 @@ const Constants = {
     QuizResultsLabels,
     PlanQuestions,
     JournalPromptQuestions,
-    ThingsThatMakeMeSmileImages
+    ThingsThatMakeMeSmileImages,
+    SelfCareSuggestionLabels
 }
 
 export default Constants
