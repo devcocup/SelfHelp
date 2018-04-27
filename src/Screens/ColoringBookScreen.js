@@ -24,13 +24,12 @@ const goToScreen = (ScreenName, url, navigation) => {
 }
 
 onColorNewpage = (navigation) => {
-    const url = 'https://tester.csuw.net/cb/phone_new.html'
-    // goToScreen('SelectPageToColorScreen', navigation)
+    const url = 'https://audemus.io/_rainn/coloring-book/cbnew.html'
     goToScreen('ColoringScreen', url, navigation)
 }
 
 onBrowseSavedPages = (navigation) => {
-    const url = 'https://tester.csuw.net/cb/phone.html'
+    const url = 'https://audemus.io/_rainn/coloring-book/cbsaved.html'
     goToScreen('ColoringScreen', url, navigation)
 }
 
