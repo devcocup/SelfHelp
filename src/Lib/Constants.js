@@ -1,3 +1,5 @@
+const AppKey = 'selfhelp'
+
 const Colors = {
     primaryBgColor: 'rgb(0 , 131, 105)',
     secondaryBgColor: 'rgb(0, 143, 120)',
@@ -922,6 +924,7 @@ const SelfCareSuggestionLabels = [
 ]
 
 const Constants = {
+    AppKey,
     Colors,
     FontSizes,
     BorderRadii,
