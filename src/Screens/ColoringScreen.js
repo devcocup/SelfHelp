@@ -32,6 +32,12 @@ export default class ColoringScreen extends Component {
         })
     }
 
+    savePicture = (navigation) => {
+        const { goBack } = navigation
+        this.webview.postMessage('save')
+        goBack()
+    }
+
     render() {
         const { navigation } = this.props
         const { newPageUrl } = this.state
@@ -39,15 +45,14 @@ export default class ColoringScreen extends Component {
         return (
             <View style={AppStyles.mainContainer}>
                 <Header
-                    type='Back'
+                    type='Coloring'
+                    onSave={() => this.savePicture(navigation)}
                     navigation={navigation}
                 />
                 <WebView
+                    ref={ webview => { this.webview = webview; }}
                     source={{ url: newPageUrl }}
                 />
-                {/*<View style={[styles.cardContainer, AppStyles.hCenter]}>
-                    <TopicButton text='Select a page to color' />
-                </View>*/}
             </View>
         )
     }
