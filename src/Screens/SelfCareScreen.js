@@ -27,11 +27,11 @@ goToScreen = (ScreenName, content, navigation) => {
 }
 
 onCreateNew = (navigation) => {
-    goToScreen('SelfCareQuizScreen', navigation)
+    goToScreen('SelfCareQuizScreen', {}, navigation)
 }
 
 onBrowse = (navigation) => {
-    goToScreen('PastPlansScreen', navigation)
+    goToScreen('PastPlansScreen', {}, navigation)
 }
 
 onJournalClicked = (navigation) => {
@@ -53,7 +53,7 @@ onJournalClicked = (navigation) => {
 }
 
 onColoringBookClicked = (navigation) => {
-    goToScreen('ColoringBookScreen', navigation)
+    goToScreen('ColoringBookScreen', {}, navigation)
 }
 
 const CardWithoutImage = ({ text, onPress }) => {
