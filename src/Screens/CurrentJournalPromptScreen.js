@@ -28,7 +28,7 @@ export default class CurrentJournalPromptScreen extends Component {
 
 
     runSQL(currentTime, journalQuestion, journalAnswer) {
-        const db = SQLite.openDatabase({name: 'journalsDB', createFromLocatoin: '/data/journalsDB.sqlite'})
+        const db = SQLite.openDatabase({name: 'journalsDB', createFromLocation: '/data/journalsDB.sqlite'})
         db.transaction((txn) => {
             txn.executeSql('DROP TABLE IF EXISTS Journals', [])
             txn.executeSql('CREATE TABLE IF NOT EXISTS Journals(journal_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, journal_date VARCHAR(30), journal_question VARCHAR(100), journal_answer VARCHAR(200))')
