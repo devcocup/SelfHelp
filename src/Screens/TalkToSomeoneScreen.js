@@ -14,6 +14,7 @@ import Header from '../Components/Header'
 import HeadingContainer from '../Components/HeadingContainer'
 // import TopicButton from '../Components/TopicButton'
 import Button from '../Components/Button'
+import CallMenu from './CallMenu'
 import ChatMenu from './ChatMenu'
 
 const SearchIcon = require('../Assets/Images/search_orange.png')
@@ -55,6 +56,7 @@ export default class TalkToSomeoneScreen extends Component {
         super(props);
     
         this.state = {
+            callMenuVisible: false,
             chatMenuVisible: false,
             contactMenuVisible: false,
             contacts: [],
@@ -66,9 +68,27 @@ export default class TalkToSomeoneScreen extends Component {
 
     dismissModal() {
         this.setState({
+            callMenuVisible: false,
             chatMenuVisible: false,
             contactMenuVisible: false
         })
+    }
+
+    onCallMenuClicked = () => {
+        this.setState({
+            callMenuVisible: true
+        })
+    }
+
+    onInternet = () => {
+        const { navigate } = this.props.navigation
+        this.dismissModal()
+        navigate('CallScreen')
+    }
+
+    onCellular = (phoneNumber) => {
+        this.dismissModal()
+        Communications.phonecall(phoneNumber, true)
     }
 
     onChat = () => {
@@ -88,8 +108,6 @@ export default class TalkToSomeoneScreen extends Component {
     }
 
     onChatMenuClicked = () => {
-        // const { navigate } = navigation
-        // navigate('ChatScreen', { chatType: 'Group' })
         this.setState({
             chatMenuVisible: true
         })
@@ -119,7 +137,7 @@ export default class TalkToSomeoneScreen extends Component {
     render() {
         const { selectFromContacts, onContactItemClicked } = this
         const { navigation } = this.props
-        const { chatMenuVisible, contactMenuVisible, contacts, isContactSelected, selectedContactName, selectedContactNumber } = this.state
+        const { callMenuVisible, chatMenuVisible, contactMenuVisible, contacts, isContactSelected, selectedContactName, selectedContactNumber } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -151,7 +169,7 @@ export default class TalkToSomeoneScreen extends Component {
                             name='Call the DoD Help Line'
                             phoneNumber='877-995-5247'
                             bgColor={Colors.lightGreen}
-                            onPress={() => callPhone('877-995-5247')}
+                            onPress={() => this.onCallMenuClicked()}
                         />
                         <ChatCard
                             name='Chat with DoD Safe Helpline'
@@ -166,6 +184,18 @@ export default class TalkToSomeoneScreen extends Component {
                             <ChatMenu
                                 onChat={this.onChat}
                                 onGroupChat={this.onGroupChat}
+                                onCancel={this.onCancel}
+                            />
+                        </Overlay>
+                        <Overlay visible={callMenuVisible}
+                            closeOnTouchOutside animationType="zoomIn"
+                            containerStyle={{ backgroundColor: 'rgba(0,131,105,0.78)' }}
+                            childrenWrapperStyle={{ backgroundColor: 'transparent' }}
+                            animationDuration={500}
+                        >
+                            <CallMenu
+                                onInternet={this.onInternet}
+                                onCellular={() => this.onCellular('877-995-5247')}
                                 onCancel={this.onCancel}
                             />
                         </Overlay>
