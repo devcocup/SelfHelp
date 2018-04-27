@@ -2,6 +2,8 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput, ScrollView, KeyboardAvoidingView, StyleSheet, Dimensions } from 'react-native'
 import SQLite from 'react-native-sqlite-2'
+import { encrypt } from 'react-native-simple-encryption'
+// import Aes from 'react-native-aes-crypto'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -13,7 +15,16 @@ import JournalHeadCard from '../Components/JournalHeadCard'
 import Button from '../Components/Button'
 
 const { height, width } = Dimensions.get('window')
-const { Paddings, Margins, BorderRadii } = Constants
+const { AppKey, Paddings, Margins, BorderRadii } = Constants
+
+// const generateKey = (password, salt) => Aes.pbkdf2(password, salt)
+
+// const encrypt = (text, keyBase64) => {
+//     let ivBase64 = 'base64 random 16 bytes string'
+//     return Aes.encrypt(text, keyBase64, ivBase64).then(cipher => ({ cipher, iv: ivBase64 }))
+// }
+
+// const decrypt = (encryptedData, key) => Aes.decrypt(encryptedData.cipher, key, encryptedData.iv)
 
 
 export default class CurrentJournalPromptScreen extends Component {
@@ -29,10 +40,14 @@ export default class CurrentJournalPromptScreen extends Component {
 
     runSQL(currentTime, journalQuestion, journalAnswer) {
         const db = SQLite.openDatabase({name: 'journalsDB', createFromLocation: '/data/journalsDB.sqlite'})
+        const encryptedTime = encrypt(AppKey, currentTime)
+        const encryptedQuestion = encrypt(AppKey, journalQuestion)
+        const encryptedAnswer = encrypt(AppKey, journalAnswer)
+
         db.transaction((txn) => {
             txn.executeSql('DROP TABLE IF EXISTS Journals', [])
             txn.executeSql('CREATE TABLE IF NOT EXISTS Journals(journal_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, journal_date VARCHAR(30), journal_question VARCHAR(100), journal_answer VARCHAR(200))')
-            txn.executeSql(`INSERT INTO Journals (journal_date, journal_question, journal_answer) VALUES("${currentTime}", "${journalQuestion}", "${journalAnswer}")`, [])
+            txn.executeSql(`INSERT INTO Journals (journal_date, journal_question, journal_answer) VALUES("${encryptedTime}", "${encryptedQuestion}", "${encryptedAnswer}")`, [])
         })
     }
 

@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
 import SQLite from 'react-native-sqlite-2'
+import { encrypt } from 'react-native-simple-encryption'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -11,7 +12,7 @@ import Constants from '../Lib/Constants'
 import Header from '../Components/Header'
 import JournalTitleListItem from '../Components/JournalTitleListItem'
 
-const { JournalPromptQuestions } = Constants
+const { AppKey, JournalPromptQuestions } = Constants
 
 const db = SQLite.openDatabase({name: 'journalsDB', createFromLocation: '/data/journalsDB.sqlite'})
 
@@ -46,7 +47,7 @@ export default class PastJournalsScreen extends Component {
                             let checked = false
                             
                             db.transaction((txn) => {
-                                txn.executeSql(`SELECT * FROM journals where journal_question = "${item}"`, [], (tx, res) => {
+                                txn.executeSql(`SELECT * FROM journals where journal_question = "${encrypt(AppKey, item)}"`, [], (tx, res) => {
                                     let tempJournals = []
                                     for (let i = 0; i < res.rows.length; ++i) {
                                         tempJournals.push(res.rows.item(i))

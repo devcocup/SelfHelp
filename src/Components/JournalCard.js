@@ -1,13 +1,14 @@
 // React
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import { decrypt } from 'react-native-simple-encryption'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
 import Constants from '../Lib/Constants'
 
 const { height, width } = Dimensions.get('window')
-const { Margins, Paddings, FontSizes, BorderRadii, Colors } = Constants
+const { AppKey, Margins, Paddings, FontSizes, BorderRadii, Colors } = Constants
 
 
 export default class Journalcard extends Component {
@@ -31,13 +32,16 @@ export default class Journalcard extends Component {
         const itemBgStyle = {
             backgroundColor: isDisplayed ? Colors.orange : Colors.secondaryOrange
         }
+        const journalDate = decrypt(AppKey, content.journal_date)
+        const journalQuestion = decrypt(AppKey, content.journal_question)
+        const journalAnswer = decrypt(AppKey, content.journal_answer)
 
         return (
             <View style={AppStyles.center}>
                 <TouchableOpacity onPress={() => this.onItemClicked()}>
                     <View style={[styles.boxContainer, AppStyles.center, itemBgStyle]}>
                         <Text style={styles.textStyle}>
-                            {content.journal_date}
+                            {journalDate}
                         </Text>
                     </View>
                 </TouchableOpacity>
@@ -47,12 +51,12 @@ export default class Journalcard extends Component {
                         <Text
                             style={styles.questionStyle}
                         >
-                            {content.journal_question}
+                            {journalQuestion}
                         </Text>
                         <Text
                             style={styles.answerStyle}
                         >
-                            {content.journal_answer}
+                            {journalAnswer}
                         </Text>
                     </View>
                 }
