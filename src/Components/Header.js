@@ -53,8 +53,9 @@ const goHome = (navigation) => {
 }
 
 
-const Header = ({ type, isMain, onDelete, navigation }) => {
-    const headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
+const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
+    let headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
+    headerText = (type === 'Coloring') ? 'Save' : headerText
 
     return (
         <View style={styles.headerStyle}>
@@ -63,6 +64,29 @@ const Header = ({ type, isMain, onDelete, navigation }) => {
                 <View style={[styles.titleArea, AppStyles.vCenter]}>
                     <View style={[styles.backArea, AppStyles.center]}>
                         <TouchableOpacity onPress={() => goBackScreen(navigation)}>
+                            <Text style={styles.textStyle}>{headerText}</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={[styles.restArea, AppStyles.center]}>
+                        {
+                            onDelete &&
+                            <TouchableOpacity
+                                onPress={onDelete}
+                            >
+                                <Image
+                                    source={DeleteIcon}
+                                    style={styles.delteIcon}
+                                />
+                            </TouchableOpacity>
+                        }
+                    </View>
+                </View>
+            }
+            {
+                (type === 'Coloring') &&
+                <View style={[styles.titleArea, AppStyles.vCenter]}>
+                    <View style={[styles.backArea, AppStyles.center]}>
+                        <TouchableOpacity onPress={onSave}>
                             <Text style={styles.textStyle}>{headerText}</Text>
                         </TouchableOpacity>
                     </View>
