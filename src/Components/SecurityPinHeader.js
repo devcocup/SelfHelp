@@ -33,7 +33,7 @@ const FlowLine = ({ flowIndex }) => {
 
 const onResetClicked = (navigation) => {
     const { navigate } = navigation
-    navigate('CreateSecurityPinScreen')
+    navigate('AnswerSecurityQuestionScreen')
 }
 
 const ResetButton = ({ navigation }) => {
