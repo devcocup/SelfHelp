@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import { NavigationActions } from 'react-navigation'
-import localStorage from 'react-native-sync-localstorage'
+import SQLite from 'react-native-sqlite-2'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -14,9 +14,9 @@ const MenuIcon = require('../Assets/Images/nav_menu.png')
 const CheckMarkIcon = require('../Assets/Images/pencil.png')
 const DeleteIcon = require('../Assets/Images/delete.png')
 
-const goToScreen = (ScreenName, navigation) => {
+const goToScreen = (ScreenName, content, navigation) => {
     const { navigate } = navigation
-    navigate(ScreenName ? ScreenName : '')
+    navigate(ScreenName ? ScreenName : '', { content })
 }
 
 const goBackScreen = (navigation) => {
@@ -25,13 +25,21 @@ const goBackScreen = (navigation) => {
 }
 
 const goJournal = (navigation) => {
-    const securityPin = localStorage.getItem('PIN')
-
-    if (securityPin === null || securityPin === undefined) {
-        goToScreen('CreateSecurityPinScreen', navigation)
-    } else {
-        goToScreen('EnterSecurityPinScreen', navigation)
-    }
+    const db = SQLite.openDatabase({name: 'securityDB', createFromLocation: '/data/securityDB.sqlite'})
+    db.transaction((txn) => {
+        txn.executeSql('CREATE TABLE IF NOT EXISTS Security(id INTEGER PRIMARY KEY NOT NULL, pin_number VARCHAR(6), security_question VARCHAR(100), security_answer VARCHAR(200))')
+        txn.executeSql('SELECT * FROM `security`', [], (tx, res) => {
+            let tempSecurity = []
+            for (let i = 0; i < res.rows.length; ++i) {
+                tempSecurity.push(res.rows.item(i))
+            }
+            if (tempSecurity.length > 0) {
+                goToScreen('EnterSecurityPinScreen', tempSecurity[0], navigation)
+            } else {
+                goToScreen('CreateSecurityPinScreen', tempSecurity[0], navigation)
+            }
+        })
+    })
 }
 
 const goHome = (navigation) => {
