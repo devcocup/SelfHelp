@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { View, Text, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView, StyleSheet, Dimensions } from 'react-native'
 import { Dropdown } from 'react-native-material-dropdown'
+import SQLite from 'react-native-sqlite-2'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -29,9 +30,33 @@ export default class AnswerSecurityQuestionScreen extends Component {
         super(props)
     
         this.state = {
+            storedAnswer: '',
+            securityQuestion: '',
             securityAnswer: '',
-            answerCorrect: false
+            answerCorrect: false,
+            instructionHeaderText: 'Answer your Security Question to reset your pin'
         }
+
+        this.runSQL()
+    }
+
+    runSQL() {
+    const db = SQLite.openDatabase({name: 'securityDB', createFromLocation: '/data/securityDB.sqlite'})
+    db.transaction((txn) => {
+        txn.executeSql('CREATE TABLE IF NOT EXISTS Security(id INTEGER PRIMARY KEY NOT NULL, pin_number VARCHAR(6), security_question VARCHAR(100), security_answer VARCHAR(200))')
+        txn.executeSql('SELECT * FROM `security`', [], (tx, res) => {
+            let tempSecurity = []
+            for (let i = 0; i < res.rows.length; ++i) {
+                tempSecurity.push(res.rows.item(i))
+            }
+            if (tempSecurity.length > 0) {
+                this.setState({
+                    securityQuestion: tempSecurity[0].security_question,
+                    storedAnswer: tempSecurity[0].security_answer
+                })
+            }
+        })
+    })
     }
 
     goToScreen = (ScreenName, navigation) => {
@@ -40,7 +65,15 @@ export default class AnswerSecurityQuestionScreen extends Component {
     }
 
     onSubmit = (navigation) => {
-        this.goToScreen('ResetConfirmScreen', navigation)
+        const { storedAnswer, securityAnswer } = this.state
+
+        if (storedAnswer === securityAnswer) {
+            this.goToScreen('ResetConfirmScreen', navigation)
+        } else {
+            this.setState({
+                instructionHeaderText: 'Your answer was incorrect, please try again'
+            })
+        }
     }
 
     onReset = (navigation) => {
@@ -49,8 +82,8 @@ export default class AnswerSecurityQuestionScreen extends Component {
 
     render() {
         const { navigation } = this.props
-        const { securityAnswer } = this.state
-        const questionText = 'What street did you grow up on?'
+        const { securityQuestion, securityAnswer, instructionHeaderText } = this.state
+        // const questionText = 'What street did you grow up on?'
 
         return (
             <KeyboardAvoidingView
@@ -63,13 +96,13 @@ export default class AnswerSecurityQuestionScreen extends Component {
                 <ScrollView>
                     <View style={styles.titleArea}>
                         <Text style={styles.title}>
-                            Answer your Security Question to reset your pin
+                            {instructionHeaderText}
                         </Text>
                     </View>
                     <View style={styles.questionArea}>
                         <Text style={styles.title}>Question:</Text>
                         <View style={AppStyles.center}>
-                            <Text style={styles.question}>{questionText}</Text>
+                            <Text style={styles.question}>{securityQuestion}</Text>
                         </View>
                     </View>
                     <View style={styles.answerArea}>

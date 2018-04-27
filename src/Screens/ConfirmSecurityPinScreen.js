@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import localStorage from 'react-native-sync-localstorage'
-import SQLite from 'react-native-sqlite-2'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'

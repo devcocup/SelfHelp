@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
 import localStorage from 'react-native-sync-localstorage'
+import SQLite from 'react-native-sqlite-2'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -13,20 +14,39 @@ import Button from '../Components/Button'
 const { height, wdith } = Dimensions.get('window')
 const { Paddings, Margins, Colors, FontSizes } = Constants
 
+const db = SQLite.openDatabase({name: 'securityDB', createFromLocation: '/data/securityDB.sqlite'})
+
 
 export default class ResetConfirmScreen extends Component {
-    goToScreen = (ScreenName, navigation) => {
+    goToScreen = (ScreenName, content, navigation) => {
         const { navigate } = navigation
-        navigate(ScreenName)
+        navigate(ScreenName, { content })
     }
 
     onReset = (navigation) => {
         localStorage.removeItem('PIN')
-        this.goToScreen('CreateSecurityPinScreen', navigation)
+        db.transaction((txn) => {
+            txn.executeSql('DROP TABLE IF EXISTS Security', [])
+            txn.executeSql('CREATE TABLE IF NOT EXISTS Security(id INTEGER PRIMARY KEY NOT NULL, pin_number VARCHAR(6), security_question VARCHAR(100), security_answer VARCHAR(200))')
+        })
+        this.goToScreen('CreateSecurityPinScreen', {}, navigation)
     }
 
     onCancel = (navigation) => {
-        this.goToScreen('AnswerSecurityQuestionScreen', navigation)
+        db.transaction((txn) => {
+            txn.executeSql('CREATE TABLE IF NOT EXISTS Security(id INTEGER PRIMARY KEY NOT NULL, pin_number VARCHAR(6), security_question VARCHAR(100), security_answer VARCHAR(200))')
+            txn.executeSql('SELECT * FROM `security`', [], (tx, res) => {
+                let tempSecurity = []
+                for (let i = 0; i < res.rows.length; ++i) {
+                    tempSecurity.push(res.rows.item(i))
+                }
+                if (tempSecurity.length > 0) {
+                    goToScreen('EnterSecurityPinScreen', tempSecurity[0], navigation)
+                } else {
+                    goToScreen('SelfCareScreen', tempSecurity[0], navigation)
+                }
+            })
+        })
     }
 
     render() {
@@ -37,7 +57,7 @@ export default class ResetConfirmScreen extends Component {
               <View style={styles.container}>
                 <View style={[styles.warningMessageArea, AppStyles.hCenter]}>
                     <Text style={styles.headerTitle}>WARNING</Text>
-                    <Text style={styles.headerContent}>Are you sure you want to earase your Safe Help Line app data and reset your pin?</Text>
+                    <Text style={styles.headerContent}>Are you sure you want to erase your Safe Help Line app data and reset your pin?</Text>
                 </View>
                 <View style={[styles.descriptionArea, AppStyles.center]}>
                     <Text style={styles.descriptionText}>You will lose journal entries, user photos, and saved cooring pages.</Text>
