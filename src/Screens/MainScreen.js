@@ -101,6 +101,7 @@ export default class MainScreen extends Component {
             <View style={AppStyles.mainContainer}>
                 <Header
                     type='Home'
+                    isMain
                     navigation={navigation}
                 />
                 <HeaderStrip

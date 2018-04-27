@@ -45,7 +45,7 @@ const goHome = (navigation) => {
 }
 
 
-const Header = ({ type, onDelete, navigation }) => {
+const Header = ({ type, isMain, onDelete, navigation }) => {
     const headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
 
     return (
@@ -90,14 +90,17 @@ const Header = ({ type, onDelete, navigation }) => {
                 </TouchableOpacity>
             </View>
             <View style={[styles.menuArea, AppStyles.center]}>
-                <TouchableOpacity
-                    onPress={() => goHome(navigation)}
-                >
-                    <Image
-                        source={MenuIcon}
-                        style={styles.menuIcon}
-                    />
-                </TouchableOpacity>
+                {
+                    !isMain &&
+                    <TouchableOpacity
+                        onPress={() => goHome(navigation)}
+                    >
+                        <Image
+                            source={MenuIcon}
+                            style={styles.menuIcon}
+                        />
+                    </TouchableOpacity>
+                }
             </View>
         </View>
     )
