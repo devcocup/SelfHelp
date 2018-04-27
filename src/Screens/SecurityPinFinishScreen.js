@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import localStorage from 'react-native-sync-localstorage'
+import SQLite from 'react-native-sqlite-2'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -27,12 +28,20 @@ export default class SecurityPinFinishScreen extends Component {
         navigate(ScreenName)
     }
 
+    runSQL(pinNumber, securityQuestion, securityAnswer) {
+        const db = SQLite.openDatabase({name: 'securityDB', createFromLocation: '/data/securityDB.sqlite'})
+        db.transaction((txn) => {
+            txn.executeSql('DROP TABLE IF EXISTS Security', [])
+            txn.executeSql('CREATE TABLE IF NOT EXISTS Security(id INTEGER PRIMARY KEY NOT NULL, pin_number VARCHAR(6), security_question VARCHAR(100), security_answer VARCHAR(200))')
+            txn.executeSql(`INSERT INTO Security (pin_number, security_question, security_answer) VALUES("${pinNumber}", "${securityQuestion}", "${securityAnswer}")`, [])
+        })
+    }
+
     onDoneClicked = (navigation) => {
         const { params } = navigation.state
         const { securityQuestion, securityAnswer } = params
         const pinNumber = localStorage.getItem('PIN')
-        localStorage.setItem('SecurityQuestion', securityQuestion)
-        localStorage.setItem('SecurityAnswer', securityAnswer)
+        this.runSQL(pinNumber, securityQuestion, securityAnswer)
         this.goToScreen('JournalScreen', navigation)
     }
 

@@ -34,7 +34,12 @@ export default class CreateSecurityPinScreen extends Component {
     }
 
     checkPin = (label, index, navigation) => {
-        const securityPin = localStorage.getItem('PIN')
+        const { state } = navigation
+        const { params } = state
+        const { content } = params
+
+        const securityPin = content.pin_number
+
         let checkedPin =  securityPin ? (securityPin.substr(index, 1).includes(label) ? true : false) : false
 
         if (this.state.dotIndex === 5) {
