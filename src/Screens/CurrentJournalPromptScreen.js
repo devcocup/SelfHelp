@@ -21,7 +21,7 @@ export default class CurrentJournalPromptScreen extends Component {
         super(props)
     
         this.state = {
-            journalText: 'I am feeling good.',
+            journalText: '',
             progress: []
         }
     }
