@@ -27,8 +27,41 @@ export default class PastJournalsScreen extends Component {
         super(props)
     
         this.state = {
-            checkedStates: []
+            checkedStates: [],
+            isFirstInstalled: true
         }
+    }
+
+    componentWillMount() {
+        this.runSQLVersionCheck()
+    }
+
+    runSQLVersionCheck() {
+        const versionDb = SQLite.openDatabase({name: 'appVerDB', createFromLocation: '/data/appVerDB.sqlite'})
+        versionDb.transaction((txn) => {
+            txn.executeSql('CREATE TABLE IF NOT EXISTS Version(id INTEGER PRIMARY KEY NOT NULL, installed BOOLEAN )')
+            txn.executeSql('SELECT * FROM Version', [], (tx, res) => {
+                let tempVersion = []
+                for (let i = 0; i < res.rows.length; ++i) {
+                    tempVersion.push(res.rows.item(i))
+                }
+                if (tempVersion.length > 0) {
+                    this.setState({
+                        isFirstInstalled: false
+                    })
+                } else {
+                    this.emptyJournalDB()
+                }
+            })
+            txn.executeSql(`INSERT INTO Version (installed) VALUES("TRUE")`, [])
+        })
+    }
+
+    emptyJournalDB() {
+        db.transaction((txn) => {
+            txn.executeSql('DROP TABLE IF EXISTS Journals', [])
+            txn.executeSql('CREATE TABLE IF NOT EXISTS Journals(journal_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, journal_date VARCHAR(30), journal_question VARCHAR(100), journal_answer VARCHAR(200))')
+        })   
     }
 
     render() {
