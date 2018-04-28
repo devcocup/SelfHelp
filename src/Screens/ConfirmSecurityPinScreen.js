@@ -51,8 +51,7 @@ export default class ConfirmSecurityPinScreen extends Component {
             this.setState({
                 completed: true
             })
-            localStorage.setItem('PIN', confirmingPin)          
-            // this.goToScreen('AnswerSecurityQuestionScreen', navigation)
+            localStorage.setItem('PIN', confirmingPin)
             this.goToScreen('CreateSecurityQuestionScreen', navigation)
         }
         if (checkedPin) {
@@ -65,7 +64,6 @@ export default class ConfirmSecurityPinScreen extends Component {
                 headerText: 'Incorrect,\nplease try again.'
             })
         }
-        // this.goToScreen('CreateSecurityQuestionScreen', navigation)
     }
 
     render() {
@@ -74,21 +72,11 @@ export default class ConfirmSecurityPinScreen extends Component {
 
         return (
             <View style={AppStyles.mainContainer}>
-                {
-                    !mismatched && 
-                    <SecurityPinHeader
-                        headerType='FLOW'
-                        flowIndex={2}
-                        navigation={navigation}
-                    />
-                }
-                {
-                    mismatched &&
-                    <SecurityPinHeader
-                        headerType='RESET'
-                        navigation={navigation}
-                    />   
-                }
+                <SecurityPinHeader
+                    headerType='FLOW'
+                    flowIndex={2}
+                    navigation={navigation}
+                />
                 <View style={[styles.bodyContainer, AppStyles.hCenter]}>
                     <Text style={styles.title}>{headerText}</Text>
                     <View style={styles.dotArea}>
