@@ -112,14 +112,17 @@ const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
                 </View>
             }
             <View style={[styles.checkArea, AppStyles.center]}>
-                <TouchableOpacity
-                    onPress={() => goJournal(navigation)}
-                >
-                    <Image
-                        source={CheckMarkIcon}
-                        style={styles.checkIcon}
-                    />
-                </TouchableOpacity>
+                {
+                    !isMain &&
+                    <TouchableOpacity
+                        onPress={() => goJournal(navigation)}
+                    >
+                        <Image
+                            source={CheckMarkIcon}
+                            style={styles.checkIcon}
+                        />
+                    </TouchableOpacity>
+                }
             </View>
             <View style={[styles.menuArea, AppStyles.center]}>
                 {
@@ -130,6 +133,17 @@ const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
                         <Image
                             source={MenuIcon}
                             style={styles.menuIcon}
+                        />
+                    </TouchableOpacity>
+                }
+                {
+                    isMain &&
+                    <TouchableOpacity
+                        onPress={() => goJournal(navigation)}
+                    >
+                        <Image
+                            source={CheckMarkIcon}
+                            style={styles.checkIcon}
                         />
                     </TouchableOpacity>
                 }
