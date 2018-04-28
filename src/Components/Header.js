@@ -13,6 +13,7 @@ const { height,width } = Dimensions.get('window')
 const MenuIcon = require('../Assets/Images/nav_menu.png')
 const CheckMarkIcon = require('../Assets/Images/pencil.png')
 const DeleteIcon = require('../Assets/Images/delete.png')
+const SaveIcon = require('../Assets/Images/save.png')
 
 const goToScreen = (ScreenName, content, navigation) => {
     const { navigate } = navigation
@@ -55,12 +56,11 @@ const goHome = (navigation) => {
 
 const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
     let headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
-    headerText = (type === 'Coloring') ? 'Save' : headerText
 
     return (
         <View style={styles.headerStyle}>
             {
-                (type === 'Back') &&
+                (type === 'Back' || type === 'Coloring') &&
                 <View style={[styles.titleArea, AppStyles.vCenter]}>
                     <View style={[styles.backArea, AppStyles.center]}>
                         <TouchableOpacity onPress={() => goBackScreen(navigation)}>
@@ -75,30 +75,7 @@ const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
                             >
                                 <Image
                                     source={DeleteIcon}
-                                    style={styles.delteIcon}
-                                />
-                            </TouchableOpacity>
-                        }
-                    </View>
-                </View>
-            }
-            {
-                (type === 'Coloring') &&
-                <View style={[styles.titleArea, AppStyles.vCenter]}>
-                    <View style={[styles.backArea, AppStyles.center]}>
-                        <TouchableOpacity onPress={onSave}>
-                            <Text style={styles.textStyle}>{headerText}</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={[styles.restArea, AppStyles.center]}>
-                        {
-                            onDelete &&
-                            <TouchableOpacity
-                                onPress={onDelete}
-                            >
-                                <Image
-                                    source={DeleteIcon}
-                                    style={styles.delteIcon}
+                                    style={styles.deleteIcon}
                                 />
                             </TouchableOpacity>
                         }
@@ -109,6 +86,17 @@ const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
                 (type === 'Home') &&
                 <View style={[styles.titleArea, AppStyles.hCenter]}>
                     <Text style={styles.textStyle}>{headerText}</Text>
+                </View>
+            }
+            {
+                (type === 'Coloring') &&
+                <View style={[styles.saveArea, AppStyles.center]}>
+                    <TouchableOpacity onPress={onSave}>
+                        <Image
+                            source={SaveIcon}
+                            style={styles.saveIcon}
+                        />
+                    </TouchableOpacity>
                 </View>
             }
             <View style={[styles.checkArea, AppStyles.center]}>
@@ -181,9 +169,20 @@ const styles = StyleSheet.create({
         flex: .5
     },
 
-    delteIcon: {
+    deleteIcon: {
         width: 35,
         height: 35
+    },
+
+    saveArea: {
+        flex: .17,
+        borderLeftWidth: 2,
+        borderLeftColor: Constants.Colors.lightGreen
+    },
+
+    saveIcon: {
+        width: 25,
+        height: 25
     },
 
     checkArea: {
