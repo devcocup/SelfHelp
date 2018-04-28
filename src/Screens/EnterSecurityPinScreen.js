@@ -24,7 +24,8 @@ export default class CreateSecurityPinScreen extends Component {
             headerText: 'Enter your Security Pin',
             completed: false,
             mismatched: false,
-            dotIndex: 0
+            dotIndex: 0,
+            typedPin: ''
         }
     }
 
@@ -40,23 +41,27 @@ export default class CreateSecurityPinScreen extends Component {
 
         const securityPin = content.pin_number
 
-        let checkedPin =  securityPin ? (securityPin.substr(index, 1).includes(label) ? true : false) : false
-
         if (this.state.dotIndex === 5) {
             this.setState({
                 completed: true
             })
-            this.goToScreen('JournalScreen', navigation)
-        }
-
-        if (checkedPin) {
-            this.setState({
-                dotIndex: this.state.dotIndex + 1
-            })
+            const toCheckPin = this.state.typedPin + label
+            const checkedPin =  securityPin ? (securityPin === toCheckPin ? true : false) : false
+            
+            if (checkedPin) {
+                this.goToScreen('JournalScreen', navigation)
+            } else {
+                this.setState({
+                    mismatched: true,
+                    headerText: 'Incorrect,\nplease try again.',
+                    dotIndex: 0,
+                    typedPin: ''
+                })
+            }
         } else {
             this.setState({
-                mismatched: true,
-                headerText: 'Incorrect,\nplease try again.'
+                dotIndex: this.state.dotIndex + 1,
+                typedPin: this.state.typedPin + label
             })
         }
     }
