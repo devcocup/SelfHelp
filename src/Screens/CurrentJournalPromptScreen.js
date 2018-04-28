@@ -45,7 +45,7 @@ export default class CurrentJournalPromptScreen extends Component {
         const encryptedAnswer = encrypt(AppKey, journalAnswer)
 
         db.transaction((txn) => {
-            txn.executeSql('DROP TABLE IF EXISTS Journals', [])
+            // txn.executeSql('DROP TABLE IF EXISTS Journals', [])
             txn.executeSql('CREATE TABLE IF NOT EXISTS Journals(journal_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, journal_date VARCHAR(30), journal_question VARCHAR(100), journal_answer VARCHAR(200))')
             txn.executeSql(`INSERT INTO Journals (journal_date, journal_question, journal_answer) VALUES("${encryptedTime}", "${encryptedQuestion}", "${encryptedAnswer}")`, [])
         })
