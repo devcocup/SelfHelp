@@ -124,11 +124,11 @@ export default class AnswerSecurityQuestionScreen extends Component {
                             onPress={() => this.onSubmit(navigation)}
                         />
                     </View>
-                    <View style={AppStyles.hCenter}>
+                    {/*<View style={AppStyles.hCenter}>
                         <ResetButton
                             onPress={() => this.onReset(navigation)}
                         />
-                    </View>
+                    </View>*/}
                 </ScrollView>
             </KeyboardAvoidingView>
         )
