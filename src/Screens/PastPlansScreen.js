@@ -1,6 +1,7 @@
 // React
 import React, { Component } from 'react'
 import { View, Text, ScrollView, TouchableOpacity, Dimensions, StyleSheet } from 'react-native'
+import SQLite from 'react-native-sqlite-2'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -10,7 +11,7 @@ import Constants from '../Lib/Constants'
 import Header from '../Components/Header'
 
 const { height, width } = Dimensions.get('window')
-const { PastPlansLabels, Margins, Paddings, Colors, FontSizes } = Constants
+const { Margins, Paddings, Colors, FontSizes } = Constants
 
 const PlanCard = ({ itemContent }) => {
     return (
@@ -25,8 +26,49 @@ const PlanCard = ({ itemContent }) => {
 }
 
 export default class PastPlansScreen extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            isPlanEmpty: true,
+            planItems: []
+        }
+    }
+
+    componentDidMount() {
+        this.runSQL()
+    }
+
+    runSQL() {
+        const db = SQLite.openDatabase({name: 'plansDB', createFromLocation: '/data/plansDB.sqlite'})
+        db.transaction((txn) => {
+            txn.executeSql('CREATE TABLE IF NOT EXISTS Plans(id INTEGER PRIMARY KEY NOT NULL, plan_time VARCHAR(20), sadness INTEGER, anxiety INTEGER, sleep INTEGER, loneliness INTEGER, stress INTEGER, hopelessness INTEGER)')
+            txn.executeSql('SELECT * FROM plans', [], (tx, res) => {
+                let tempPlans = []
+                for (let i = 0; i < res.rows.length; ++i) {
+                    tempPlans.push(res.rows.item(i))
+                }
+                if (tempPlans.length > 0) {
+                    this.setState({
+                        isJournalEmpty: false
+                    })
+                }
+                this.setState({
+                    planItems: tempPlans
+                })
+            })
+        })
+    }
+
+    onPlanItemClicked = (content, navigation) => {
+        const { navigate } = navigation
+        const { sadness, anxiety, sleep, loneliness, stress, hopelessness} = content
+        navigate('SelfCareQuizResultsScreen', { scoreValues: [sadness, anxiety, sleep, loneliness, stress, hopelessness] })
+    }
+
     render() {
         const { navigation } = this.props
+        const { planItems } = this.state
 
         return(
             <View style={AppStyles.mainContainer}>
@@ -36,12 +78,16 @@ export default class PastPlansScreen extends Component {
                 />
                 <ScrollView>
                 {
-                    PastPlansLabels.map((item, index) => {
+                    planItems.map((item, index) => {
                         return (
-                            <PlanCard
+                            <TouchableOpacity
                                 key={index}
-                                itemContent={item}
-                            />
+                                onPress={() => this.onPlanItemClicked(item, navigation)}
+                            >
+                                <View style={[styles.plancard, AppStyles.hCenter]}>
+                                    <Text style={styles.dateStyle}>{item.plan_time}</Text>
+                                </View>
+                            </TouchableOpacity>
                         )
                     })
                 }

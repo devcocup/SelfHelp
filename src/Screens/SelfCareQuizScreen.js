@@ -39,6 +39,14 @@ export default class SelfCareQuizScreen extends Component {
         }
     }
 
+    componentDidMount() {
+        const scores = [0, 0, 0, 0, 0, 0]
+
+        this.setState({
+            scoreValues: scores
+        })
+    }
+
     onSliderChange(value, index) {
         const scores = this.state.scoreValues
         tempScore = Math.floor(value)
@@ -58,8 +66,18 @@ export default class SelfCareQuizScreen extends Component {
         console.log('skip clicked')
     }
 
+    runSQL(scoreValues) {
+        const db = SQLite.openDatabase({name: 'plansDB', createFromLocation: '/data/plansDB.sqlite'})
+        const currentTime = new Date().toLocaleString()
+        db.transaction((txn) => {
+            txn.executeSql('CREATE TABLE IF NOT EXISTS Plans(id INTEGER PRIMARY KEY NOT NULL, plan_time VARCHAR(20), sadness INTEGER, anxiety INTEGER, sleep INTEGER, loneliness INTEGER, stress INTEGER, hopelessness INTEGER)')
+            txn.executeSql(`INSERT INTO Plans (plan_time, sadness, anxiety, sleep, loneliness, stress, hopelessness) VALUES("${currentTime}", "${scoreValues[0]}", "${scoreValues[1]}", "${scoreValues[2]}", "${scoreValues[3]}", "${scoreValues[4]}", "${scoreValues[5]}")`, [])
+        })
+    }
+
     onContinue = (navigation) => {
         if (this.state.quizIndex >= 6) {
+            this.runSQL(this.state.scoreValues)
             this.goToScreen('SelfCareQuizResultsScreen', this.state.scoreValues, navigation)
         } else {
             this.setState({
