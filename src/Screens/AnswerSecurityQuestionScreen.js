@@ -77,6 +77,14 @@ export default class AnswerSecurityQuestionScreen extends Component {
     }
 
     onReset = (navigation) => {
+        const journalsDb = SQLite.openDatabase({name: 'journalsDB', createFromLocation: '/data/journalsDB.sqlite'})
+        journalsDb.transaction((txn) => {            
+            txn.executeSql('DROP TABLE IF EXISTS Journals', [])
+        })
+        const plansDb = SQLite.openDatabase({name: 'plansDB', createFromLocation: '/data/plansDB.sqlite'})
+        plansDb.transaction((txn) => {
+            txn.executeSql('DROP TABLE IF EXISTS Plans', [])
+        })
         this.goToScreen('ResetConfirmScreen', navigation)
     }
 
@@ -124,11 +132,11 @@ export default class AnswerSecurityQuestionScreen extends Component {
                             onPress={() => this.onSubmit(navigation)}
                         />
                     </View>
-                    {/*<View style={AppStyles.hCenter}>
+                    <View style={AppStyles.hCenter}>
                         <ResetButton
                             onPress={() => this.onReset(navigation)}
                         />
-                    </View>*/}
+                    </View>
                 </ScrollView>
             </KeyboardAvoidingView>
         )
