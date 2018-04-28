@@ -12,7 +12,7 @@ import Constants from '../Lib/Constants'
 import Header from '../Components/Header'
 import JournalCard from '../Components/JournalCard'
 
-const { AppKey, height, width } = Constants
+const { AppKey, FontSizes, Paddings } = Constants
 
 
 export default class JournalHistoryScreen extends Component {
@@ -20,7 +20,8 @@ export default class JournalHistoryScreen extends Component {
         super(props)
     
         this.state = {
-            journalItems: []
+            journalItems: [],
+            isJournalEmpty: true
         }
     }
 
@@ -40,6 +41,11 @@ export default class JournalHistoryScreen extends Component {
                 for (let i = 0; i < res.rows.length; ++i) {
                     tempJournals.push(res.rows.item(i))
                 }
+                if (tempJournals.length > 0) {
+                    this.setState({
+                        isJournalEmpty: false
+                    })
+                }
                 this.setState({
                     journalItems: tempJournals
                 })
@@ -49,7 +55,7 @@ export default class JournalHistoryScreen extends Component {
 
     render() {
         const { navigation } = this.props
-        const { journalItems } = this.state
+        const { journalItems, isJournalEmpty } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -71,6 +77,12 @@ export default class JournalHistoryScreen extends Component {
                         )
                     })                    
                 }
+                {
+                    isJournalEmpty &&
+                    <View style={[styles.container, AppStyles.center]}>
+                        <Text style={styles.text}>Empty Journals</Text>
+                    </View>
+                }
                 </ScrollView>
             </View>
         )
@@ -78,7 +90,12 @@ export default class JournalHistoryScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-    cardContainer: {
+    container: {
+        paddingTop: Paddings.containerP
+    },
 
+    text: {
+        color: 'white',
+        fontSize: FontSizes.topicFS
     }
 })
