@@ -60,9 +60,7 @@ export default class TalkToSomeoneScreen extends Component {
             chatMenuVisible: false,
             contactMenuVisible: false,
             contacts: [],
-            isContactSelected: false,
-            selectedContactName: '',
-            selectedContactNumber: ''
+            selectedContacts: []
         }
     }
 
@@ -126,10 +124,11 @@ export default class TalkToSomeoneScreen extends Component {
     }
 
     onContactItemClicked = (firstname, lastname, number) => {
+        const tempName = firstname + ' ' + lastname
+        const tempSelected = this.state.selectedContacts
+        tempSelected.push({name: tempName, number: number})
         this.setState({
-            selectedContactName: firstname + ' ' + lastname,
-            selectedContactNumber: number,
-            isContactSelected: true
+            selectedContacts: tempSelected
         })
         this.dismissModal()
     }
@@ -137,7 +136,7 @@ export default class TalkToSomeoneScreen extends Component {
     render() {
         const { selectFromContacts, onContactItemClicked } = this
         const { navigation } = this.props
-        const { callMenuVisible, chatMenuVisible, contactMenuVisible, contacts, isContactSelected, selectedContactName, selectedContactNumber } = this.state
+        const { callMenuVisible, chatMenuVisible, contactMenuVisible, contacts, selectedContacts } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -151,14 +150,19 @@ export default class TalkToSomeoneScreen extends Component {
                         headingText='Talk to Someone'
                     />
                     <View style={[styles.cardContainer, AppStyles.hCenter]}>
+
                         {
-                            isContactSelected &&
-                            <PhoneCard
-                                name={selectedContactName}
-                                phoneNumber={selectedContactNumber}
-                                bgColor={Colors.gray}
-                                onPress={() => callPhone(selectedContactNumber)}
-                            />
+                            selectedContacts.map((item, index) => {
+                                return (
+                                    <PhoneCard
+                                        key={index}
+                                        name={item.name}
+                                        phoneNumber={item.number}
+                                        bgColor={Colors.gray}
+                                        onPress={() => callPhone(item.number)}
+                                    />
+                                )
+                            })
                         }
                         <Button
                             label='Select from contacts'
