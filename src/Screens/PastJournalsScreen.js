@@ -36,6 +36,10 @@ export default class PastJournalsScreen extends Component {
         this.runSQLVersionCheck()
     }
 
+    // componentWillUnmount() {
+    //     this.statePromises.forEach(p => p.cancel())
+    // }
+    
     runSQLVersionCheck() {
         const versionDb = SQLite.openDatabase({name: 'appVerDB', createFromLocation: '/data/appVerDB.sqlite'})
         versionDb.transaction((txn) => {
@@ -53,6 +57,8 @@ export default class PastJournalsScreen extends Component {
                     this.emptyJournalDB()
                 }
             })
+            txn.executeSql('DROP TABLE IF EXISTS Version', [])
+            txn.executeSql('CREATE TABLE IF NOT EXISTS Version(id INTEGER PRIMARY KEY NOT NULL, installed BOOLEAN )')
             txn.executeSql(`INSERT INTO Version (installed) VALUES("TRUE")`, [])
         })
     }
