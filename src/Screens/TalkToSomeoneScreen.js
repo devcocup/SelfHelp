@@ -126,7 +126,13 @@ export default class TalkToSomeoneScreen extends Component {
     onContactItemClicked = (firstname, lastname, number) => {
         const tempName = firstname + ' ' + lastname
         const tempSelected = this.state.selectedContacts
-        tempSelected.push({name: tempName, number: number})
+        const tempContact = {name: tempName, number: number}
+        const found = tempSelected.some(function (el) {
+            return el.name === tempContact.name
+        })
+        if (!found) {
+            tempSelected.push({name: tempName, number: number})
+        } 
         this.setState({
             selectedContacts: tempSelected
         })
