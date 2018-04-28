@@ -99,9 +99,9 @@ const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
                     </TouchableOpacity>
                 </View>
             }
-            <View style={[styles.checkArea, AppStyles.center]}>
-                {
-                    !isMain &&
+            {
+                !isMain && 
+                <View style={[styles.checkArea, AppStyles.center]}>
                     <TouchableOpacity
                         onPress={() => goJournal(navigation)}
                     >
@@ -110,8 +110,13 @@ const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
                             style={styles.checkIcon}
                         />
                     </TouchableOpacity>
-                }
-            </View>
+                </View>
+            }
+            {
+                isMain && 
+                <View style={[styles.mainCheckArea, AppStyles.center]}>
+                </View>
+            }
             <View style={[styles.menuArea, AppStyles.center]}>
                 {
                     !isMain &&
@@ -189,6 +194,10 @@ const styles = StyleSheet.create({
         flex: .17,
         borderLeftWidth: 2,
         borderLeftColor: Constants.Colors.lightGreen
+    },
+
+    mainCheckArea: {
+        flex: .17
     },
 
     checkIcon: {
