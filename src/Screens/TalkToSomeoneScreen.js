@@ -22,12 +22,23 @@ const SearchIcon = require('../Assets/Images/search_orange.png')
 const { height, width } = Dimensions.get('window')
 const { Paddings, Margins, FontSizes, Colors, BorderRadii } = Constants
 
-const PhoneCard = ({ name, phoneNumber, bgColor, onPress }) => {
+const PhoneCard = ({ name, phoneNumber, isRemovable, bgColor, onPress, onRemove }) => {
     return (
         <TouchableOpacity
             style={[styles.phoneCard, AppStyles.hCenter, { backgroundColor: bgColor }]}
             onPress={onPress}
         >
+            {
+                isRemovable &&
+                <TouchableOpacity
+                    style={styles.close}
+                    onPress={onRemove}
+                >
+                    <View style={AppStyles.center}>
+                        <Text style={styles.closeText}>x</Text>
+                    </View>
+                </TouchableOpacity>
+            }
             <Text style={styles.nameText}>{name}</Text>
             <View style={styles.separateBar}></View>
             <Text style={styles.phoneNumberText}>{phoneNumber}</Text>
@@ -139,8 +150,16 @@ export default class TalkToSomeoneScreen extends Component {
         this.dismissModal()
     }
 
+    removeContact = (index) => {
+        const tempContacts = this.state.selectedContacts
+        tempContacts.splice(index, 1)
+        this.setState({
+            selectedContacts: tempContacts
+        })
+    }
+
     render() {
-        const { selectFromContacts, onContactItemClicked } = this
+        const { selectFromContacts, onContactItemClicked, removeContact } = this
         const { navigation } = this.props
         const { callMenuVisible, chatMenuVisible, contactMenuVisible, contacts, selectedContacts } = this.state
 
@@ -164,8 +183,10 @@ export default class TalkToSomeoneScreen extends Component {
                                         key={index}
                                         name={item.name}
                                         phoneNumber={item.number}
+                                        isRemovable
                                         bgColor={Colors.gray}
                                         onPress={() => callPhone(item.number)}
+                                        onRemove={() => removeContact(index)}
                                     />
                                 )
                             })
@@ -255,6 +276,22 @@ const styles = StyleSheet.create({
         padding: Paddings.containerP,
         borderRadius: BorderRadii.boxBR,
         marginBottom: Margins.elementM
+    },
+
+    close: {
+        position: 'absolute',
+        right: 0,
+        top: 0,
+        width: 15,
+        height: 15,
+        borderRadius: BorderRadii.boxBR,
+        backgroundColor: 'red'
+    },
+
+    closeText: {
+        color: 'white',
+        fontSize: 12,
+        fontWeight: '600'
     },
 
     nameText: {
