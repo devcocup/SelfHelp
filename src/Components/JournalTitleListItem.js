@@ -7,7 +7,7 @@ import Constants from '../Lib/Constants'
 import AppStyles from '../Lib/AppStyles'
 
 const DisabledIcon = require('../Assets/Images/checkmark.png')
-const ActivatedIcon = require('../Assets/Images/journal_orange.png')
+const ActivatedIcon = require('../Assets/Images/checkmark_orange.png')
 
 const { height, width } = Dimensions.get('window')
 const { Paddings, Colors, FontSizes } = Constants
