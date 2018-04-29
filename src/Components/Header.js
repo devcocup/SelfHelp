@@ -10,6 +10,7 @@ import Constants from '../Lib/Constants'
 
 const { height,width } = Dimensions.get('window')
 
+const HomeIcon = require('../Assets/Images/home.png')
 const MenuIcon = require('../Assets/Images/nav_menu.png')
 const CheckMarkIcon = require('../Assets/Images/pencil.png')
 const DeleteIcon = require('../Assets/Images/delete.png')
@@ -124,8 +125,8 @@ const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
                         onPress={() => goHome(navigation)}
                     >
                         <Image
-                            source={MenuIcon}
-                            style={styles.menuIcon}
+                            source={HomeIcon}
+                            style={styles.homeIcon}
                         />
                     </TouchableOpacity>
                 }
@@ -186,8 +187,8 @@ const styles = StyleSheet.create({
     },
 
     saveIcon: {
-        width: 25,
-        height: 25
+        width: 30,
+        height: 35
     },
 
     checkArea: {
@@ -211,9 +212,9 @@ const styles = StyleSheet.create({
         borderLeftColor: Constants.Colors.lightGreen
     },
 
-    menuIcon: {
-        width: 35,
-        height: 25
+    homeIcon: {
+        width: 40,
+        height: 40
     }
 
 })
