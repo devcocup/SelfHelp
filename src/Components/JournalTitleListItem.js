@@ -6,7 +6,7 @@ import { View, Text, Image, TouchableOpacity, StyleSheet, Dimensions } from 'rea
 import Constants from '../Lib/Constants'
 import AppStyles from '../Lib/AppStyles'
 
-const DisabledIcon = require('../Assets/Images/checkmark.png')
+const DisabledIcon = require('../Assets/Images/pencil.png')
 const ActivatedIcon = require('../Assets/Images/checkmark_orange.png')
 
 const { height, width } = Dimensions.get('window')
