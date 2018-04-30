@@ -282,15 +282,15 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 0,
         top: 0,
-        width: 15,
-        height: 15,
+        width: 20,
+        height: 20,
         borderRadius: BorderRadii.boxBR,
         backgroundColor: 'red'
     },
 
     closeText: {
         color: 'white',
-        fontSize: 12,
+        fontSize: 15,
         fontWeight: '600'
     },
 
