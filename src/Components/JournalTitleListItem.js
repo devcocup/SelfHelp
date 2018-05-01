@@ -29,7 +29,7 @@ const JournalTitleListItem = ({ checked, label, onPress }) => {
                         !checked &&
                         <Image
                             source={DisabledIcon}
-                            style={styles.checkIcon}
+                            style={styles.disabledIcon}
                         />
                     }
                 </View>
@@ -57,8 +57,12 @@ const styles = StyleSheet.create({
 
     checkIcon: {
         width: 40,
-        height: 40,
-        opacity: .6
+        height: 40
+    },
+
+    disabledIcon: {
+        width: 32,
+        height: 32
     },
 
     labelArea: {
