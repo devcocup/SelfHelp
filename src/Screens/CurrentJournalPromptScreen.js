@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, TextInput, ScrollView, KeyboardAvoidingView, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, TextInput, ScrollView, KeyboardAvoidingView, StyleSheet, Dimensions, Keyboard } from 'react-native'
 import SQLite from 'react-native-sqlite-2'
 import { encrypt } from 'react-native-simple-encryption'
 // import Aes from 'react-native-aes-crypto'
@@ -33,10 +33,37 @@ export default class CurrentJournalPromptScreen extends Component {
     
         this.state = {
             journalText: '',
-            progress: []
+            progress: [],
+            visibleHeight: height - 340
         }
     }
 
+
+    componentWillMount () {
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow.bind(this))
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide.bind(this))
+    }
+
+    componentWillUnmount () {
+        this.keyboardDidShowListener.remove()
+        this.keyboardDidHideListener.remove()
+    }
+
+    keyboardDidShow (e) {
+        let newSize = height - 340 - e.endCoordinates.height
+
+        this.setState({
+            visibleHeight: newSize,
+            topLogo: { width: 100, height: 70 }
+        })
+    }
+  
+    keyboardDidHide (e) {
+        this.setState({
+            visibleHeight: height - 340,
+            topLogo: { width: width}
+        })
+    } 
 
     runSQL(currentTime, journalQuestion, journalAnswer) {
         const db = SQLite.openDatabase({name: 'journalsDB', createFromLocation: '/data/journalsDB.sqlite'})
@@ -58,7 +85,7 @@ export default class CurrentJournalPromptScreen extends Component {
         const { headerContent } = params
         const currentTime = new Date().toLocaleString()
         this.runSQL(currentTime, headerContent, journalText)
-        navigate('JournalScreen')
+        navigate('JournalScreen', { updated: true })
     }
 
     render() {
@@ -66,7 +93,7 @@ export default class CurrentJournalPromptScreen extends Component {
         const { headerTitle, headerContent } = navigation.state.params
 
         return (
-            <KeyboardAvoidingView style={AppStyles.mainContainer}>
+            <View style={AppStyles.mainContainer}>
                 <Header
                     type='Back'
                     navigation={navigation}
@@ -80,8 +107,9 @@ export default class CurrentJournalPromptScreen extends Component {
                         <View style={[styles.answerArea, AppStyles.hCenter]}>
                             <View style={styles.textArea}>
                                 <TextInput
-                                    style={styles.inputBox}
+                                    style={[styles.inputBox, { height: this.state.visibleHeight}]}
                                     multiline={true}
+                                    blurOnSubmit={true}
                                     onChangeText={(journalText) => this.setState({ journalText })}
                                     value={this.state.journalText}
                                 />
@@ -96,7 +124,7 @@ export default class CurrentJournalPromptScreen extends Component {
                         </View>
                     </View>
                 </ScrollView>
-            </KeyboardAvoidingView>
+            </View>
         )
     }
 }
@@ -115,7 +143,7 @@ const styles = StyleSheet.create({
     },
 
     inputBox: {
-        height: height - 340,
+        // height: height - 340,
         padding: Paddings.elementP
     },
 
