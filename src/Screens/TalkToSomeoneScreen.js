@@ -75,7 +75,7 @@ export default class TalkToSomeoneScreen extends Component {
         }
     }
 
-    dismissModal() {
+    dismissModal = () => {
         this.setState({
             callMenuVisible: false,
             chatMenuVisible: false,
@@ -159,7 +159,7 @@ export default class TalkToSomeoneScreen extends Component {
     }
 
     render() {
-        const { selectFromContacts, onContactItemClicked, removeContact } = this
+        const { selectFromContacts, onContactItemClicked, removeContact, dismissModal } = this
         const { navigation } = this.props
         const { callMenuVisible, chatMenuVisible, contactMenuVisible, contacts, selectedContacts } = this.state
 
@@ -258,6 +258,14 @@ export default class TalkToSomeoneScreen extends Component {
                                     })
                                 }
                             </ScrollView>
+                            <TouchableOpacity
+                                style={styles.dismissModal}
+                                onPress={dismissModal}
+                            >
+                                <View style={AppStyles.center}>
+                                    <Text style={styles.closeText}>x</Text>
+                                </View>
+                            </TouchableOpacity>
                         </Overlay>
                     </View>
                 </ScrollView>
@@ -335,5 +343,15 @@ const styles = StyleSheet.create({
     contactNumber: {
         color: 'white',
         fontSize: FontSizes.contentFS
-    }
+    },
+
+    dismissModal: {
+        position: 'absolute',
+        right: 32,
+        top: 12,
+        width: 20,
+        height: 20,
+        borderRadius: BorderRadii.boxBR,
+        backgroundColor: 'red'
+    },
 })
