@@ -63,7 +63,14 @@ export default class SelfCareQuizScreen extends Component {
     }
 
     onSkip = (navigation) => {
-        console.log('skip clicked')
+        if (this.state.quizIndex >= 6) {
+            this.runSQL(this.state.scoreValues)
+            this.goToScreen('SelfCareQuizResultsScreen', this.state.scoreValues, navigation)
+        } else {
+            this.setState({
+                quizIndex: this.state.quizIndex + 1
+            })
+        }
     }
 
     runSQL(scoreValues) {
