@@ -15,18 +15,15 @@ import Button from '../Components/Button'
 const { height, width } = Dimensions.get('window')
 const { Paddings, Margins, FontSizes, Colors } = Constants
 
-const quizTitle = 'Scenario 1'
-const quizSubTitle = 'At a bar'
-
-const QuizHeadingContainer = () => {
+const QuizHeadingContainer = ({ index }) => {
     return (
         <View style={[styles.headingContainer, AppStyles.center]}>
             <Text style={styles.titleText}>
-                {quizTitle}
+                Scenario {index}
             </Text>
             <View style={styles.separateBar}></View>
             <Text style={styles.subTitleText}>
-                {quizSubTitle}
+                {Constants.QuizLabels[index - 1].title}
             </Text>
         </View>
     )
@@ -38,9 +35,7 @@ export default class QuizScenarioScreen extends Component {
         super(props)
     
         this.state = {
-            quizIndex: 1,
-            titleText: 'Scenario 1',
-            subTitleText: 'At a bar'
+            quizIndex: 1
         }
     }
 
@@ -68,7 +63,9 @@ export default class QuizScenarioScreen extends Component {
                     navigation={navigation}
                 />
                 <ScrollView>
-                    <QuizHeadingContainer />
+                    <QuizHeadingContainer
+                        index={quizIndex}
+                    />
                     {
                         Constants.QuizLabels.map((item, index) => {
                             return (
