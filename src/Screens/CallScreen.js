@@ -115,7 +115,7 @@ export default class CallScreen extends Component {
         const { navigate } = navigation
         TwilioVoice.disconnect()
         this.setState({
-            statusText: 'Cancelled'
+            statusText: 'Canceled'
         })
     }
 
