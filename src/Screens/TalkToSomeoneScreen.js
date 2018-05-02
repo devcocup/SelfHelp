@@ -203,7 +203,7 @@ export default class TalkToSomeoneScreen extends Component {
                             onPress={() => this.onCallMenuClicked()}
                         />
                         <ChatCard
-                            name='Chat with DoD Safe Helpline'
+                            name='Chat with DoD Helpline'
                             onPress={() => this.onChatMenuClicked()}
                         />
                         <Overlay visible={chatMenuVisible}
