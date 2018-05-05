@@ -44,7 +44,7 @@ const CardContainer = ({ content, navigation }) => {
                 }
                 {
                     item.url &&
-                    <RedirectButton content={item} onPress={onRedirect(item.url, navigation)} />
+                    <RedirectButton content={item} onPress={() => onRedirect(item.url, navigation)} />
                 }
             </View>
         )
