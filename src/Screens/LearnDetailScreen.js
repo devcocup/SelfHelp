@@ -10,12 +10,17 @@ import Constants from '../Lib/Constants'
 import Header from '../Components/Header'
 import TopicButton from '../Components/TopicButton'
 import SubTopicButton from '../Components/SubTopicButton'
+import RedirectButton from '../Components/RedirectButton'
 
 const { height, width } = Dimensions.get('window')
 const { Paddings, FontSizes } = Constants
 
+onRedirect = (url, navigation) => {
+    const { navigate } = navigation
+    navigate('LearnRedirectScreen', { url })
+}
 
-const CardContainer = ({ content }) => {
+const CardContainer = ({ content, navigation }) => {
     const cardDescriptionBox = content.subContent.subDescription.map((item, index) => {
         return (
             <Text
@@ -33,7 +38,14 @@ const CardContainer = ({ content }) => {
                 key={index}
                 style={[styles.cardContainer, AppStyles.hCenter]}
             >
-                <SubTopicButton content={item} />
+                {
+                    !item.url &&
+                    <SubTopicButton content={item} />
+                }
+                {
+                    item.url &&
+                    <RedirectButton content={item} onPress={onRedirect(item.url, navigation)} />
+                }
             </View>
         )
     })
@@ -62,6 +74,7 @@ export default class LearnDetailScreen extends Component {
                 <ScrollView>
                     <CardContainer
                         content={navigation.state.params}
+                        navigation={navigation}
                     />
                 </ScrollView>
             </View>

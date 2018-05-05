@@ -112,19 +112,22 @@ const LearnLabels = [
                             categoryTitle: 'Building Hope and Resiliency',
                             categoryContent: [
                                 'Addressing the Effects of Sexual Assault: This program seeks to help survivors begin to recover, heal, and build resiliency after a sexual assault. Recognizing the effect that trauma can have, this program is part of a comprehensive effort to enhance resilience and improve readiness across the Total Force. Users will learn about sexual assault and its effects, assess their current coping skills, and find information about additional support and resources available. This program may be especially helpful for survivors that are not yet ready to connect directly with anyone or for those that prefer to do their own research before taking the next step.'
-                            ]
+                            ],
+                            url: 'https://safehelpline.org/building-hope-and-resiliency'
                         },
                         {
                             categoryTitle: 'How to Support a Survivor',
                             categoryContent: [
                                 'The How to Support a Survivor program provides concrete tools that can help friends, family members, and colleagues of survivors of sexual assault support the course of a survivor\'s recovery. This program identifies helping behaviors that support survivors of sexual assault while also educating supporters about behaviors that can be harmful and how to avoid them.'
-                            ]
+                            ],
+                            url: 'https://safehelpline.org/HTSAS'
                         },
                         {
                             categoryTitle: 'Safe Helpline 101',
                             categoryContent: [
                                 'This program provides an overview of Safe Helpline, including services offered, information about the secure technology platform, and steps taken to protect the anonymity and confidentiality of users. Most important, this program describes how Safe Helpline services augment and support Sexual Assault Response Coordinators and Victim Advocates (SARC/SAPR VA) in their efforts to meet the needs of sexual assault survivors. The target audience for this program is SARCs, SAPR VAs, and other responders interested in learning more about Safe Helpline.'
-                            ]
+                            ],
+                            url: 'https://safehelpline.org/101'
                         }
                     ]
                 }
