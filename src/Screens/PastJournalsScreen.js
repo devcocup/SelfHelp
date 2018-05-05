@@ -16,9 +16,16 @@ const { AppKey, JournalPromptQuestions } = Constants
 
 const db = SQLite.openDatabase({name: 'journalsDB', createFromLocation: '/data/journalsDB.sqlite'})
 
-const onListClick = (item, index, navigation) => {
+const onListClick = (item, index, checked, navigation) => {
     const { navigate } = navigation
-    navigate('JournalHistoryScreen', { question: item })
+    if ( checked) {
+        navigate('JournalHistoryScreen', { question: item })        
+    } else {
+        const headerTitle = 'Current Journal Prompt'
+        const headerContent = item
+        navigate('CurrentJournalPromptScreen', { headerTitle, headerContent })
+    }
+
 }
 
 
@@ -106,7 +113,7 @@ export default class PastJournalsScreen extends Component {
                                     <JournalTitleListItem
                                         checked={this.state.checkedStates[index]}
                                         label={item}
-                                        onPress={() => onListClick(item, index, navigation)}
+                                        onPress={() => onListClick(item, index, checked, navigation)}
                                     />
                                 </View>
                             )
