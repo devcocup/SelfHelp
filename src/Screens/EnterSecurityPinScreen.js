@@ -66,6 +66,17 @@ export default class CreateSecurityPinScreen extends Component {
         }
     }
 
+    onPanelClicked = (label, index, navigation) => {
+        if (label === 'Clear') {
+            this.setState({
+                dotIndex: 0,
+                typedPin: ''
+            })
+        } else {
+            this.checkPin(label, index, navigation)
+        }
+    }
+
     render() {
         const { navigation } = this.props
         const { mismatched, headerText, dotIndex } = this.state
@@ -99,7 +110,7 @@ export default class CreateSecurityPinScreen extends Component {
                                 <TouchableOpacity
                                     key={index}
                                     style={[styles.panel, AppStyles.center]}
-                                    onPress={() => this.checkPin(item, dotIndex, navigation)}
+                                    onPress={() => this.onPanelClicked(item, dotIndex, navigation)}
                                 >
                                     <Text style={styles.panelText}>{item}</Text>
                                 </TouchableOpacity>
