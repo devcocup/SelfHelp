@@ -1,0 +1,12 @@
+PODS:
+  - TwilioVoice (2.0.4)
+
+DEPENDENCIES:
+  - TwilioVoice (~> 2.0.0)
+
+SPEC CHECKSUMS:
+  TwilioVoice: f3a1ec7a362dc361c84e246a6c8a930d152d760d
+
+PODFILE CHECKSUM: 237cb5d824bed67530b9fe53558be073cf421723
+
+COCOAPODS: 1.4.0

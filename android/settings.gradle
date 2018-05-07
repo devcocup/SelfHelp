@@ -1,3 +1,15 @@
 rootProject.name = 'selfhelp'
+include ':react-native-twilio-programmable-voice'
+project(':react-native-twilio-programmable-voice').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-twilio-programmable-voice/android')
+include ':react-native-vector-icons'
+project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
+include ':react-native-sqlite-2'
+project(':react-native-sqlite-2').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sqlite-2/android')
+include ':react-native-sound-player'
+project(':react-native-sound-player').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sound-player/android')
+include ':react-native-image-picker'
+project(':react-native-image-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-picker/android')
+include ':react-native-contacts'
+project(':react-native-contacts').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-contacts/android')
 
 include ':app'

@@ -81,7 +81,7 @@ export default class CallScreen extends Component {
     }
 
     getAccessTokenFromServer() {
-        const url = 'https://voip.safehelpline.org/connect.php'
+        const url = 'https://voip.safehelpline.org/connect-new.php'
         fetch(url)
             .then((response) => response.text())
             .then(data => this.initTelephony(data))
