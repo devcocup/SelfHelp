@@ -10,7 +10,7 @@ import Constants from '../Lib/Constants'
 // Assets
 import Header from '../Components/Header'
 import SearchResultPanel from '../Components/SearchResultPanel'
-import SearchResultSubList from "./SearchResultSubList";
+import SearchResultSubList from "../Components/SearchResultSubList";
 
 const CallIcon = require('../Assets/Images/call_button.png')
 
