@@ -856,7 +856,7 @@ const JournalPromptQuestions = [
     'What would you do if money were no object?',
     'What\'s something you\'re grateful for this week? Why are you grateful for it?',
     'What are some of your favorite quotes?',
-    'What is your favortie personality trait?',
+    'What is your favorite personality trait?',
     'What is something you\'ve learned this week?'
 ]
 
