@@ -1,4 +1,7 @@
 {
   "name": "selfhelp",
-  "displayName": "selfhelp"
+  "displayName": "selfhelp",
+  "expo" : {
+    "sdkVersion" : "27.0.0"
+  }
 }
