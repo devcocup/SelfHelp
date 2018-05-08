@@ -38,7 +38,6 @@ export default class SearchResultSubList extends Component {
                             <Text style={styles.subLabelText}>{cardItem.NAME}</Text>
                             <Text style={styles.phoneNumberText}>{cardItem.PHONE1}</Text>
                             <Text style={styles.locationText}>{cardItem.CITY}, {cardItem.STATE}</Text>
-                            <Text style={styles.subLabelText}>{cardItem.TYPE}</Text>
                         </View>
                         <View style={[styles.panelItemButton, AppStyles.center]}>
                             <TouchableOpacity
