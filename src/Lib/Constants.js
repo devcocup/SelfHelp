@@ -783,7 +783,13 @@ const QuizLabels = [
             {
                 choiceCaption: 'B',
                 content: 'Suggest that they talk to a supervisor they are comfortable approaching.',
-                subContent: 'Please note that if the supervisor they reach out to is in their chain of command, it will automatically trigger an Unrestricted Report. This is a good option if your friend is ready to file an Unrestricted report against their abuser. You can learn more about Restricted and Unrestricted Report here, or speak to Safe Helpline staff member at online.safehelpline.org or by calling 877-995-5247.'
+                subContent: {
+                    preLinkText: 'Please note that if the supervisor they reach out to is in their chain of command, it will automatically trigger an Unrestricted Report. This is a good option if your friend is ready to file an Unrestricted report against their abuser. You can learn more about Restricted and Unrestricted Reports ',
+                    postLinkText: ', or speak to Safe Helpline staff member at online.safehelpline.org or by calling 877-995-5247.',
+                    linkText: 'here',
+                    link: 'https://www.safehelpline.org/reporting-option'
+                },
+                hasEmbeddedLink: true
             },
             {
                 choiceCaption: 'C',
@@ -809,7 +815,13 @@ const QuizLabels = [
             {
                 choiceCaption: 'C',
                 content: 'Suggest that she reach out to an advocate for support.',
-                subContent: 'Local rape crisis centers have resources to help victims of stalking and can help your friend with obtaining a protection order with law enforcement if she chooses to get one. You can look up local rape crisis centers here, but remember to let her decide if she wants to connect with them or not. You may also suggest that she reach out to a counselor at the Equal Employment Opportunity Commission.'
+                subContent: {
+                    preLinkText: 'Local rape crisis centers have resources to help victims of stalking and can help your friend with obtaining a protection order with law enforcement if she chooses to get one. You can look up local rape crisis centers ',
+                    postLinkText: ', but remember to let her decide if she wants to connect with them or not. You may also suggest that she reach out to a counselor at the Equal Employment Opportunity Commission.',
+                    linkText: 'here',
+                    link: 'https://centers.rainn.org/'
+                },
+                hasEmbeddedLink: true
             }
         ]
     }
