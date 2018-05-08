@@ -11,6 +11,7 @@ import Constants from '../Lib/Constants'
 import Header from '../Components/Header'
 import SearchResultPanel from '../Components/SearchResultPanel'
 import SearchResultSubList from "../Components/SearchResultSubList";
+import VetCentersContainer from "../Components/VetCentersContainer";
 
 const CallIcon = require('../Assets/Images/call_button.png')
 
@@ -35,6 +36,7 @@ const TypeIdToName = {
 const TypeOrder = [
     "SARC",
     "Civilian",
+    "Vet Centers",
     "Chaplain",
     "Legal",
     "Medical",
@@ -121,7 +123,13 @@ export default class SearchResultScreen extends Component {
                     }
                     {
                         TypeOrder.map(category => {
-                            return (<SearchResultSubList key={category} category={category} services={services.filter(service => TypeIdToName[service.TYPE] === category)} />)
+                            switch(category){
+                                case "Vet Centers":
+                                    console.log(category)
+                                    return(<VetCentersContainer/>)
+                                default:
+                                    return (<SearchResultSubList key={category} category={category} services={services.filter(service => TypeIdToName[service.TYPE] === category)} />)
+                            }
                         })
                     }
                 </ScrollView>

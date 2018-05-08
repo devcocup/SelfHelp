@@ -117,14 +117,14 @@ const styles = StyleSheet.create({
     },
 
     header: {
-        backgroundColor: 'tan',
         alignItems: 'center',
         justifyContent: 'center'
     },
 
     headerText: {
         fontSize: FontSizes.listFS,
-        fontWeight: '600'
+        fontWeight: '600',
+        color: 'orange'
     },
 
     panelItemTextArea: {
