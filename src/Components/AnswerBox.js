@@ -1,5 +1,6 @@
 // React
 import React, { Component } from 'react'
+import { Linking } from 'react-native'
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
@@ -8,6 +9,25 @@ import Constants from '../Lib/Constants'
 
 const { height, width } = Dimensions.get('window')
 const { Margins, Paddings, FontSizes, BorderRadii, Colors } = Constants
+
+const AnswerBoxSubContent = ({ content }) => {
+    return (
+        <View style={styles.subContentBox}>
+            {
+                !content.hasEmbeddedLink ? (
+                <Text style={styles.subTextStyle}>{content.subContent}</Text>
+                ) : (
+                <Text style={styles.subTextStyle}>{content.subContent.preLinkText}
+                    <Text style={{color: Colors.orange}} onPress={() => Linking.openURL(content.subContent.link)}>
+                        {content.subContent.linkText}
+                    </Text>
+                    {content.subContent.postLinkText}
+                </Text>
+                )
+            }
+        </View>
+    )
+}
 
 
 export default class AnswerBox extends Component {
@@ -42,17 +62,13 @@ export default class AnswerBox extends Component {
                             </Text>
                         </View>
                         <View style={styles.contentArea}>
-                            <Text style={styles.textStyle}>
-                                {content.content}
-                            </Text>
+                            <Text style={styles.textStyle}>{content.content}</Text>
                         </View>
                     </View>
                 </TouchableOpacity>
                 {
                     isDisplayed &&
-                    <View style={styles.subContentBox}>
-                        <Text style={styles.subTextStyle}>{content.subContent}</Text>
-                    </View>
+                    <AnswerBoxSubContent content={content} />
                 }
             </View>
         )        
