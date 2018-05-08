@@ -87,12 +87,12 @@ const LearnLabels = [
         content: [
             {
                 icon: require('../Assets/Images/what_can_I_do_to_help.png'),
-                subTopic: 'What can I do to help?',
+                subTopic: 'What can I do to help someone?',
                 description: 'Learn how to help someone who has been harassed or sexual assaulted.',
                 subContent: {
                     subDescription: [
-                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every stuation is different, but hopefully this tool can help prepare you to support people at rist. You don\'t have to be a hero to make a big difference in someone\'s life.',
-                        'If you need additional support about a situation you are dealing with, you can reach out to a Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
+                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every stuation is different, but hopefully this tool can help prepare you to support people at risk. You don\'t have to be a hero to make a big difference in someone\'s life.',
+                        'If you need additional support about a situation you are dealing with, you can reach out to Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
                     ],
                     subCategories: []
                 }
@@ -613,7 +613,7 @@ const SearchLabels = [
             },
             {
                 icon: '',
-                label: 'Transition Resources'
+                label: 'Transitioning Service Member Resources'
             },
             {
                 icon: require('../Assets/Images/talk_to_someone.png'),
@@ -690,10 +690,10 @@ const WhatCanIDoToHelpLabels = [
      The Scenarios cover a range of harmful behavior in the spectrum of sexual assault\
      and harassment. Each scenario includes different courses of action and how or why\
      that action can be helpful. Every stuation is different, but hopefully this \
-     tool can help prepare you to support people at rist. You don\'t have to be a hero \
+     tool can help prepare you to support people at risk. You don\'t have to be a hero \
     to make a big difference in someone\'s life.',
     'If you need additional support about a situation you are dealing with, you can \
-    reach out to a Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. \
+    reach out to Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. \
     A trained Safe Helpline staff member is available to support you 24/7.'
 ]
 
@@ -725,7 +725,7 @@ const QuizLabels = [
             {
                 choiceCaption: 'C',
                 content: 'Tell your commanding officer or your training instructor about what you witnessed.',
-                subContent: 'What your coworkers are saying about other members in your unit undermines the strength of your team and can lead to a hostile working environment. Your CO may have additional ways to address the problem at hand and make it a safer working environment for everyone in your unit'
+                subContent: 'What your coworkers are saying about other members in your unit undermines the strength of your team and can lead to a hostile working environment. Your CO may have additional ways to address the problem at hand and make it a safer working environment for everyone in your unit.'
             }
         ]
     },
@@ -783,7 +783,7 @@ const QuizLabels = [
             {
                 choiceCaption: 'B',
                 content: 'Suggest that they talk to a supervisor they are comfortable approaching.',
-                subContent: 'Please note that if the supervisor they reach out to is in their chain of command, it will automatically trigger an Unrestricted Report. This is a good option if your friend is ready to file an Unrestricted report against their abuser. You can learn more about Restricted and Unrestricted Report here, or speak to a Safe Helpline staff member at online.safehelpline.org or by calling 877-995-5247.'
+                subContent: 'Please note that if the supervisor they reach out to is in their chain of command, it will automatically trigger an Unrestricted Report. This is a good option if your friend is ready to file an Unrestricted report against their abuser. You can learn more about Restricted and Unrestricted Report here, or speak to Safe Helpline staff member at online.safehelpline.org or by calling 877-995-5247.'
             },
             {
                 choiceCaption: 'C',
