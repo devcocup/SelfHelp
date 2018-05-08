@@ -20,7 +20,7 @@ const RedirectButton = ({ content, onPress }) => {
             <TouchableOpacity onPress={onPress}>
                 <View style={[styles.boxContainer, AppStyles.center, itemBgStyle]}>
                     <Text style={styles.textStyle}>
-                        {content.categoryTitle}
+                        {content.categoryTitle ? content.categoryTitle : content.text}
                     </Text>
                 </View>
             </TouchableOpacity>   

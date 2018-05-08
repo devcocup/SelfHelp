@@ -5,6 +5,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-nati
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
 import Constants from '../Lib/Constants'
+import RedirectButton from '../Components/RedirectButton'
 
 const { height, width } = Dimensions.get('window')
 const { Margins, Paddings, FontSizes, BorderRadii, Colors } = Constants
@@ -25,7 +26,10 @@ export default class SubTopicButton extends Component {
         })
     }
 
-    render() {
+  renderLinks = (links) => links.map(link => <RedirectButton key={link.uri} content={link} onPress={() => onRedirect(link.uri, this.props.navigation)} />)
+
+
+  render() {
         const { content } = this.props
         const { isDisplayed } = this.state
         const itemBgStyle = {
@@ -56,6 +60,9 @@ export default class SubTopicButton extends Component {
                             )
                         })
                     }
+                      {
+                        content.links && this.renderLinks(content.links)
+                      }
                     </View>
                 }
             </View>
