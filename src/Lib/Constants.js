@@ -474,10 +474,15 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Where can I find more information for Transitioning Service Members?',
                             categoryContent: [
-                                'Transition Assistance Program',
-                                'Veteran\'s Health Administration',
-                                'Veteran\'s Affairs Benefits Guide'
-                            ]
+                                // 'Transition Assistance Program',
+                                // 'Veteran\'s Health Administration',
+                                // 'Veteran\'s Affairs Benefits Guide'
+                            ],
+                          links: [
+                            {uri: 'https://www.dodtap.mil/' , text: 'Transition Assistance Program'},
+                            {uri: 'https://www.va.gov/health/', text: 'Veterans Health Administration'},
+                            {uri: 'https://benefits.va.gov/BENEFITS/benefits_summary_materials.asp', text: "Veterans' Affairs Benefits Guide"},
+                          ]
                         }
                     ]
                 }
