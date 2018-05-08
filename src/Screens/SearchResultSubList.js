@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
 
     cardText: {
         color: 'white',
-        fontSize: FontSizes.listFS,
+        fontSize: FontSizes.textHeaderFS,
         fontWeight: '600'
     },
 
@@ -123,7 +123,8 @@ const styles = StyleSheet.create({
     },
 
     headerText: {
-        fontSize: FontSizes.listFS
+        fontSize: FontSizes.listFS,
+        fontWeight: '600'
     },
 
     panelItemTextArea: {
