@@ -517,6 +517,7 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/focusing_on_the_present.png'),
                 subTopic: 'Focusing on the Present',
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed or feel like what you went through is happening all over again.',
                 description: 'An exercise to ground yourself in the Pressent to reduce stress',
                 bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
                 music: 'focusing_on_present'
@@ -524,6 +525,7 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/guided_breathing.png'),
                 subTopic: 'Guided Breathing',
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided breathing may help you when you are feeling nervous, overwhelmed, or tense. Focusing on your breath may help you feel more relaxed and in the present. ',
                 description: 'Breathing techniques to help you relax when you are overwhelmed.',
                 bgImage: require('../Assets/Images/guided_breathing_bg-min.jpg'),
                 music: 'guided_breathing'
@@ -531,12 +533,14 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/guided_muscle_relaxation.png'),
                 subTopic: 'Guided Muscle Relaxation',
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided muscle relaxation may help to reduce tension and help you feel calmer. Before starting this exercise, please consult with your doctor if you have a history of muscle spasms, back problems or other conditions that may be made worse by tensing your muscles.',
                 description: 'Reduce tension with this audio guided muscle relaxationexercise.',
                 bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg'),
                 music: 'guided_muscle_relaxation'
             },
             {
                 icon: require('../Assets/Images/listening_to_soothing_sounds.png'),
+                subDescription: '',
                 subTopic: 'Listening to Soothing Sounds',
                 description: 'Feel more relaxed by listening to these soothing sounds.',
                 bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg'),
@@ -544,6 +548,7 @@ const ExercisesLabels = [
             },
             {
                 icon: require('../Assets/Images/my_safe_place.png'),
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Following this exercise can  help you visualize being in your safe place, by channelling your feelings, sense of sight, smell, and touch.',
                 subTopic: 'My Safe Place',
                 description: 'This exercise will help you visualize being at the beach to reduce stress.',
                 bgImage: require('../Assets/Images/my_safe_place_bg-min.jpg'),
@@ -551,6 +556,7 @@ const ExercisesLabels = [
             },
             {
                 icon: require('../Assets/Images/people_I_can_call.png'),
+                subDescription: '',
                 subTopic: 'People I Can Call',
                 description: 'Make a list of the people you can call when you need to talk to them.',
                 bgImage: require('../Assets/Images/people_I_can_call_bg-min.jpg'),
@@ -558,6 +564,7 @@ const ExercisesLabels = [
             },
             {
                 icon: require('../Assets/Images/things_that_make_me_smile.png'),
+                subDescription: 'Images can have a powerful effect on how you feel. Pictures of loved ones, pets, and even memorable moments can make you feel happy, safe, and at ease. With this tool, you can select images from your phone or you can pick images from our photo album. ',
                 subTopic: 'Things that make me smile',
                 description: 'Make a gallery of your favorite things that make you smile and happy.',
                 bgImage: require('../Assets/Images/things_that_make_me_smile_bg-min.jpg'),

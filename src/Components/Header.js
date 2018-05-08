@@ -55,7 +55,7 @@ const goHome = (navigation) => {
 }
 
 
-const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
+const Header = ({ type, isMain, onDelete, onSave, navigation, displaySaveButton = true }) => {
     let headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
 
     return (
@@ -90,7 +90,7 @@ const Header = ({ type, isMain, onDelete, onSave, navigation }) => {
                 </View>
             }
             {
-                (type === 'Coloring') &&
+                (type === 'Coloring' && displaySaveButton) &&
                 <View style={[styles.saveArea, AppStyles.center]}>
                     <TouchableOpacity onPress={onSave}>
                         <Image
