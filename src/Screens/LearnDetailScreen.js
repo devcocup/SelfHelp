@@ -32,7 +32,9 @@ const CardContainer = ({ content, navigation }) => {
         )
     })
 
+
     const cardList = content.subContent.subCategories.map((item, index) => {
+        console.log(item)
         return (
             <View
                 key={index}
@@ -40,12 +42,14 @@ const CardContainer = ({ content, navigation }) => {
             >
                 {
                     !item.url &&
-                    <SubTopicButton content={item} />
+                    <SubTopicButton content={item} navigation={navigation}/>
+
                 }
-                {
-                    item.url &&
-                    <RedirectButton content={item} onPress={() => onRedirect(item.url, navigation)} />
-                }
+              {
+                item.url &&
+                <RedirectButton content={item} onPress={() => onRedirect(item.url, navigation)}/>
+              }
+
             </View>
         )
     })

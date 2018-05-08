@@ -209,6 +209,14 @@ const LearnLabels = [
                                 'Learn more about depression from the National Institute of Mental Health or the National Alliance on Mental Illness.',
                                 'To find a mental health facility or program, use the Safe Helpline responder database for military and civilian resources in your area here. You can also use the Mental Health Treatment Locator function from The Substance Abuse and Mental Health Services Administration (SAMHSA).  Find the center that is closest to you and best fits your needs. Please note that not all providers in the database have been formally vetted by RAINN and not all accept TRICARE. Please confirm with the provider about the insurances they accept.',
                                 'Having support when you need it most can sometimes be challenging. The Safe Helpline app allows you to create a personalized self-care plan based on how you are feeling, and you can browse a number of self-care exercises to help you through a difficult moment.'
+                            ],
+                            links: [
+                              {uri: 'https://www.nimh.nih.gov/index.shtml' , text: 'National Institute of Mental Health'},
+                              {uri: 'https://www.nami.org/' , text: 'National Alliance on Mental Illness'},
+                              {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline for Military & Civilian Resources'},
+                              {uri: 'https://findtreatment.samhsa.gov/', text: 'Mental Health Treatment Locator'},
+                              {uri: 'https://www.samhsa.gov/', text: 'The Substance Abuse and Mental Health Services Administration (SAMHSA)'},
+                              {uri: 'http://cloudorpheus.com/safehelpline/node/18', text: 'Safe Helpline App'},
                             ]
                         },
                         {
@@ -225,7 +233,13 @@ const LearnLabels = [
                                 'Living with PTSD can be challenging, but learning more about the condition can encourage you to ask questions and find the help you need. You can learn more about PTSD at the National Institute of Mental Health, the Mayo Clinic, or the National Center for PTSD.',
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.',
                                 'Kessler RC, Sonnega A, Bromet E, Hughes M, Nelson CB. Posttraumatic stress disorder in the National Comorbidity Survey. Arch Gen Psych. 1995;52: 1048–1060.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://www.nimh.nih.gov/index.shtml' , text: 'National Institute of Mental Health'},
+                            {uri: 'https://www.ptsd.va.gov/' , text: 'National Center for PTSD'},
+                            {uri: 'https://www.mayoclinic.org/', text: 'The Mayo Clinic'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Self Harm',
@@ -240,7 +254,12 @@ const LearnLabels = [
                                 'To an outsider, self-harm might not be very apparent.  Survivors tend to do these activities in secret.  They put effort into covering up signs of self-harm, such as wearing long sleeves over cut skin.  It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.',
                                 'Where can I find help and learn more?',
                                 'If you or someone you care about is self-harming, Self-injury Outreach & Support (SiOS) has valuable resources that may help you through this difficult time. You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/143' , text: 'How Trauma Can Effect the Brain'},
+                            {uri: 'http://sioutreach.org/' , text: 'Self Injury Outreach & Support'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Suicide',
@@ -256,7 +275,12 @@ const LearnLabels = [
                                 'Call the National Suicide Prevention Lifeline at 800.273.TALK (8255) or chat online using the Lifeline Crisis Chat anytime, 24/7.  The Lifeline is not a confidential service and some personal information may be collected and used if the caller is in danger, such as an IP address or the caller\'s telephone number. If you are concerned about privacy, please review the organization\'s policies before using the service.',
                                 'You can also call the Military/Veterans Crisis Line by calling the same number (800-273-8255) and pressing 1 or connect with them through their online chat service for support 24/7.',
                                 'Additionally, you can use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://suicidepreventionlifeline.org/' , text: 'National Suicide Prevention Lifeline'},
+                            {uri: 'https://www.veteranscrisisline.net/ChatTermsOfService.aspx?account=Veterans%20Chat' , text: 'Veterans Crisis Line'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Dissociation',
@@ -269,7 +293,11 @@ const LearnLabels = [
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.',
                                 'Where can I find help and learn more?',
                                 'To learn more about the resources provided, or to find additional resources, please consider reaching out to Safe Helpline.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://www.nami.org/' , text: 'National Alliance on Mental Illness'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/128', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Sleep Disorders',
@@ -280,7 +308,12 @@ const LearnLabels = [
                                 'Where can I go to get help and learn more?',
                                 'The National Heart, Lung, and Blood Institute (NHLBI) has resources to help you discuss sleep with a healthcare professional, including what questions to ask.  Additionally, you can learn more about the symptoms of insomnia and nightmares from the American Academy of Sleep Medicine.',
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://www.nhlbi.nih.gov/' , text: 'National Heart, Lung, & Blood Institute'},
+                            {uri: 'https://aasm.org/', text: 'American Academy of Sleep Medicine'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Eating Disorders',
@@ -308,7 +341,12 @@ const LearnLabels = [
                                 'Where can I find help and learn more?',
                                 'Eating disorders are complex.  Finding the right support is an important part of recovery.  To be sure you\'re finding a supportive network, you can locate resources at The National Eating Disorder Association, read stories of hope, or call their Helpline at 800-931-2237.',
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://www.nationaleatingdisorders.org/' , text: 'National Eating Disorder Association'},
+                            {uri: 'https://www.nationaleatingdisorders.org/stories-of-hope/featured-stories-of-hope', text: 'Stories of Hope'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Substance Abuse',
@@ -333,7 +371,10 @@ const LearnLabels = [
                                 'Getting into legal trouble or breaking laws',
                                 'Where can I find help and learn more?',
                                 'If you or someone you care about is using substances, it could pose a serious health risk and have long-term health effects.  Call the Substance Abuse Treatment Referral Helpline 1.800.662.HELP (4357) to find support or search for a local treatment center through the Substance Abuse and Mental Health Services Administration.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://www.samhsa.gov/' , text: 'Substance Abuse and Mental Health Services Administration'},
+                          ]
                         }
                     ]
                 }
