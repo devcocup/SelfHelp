@@ -87,12 +87,12 @@ const LearnLabels = [
         content: [
             {
                 icon: require('../Assets/Images/what_can_I_do_to_help.png'),
-                subTopic: 'What can I do to help?',
+                subTopic: 'What can I do to help someone?',
                 description: 'Learn how to help someone who has been harassed or sexual assaulted.',
                 subContent: {
                     subDescription: [
-                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every stuation is different, but hopefully this tool can help prepare you to support people at rist. You don\'t have to be a hero to make a big difference in someone\'s life.',
-                        'If you need additional support about a situation you are dealing with, you can reach out to a Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
+                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every stuation is different, but hopefully this tool can help prepare you to support people at risk. You don\'t have to be a hero to make a big difference in someone\'s life.',
+                        'If you need additional support about a situation you are dealing with, you can reach out to Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
                     ],
                     subCategories: []
                 }
@@ -104,8 +104,8 @@ const LearnLabels = [
                 subContent: {
                     subDescription: [
                         'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault. Each program was built with a particular audience in mind, but all programs provide valuable information for anyone looking to learn more about sexual assault, its effects, and the support available.',
-                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',
-                        'You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these step-by-step instructions.'
+                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',[
+                        'You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these', 'step-by-step instructions.', 'https://safehelpline.org/program-registration-instructions']
                     ],
                     subCategories: [
                         {
@@ -209,6 +209,14 @@ const LearnLabels = [
                                 'Learn more about depression from the National Institute of Mental Health or the National Alliance on Mental Illness.',
                                 'To find a mental health facility or program, use the Safe Helpline responder database for military and civilian resources in your area here. You can also use the Mental Health Treatment Locator function from The Substance Abuse and Mental Health Services Administration (SAMHSA).  Find the center that is closest to you and best fits your needs. Please note that not all providers in the database have been formally vetted by RAINN and not all accept TRICARE. Please confirm with the provider about the insurances they accept.',
                                 'Having support when you need it most can sometimes be challenging. The Safe Helpline app allows you to create a personalized self-care plan based on how you are feeling, and you can browse a number of self-care exercises to help you through a difficult moment.'
+                            ],
+                            links: [
+                              {uri: 'https://www.nimh.nih.gov/index.shtml' , text: 'National Institute of Mental Health'},
+                              {uri: 'https://www.nami.org/' , text: 'National Alliance on Mental Illness'},
+                              {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline for Military & Civilian Resources'},
+                              {uri: 'https://findtreatment.samhsa.gov/', text: 'Mental Health Treatment Locator'},
+                              {uri: 'https://www.samhsa.gov/', text: 'The Substance Abuse and Mental Health Services Administration (SAMHSA)'},
+                              {uri: 'http://cloudorpheus.com/safehelpline/node/18', text: 'Safe Helpline App'},
                             ]
                         },
                         {
@@ -225,7 +233,13 @@ const LearnLabels = [
                                 'Living with PTSD can be challenging, but learning more about the condition can encourage you to ask questions and find the help you need. You can learn more about PTSD at the National Institute of Mental Health, the Mayo Clinic, or the National Center for PTSD.',
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.',
                                 'Kessler RC, Sonnega A, Bromet E, Hughes M, Nelson CB. Posttraumatic stress disorder in the National Comorbidity Survey. Arch Gen Psych. 1995;52: 1048–1060.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://www.nimh.nih.gov/index.shtml' , text: 'National Institute of Mental Health'},
+                            {uri: 'https://www.ptsd.va.gov/' , text: 'National Center for PTSD'},
+                            {uri: 'https://www.mayoclinic.org/', text: 'The Mayo Clinic'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Self Harm',
@@ -240,7 +254,12 @@ const LearnLabels = [
                                 'To an outsider, self-harm might not be very apparent.  Survivors tend to do these activities in secret.  They put effort into covering up signs of self-harm, such as wearing long sleeves over cut skin.  It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.',
                                 'Where can I find help and learn more?',
                                 'If you or someone you care about is self-harming, Self-injury Outreach & Support (SiOS) has valuable resources that may help you through this difficult time. You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/143' , text: 'How Trauma Can Effect the Brain'},
+                            {uri: 'http://sioutreach.org/' , text: 'Self Injury Outreach & Support'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Suicide',
@@ -256,7 +275,12 @@ const LearnLabels = [
                                 'Call the National Suicide Prevention Lifeline at 800.273.TALK (8255) or chat online using the Lifeline Crisis Chat anytime, 24/7.  The Lifeline is not a confidential service and some personal information may be collected and used if the caller is in danger, such as an IP address or the caller\'s telephone number. If you are concerned about privacy, please review the organization\'s policies before using the service.',
                                 'You can also call the Military/Veterans Crisis Line by calling the same number (800-273-8255) and pressing 1 or connect with them through their online chat service for support 24/7.',
                                 'Additionally, you can use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://suicidepreventionlifeline.org/' , text: 'National Suicide Prevention Lifeline'},
+                            {uri: 'https://www.veteranscrisisline.net/ChatTermsOfService.aspx?account=Veterans%20Chat' , text: 'Veterans Crisis Line'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Dissociation',
@@ -269,7 +293,11 @@ const LearnLabels = [
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.',
                                 'Where can I find help and learn more?',
                                 'To learn more about the resources provided, or to find additional resources, please consider reaching out to Safe Helpline.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://www.nami.org/' , text: 'National Alliance on Mental Illness'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/128', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Sleep Disorders',
@@ -280,7 +308,12 @@ const LearnLabels = [
                                 'Where can I go to get help and learn more?',
                                 'The National Heart, Lung, and Blood Institute (NHLBI) has resources to help you discuss sleep with a healthcare professional, including what questions to ask.  Additionally, you can learn more about the symptoms of insomnia and nightmares from the American Academy of Sleep Medicine.',
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://www.nhlbi.nih.gov/' , text: 'National Heart, Lung, & Blood Institute'},
+                            {uri: 'https://aasm.org/', text: 'American Academy of Sleep Medicine'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Eating Disorders',
@@ -308,7 +341,12 @@ const LearnLabels = [
                                 'Where can I find help and learn more?',
                                 'Eating disorders are complex.  Finding the right support is an important part of recovery.  To be sure you\'re finding a supportive network, you can locate resources at The National Eating Disorder Association, read stories of hope, or call their Helpline at 800-931-2237.',
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://www.nationaleatingdisorders.org/' , text: 'National Eating Disorder Association'},
+                            {uri: 'https://www.nationaleatingdisorders.org/stories-of-hope/featured-stories-of-hope', text: 'Stories of Hope'},
+                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                          ]
                         },
                         {
                             categoryTitle: 'Substance Abuse',
@@ -333,7 +371,10 @@ const LearnLabels = [
                                 'Getting into legal trouble or breaking laws',
                                 'Where can I find help and learn more?',
                                 'If you or someone you care about is using substances, it could pose a serious health risk and have long-term health effects.  Call the Substance Abuse Treatment Referral Helpline 1.800.662.HELP (4357) to find support or search for a local treatment center through the Substance Abuse and Mental Health Services Administration.'
-                            ]
+                            ],
+                          links: [
+                            {uri: 'https://www.samhsa.gov/' , text: 'Substance Abuse and Mental Health Services Administration'},
+                          ]
                         }
                     ]
                 }
@@ -433,10 +474,15 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Where can I find more information for Transitioning Service Members?',
                             categoryContent: [
-                                'Transition Assistance Program',
-                                'Veteran\'s Health Administration',
-                                'Veteran\'s Affairs Benefits Guide'
-                            ]
+                                // 'Transition Assistance Program',
+                                // 'Veteran\'s Health Administration',
+                                // 'Veteran\'s Affairs Benefits Guide'
+                            ],
+                          links: [
+                            {uri: 'https://www.dodtap.mil/' , text: 'Transition Assistance Program'},
+                            {uri: 'https://www.va.gov/health/', text: 'Veterans Health Administration'},
+                            {uri: 'https://benefits.va.gov/BENEFITS/benefits_summary_materials.asp', text: "Veterans' Affairs Benefits Guide"},
+                          ]
                         }
                     ]
                 }
@@ -448,7 +494,8 @@ const LearnLabels = [
                 subContent: {
                     subDescription: [
                         'Are you in the process of separating or retiring from Military Service? Being a survivor of sexual assault and going through the transition process can be difficult. There are a number of DoD, Veterans Affairs and civilian resources available to help you through the transition.',
-                        'DoD Safe Helpline is a service available to adult members of the DoD community. If you are 17 or under please contact your nearest Family Advocacy Program to learn more about resources available to you.'
+                        ['DoD Safe Helpline is a service available to adult members of the DoD community. If you are 17 or under please contact your nearest','Family Advocacy Program', 'http://www.militaryinstallations.dod.mil/MOS/f?p=MI:ENTRY:0', 'to learn more about resources available to you.'],
+                        ['Click', 'here', 'https://safehelpline.org/tsm-search.cfm', 'to determine what resources are right for you.']
                     ],
                     subCategories: []
                 }
@@ -471,6 +518,7 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/focusing_on_the_present.png'),
                 subTopic: 'Focusing on the Present',
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed or feel like what you went through is happening all over again.',
                 description: 'An exercise to ground yourself in the Pressent to reduce stress',
                 bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
                 music: 'focusing_on_present'
@@ -478,6 +526,7 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/guided_breathing.png'),
                 subTopic: 'Guided Breathing',
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided breathing may help you when you are feeling nervous, overwhelmed, or tense. Focusing on your breath may help you feel more relaxed and in the present. ',
                 description: 'Breathing techniques to help you relax when you are overwhelmed.',
                 bgImage: require('../Assets/Images/guided_breathing_bg-min.jpg'),
                 music: 'guided_breathing'
@@ -485,12 +534,14 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/guided_muscle_relaxation.png'),
                 subTopic: 'Guided Muscle Relaxation',
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided muscle relaxation may help to reduce tension and help you feel calmer. Before starting this exercise, please consult with your doctor if you have a history of muscle spasms, back problems or other conditions that may be made worse by tensing your muscles.',
                 description: 'Reduce tension with this audio guided muscle relaxationexercise.',
                 bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg'),
                 music: 'guided_muscle_relaxation'
             },
             {
                 icon: require('../Assets/Images/listening_to_soothing_sounds.png'),
+                subDescription: '',
                 subTopic: 'Listening to Soothing Sounds',
                 description: 'Feel more relaxed by listening to these soothing sounds.',
                 bgImage: require('../Assets/Images/listening_to_soothing_sounds_bg-min.jpg'),
@@ -498,6 +549,7 @@ const ExercisesLabels = [
             },
             {
                 icon: require('../Assets/Images/my_safe_place.png'),
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Following this exercise can  help you visualize being in your safe place, by channelling your feelings, sense of sight, smell, and touch.',
                 subTopic: 'My Safe Place',
                 description: 'This exercise will help you visualize being at the beach to reduce stress.',
                 bgImage: require('../Assets/Images/my_safe_place_bg-min.jpg'),
@@ -505,6 +557,7 @@ const ExercisesLabels = [
             },
             {
                 icon: require('../Assets/Images/people_I_can_call.png'),
+                subDescription: '',
                 subTopic: 'People I Can Call',
                 description: 'Make a list of the people you can call when you need to talk to them.',
                 bgImage: require('../Assets/Images/people_I_can_call_bg-min.jpg'),
@@ -512,6 +565,7 @@ const ExercisesLabels = [
             },
             {
                 icon: require('../Assets/Images/things_that_make_me_smile.png'),
+                subDescription: 'Images can have a powerful effect on how you feel. Pictures of loved ones, pets, and even memorable moments can make you feel happy, safe, and at ease. With this tool, you can select images from your phone or you can pick images from our photo album. ',
                 subTopic: 'Things that make me smile',
                 description: 'Make a gallery of your favorite things that make you smile and happy.',
                 bgImage: require('../Assets/Images/things_that_make_me_smile_bg-min.jpg'),
@@ -613,7 +667,7 @@ const SearchLabels = [
             },
             {
                 icon: '',
-                label: 'Transition Resources'
+                label: 'Transitioning Service Member Resources'
             },
             {
                 icon: require('../Assets/Images/talk_to_someone.png'),
@@ -690,10 +744,10 @@ const WhatCanIDoToHelpLabels = [
      The Scenarios cover a range of harmful behavior in the spectrum of sexual assault\
      and harassment. Each scenario includes different courses of action and how or why\
      that action can be helpful. Every stuation is different, but hopefully this \
-     tool can help prepare you to support people at rist. You don\'t have to be a hero \
+     tool can help prepare you to support people at risk. You don\'t have to be a hero \
     to make a big difference in someone\'s life.',
     'If you need additional support about a situation you are dealing with, you can \
-    reach out to a Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. \
+    reach out to Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. \
     A trained Safe Helpline staff member is available to support you 24/7.'
 ]
 
@@ -725,7 +779,7 @@ const QuizLabels = [
             {
                 choiceCaption: 'C',
                 content: 'Tell your commanding officer or your training instructor about what you witnessed.',
-                subContent: 'What your coworkers are saying about other members in your unit undermines the strength of your team and can lead to a hostile working environment. Your CO may have additional ways to address the problem at hand and make it a safer working environment for everyone in your unit'
+                subContent: 'What your coworkers are saying about other members in your unit undermines the strength of your team and can lead to a hostile working environment. Your CO may have additional ways to address the problem at hand and make it a safer working environment for everyone in your unit.'
             }
         ]
     },
@@ -783,7 +837,13 @@ const QuizLabels = [
             {
                 choiceCaption: 'B',
                 content: 'Suggest that they talk to a supervisor they are comfortable approaching.',
-                subContent: 'Please note that if the supervisor they reach out to is in their chain of command, it will automatically trigger an Unrestricted Report. This is a good option if your friend is ready to file an Unrestricted report against their abuser. You can learn more about Restricted and Unrestricted Report here, or speak to a Safe Helpline staff member at online.safehelpline.org or by calling 877-995-5247.'
+                subContent: {
+                    preLinkText: 'Please note that if the supervisor they reach out to is in their chain of command, it will automatically trigger an Unrestricted Report. This is a good option if your friend is ready to file an Unrestricted report against their abuser. You can learn more about Restricted and Unrestricted Reports ',
+                    postLinkText: ', or speak to Safe Helpline staff member at online.safehelpline.org or by calling 877-995-5247.',
+                    linkText: 'here',
+                    link: 'https://www.safehelpline.org/reporting-option'
+                },
+                hasEmbeddedLink: true
             },
             {
                 choiceCaption: 'C',
@@ -809,7 +869,13 @@ const QuizLabels = [
             {
                 choiceCaption: 'C',
                 content: 'Suggest that she reach out to an advocate for support.',
-                subContent: 'Local rape crisis centers have resources to help victims of stalking and can help your friend with obtaining a protection order with law enforcement if she chooses to get one. You can look up local rape crisis centers here, but remember to let her decide if she wants to connect with them or not. You may also suggest that she reach out to a counselor at the Equal Employment Opportunity Commission.'
+                subContent: {
+                    preLinkText: 'Local rape crisis centers have resources to help victims of stalking and can help your friend with obtaining a protection order with law enforcement if she chooses to get one. You can look up local rape crisis centers ',
+                    postLinkText: ', but remember to let her decide if she wants to connect with them or not. You may also suggest that she reach out to a counselor at the Equal Employment Opportunity Commission.',
+                    linkText: 'here',
+                    link: 'https://centers.rainn.org/'
+                },
+                hasEmbeddedLink: true
             }
         ]
     }
@@ -856,7 +922,7 @@ const JournalPromptQuestions = [
     'What would you do if money were no object?',
     'What\'s something you\'re grateful for this week? Why are you grateful for it?',
     'What are some of your favorite quotes?',
-    'What is your favortie personality trait?',
+    'What is your favorite personality trait?',
     'What is something you\'ve learned this week?'
 ]
 

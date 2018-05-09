@@ -12,7 +12,7 @@ const { height, width } = Dimensions.get('window')
 const { Colors, FontSizes } = Constants
 
 
-const QuizHeadingContainer = ({ quizTitle, quizSubTitle, subTitleType }) => {
+const QuizHeadingContainer = ({ quizTitle, quizSubTitleOne, quizSubTitleTwo, subTitleType }) => {
     const contentStyle = {
         fontSize: 16,
         color: 'black'
@@ -26,7 +26,10 @@ const QuizHeadingContainer = ({ quizTitle, quizSubTitle, subTitleType }) => {
             </Text>
             <View style={styles.separateBar}></View>
             <Text style={[styles.subTitleText, contentStyle]}>
-                {quizSubTitle}
+                {quizSubTitleOne}
+            </Text>
+            <Text style={[styles.subTitleText, contentStyle]}>
+                {quizSubTitleTwo}
             </Text>
         </View>
     )
@@ -40,9 +43,10 @@ const styles = StyleSheet.create({
     },
 
     titleText: {
+        textAlign: 'center',
         fontSize: FontSizes.quizTitleFS,
         fontWeight: '600',
-        marginBottom: 10
+        marginBottom: 5
     },
 
     separateBar: {
@@ -52,10 +56,12 @@ const styles = StyleSheet.create({
     },
 
     subTitleText: {
+        textAlign: 'center',
         color: Colors.gray,
         fontSize: FontSizes.quizTitleFS,
         fontWeight: '600',
-        marginTop: 10
+        marginBottom: 10,
+        paddingTop: 5
     }
 })
 

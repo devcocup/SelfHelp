@@ -81,6 +81,7 @@ export default class CreateSecurityPinScreen extends Component {
         const { navigation } = this.props
         const { mismatched, headerText, dotIndex } = this.state
 
+
         return (
             <View style={AppStyles.mainContainer}>
                 {

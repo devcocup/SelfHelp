@@ -14,7 +14,7 @@ import PinDots from '../Components/PinDots'
 
 const { height, width } = Dimensions.get('window')
 const { PanelLabels, Paddings, FontSizes, Colors, BorderRadii } = Constants
-let pin = ''
+
 
 
 export default class CreateSecurityPinScreen extends Component {
@@ -22,10 +22,14 @@ export default class CreateSecurityPinScreen extends Component {
         super(props)
     
         this.state = {
-            completed: false,
-            dotIndex: 0,
             pinNumber: ''
         }
+    }
+
+    componentDidUpdate = () => {
+      if (this.state.pinNumber.length === 6) {
+        this.goToScreen('ConfirmSecurityPinScreen', this.props.navigation)
+      }
     }
 
     goToScreen = (ScreenName, navigation) => {
@@ -33,29 +37,16 @@ export default class CreateSecurityPinScreen extends Component {
         navigate(ScreenName, {pinNumber: this.state.pinNumber.substring(0, 6)})
     }
 
-    onNumberClicked = (label, navigation) => {
-        // if (this.state.completed === true) {
-        //     this.goToScreen('ConfirmSecurityPinScreen', navigation)
-        // }
-        pin = pin + label
-
-        if (this.state.dotIndex === 5) {
-            this.setState({
-                completed: true
-            })
-            this.state = {
-                pinNumber: pin
-            }
-            this.goToScreen('ConfirmSecurityPinScreen', navigation)
+    onNumberClicked = (label) => {
+        if (label === 'Clear') {
+          this.setState(() => ({ pinNumber: '' }));
+        } else {
+          this.setState((prevState) => ({...prevState, pinNumber: prevState.pinNumber + label}))
         }
-        this.setState({
-            dotIndex: this.state.dotIndex + 1
-        })
-    }
+    };
 
     render() {
         const { navigation } = this.props
-        const { dotIndex } = this.state
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -67,7 +58,7 @@ export default class CreateSecurityPinScreen extends Component {
                 <View style={[styles.bodyContainer, AppStyles.hCenter]}>
                     <Text style={styles.title}>Create a Security Pin</Text>
                     <View style={styles.dotArea}>
-                        <PinDots dotIndex={dotIndex} />
+                        <PinDots dotIndex={this.state.pinNumber.length} />
                     </View>
                     <View style={styles.panelArea}>
                     {
@@ -76,7 +67,7 @@ export default class CreateSecurityPinScreen extends Component {
                                 <TouchableOpacity
                                     key={index}
                                     style={[styles.panel, AppStyles.center]}
-                                    onPress={() => this.onNumberClicked(item, navigation)}
+                                    onPress={() => this.onNumberClicked(item)}
                                 >
                                     <Text style={styles.title}>{item}</Text>
                                 </TouchableOpacity>

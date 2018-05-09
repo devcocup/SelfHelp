@@ -15,6 +15,7 @@ export default class LearnRedirectScreen extends Component {
         const { navigation } = this.props
         const { url } = navigation.state.params
 
+
         return (
             <View style={AppStyles.mainContainer}>
                 <Header
@@ -22,7 +23,7 @@ export default class LearnRedirectScreen extends Component {
                     navigation={navigation}
                 />
                 <WebView
-                    source={{ url }}
+                    source={{ uri: url }}
                 />
             </View>
         )
