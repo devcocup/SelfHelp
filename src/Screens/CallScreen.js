@@ -112,11 +112,14 @@ export default class CallScreen extends Component {
     }
 
     hangUpCall = (navigation) => {
-        const { navigate } = navigation
+        const { goBack } = navigation;
         TwilioVoice.disconnect()
         this.setState({
             statusText: 'Canceled'
-        })
+        });
+        setTimeout(() => {
+            goBack();
+        }, 1000);
     }
 
     render() {
