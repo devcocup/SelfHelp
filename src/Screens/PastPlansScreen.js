@@ -66,6 +66,18 @@ export default class PastPlansScreen extends Component {
         navigate('SelfCareQuizResultsScreen', { scoreValues: [sadness, anxiety, sleep, loneliness, stress, hopelessness] })
     }
 
+    determineBgColor = (content) => {
+        const scores = Object.keys(content).map( key => content[key]);
+
+        const neverProportion = scores.filter(x => x === 0).length / scores.length;
+        const sometimesProportion = scores.filter(x => x > 0 && x < 5).length / scores.length;
+        const alwaysProportion = scores.filter(x => x === 5).length / scores.length;
+        const maxProportion = Math.max(neverProportion, sometimesProportion, alwaysProportion);
+        if(maxProportion === neverProportion) return Colors.orange ;
+        if(maxProportion === sometimesProportion) return Colors.secondaryOrange ;
+        if(maxProportion === alwaysProportion) return Colors.secondaryGray;
+    }
+
     render() {
         const { navigation } = this.props
         const { planItems } = this.state
@@ -79,12 +91,15 @@ export default class PastPlansScreen extends Component {
                 <ScrollView>
                 {
                     planItems.map((item, index) => {
+                        const bgColor = {
+                            backgroundColor : this.determineBgColor(item)
+                        }
                         return (
                             <TouchableOpacity
                                 key={index}
                                 onPress={() => this.onPlanItemClicked(item, navigation)}
                             >
-                                <View style={[styles.plancard, AppStyles.hCenter]}>
+                                <View style={[styles.plancard, AppStyles.hCenter, bgColor]}>
                                     <Text style={styles.dateStyle}>{item.plan_time}</Text>
                                 </View>
                             </TouchableOpacity>
@@ -102,8 +117,8 @@ const styles = StyleSheet.create({
         width,
         height: 60,
         flexDirection: 'row',
-        backgroundColor: Colors.orange,
-        marginBottom: 1,
+        // backgroundColor: Colors.orange,
+        // marginBottom: 1,
         paddingLeft: Paddings.containerP
     },
 

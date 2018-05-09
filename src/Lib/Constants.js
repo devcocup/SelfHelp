@@ -104,8 +104,8 @@ const LearnLabels = [
                 subContent: {
                     subDescription: [
                         'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault. Each program was built with a particular audience in mind, but all programs provide valuable information for anyone looking to learn more about sexual assault, its effects, and the support available.',
-                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',
-                        'You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these step-by-step instructions.'
+                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',[
+                        'You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these', 'step-by-step instructions.', 'https://safehelpline.org/program-registration-instructions']
                     ],
                     subCategories: [
                         {
@@ -494,7 +494,8 @@ const LearnLabels = [
                 subContent: {
                     subDescription: [
                         'Are you in the process of separating or retiring from Military Service? Being a survivor of sexual assault and going through the transition process can be difficult. There are a number of DoD, Veterans Affairs and civilian resources available to help you through the transition.',
-                        'DoD Safe Helpline is a service available to adult members of the DoD community. If you are 17 or under please contact your nearest Family Advocacy Program to learn more about resources available to you.'
+                        ['DoD Safe Helpline is a service available to adult members of the DoD community. If you are 17 or under please contact your nearest','Family Advocacy Program', 'http://www.militaryinstallations.dod.mil/MOS/f?p=MI:ENTRY:0', 'to learn more about resources available to you.'],
+                        ['Click', 'here', 'https://safehelpline.org/tsm-search.cfm', 'to determine what resources are right for you.']
                     ],
                     subCategories: []
                 }
