@@ -87,12 +87,12 @@ const LearnLabels = [
         content: [
             {
                 icon: require('../Assets/Images/what_can_I_do_to_help.png'),
-                subTopic: 'What can I do to help?',
+                subTopic: 'What can I do to help someone?',
                 description: 'Learn how to help someone who has been harassed or sexual assaulted.',
                 subContent: {
                     subDescription: [
-                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every stuation is different, but hopefully this tool can help prepare you to support people at rist. You don\'t have to be a hero to make a big difference in someone\'s life.',
-                        'If you need additional support about a situation you are dealing with, you can reach out to a Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
+                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every situation is different, but hopefully this tool can help prepare you to support people at risk. You don\'t have to be a hero to make a big difference in someone\'s life.',
+                        'If you need additional support about a situation you are dealing with, you can reach out to Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
                     ],
                     subCategories: []
                 }
@@ -104,8 +104,8 @@ const LearnLabels = [
                 subContent: {
                     subDescription: [
                         'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault. Each program was built with a particular audience in mind, but all programs provide valuable information for anyone looking to learn more about sexual assault, its effects, and the support available.',
-                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',
-                        'You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these step-by-step instructions.'
+                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',[
+                        'You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these', 'step-by-step instructions.', 'https://safehelpline.org/program-registration-instructions']
                     ],
                     subCategories: [
                         {
@@ -494,7 +494,8 @@ const LearnLabels = [
                 subContent: {
                     subDescription: [
                         'Are you in the process of separating or retiring from Military Service? Being a survivor of sexual assault and going through the transition process can be difficult. There are a number of DoD, Veterans Affairs and civilian resources available to help you through the transition.',
-                        'DoD Safe Helpline is a service available to adult members of the DoD community. If you are 17 or under please contact your nearest Family Advocacy Program to learn more about resources available to you.'
+                        ['DoD Safe Helpline is a service available to adult members of the DoD community. If you are 17 or under please contact your nearest','Family Advocacy Program', 'http://www.militaryinstallations.dod.mil/MOS/f?p=MI:ENTRY:0', 'to learn more about resources available to you.'],
+                        ['Click', 'here', 'https://safehelpline.org/tsm-search.cfm', 'to determine what resources are right for you.']
                     ],
                     subCategories: []
                 }
@@ -666,7 +667,7 @@ const SearchLabels = [
             },
             {
                 icon: '',
-                label: 'Transition Resources'
+                label: 'Transitioning Service Member Resources'
             },
             {
                 icon: require('../Assets/Images/talk_to_someone.png'),
@@ -743,10 +744,10 @@ const WhatCanIDoToHelpLabels = [
      The Scenarios cover a range of harmful behavior in the spectrum of sexual assault\
      and harassment. Each scenario includes different courses of action and how or why\
      that action can be helpful. Every stuation is different, but hopefully this \
-     tool can help prepare you to support people at rist. You don\'t have to be a hero \
+     tool can help prepare you to support people at risk. You don\'t have to be a hero \
     to make a big difference in someone\'s life.',
     'If you need additional support about a situation you are dealing with, you can \
-    reach out to a Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. \
+    reach out to Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. \
     A trained Safe Helpline staff member is available to support you 24/7.'
 ]
 
@@ -778,7 +779,7 @@ const QuizLabels = [
             {
                 choiceCaption: 'C',
                 content: 'Tell your commanding officer or your training instructor about what you witnessed.',
-                subContent: 'What your coworkers are saying about other members in your unit undermines the strength of your team and can lead to a hostile working environment. Your CO may have additional ways to address the problem at hand and make it a safer working environment for everyone in your unit'
+                subContent: 'What your coworkers are saying about other members in your unit undermines the strength of your team and can lead to a hostile working environment. Your CO may have additional ways to address the problem at hand and make it a safer working environment for everyone in your unit.'
             }
         ]
     },
@@ -836,7 +837,13 @@ const QuizLabels = [
             {
                 choiceCaption: 'B',
                 content: 'Suggest that they talk to a supervisor they are comfortable approaching.',
-                subContent: 'Please note that if the supervisor they reach out to is in their chain of command, it will automatically trigger an Unrestricted Report. This is a good option if your friend is ready to file an Unrestricted report against their abuser. You can learn more about Restricted and Unrestricted Report here, or speak to a Safe Helpline staff member at online.safehelpline.org or by calling 877-995-5247.'
+                subContent: {
+                    preLinkText: 'Please note that if the supervisor they reach out to is in their chain of command, it will automatically trigger an Unrestricted Report. This is a good option if your friend is ready to file an Unrestricted report against their abuser. You can learn more about Restricted and Unrestricted Reports ',
+                    postLinkText: ', or speak to Safe Helpline staff member at online.safehelpline.org or by calling 877-995-5247.',
+                    linkText: 'here',
+                    link: 'https://www.safehelpline.org/reporting-option'
+                },
+                hasEmbeddedLink: true
             },
             {
                 choiceCaption: 'C',
@@ -862,7 +869,13 @@ const QuizLabels = [
             {
                 choiceCaption: 'C',
                 content: 'Suggest that she reach out to an advocate for support.',
-                subContent: 'Local rape crisis centers have resources to help victims of stalking and can help your friend with obtaining a protection order with law enforcement if she chooses to get one. You can look up local rape crisis centers here, but remember to let her decide if she wants to connect with them or not. You may also suggest that she reach out to a counselor at the Equal Employment Opportunity Commission.'
+                subContent: {
+                    preLinkText: 'Local rape crisis centers have resources to help victims of stalking and can help your friend with obtaining a protection order with law enforcement if she chooses to get one. You can look up local rape crisis centers ',
+                    postLinkText: ', but remember to let her decide if she wants to connect with them or not. You may also suggest that she reach out to a counselor at the Equal Employment Opportunity Commission.',
+                    linkText: 'here',
+                    link: 'https://centers.rainn.org/'
+                },
+                hasEmbeddedLink: true
             }
         ]
     }
@@ -909,7 +922,7 @@ const JournalPromptQuestions = [
     'What would you do if money were no object?',
     'What\'s something you\'re grateful for this week? Why are you grateful for it?',
     'What are some of your favorite quotes?',
-    'What is your favortie personality trait?',
+    'What is your favorite personality trait?',
     'What is something you\'ve learned this week?'
 ]
 
