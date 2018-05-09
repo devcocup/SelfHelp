@@ -1,6 +1,6 @@
 // React
-import React, { Component } from 'react'
-import { View, Text, ScrollView, Image, TouchableOpacity, ActivityIndicator, StyleSheet, Dimensions } from 'react-native'
+import React, {Component} from 'react'
+import {View, Text, ScrollView, Image, TouchableOpacity, ActivityIndicator, StyleSheet, Dimensions} from 'react-native'
 import Communications from 'react-native-communications'
 
 // Global Styles & Constants
@@ -10,10 +10,12 @@ import Constants from '../Lib/Constants'
 // Assets
 import Header from '../Components/Header'
 import SearchResultPanel from '../Components/SearchResultPanel'
+import SearchResultSubList from "../Components/SearchResultSubList";
+import VetCentersContainer from "../Components/VetCentersContainer";
 
 const CallIcon = require('../Assets/Images/call_button.png')
 
-const { height, width } = Dimensions.get('window')
+const {height, width} = Dimensions.get('window')
 const {
     SearchResultLabels,
     Paddings,
@@ -21,11 +23,31 @@ const {
     FontSizes
 } = Constants
 
+const TypeIdToName = {
+    1: "SARC",
+    2: "Chaplain",
+    3: "Legal",
+    4: "Medical",
+    5: "Civilian",
+    6: "Military Police"
+}
+
+
+const TypeOrder = [
+    "SARC",
+    "Civilian",
+    "Vet Centers",
+    "Chaplain",
+    "Legal",
+    "Medical",
+    "Military Police"
+]
+
 
 export default class SearchResultScreen extends Component {
     constructor(props) {
         super(props)
-    
+
         this.state = {
             services: [],
             fetched: false
@@ -33,9 +55,9 @@ export default class SearchResultScreen extends Component {
     }
 
     componentWillMount() {
-        const { navigation } = this.props
-        const { params } = navigation.state
-        const { locationSearchText, servicesQuery } = params
+        const {navigation} = this.props
+        const {params} = navigation.state
+        const {locationSearchText, servicesQuery} = params
         this.getLocalResources(locationSearchText, servicesQuery)
     }
 
@@ -65,15 +87,15 @@ export default class SearchResultScreen extends Component {
     renderContent = (section) => {
         return (
             <View style={styles.content}>
-            {
-                section.subContent.map((item, index) => {
-                    return (
-                        <View>
-                            <Text>{item.subLabel}</Text>
-                        </View>
-                    )
-                })
-            }
+                {
+                    section.subContent.map((item, index) => {
+                        return (
+                            <View>
+                                <Text>{item.subLabel}</Text>
+                            </View>
+                        )
+                    })
+                }
             </View>
         )
     }
@@ -83,8 +105,8 @@ export default class SearchResultScreen extends Component {
     }
 
     render() {
-        const { navigation } = this.props
-        const { services, fetched } = this.state
+        const {navigation} = this.props
+        const {services, fetched} = this.state
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -93,71 +115,23 @@ export default class SearchResultScreen extends Component {
                     navigation={navigation}
                 />
                 <ScrollView>
-                {
-                    !fetched &&
-                    <View style={[styles.loading, AppStyles.center]}>
-                        <ActivityIndicator size='large' color='white' />
-                    </View>
-                }
-                {
-                    services.map((cardItem, cardIndex) => {
-                        return (
-                            <View
-                                key={cardIndex}
-                            >
-                                <View
-                                    key={cardIndex}
-                                    style={styles.panelItem}>
-                                    <View style={styles.panelItemTextArea}>
-                                        <Text style={styles.subLabelText}>{cardItem.NAME}</Text>
-                                        <Text style={styles.phoneNumberText}>{cardItem.PHONE1}</Text>
-                                        <Text style={styles.locationText}>{cardItem.CITY}, {cardItem.STATE}</Text>
-                                    </View>
-                                    <View style={[styles.panelItemButton, AppStyles.center]}>
-                                        <TouchableOpacity
-                                            style={[styles.callButton, AppStyles.center]}
-                                            onPress={() => this.callPhone(cardItem.PHONE1)}
-                                        >
-                                            <Image
-                                                source={CallIcon}
-                                                style={styles.callButtonImage}
-                                            />
-                                        </TouchableOpacity>
-                                    </View>
-                                </View>
-                                {/*<SearchResultPanel
-                                                                            title={cardItem.label}
-                                                                        >
-                                                                        {
-                                                                            cardItem.subContent && cardItem.subContent.map((subItem, subIndex) => {
-                                                                                return (
-                                                                                    <View
-                                                                                        key={subIndex}
-                                                                                        style={styles.panelItem}>
-                                                                                        <View style={styles.panelItemTextArea}>
-                                                                                            <Text style={styles.subLabelText}>{subItem.subLabel}</Text>
-                                                                                            <Text style={styles.phoneNumberText}>{subItem.phoneNumber}</Text>
-                                                                                            <Text style={styles.locationText}>{subItem.location}</Text>
-                                                                                        </View>
-                                                                                        <View style={[styles.panelItemButton, AppStyles.center]}>
-                                                                                            <TouchableOpacity
-                                                                                                style={[styles.callButton, AppStyles.center]}
-                                                                                            >
-                                                                                                <Image
-                                                                                                    source={CallIcon}
-                                                                                                    style={styles.callButtonImage}
-                                                                                                />
-                                                                                            </TouchableOpacity>
-                                                                                        </View>
-                                                                                    </View>
-                                                                                )
-                                                                            })
-                                                                        }
-                                                                        </SearchResultPanel>*/}
-                            </View>
-                        )
-                    })
-                }
+                    {
+                        !fetched &&
+                        <View style={[styles.loading, AppStyles.center]}>
+                            <ActivityIndicator size='large' color='white'/>
+                        </View>
+                    }
+                    {
+                        TypeOrder.map(category => {
+                            switch(category){
+                                case "Vet Centers":
+                                    console.log(category)
+                                    return(<VetCentersContainer/>)
+                                default:
+                                    return (<SearchResultSubList key={category} category={category} services={services.filter(service => TypeIdToName[service.TYPE] === category)} />)
+                            }
+                        })
+                    }
                 </ScrollView>
             </View>
         )

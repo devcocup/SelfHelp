@@ -32,7 +32,7 @@ const goToScreen = (ScreenName, navigation, subTopic, subContent) => {
 
 const onLearnDetail = (navigation, subTopic, subContent) => {
     switch (subTopic) {
-        case 'What can I do to help?':
+        case 'What can I do to help someone?':
             goToScreen('WhatCanIDoScreen', navigation, subTopic, subContent)
             break
         default:

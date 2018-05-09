@@ -31,7 +31,7 @@ const onPress = (cardTitle, navigation) => {
             ScreenName = 'LocalResourcesScreen'
             goToScreen(ScreenName, cardTitle, navigation)
             break
-        case 'Transition Resources':
+        case 'Transitioning Service Member Resources':
             ScreenName = 'TransitionResourcesScreen'
             goToScreen(ScreenName, '', navigation)
             break

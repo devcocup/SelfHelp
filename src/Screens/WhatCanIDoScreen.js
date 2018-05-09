@@ -14,12 +14,13 @@ import Button from '../Components/Button'
 const { height, width } = Dimensions.get('window')
 
 const DescriptionTextContainer = () => {
+    const trimExtraSpaces = (string) => {return string.replace(/\s+/g,' ').trim();}
     const textList = Constants.WhatCanIDoToHelpLabels.map((item, index) => {
         return (
             <Text
                 key={index}
                 style={styles.descriptionText}>
-                {item}
+                {trimExtraSpaces(item)}
             </Text>
         )
     })
@@ -94,13 +95,13 @@ const styles = StyleSheet.create({
     },
 
     descriptionTextArea: {
-        width,
         paddingHorizontal: 30,
         marginTop: 20
     },
 
     descriptionText: {
         color: 'white',
-        marginBottom: 20
+        marginBottom: 30,
+        textAlign: 'justify',
     }
 })
