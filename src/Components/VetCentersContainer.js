@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
     },
 
     headerText: {
-        color: 'orange'
+        color: 'orange',
+        fontWeight: '600'
     },
 
     body: {
