@@ -34,6 +34,8 @@ const styles = StyleSheet.create({
     },
 
     body: {
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        paddingTop: 10,
+        paddingBottom: 10
     }
 })
