@@ -56,7 +56,7 @@ const goHome = (navigation) => {
 
 
 const Header = ({ type, isMain, onDelete, onSave, navigation, displaySaveButton = true }) => {
-    let headerText = (type === 'Home') ? 'Safe Helpline' : 'Back'
+    let headerText = (type === 'Home') ? '' : 'Back'
 
     return (
         <View style={styles.headerStyle}>
@@ -102,46 +102,22 @@ const Header = ({ type, isMain, onDelete, onSave, navigation, displaySaveButton 
             }
             {
                 !isMain && 
-                <View style={[styles.checkArea, AppStyles.center]}>
-                    <TouchableOpacity
-                        onPress={() => goJournal(navigation)}
-                    >
-                        <Image
-                            source={CheckMarkIcon}
-                            style={styles.checkIcon}
-                        />
-                    </TouchableOpacity>
-                </View>
-            }
-            {
-                isMain && 
                 <View style={[styles.mainCheckArea, AppStyles.center]}>
                 </View>
             }
-            <View style={[styles.menuArea, AppStyles.center]}>
-                {
-                    !isMain &&
-                    <TouchableOpacity
-                        onPress={() => goHome(navigation)}
-                    >
-                        <Image
-                            source={HomeIcon}
-                            style={styles.homeIcon}
-                        />
-                    </TouchableOpacity>
-                }
-                {
-                    isMain &&
-                    <TouchableOpacity
-                        onPress={() => goJournal(navigation)}
-                    >
-                        <Image
-                            source={CheckMarkIcon}
-                            style={styles.checkIcon}
-                        />
-                    </TouchableOpacity>
-                }
-            </View>
+            {
+                !isMain &&
+                <View style={[styles.menuArea, AppStyles.center]}>
+                        <TouchableOpacity
+                            onPress={() => goHome(navigation)}
+                        >
+                            <Image
+                                source={HomeIcon}
+                                style={styles.homeIcon}
+                            />
+                        </TouchableOpacity>
+                </View>
+            }
         </View>
     )
 }
