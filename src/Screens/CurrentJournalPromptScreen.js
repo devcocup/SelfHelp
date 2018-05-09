@@ -34,7 +34,8 @@ export default class CurrentJournalPromptScreen extends Component {
         this.state = {
             journalText: '',
             progress: [],
-            visibleHeight: height - 340
+            visibleHeight: height - 340,
+            placeholderText: 'Test placeholder here...'
         }
     }
 
@@ -89,7 +90,7 @@ export default class CurrentJournalPromptScreen extends Component {
     }
 
     render() {
-        const { navigation } = this.props
+        const { navigation, placeholder } = this.props
         const { headerTitle, headerContent } = navigation.state.params
 
         return (
@@ -108,6 +109,7 @@ export default class CurrentJournalPromptScreen extends Component {
                             <View style={styles.textArea}>
                                 <TextInput
                                     style={[styles.inputBox, { height: this.state.visibleHeight}]}
+                                    placeholder={placeholder ? placeholder : "You may answer the prompt, or leave it empty and click 'Submit' to skip it for now ..."}
                                     multiline={true}
                                     blurOnSubmit={true}
                                     onChangeText={(journalText) => this.setState({ journalText })}

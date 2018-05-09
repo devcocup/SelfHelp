@@ -70,7 +70,8 @@ export default class SelfCareQuizResultScreen extends Component {
         const { params } = navigation.state
         const { scoreValues } = params
         const quizTitle = 'Results'
-        const quizSubTitle = ' Click buttons below to see suggestions for exercises that may help with those issues.'
+        const quizSubTitleOne = ' Click buttons below to see suggestions for exercises that may help with those issues.'
+        const quizSubTitleTwo = 'Areas that do not appear to be current stressors for you are marked in orange. Areas where you may need more support are indicated in gray.'
 
         return (
             <View style={AppStyles.mainContainer}>
@@ -81,7 +82,8 @@ export default class SelfCareQuizResultScreen extends Component {
                 <ScrollView>
                     <QuizHeadingContainer
                         quizTitle={quizTitle}
-                        quizSubTitle={quizSubTitle}
+                        quizSubTitleOne={quizSubTitleOne}
+                        quizSubTitleTwo={quizSubTitleTwo}
                         subTitleType='Description'
                     />
                     <View style={styles.cardArea}>

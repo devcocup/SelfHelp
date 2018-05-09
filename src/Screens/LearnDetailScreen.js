@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, ScrollView, StyleSheet, Dimensions, Linking } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -22,14 +22,47 @@ onRedirect = (url, navigation) => {
 
 const CardContainer = ({ content, navigation }) => {
     const cardDescriptionBox = content.subContent.subDescription.map((item, index) => {
-        return (
-            <Text
-                key={index}
-                style={styles.descriptionText}
-            >
-                {item}
-            </Text>
-        )
+        if(Array.isArray(item) && item.length === 4 ){
+            return (
+                <Text
+                    key={index}
+                    style={styles.descriptionText}
+                >
+                    {item[0]}&nbsp;
+                    <Text
+                        style={styles.descriptionHyperText}
+                        onPress={() => Linking.openURL(item[2])}
+                    >
+                        {item[1]}
+                    </Text>
+                    &nbsp;{item[3]}
+                </Text>
+            )
+        }else if(Array.isArray(item) && item.length === 3 ){
+            return (
+                <Text
+                    key={index}
+                    style={styles.descriptionText}
+                >
+                    {item[0]}&nbsp;
+                    <Text
+                        style={styles.descriptionHyperText}
+                        onPress={() => Linking.openURL(item[2])}
+                    >
+                        {item[1]}
+                    </Text>
+                </Text>
+            )
+        }else{
+            return (
+                <Text
+                    key={index}
+                    style={styles.descriptionText}
+                >
+                    {item}
+                </Text>
+            )
+        }
     })
 
     const cardList = content.subContent.subCategories.map((item, index) => {
@@ -88,7 +121,14 @@ const styles = StyleSheet.create({
     },
 
     descriptionText: {
-        color: 'white'
+        color: 'white',
+        paddingVertical: 5
+    },
+    descriptionHyperText: {
+        fontWeight: 'bold',
+        textDecorationColor: 'white',
+        textDecorationStyle: 'solid',
+        textDecorationLine: 'underline'
     },
 
     cardContainer: {

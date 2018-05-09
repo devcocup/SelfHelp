@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     genderBox: {
         width: width / 2 - 30,
         height: height / 6,
-        backgroundColor: 'green',
+        backgroundColor: '#268e77',
         borderRadius: Constants.BorderRadii.boxBR
     },
 

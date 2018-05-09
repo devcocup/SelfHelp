@@ -40,6 +40,16 @@
 		2DCD954D1E0B4F2C00145EB5 /* selfhelpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* selfhelpTests.m */; };
 		41196ED109E349FF81D9F32F /* libRNSoundPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E79A6E843E04B2BA739A242 /* libRNSoundPlayer.a */; };
 		4B3A462620A0ADF700939B97 /* libRNTwilioVoice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3A462520A0ADF700939B97 /* libRNTwilioVoice.a */; };
+		4BD1A2AC20A22FCE009A66D7 /* focusing_on_the_present_male.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2A220A22FCD009A66D7 /* focusing_on_the_present_male.mp3 */; };
+		4BD1A2AD20A22FCE009A66D7 /* guided_breathing_male.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2A320A22FCD009A66D7 /* guided_breathing_male.mp3 */; };
+		4BD1A2AE20A22FCE009A66D7 /* my_safe_place_female.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2A420A22FCD009A66D7 /* my_safe_place_female.mp3 */; };
+		4BD1A2AF20A22FCE009A66D7 /* muscle_relaxation_male.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2A520A22FCD009A66D7 /* muscle_relaxation_male.mp3 */; };
+		4BD1A2B020A22FCE009A66D7 /* muscle_relaxation_female.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2A620A22FCD009A66D7 /* muscle_relaxation_female.mp3 */; };
+		4BD1A2B120A22FCE009A66D7 /* focusing_on_the_present_female.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2A720A22FCD009A66D7 /* focusing_on_the_present_female.mp3 */; };
+		4BD1A2B220A22FCE009A66D7 /* guided_breathing_female.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2A820A22FCD009A66D7 /* guided_breathing_female.mp3 */; };
+		4BD1A2B320A22FCE009A66D7 /* my_safe_place_male.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2A920A22FCD009A66D7 /* my_safe_place_male.mp3 */; };
+		4BD1A2B420A22FCE009A66D7 /* at_the_beach_female.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2AA20A22FCD009A66D7 /* at_the_beach_female.mp3 */; };
+		4BD1A2B520A22FCE009A66D7 /* at_the_beach_male.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2AB20A22FCD009A66D7 /* at_the_beach_male.mp3 */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		64F3140D2BB842B5821E4E4D /* libRNSqlite2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F18D9A499E24475DB9D56E0D /* libRNSqlite2.a */; };
 		7E712F4989AA4EE2B0C2A24D /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0906A656096B487BACB86D79 /* Octicons.ttf */; };
@@ -405,6 +415,16 @@
 		4B3A462220A0AC1000939B97 /* libRNTwilioVoice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNTwilioVoice.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B3A462520A0ADF700939B97 /* libRNTwilioVoice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNTwilioVoice.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B67E0B320A0B10C006C108C /* RNTwilioVoice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNTwilioVoice.xcodeproj; path = "../node_modules/react-native-twilio-programmable-voice/ios/RNTwilioVoice.xcodeproj"; sourceTree = "<group>"; };
+		4BD1A2A220A22FCD009A66D7 /* focusing_on_the_present_male.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = focusing_on_the_present_male.mp3; sourceTree = "<group>"; };
+		4BD1A2A320A22FCD009A66D7 /* guided_breathing_male.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guided_breathing_male.mp3; sourceTree = "<group>"; };
+		4BD1A2A420A22FCD009A66D7 /* my_safe_place_female.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = my_safe_place_female.mp3; sourceTree = "<group>"; };
+		4BD1A2A520A22FCD009A66D7 /* muscle_relaxation_male.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = muscle_relaxation_male.mp3; sourceTree = "<group>"; };
+		4BD1A2A620A22FCD009A66D7 /* muscle_relaxation_female.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = muscle_relaxation_female.mp3; sourceTree = "<group>"; };
+		4BD1A2A720A22FCD009A66D7 /* focusing_on_the_present_female.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = focusing_on_the_present_female.mp3; sourceTree = "<group>"; };
+		4BD1A2A820A22FCD009A66D7 /* guided_breathing_female.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = guided_breathing_female.mp3; sourceTree = "<group>"; };
+		4BD1A2A920A22FCD009A66D7 /* my_safe_place_male.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = my_safe_place_male.mp3; sourceTree = "<group>"; };
+		4BD1A2AA20A22FCD009A66D7 /* at_the_beach_female.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = at_the_beach_female.mp3; sourceTree = "<group>"; };
+		4BD1A2AB20A22FCD009A66D7 /* at_the_beach_male.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = at_the_beach_male.mp3; sourceTree = "<group>"; };
 		54A0FE07F43C47129D46A82C /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		6E79A6E843E04B2BA739A242 /* libRNSoundPlayer.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSoundPlayer.a; sourceTree = "<group>"; };
@@ -679,6 +699,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4BD1A2A120A22FCD009A66D7 /* mp3 */ = {
+			isa = PBXGroup;
+			children = (
+				4BD1A2A220A22FCD009A66D7 /* focusing_on_the_present_male.mp3 */,
+				4BD1A2A320A22FCD009A66D7 /* guided_breathing_male.mp3 */,
+				4BD1A2A420A22FCD009A66D7 /* my_safe_place_female.mp3 */,
+				4BD1A2A520A22FCD009A66D7 /* muscle_relaxation_male.mp3 */,
+				4BD1A2A620A22FCD009A66D7 /* muscle_relaxation_female.mp3 */,
+				4BD1A2A720A22FCD009A66D7 /* focusing_on_the_present_female.mp3 */,
+				4BD1A2A820A22FCD009A66D7 /* guided_breathing_female.mp3 */,
+				4BD1A2A920A22FCD009A66D7 /* my_safe_place_male.mp3 */,
+				4BD1A2AA20A22FCD009A66D7 /* at_the_beach_female.mp3 */,
+				4BD1A2AB20A22FCD009A66D7 /* at_the_beach_male.mp3 */,
+			);
+			name = mp3;
+			path = ../../../Downloads/mp3;
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -733,6 +771,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				4BD1A2A120A22FCD009A66D7 /* mp3 */,
 				4B67E0B320A0B10C006C108C /* RNTwilioVoice.xcodeproj */,
 				13B07FAE1A68108700A75B9A /* selfhelp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -1315,15 +1354,25 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				CF6A14BBF65D441DA49E4C9D /* Entypo.ttf in Resources */,
+				4BD1A2B120A22FCE009A66D7 /* focusing_on_the_present_female.mp3 in Resources */,
 				B754DC56F846443792E8C718 /* EvilIcons.ttf in Resources */,
+				4BD1A2AC20A22FCE009A66D7 /* focusing_on_the_present_male.mp3 in Resources */,
 				18DD03DB81634552AF72CB89 /* Feather.ttf in Resources */,
 				2A814480856543BF9AFA8615 /* FontAwesome.ttf in Resources */,
+				4BD1A2AE20A22FCE009A66D7 /* my_safe_place_female.mp3 in Resources */,
 				177A018CB794457C888C9D1E /* Foundation.ttf in Resources */,
+				4BD1A2B320A22FCE009A66D7 /* my_safe_place_male.mp3 in Resources */,
+				4BD1A2B420A22FCE009A66D7 /* at_the_beach_female.mp3 in Resources */,
 				E015AF2E32AD4931B8C8D267 /* Ionicons.ttf in Resources */,
+				4BD1A2B220A22FCE009A66D7 /* guided_breathing_female.mp3 in Resources */,
 				1AE13CC6756F43C1B6095474 /* MaterialCommunityIcons.ttf in Resources */,
 				A00E8706D7224FE78E3BC702 /* MaterialIcons.ttf in Resources */,
 				7E712F4989AA4EE2B0C2A24D /* Octicons.ttf in Resources */,
 				FE62DE3EC6714291A82FF356 /* SimpleLineIcons.ttf in Resources */,
+				4BD1A2B020A22FCE009A66D7 /* muscle_relaxation_female.mp3 in Resources */,
+				4BD1A2AD20A22FCE009A66D7 /* guided_breathing_male.mp3 in Resources */,
+				4BD1A2B520A22FCE009A66D7 /* at_the_beach_male.mp3 in Resources */,
+				4BD1A2AF20A22FCE009A66D7 /* muscle_relaxation_male.mp3 in Resources */,
 				DD0D3BF2354E48ED84379456 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

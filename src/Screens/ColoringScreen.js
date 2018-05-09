@@ -18,7 +18,8 @@ export default class ColoringScreen extends Component {
         super(props)
     
         this.state = {
-            newPageUrl: ''
+            newPageUrl: '',
+            displaySaveButton: true
         }
     }
 
@@ -30,6 +31,13 @@ export default class ColoringScreen extends Component {
         this.setState({
             newPageUrl: url
         })
+    }
+
+    // Likely need to implement `window.postMessage(data)` on underlying webview to
+    // listen for selection events before save button can be toggled.
+
+    toggleSaveButton = () => {
+      this.setState((prevState) => ({...prevState, displaySaveButton: !prevState.displaySaveButton}))
     }
 
     savePicture = (navigation) => {
@@ -47,6 +55,7 @@ export default class ColoringScreen extends Component {
                 <Header
                     type='Coloring'
                     onSave={() => this.savePicture(navigation)}
+                    displaySaveButton={this.state.displaySaveButton}
                     navigation={navigation}
                 />
                 <WebView
