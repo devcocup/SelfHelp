@@ -35,21 +35,7 @@ onBrowse = (navigation) => {
 }
 
 onJournalClicked = (navigation) => {
-    const db = SQLite.openDatabase({name: 'securityDB', createFromLocation: '/data/securityDB.sqlite'})
-    db.transaction((txn) => {
-        txn.executeSql('CREATE TABLE IF NOT EXISTS Security(id INTEGER PRIMARY KEY NOT NULL, pin_number VARCHAR(6), security_question VARCHAR(100), security_answer VARCHAR(200))')
-        txn.executeSql('SELECT * FROM `security`', [], (tx, res) => {
-            let tempSecurity = []
-            for (let i = 0; i < res.rows.length; ++i) {
-                tempSecurity.push(res.rows.item(i))
-            }
-            if (tempSecurity.length > 0) {
-                goToScreen('EnterSecurityPinScreen', tempSecurity[0], navigation)
-            } else {
-                goToScreen('CreateSecurityPinScreen', tempSecurity[0], navigation)
-            }
-        })
-    })
+    goToScreen('JournalScreen', {}, navigation)
 }
 
 onColoringBookClicked = (navigation) => {

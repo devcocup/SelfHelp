@@ -191,11 +191,6 @@ export default class TalkToSomeoneScreen extends Component {
                                 )
                             })
                         }
-                        <Button
-                            label='Select from contacts'
-                            bgColor={Colors.orange}
-                            onPress={selectFromContacts}
-                        />
                         <PhoneCard
                             name='Call the DoD Help Line'
                             phoneNumber='877-995-5247'

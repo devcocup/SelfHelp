@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { View, ScrollView, Text, Image, TouchableOpacity, Dimensions, StyleSheet } from 'react-native'
 import Overlay from 'react-native-modal-overlay'
 import Communications from 'react-native-communications'
+import SQLite from 'react-native-sqlite-2'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -95,6 +96,24 @@ export default class MainScreen extends Component {
         Communications.phonecall('18779955247', true)
     }
 
+    onSafeCare = () => {
+        const db = SQLite.openDatabase({name: 'securityDB', createFromLocation: '/data/securityDB.sqlite'})
+        db.transaction((txn) => {
+            txn.executeSql('CREATE TABLE IF NOT EXISTS Security(id INTEGER PRIMARY KEY NOT NULL, pin_number VARCHAR(6), security_question VARCHAR(100), security_answer VARCHAR(200))')
+            txn.executeSql('SELECT * FROM `security`', [], (tx, res) => {
+                let tempSecurity = []
+                for (let i = 0; i < res.rows.length; ++i) {
+                    tempSecurity.push(res.rows.item(i))
+                }
+                if (tempSecurity.length > 0) {
+                    this.goToScreen('EnterSecurityPinScreen', tempSecurity[0])
+                } else {
+                    this.goToScreen('CreateSecurityPinScreen', tempSecurity[0])
+                }
+            })
+        }) 
+    }
+
     render() {
         const {
             chatMenuVisible,
@@ -114,7 +133,7 @@ export default class MainScreen extends Component {
                 />
                 <ScrollView style={{ backgroundColor:'rgb(0,131,105)' }}>  
                     <View style={{ backgroundColor:'white', height:height/5, justifyContent:'center',alignItems:'center' }}>
-                        <Image source={Logo} style={{ height:100, width:width }} />
+                        <Image source={Logo} style={{ height:height/7, width:width }} resizeMode="contain"/>
                     </View>   
                     <View style={{margin:10}}>
                         <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
@@ -138,7 +157,7 @@ export default class MainScreen extends Component {
                             <HomeButton 
                                 source={SelfCare}
                                 Label='Self-Care'
-                                onPress={() => this.goToScreen('SelfCareScreen')} 
+                                onPress={this.onSafeCare} 
                             />    
                         </View>  
                         <View style={[styles.Boxcontainer, AppStyles.hCenter]}>

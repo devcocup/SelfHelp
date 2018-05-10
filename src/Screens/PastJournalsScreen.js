@@ -40,7 +40,7 @@ export default class PastJournalsScreen extends Component {
     }
 
     componentWillMount() {
-        this.runSQLVersionCheck()
+      this.runSQLVersionCheck()
       this.runJournalAnswersCheck()
     }
 
@@ -88,8 +88,6 @@ export default class PastJournalsScreen extends Component {
         this.setState({
           checkedStates: tempStates
         })
-        console.log("*********************")
-        console.log(this.state.checkedStates)
       })
     });
   }

@@ -910,7 +910,7 @@ const SelfCareQuizLabels = [
     'How often do you have trouble falling or staying asleep?',
     'How often do you feel lonely or isolated?',
     'How often do you feel stressed or frightened?',
-    // 'How often do you feel angry?',
+    'How often do you feel angry?',
     'How often do you feel hopeless about the present or future?'
 ]
 
@@ -945,6 +945,10 @@ const QuizResultsLabels = [
     },
     {
         status: 'Stress & Fear',
+        frequency: 'Sometimes'
+    },
+    {
+        status: 'Angriness',
         frequency: 'Sometimes'
     },
     {
