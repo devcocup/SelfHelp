@@ -192,13 +192,13 @@ export default class TalkToSomeoneScreen extends Component {
                             })
                         }
                         <PhoneCard
-                            name='Call the DoD Help Line'
+                            name='Call the DoD Safe Help Line'
                             phoneNumber='877-995-5247'
                             bgColor={Colors.lightGreen}
                             onPress={() => this.onCallMenuClicked()}
                         />
                         <ChatCard
-                            name='Chat with DoD Helpline'
+                            name='Chat with DoD Safe Help Line'
                             onPress={() => this.onChatMenuClicked()}
                         />
                         <Overlay visible={chatMenuVisible}
