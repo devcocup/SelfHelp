@@ -84,11 +84,11 @@ export default class CallScreen extends Component {
 
   handleTwilioInit = async () => {
     const url = "https://voip.safehelpline.org/hello-client-monkey-twiml.php"
-    console.log('In handleTwilioInit')
+    //console.log('In handleTwilioInit')
     if (PLATFORM === 'ios') {
       const token = await this.getAccessTokenFromServer();
       //const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJ0bVBKWGgxdXVuNkRKenk0SnpDSEJ0SHEzckJpbGtjeS0xNTI1OTAxOTM4IiwiaXNzIjoidG1QSlhoMXV1bjZESnp5NEp6Q0hCdEhxM3JCaWxrY3kiLCJzdWIiOiJBQ2E2ZDE1YzExZWViOWZmMDExY2U2NjNiNjE4OWUzMDcyIiwiZXhwIjoxNTI1OTA1NTM4LCJncmFudHMiOnsiaWRlbnRpdHkiOiJtb25rZXkiLCJ2b2ljZSI6eyJvdXRnb2luZyI6eyJhcHBsaWNhdGlvbl9zaWQiOiJBUDdlMWYzNzEyYjZjZmEwZDk1N2E2MGJlYjM5ZjNjNGM5In19fX0.TbOzgPhJmfupBcT57ymUjtPV3uE34M4q5RCSfU6Y1BU"
-      console.log(token);
+      //console.log(token);
       const success = await TwilioVoice.initWithToken(token);
       console.log(success)
 
@@ -102,7 +102,7 @@ export default class CallScreen extends Component {
         console.log('Unable to init Twilio: ', err)
       }
 
-      TwilioVoice.connect({To: '+18568737809'})
+      TwilioVoice.connect({To: '+18568737809', logLevel: 'debug'})
 
     }
 

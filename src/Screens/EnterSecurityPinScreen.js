@@ -49,7 +49,7 @@ export default class CreateSecurityPinScreen extends Component {
             const checkedPin =  securityPin ? (securityPin === toCheckPin ? true : false) : false
             
             if (checkedPin) {
-                this.goToScreen('JournalScreen', navigation)
+                this.goToScreen('SelfCareScreen', navigation)
             } else {
                 this.setState({
                     mismatched: true,
