@@ -40,7 +40,7 @@ export default class SelfCareQuizScreen extends Component {
     }
 
     componentDidMount() {
-        const scores = [0, 0, 0, 0, 0, 0]
+        const scores = [0, 0, 0, 0, 0, 0, 0]
 
         this.setState({
             scoreValues: scores
@@ -83,7 +83,7 @@ export default class SelfCareQuizScreen extends Component {
     }
 
     onContinue = (navigation) => {
-        if (this.state.quizIndex >= 6) {
+        if (this.state.quizIndex >= 7) {
             this.runSQL(this.state.scoreValues)
             this.goToScreen('SelfCareQuizResultsScreen', this.state.scoreValues, navigation)
         } else {
