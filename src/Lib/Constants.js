@@ -763,7 +763,7 @@ const AtTheBeachLabels = {
 
 const QuizLabels = [
     {
-        title: 'At a bar',
+        title: 'At a bar (culture change)',
         question: 'You are at a bar with some people in your training uint. Some of the guys start saying lewd and disrespectful comments about the women in your unit who aren\'t there. What can you do to intervene?',
         answers: [
             {
@@ -826,7 +826,7 @@ const QuizLabels = [
         ]
     },
     {
-        title: 'Sexual abuse',
+        title: 'Sexual Abuse',
         question: 'A friend confides in you that he\'s being forced to have sex with someone. He jokes about it at first, but you can tell it really bothers him.  He shares that the person is a woman, and an officer, but won\'t say who. He says he\'s ashamed and has no idea how make it stop. He\'s afraid that no one will believe him because he\'s a man, and why wouldn\'t he want to have sex with her. What can you do to help?',
         answers: [
             {
