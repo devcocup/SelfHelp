@@ -42,7 +42,7 @@ export default class SecurityPinFinishScreen extends Component {
         const { securityQuestion, securityAnswer } = params
         const pinNumber = localStorage.getItem('PIN')
         this.runSQL(pinNumber, securityQuestion, securityAnswer)
-        this.goToScreen('JournalScreen', navigation)
+        this.goToScreen('SelfCareScreen', navigation)
     }
 
     render() {

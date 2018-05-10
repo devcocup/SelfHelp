@@ -46,12 +46,17 @@ export default class MainScreen extends Component {
         })
     }
 
-    goToScreen = (ScreenName) => {
-        const { navigate } = this.props.navigation
-        navigate(ScreenName)
+  goToScreen = (ScreenName, content=null) => {
+    const { navigate } = this.props.navigation
+    if (content == null) {
+      navigate(ScreenName)
+    } else {
+      navigate(ScreenName, { content })
     }
+  }
 
-    onChatMenu = () => {
+
+  onChatMenu = () => {
         this.setState({
             chatMenuVisible: true
         })

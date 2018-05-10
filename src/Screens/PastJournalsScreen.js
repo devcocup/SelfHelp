@@ -41,6 +41,7 @@ export default class PastJournalsScreen extends Component {
 
     componentWillMount() {
         this.runSQLVersionCheck()
+      this.runJournalAnswersCheck()
     }
 
     // componentWillUnmount() {
@@ -70,7 +71,31 @@ export default class PastJournalsScreen extends Component {
         })
     }
 
-    emptyJournalDB() {
+  runJournalAnswersCheck() {
+
+    JournalPromptQuestions.map((item, index) => {
+      let checked = false
+      var tempStates = this.state.checkedStates
+      let result = new Promise((resolve, reject) => {
+        db.transaction((txn) => {
+          txn.executeSql(`SELECT journal_answer FROM journals where journal_question = "${encrypt(AppKey, item)}"`, [], (tx, res) => {
+            resolve(res.rows.length > 0)
+          })
+        })
+      });
+      result.then((res) => {
+        tempStates[index] = res
+        this.setState({
+          checkedStates: tempStates
+        })
+        console.log("*********************")
+        console.log(this.state.checkedStates)
+      })
+    });
+  }
+
+
+  emptyJournalDB() {
         db.transaction((txn) => {
             txn.executeSql('DROP TABLE IF EXISTS Journals', [])
             txn.executeSql('CREATE TABLE IF NOT EXISTS Journals(journal_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, journal_date VARCHAR(30), journal_question VARCHAR(100), journal_answer VARCHAR(200))')
@@ -80,49 +105,33 @@ export default class PastJournalsScreen extends Component {
     render() {
         const { navigation } = this.props
 
-        return (
-            <View style={AppStyles.mainContainer}>
-                <Header
-                    type='Back'
-                    navigation={navigation}
-                />
-                <ScrollView>
-                    <View>
-                    {
-                        JournalPromptQuestions.map((item, index) => {
-                            let checked = false
-                            
-                            db.transaction((txn) => {
-                                txn.executeSql(`SELECT * FROM journals where journal_question = "${encrypt(AppKey, item)}"`, [], (tx, res) => {
-                                    let tempJournals = []
-                                    for (let i = 0; i < res.rows.length; ++i) {
-                                        tempJournals.push(res.rows.item(i))
-                                    }
-                                    if (tempJournals.length > 0) {
-                                        const tempStates = this.state.checkedStates
-                                        tempStates[index] = true
-                                        this.setState({
-                                            checkedStates: tempStates
-                                        })
-                                    }
-                                })
-                            })
-
-                            return (
-                                <View key={index}>
-                                    <JournalTitleListItem
-                                        checked={this.state.checkedStates[index]}
-                                        label={item}
-                                        onPress={() => onListClick(item, index, checked, navigation)}
-                                    />
-                                </View>
-                            )
-                        })
-                    }
+      return (
+        <View style={AppStyles.mainContainer}>
+          <Header
+            type='Back'
+            navigation={navigation}
+          />
+          <ScrollView>
+            <View>
+              {
+                JournalPromptQuestions.map((item, index) => {
+                  let checked = this.state.checkedStates[index]
+                  return (
+                    <View key={index}>
+                      <JournalTitleListItem
+                        checked={this.state.checkedStates[index]}
+                        label={item}
+                        onPress={() => onListClick(item, index, checked, navigation)}
+                      />
                     </View>
-                </ScrollView>
+                  )
+                })
+              }
             </View>
-        )
+          </ScrollView>
+        </View>
+      )
+
     }
 }
 
