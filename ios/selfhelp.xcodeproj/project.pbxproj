@@ -854,9 +854,9 @@
 			productReference = 00E356EE1AD99517003FC87E /* selfhelpTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* selfhelp */ = {
+		13B07F861A680F5B00A75B9A /* DoD Safe Helpline */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "selfhelp" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DoD Safe Helpline" */;
 			buildPhases = (
 				4D68283ECC75D7ACE8772881 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -870,7 +870,7 @@
 			);
 			dependencies = (
 			);
-			name = selfhelp;
+			name = "DoD Safe Helpline";
 			productName = "Hello World";
 			productReference = 13B07F961A680F5B00A75B9A /* selfhelp.app */;
 			productType = "com.apple.product-type.application";
@@ -1026,7 +1026,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* selfhelp */,
+				13B07F861A680F5B00A75B9A /* DoD Safe Helpline */,
 				00E356ED1AD99517003FC87E /* selfhelpTests */,
 				2D02E47A1E0B4A5D006451C7 /* selfhelp-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* selfhelp-tvOSTests */,
@@ -1515,7 +1515,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* selfhelp */;
+			target = 13B07F861A680F5B00A75B9A /* DoD Safe Helpline */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
@@ -1866,7 +1866,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "selfhelp" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "DoD Safe Helpline" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
