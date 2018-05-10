@@ -69,9 +69,11 @@ export default class LocalResourcesScreen extends Component {
                             <Text style={styles.hintText}>Enter your location info:</Text>
                             <TextInput
                                 style={styles.inputBox}
+                                returnKeyType='search'
                                 underlineColorAndroid='rgba(0, 0, 0, 0)'
                                 placeholder='Zip Code, State, Country, Installation/Base'
                                 onChangeText={(locationSearchText) => this.setState({ locationSearchText })}
+                                onEndEditing={() => this.onSearchClicked(navigation)}
                                 value={this.state.locationSearchText}
                             />
                         </View>

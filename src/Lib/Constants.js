@@ -763,7 +763,7 @@ const AtTheBeachLabels = {
 
 const QuizLabels = [
     {
-        title: 'At a bar',
+        title: 'Culture Change',
         question: 'You are at a bar with some people in your training uint. Some of the guys start saying lewd and disrespectful comments about the women in your unit who aren\'t there. What can you do to intervene?',
         answers: [
             {
