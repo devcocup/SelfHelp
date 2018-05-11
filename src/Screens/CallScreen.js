@@ -81,7 +81,7 @@ export default class CallScreen extends Component {
         console.log('Unable to init Twilio: ', err)
       }
     } else if (success && PLATFORM === 'android') {
-      TwilioVoice.connect({To: '+12674222609'})
+      TwilioVoice.connect({To: '+18004444444'})
     }
   }
 
