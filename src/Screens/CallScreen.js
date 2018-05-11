@@ -75,7 +75,7 @@ export default class CallScreen extends Component {
         TwilioVoice.configureCallKit({
           appName: 'SelfHelpline'
         })
-        TwilioVoice.connect({To: '+12674222609'})
+        TwilioVoice.connect({To: '+18004444444'})
         // this.setState((prevState) => ({ ...prevState, statusText: "Dialing"}))
       } catch (err) {
         console.log('Unable to init Twilio: ', err)
