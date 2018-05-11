@@ -6,8 +6,8 @@ import com.facebook.react.ReactApplication;
 import com.hoxfon.react.RNTwilioVoice.TwilioVoicePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import dog.craftz.sqlite_2.RNSqlite2Package;
-import rnsoundplayer.RNSoundPlayerPackage;
-import com.imagepicker.ImagePickerPackage;
+ import rnsoundplayer.RNSoundPlayerPackage;
+ import com.imagepicker.ImagePickerPackage;
 import com.rt2zz.reactnativecontacts.ReactNativeContacts;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -32,8 +32,8 @@ public class MainApplication extends Application implements ReactApplication {
             new TwilioVoicePackage(),
             new VectorIconsPackage(),
             new RNSqlite2Package(),
-            new RNSoundPlayerPackage(),
-            new ImagePickerPackage(),
+             new RNSoundPlayerPackage(),
+             new ImagePickerPackage(),
             new ReactNativeContacts()
       );
     }

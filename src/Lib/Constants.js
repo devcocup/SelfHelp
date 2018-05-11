@@ -618,7 +618,7 @@ const SoothingSoundsLabels = [
                 subTopic: 'White Noise',
                 description: 'Listen to the soothing sound of white noise.',
                 music: 'white_noise',
-                bgImage: require('../Assets/Images/white_noise.jpg')
+                bgImage: require('../Assets/Images/white_noise2.jpg')
             },
             {
                 icon: require('../Assets/Images/wind_chimes.png'),
