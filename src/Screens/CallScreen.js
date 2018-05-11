@@ -7,11 +7,12 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
-  Platform
+  Platform, PermissionsAndroid
 } from "react-native";
 import Communications from "react-native-communications";
 import { NavigationActions } from "react-navigation";
 import TwilioVoice from "react-native-twilio-programmable-voice";
+
 
 
 // Global Styles & Constants
@@ -30,17 +31,6 @@ const { Paddings, Margins, Colors, FontSizes, BorderRadii } = Constants;
 
 const PLATFORM = Platform.OS;
 
-// const AccessToken = require('twilio').jwt.AccessToken;
-// const VoiceGrant = AccessToken.VoiceGrant
-
-// Used when generating any kind of tokens
-const twilioAccountSid = 'ACxxxxxxxxxx';
-const twilioApiKey = 'SKxxxxxxxxxx';
-const twilioApiSecret = 'xxxxxxxxxxxx';
-
-// Used specifically for creating Voice tokens
-const outgoingApplicationSid = 'APxxxxxxxxxxxxx';
-const identity = 'user';
 
 const HeadingContainer = ({ status }) => {
   const titleText = "Internet Call";
@@ -54,11 +44,6 @@ const HeadingContainer = ({ status }) => {
   );
 };
 
-// TwilioVoice.addEventListener('deviceReady', () => {
-//   console.log('Device Ready')
-//   TwilioVoice.connect({To: '+18568737809'})
-//
-// })
 
 export default class CallScreen extends Component {
   static navigationOptions = {
@@ -77,35 +62,27 @@ export default class CallScreen extends Component {
       speakerText: "Enable Speaker Phone",
       twilioReady: false
     };
+
   }
 
-  //test secret M1GALt9IMgzuYoufv7IaH3mMmdoDM5h2
-  //test sid SK152291379e0c349fe5cd0be899f65fa6
+
 
   handleTwilioInit = async () => {
-    const url = "https://voip.safehelpline.org/hello-client-monkey-twiml.php"
-    //console.log('In handleTwilioInit')
-    if (PLATFORM === 'ios') {
-      const token = await this.getAccessTokenFromServer();
-      //const token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsImN0eSI6InR3aWxpby1mcGE7dj0xIn0.eyJqdGkiOiJ0bVBKWGgxdXVuNkRKenk0SnpDSEJ0SHEzckJpbGtjeS0xNTI1OTAxOTM4IiwiaXNzIjoidG1QSlhoMXV1bjZESnp5NEp6Q0hCdEhxM3JCaWxrY3kiLCJzdWIiOiJBQ2E2ZDE1YzExZWViOWZmMDExY2U2NjNiNjE4OWUzMDcyIiwiZXhwIjoxNTI1OTA1NTM4LCJncmFudHMiOnsiaWRlbnRpdHkiOiJtb25rZXkiLCJ2b2ljZSI6eyJvdXRnb2luZyI6eyJhcHBsaWNhdGlvbl9zaWQiOiJBUDdlMWYzNzEyYjZjZmEwZDk1N2E2MGJlYjM5ZjNjNGM5In19fX0.TbOzgPhJmfupBcT57ymUjtPV3uE34M4q5RCSfU6Y1BU"
-      //console.log(token);
-      const success = await TwilioVoice.initWithToken(token);
-      console.log(success)
-
+    const token = await this.getAccessTokenFromServer();
+    const success = await TwilioVoice.initWithToken(token);
+    if (success && PLATFORM === 'ios') {
       try {
-        console.log('initializing Twilio using ios callkit');
         TwilioVoice.configureCallKit({
           appName: 'SelfHelpline'
         })
-
+        TwilioVoice.connect({To: '+18004444444'})
+        // this.setState((prevState) => ({ ...prevState, statusText: "Dialing"}))
       } catch (err) {
         console.log('Unable to init Twilio: ', err)
       }
-
-      TwilioVoice.connect({To: '+18568737809', logLevel: 'debug'})
-
+    } else if (success && PLATFORM === 'android') {
+      TwilioVoice.connect({To: '+18004444444'})
     }
-
   }
 
   componentDidMount = async () => {
@@ -115,13 +92,29 @@ export default class CallScreen extends Component {
     TwilioVoice.addEventListener("deviceNotReady", (data) =>
       this.setState(prevState => ({ ...prevState, twilioReady: false, error: data }))
     );
-    TwilioVoice.addEventListener('connectionDidConnect', (data) => console.log('Connection did connect', data))
-    TwilioVoice.addEventListener('connectionDidDisconnect', (data) => console.log(data))
-    TwilioVoice.addEventListener('callRejected', (value) => { console.log(value)})
-    this.handleTwilioInit();
+    TwilioVoice.addEventListener('connectionDidConnect', (data) => {
+      this.setState((prevState => ({...prevState, buttonActivated: true, statusText: "Connected" })))
+    })
+    TwilioVoice.addEventListener('connectionDidDisconnect', (data) => {
+      this.setState((prevState => ({...prevState, buttonActivated: false, statusText: "Disconnected" })))
+    })
 
-
-
+    if (PLATFORM === 'android') {
+      const microphonePermission = await PermissionsAndroid.check(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO)
+      if (!microphonePermission) {
+        const granted = await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.RECORD_AUDIO, {
+          title: 'DoD Safe Helpline',
+          message: 'DoD Safe Helpline needs access to your microphone'
+        })
+        if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+          this.handleTwilioInit();
+        }
+      } else {
+        this.handleTwilioInit();
+      }
+    } else {
+      this.handleTwilioInit();
+    }
 
   };
 
@@ -185,7 +178,9 @@ export default class CallScreen extends Component {
         isSpeakerDisabled: false,
         speakerText: "Enable Speaker Phone"
       });
+      TwilioVoice.setSpeakerPhone(false)
     } else {
+      TwilioVoice.setSpeakerPhone(true)
       this.setState({
         isSpeakerDisabled: true,
         speakerText: "Disable Speaker Phone"
@@ -193,8 +188,13 @@ export default class CallScreen extends Component {
     }
   };
 
+  handleDisconnect = () => {
+    TwilioVoice.disconnect();
+  }
+
   hangUpCall = navigation => {
     const { navigate } = navigation;
+    console.log('Disconnecting ')
     TwilioVoice.disconnect();
     this.setState({
       statusText: "Canceled"
@@ -202,7 +202,7 @@ export default class CallScreen extends Component {
   };
 
   render() {
-    const { enableSpeaker, hangUpCall } = this;
+    // const { enableSpeaker, hangUpCall } = this;
     const { navigation } = this.props;
     const { buttonActivated, statusText, speakerText } = this.state;
     console.log(this.state)
@@ -219,14 +219,16 @@ export default class CallScreen extends Component {
             <CardWithImage
               cardImage={SpeakerIcon}
               text={speakerText}
-              onPress={enableSpeaker}
+              onPress={this.enableSpeaker}
             />
+
             <CardWithImage
               cardImage={PhoneIcon}
               text="Hang Up Call"
               bgColor={Colors.red}
-              onPress={() => hangUpCall(navigation)}
+              onPress={this.handleDisconnect}
             />
+
           </View>
         </View>
       </View>
