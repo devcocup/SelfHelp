@@ -11,19 +11,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+        <view contentMode="scaleAspectFit" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="982"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading-screen" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SVI-vF-0Vt">
-                    <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading-screen" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SVI-vF-0Vt">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="982"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SVI-vF-0Vt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5d2-oU-dTv"/>
+                <constraint firstAttribute="bottom" secondItem="SVI-vF-0Vt" secondAttribute="bottom" id="cwq-tH-tFo"/>
+                <constraint firstAttribute="trailing" secondItem="SVI-vF-0Vt" secondAttribute="trailing" id="ezE-nR-YsW"/>
+                <constraint firstItem="SVI-vF-0Vt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="maN-W8-sG6"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="548" y="455"/>
+            <point key="canvasLocation" x="548" y="706"/>
         </view>
     </objects>
     <resources>

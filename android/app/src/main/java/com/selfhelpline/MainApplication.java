@@ -1,4 +1,4 @@
-package com.selfhelpline;
+package com.RAINN.selfhelpline;
 
 import android.app.Application;
 
