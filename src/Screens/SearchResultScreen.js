@@ -54,10 +54,16 @@ export default class SearchResultScreen extends Component {
         }
     }
 
+
     componentWillMount() {
         const {navigation} = this.props
         const {params} = navigation.state
         const {locationSearchText, servicesQuery} = params
+
+        console.log('Location Search Text: ', locationSearchText)
+        console.log('Services Query: ', servicesQuery)
+
+
         this.getLocalResources(locationSearchText, servicesQuery)
     }
 
@@ -101,6 +107,7 @@ export default class SearchResultScreen extends Component {
     }
 
     callPhone = (phoneNumber) => {
+      console.log(phoneNumber)
         Communications.phonecall(phoneNumber, true)
     }
 
@@ -128,7 +135,7 @@ export default class SearchResultScreen extends Component {
                                     console.log(category)
                                     return(<VetCentersContainer/>)
                                 default:
-                                    return (<SearchResultSubList key={category} category={category} services={services.filter(service => TypeIdToName[service.TYPE] === category)} />)
+                                    return (<SearchResultSubList callPhone={this.callPhone} key={category} category={category} services={services.filter(service => TypeIdToName[service.TYPE] === category)} />)
                             }
                         })
                     }

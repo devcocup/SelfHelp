@@ -40,7 +40,7 @@ export default class TransitionResourcesScreen extends Component {
     render() {
         const { navigation } = this.props
         const { url } = this.state
-        console.log(url)
+        // console.log(url)
 
         return(
             <View style={AppStyles.mainContainer}>
@@ -50,9 +50,11 @@ export default class TransitionResourcesScreen extends Component {
                 />
                 <WebView
                     style={styles.WebViewStyle}
-                    source={{ url: url }}
+                    source={{ uri: url }}
                     renderLoading={this.ActivityIndicatorLoadingView}
                     startInLoadingState={true}
+                    scalesPageToFit
+
                 />
             </View>
         )

@@ -29,9 +29,10 @@ export default class SearchResultSubList extends Component {
         </View>)
     }
 
-    renderSublist() {
+    renderSublist = () => {
+      const {callPhone, services} = this.props;
         return (
-            this.props.services.map((cardItem, cardIndex) => {
+            services.map((cardItem, cardIndex) => {
                 return (<View key={cardIndex}>
                     <View key={cardIndex} style={styles.panelItem}>
                         <View style={styles.panelItemTextArea}>
@@ -42,7 +43,7 @@ export default class SearchResultSubList extends Component {
                         <View style={[styles.panelItemButton, AppStyles.center]}>
                             <TouchableOpacity
                                 style={[styles.callButton, AppStyles.center]}
-                                onPress={() => this.callPhone(cardItem.PHONE1)}>
+                                onPress={() => callPhone(cardItem.PHONE1)}>
                                 <Image
                                     source={CallIcon}
                                     style={styles.callButtonImage}
@@ -56,6 +57,7 @@ export default class SearchResultSubList extends Component {
     }
 
     render() {
+      console.log(this.props)
         return (
             <View>
                 {
