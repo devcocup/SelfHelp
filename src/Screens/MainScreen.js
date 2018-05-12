@@ -3,6 +3,7 @@ import { View, ScrollView, Text, Image, TouchableOpacity, Dimensions, StyleSheet
 import Overlay from 'react-native-modal-overlay'
 import Communications from 'react-native-communications'
 import SQLite from 'react-native-sqlite-2'
+import { AndroidBackHandler } from 'react-navigation-backhandler';
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -39,6 +40,16 @@ export default class MainScreen extends Component {
         chatMenuVisible: false,
         callMenuVisible: false
     }
+
+  onBackButtonPressAndroid = () => {
+      // console.log('this got called')
+    if (this.state.callMenuVisible) {
+      this.setState((prevState) => ({...prevState, callMenuVisible: !prevState.callMenuVisible}))
+      return true;
+    } else {
+      return false;
+    }
+  };
 
     dismissModal() {
         this.setState({
@@ -122,7 +133,9 @@ export default class MainScreen extends Component {
         const { navigation } = this.props
 
         return(
+
             <View style={AppStyles.mainContainer}>
+              <AndroidBackHandler onBackPress={this.onBackButtonPressAndroid}>
                 <Header
                     type='Home'
                     isMain
@@ -198,7 +211,9 @@ export default class MainScreen extends Component {
                         onCancel={this.onCancel}
                     />
                 </Overlay>
+              </AndroidBackHandler>
             </View>
+
         )
     }
 }

@@ -1,66 +1,63 @@
 //React
-import React, { Component } from 'react'
-import { View, Text, WebView, StyleSheet, Dimensions  } from 'react-native'
+import React, { Component } from "react";
+import { View, WebView, StyleSheet, Dimensions } from "react-native";
 
 // Global Styles & Constants
-import AppStyles from '../Lib/AppStyles'
-import Constants from '../Lib/Constants'
+import AppStyles from "../Lib/AppStyles";
 
 // Assets
-import Header from '../Components/Header'
-
-const { height, width } = Dimensions.get('window')
-
+import Header from "../Components/Header";
 
 export default class ChatScreen extends Component {
-    static navigationOptions = {
-        title: 'Chat Screen',
-        headerStyle: {backgroundColor: 'rgb(0,143,120)'},
-        headerTintColor: 'white',
-        headerTitleStyle : {alignSelf:'flex-start'}
+  static navigationOptions = {
+    title: "Chat Screen",
+    headerStyle: { backgroundColor: "rgb(0,143,120)" },
+    headerTintColor: "white",
+    headerTitleStyle: { alignSelf: "flex-start" }
+  };
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    const { navigation } = nextProps;
+    if (navigation && navigation.state && navigation.state.params) {
+      const { chatType } = navigation.state.params;
+      if (chatType) {
+        return { ...prevState, chatType };
+      }
     }
+    return null;
+  }
 
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-            chatUrl: ''
-        }
-    }
+  state = { chatType: null };
 
-    componentWillMount() {
-        const { navigation } = this.props
-        const { chatType } = navigation.state.params
-        let tempChatUrl = ''
+  render() {
 
-        if (chatType === 'OneOnOne') {
-            tempChatUrl = 'https://hotline.safehelpline.org/safe-helpline/'
-        } else {
-            tempChatUrl = 'https://safe-helproom.safehelpline.org'
-        }
-        this.setState({
-            chatUrl: tempChatUrl
-        })
-    }
+    // *************** KNOWN REACT-NATIVE ISSUE: *********************
+    // WebView fails to load certain URLs (seemingly randomly) in emulator;
+    // debug in emulator browser or on native device.
+    // See https://github.com/facebook/react-native/issues/14754.
+    // *************** KNOWN REACT-NATIVE ISSUE: *********************
 
-    render() {
-        const { navigation } = this.props
-        const { chatUrl } = this.state
+    const uri =
+      this.state.chatType === "OneOnOne"
+        ? "https://hotline.safehelpline.org/safe-helpline/"
+        : "https://safe-helproom.safehelpline.org/#/";
 
-        return(
-            <View style={AppStyles.mainContainer}>
-                <Header
-                    type='Back'
-                    navigation={navigation}
-                />
-                <WebView
-                    source={{ url: chatUrl}}
-                />
-            </View>   
-        )
-    }
+    const { navigation } = this.props;
+
+    return (
+      <View style={AppStyles.mainContainer}>
+        <Header type="Back" navigation={navigation} />
+        <WebView
+          source={{ uri }}
+          scalesPageToFit
+          javaScriptEnabled
+          domStorageEnabled
+          startInLoadingState
+          mixedContentMode="always"
+        />
+      </View>
+    );
+  }
 }
 
-const styles = StyleSheet.create({
-
-})
+const styles = StyleSheet.create({});

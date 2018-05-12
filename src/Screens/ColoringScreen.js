@@ -60,7 +60,7 @@ export default class ColoringScreen extends Component {
                 />
                 <WebView
                     ref={ webview => { this.webview = webview; }}
-                    source={{ url: newPageUrl }}
+                    source={{ uri: newPageUrl }}
                 />
             </View>
         )
