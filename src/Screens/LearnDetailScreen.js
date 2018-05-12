@@ -66,6 +66,8 @@ const CardContainer = ({ content, navigation }) => {
     })
 
     const cardList = content.subContent.subCategories.map((item, index) => {
+
+
         return (
             <View
                 key={index}
@@ -73,7 +75,7 @@ const CardContainer = ({ content, navigation }) => {
             >
                 {
                     !item.url &&
-                    <SubTopicButton content={item} />
+                    <SubTopicButton content={item} navigation={navigation} />
                 }
                 {
                     item.url &&
