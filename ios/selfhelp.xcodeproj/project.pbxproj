@@ -39,6 +39,13 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* selfhelpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* selfhelpTests.m */; };
 		41196ED109E349FF81D9F32F /* libRNSoundPlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E79A6E843E04B2BA739A242 /* libRNSoundPlayer.a */; };
+		4B36090220AA2C3A0074325D /* soothing_white_noise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B3608FB20AA2C390074325D /* soothing_white_noise.mp3 */; };
+		4B36090320AA2C3A0074325D /* soothing_harp.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B3608FC20AA2C390074325D /* soothing_harp.mp3 */; };
+		4B36090420AA2C3A0074325D /* soothing_crickets.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B3608FD20AA2C390074325D /* soothing_crickets.mp3 */; };
+		4B36090520AA2C3A0074325D /* soothing_rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B3608FE20AA2C390074325D /* soothing_rain.mp3 */; };
+		4B36090620AA2C3A0074325D /* soothing_ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B3608FF20AA2C390074325D /* soothing_ocean.mp3 */; };
+		4B36090720AA2C3A0074325D /* soothing_forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B36090020AA2C3A0074325D /* soothing_forest.mp3 */; };
+		4B36090820AA2C3A0074325D /* soothing_wind_chimes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4B36090120AA2C3A0074325D /* soothing_wind_chimes.mp3 */; };
 		4B3A462620A0ADF700939B97 /* libRNTwilioVoice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3A462520A0ADF700939B97 /* libRNTwilioVoice.a */; };
 		4BD1A2AC20A22FCE009A66D7 /* focusing_on_the_present_male.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2A220A22FCD009A66D7 /* focusing_on_the_present_male.mp3 */; };
 		4BD1A2AD20A22FCE009A66D7 /* guided_breathing_male.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4BD1A2A320A22FCD009A66D7 /* guided_breathing_male.mp3 */; };
@@ -412,6 +419,13 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EF0A3E6BD584AAD8D5E5EFD /* RCTContacts.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTContacts.xcodeproj; path = "../node_modules/react-native-contacts/ios/RCTContacts.xcodeproj"; sourceTree = "<group>"; };
 		328B823C8A7E4E8D939B6ADE /* libRNImagePicker.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNImagePicker.a; sourceTree = "<group>"; };
+		4B3608FB20AA2C390074325D /* soothing_white_noise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soothing_white_noise.mp3; sourceTree = "<group>"; };
+		4B3608FC20AA2C390074325D /* soothing_harp.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soothing_harp.mp3; sourceTree = "<group>"; };
+		4B3608FD20AA2C390074325D /* soothing_crickets.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soothing_crickets.mp3; sourceTree = "<group>"; };
+		4B3608FE20AA2C390074325D /* soothing_rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soothing_rain.mp3; sourceTree = "<group>"; };
+		4B3608FF20AA2C390074325D /* soothing_ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soothing_ocean.mp3; sourceTree = "<group>"; };
+		4B36090020AA2C3A0074325D /* soothing_forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soothing_forest.mp3; sourceTree = "<group>"; };
+		4B36090120AA2C3A0074325D /* soothing_wind_chimes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soothing_wind_chimes.mp3; sourceTree = "<group>"; };
 		4B3A462220A0AC1000939B97 /* libRNTwilioVoice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNTwilioVoice.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B3A462520A0ADF700939B97 /* libRNTwilioVoice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNTwilioVoice.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B67E0B320A0B10C006C108C /* RNTwilioVoice.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNTwilioVoice.xcodeproj; path = "../node_modules/react-native-twilio-programmable-voice/ios/RNTwilioVoice.xcodeproj"; sourceTree = "<group>"; };
@@ -702,6 +716,13 @@
 		4BD1A2A120A22FCD009A66D7 /* mp3 */ = {
 			isa = PBXGroup;
 			children = (
+				4B3608FD20AA2C390074325D /* soothing_crickets.mp3 */,
+				4B36090020AA2C3A0074325D /* soothing_forest.mp3 */,
+				4B3608FC20AA2C390074325D /* soothing_harp.mp3 */,
+				4B3608FF20AA2C390074325D /* soothing_ocean.mp3 */,
+				4B3608FE20AA2C390074325D /* soothing_rain.mp3 */,
+				4B3608FB20AA2C390074325D /* soothing_white_noise.mp3 */,
+				4B36090120AA2C3A0074325D /* soothing_wind_chimes.mp3 */,
 				4BD1A2A220A22FCD009A66D7 /* focusing_on_the_present_male.mp3 */,
 				4BD1A2A320A22FCD009A66D7 /* guided_breathing_male.mp3 */,
 				4BD1A2A420A22FCD009A66D7 /* my_safe_place_female.mp3 */,
@@ -1350,6 +1371,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B36090220AA2C3A0074325D /* soothing_white_noise.mp3 in Resources */,
+				4B36090320AA2C3A0074325D /* soothing_harp.mp3 in Resources */,
+				4B36090420AA2C3A0074325D /* soothing_crickets.mp3 in Resources */,
+				4B36090520AA2C3A0074325D /* soothing_rain.mp3 in Resources */,
+				4B36090620AA2C3A0074325D /* soothing_ocean.mp3 in Resources */,
+				4B36090720AA2C3A0074325D /* soothing_forest.mp3 in Resources */,
+				4B36090820AA2C3A0074325D /* soothing_wind_chimes.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				CF6A14BBF65D441DA49E4C9D /* Entypo.ttf in Resources */,
