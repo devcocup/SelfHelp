@@ -521,7 +521,7 @@ const ExercisesLabels = [
                 subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed or feel like what you went through is happening all over again.',
                 description: 'An exercise to ground yourself in the Pressent to reduce stress',
                 bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
-                music: 'focusing_on_present'
+                music: 'focusing_on_the_present'
             },
             {
                 icon: require('../Assets/Images/guided_breathing.png'),
@@ -537,7 +537,7 @@ const ExercisesLabels = [
                 subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided muscle relaxation may help to reduce tension and help you feel calmer. Before starting this exercise, please consult with your doctor if you have a history of muscle spasms, back problems or other conditions that may be made worse by tensing your muscles.',
                 description: 'Reduce tension with this audio guided muscle relaxationexercise.',
                 bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg'),
-                music: 'guided_muscle_relaxation'
+                music: 'muscle_relaxation'
             },
             {
                 icon: require('../Assets/Images/listening_to_soothing_sounds.png'),
@@ -582,49 +582,49 @@ const SoothingSoundsLabels = [
                 icon: require('../Assets/Images/crickets.png'),
                 subTopic: 'Crickets',
                 description: 'Listen to the sound of crickets chirping in the night.',
-                music: 'crickets',
+                music: 'soothing_crickets',
                 bgImage: require('../Assets/Images/sound_crickets.jpg')
             },
             {
                 icon: require('../Assets/Images/forest.png'),
                 subTopic: 'Forest',
                 description: 'Embrace the nature filled sounds of the forest.',
-                music: 'forest',
+                music: 'soothing_forest',
                 bgImage: require('../Assets/Images/sound_forest.jpg')
             },
             {
                 icon: require('../Assets/Images/harp.png'),
                 subTopic: 'Harp',
                 description: 'Listen to the beautiful sounds of a soothing harp.',
-                music: 'harp',
+                music: 'soothing_harp',
                 bgImage: require('../Assets/Images/sound_harp.jpg')
             },
             {
                 icon: require('../Assets/Images/ocean.png'),
                 subTopic: 'Ocean',
                 description: 'Listen to the sounds of the waves by the ocean.',
-                music: 'ocean',
+                music: 'soothing_ocean',
                 bgImage: require('../Assets/Images/sound_ocean.jpg')
             },
             {
                 icon: require('../Assets/Images/rain.png'),
                 subTopic: 'Rain',
                 description: 'Listen to the sounds of rain falling.',
-                music: 'rain',
+                music: 'soothing_rain',
                 bgImage: require('../Assets/Images/sound_rain.jpg')
             },
             {
                 icon: require('../Assets/Images/white_noise.png'),
                 subTopic: 'White Noise',
                 description: 'Listen to the soothing sound of white noise.',
-                music: 'white_noise',
+                music: 'soothing_white_noise',
                 bgImage: require('../Assets/Images/white_noise2.jpg')
             },
             {
                 icon: require('../Assets/Images/wind_chimes.png'),
                 subTopic: 'Wind Chimes',
                 description: 'Listen to the rings of wind chimes moving in the wind.',
-                music: 'chimes',
+                music: 'soothing_wind_chimes',
                 bgImage: require('../Assets/Images/sound_windchimes.jpg')
             }
         ]

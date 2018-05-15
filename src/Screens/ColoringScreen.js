@@ -19,7 +19,7 @@ export default class ColoringScreen extends Component {
     
         this.state = {
             newPageUrl: '',
-            displaySaveButton: true
+            displaySaveButton: false,
         }
     }
 
@@ -36,8 +36,14 @@ export default class ColoringScreen extends Component {
     // Likely need to implement `window.postMessage(data)` on underlying webview to
     // listen for selection events before save button can be toggled.
 
-    toggleSaveButton = () => {
-      this.setState((prevState) => ({...prevState, displaySaveButton: !prevState.displaySaveButton}))
+    toggleSaveButton = (event) => {
+      const {data} = event.nativeEvent;
+      if (data === 'showSave') {
+        this.setState((prevState) => ({...prevState, displaySaveButton: true}))
+      } else if (data === 'hideSave') {
+        this.setState((prevState) => ({...prevState, displaySaveButton: false}))
+      }
+
     }
 
     savePicture = (navigation) => {
@@ -57,10 +63,12 @@ export default class ColoringScreen extends Component {
                     onSave={() => this.savePicture(navigation)}
                     displaySaveButton={this.state.displaySaveButton}
                     navigation={navigation}
+
                 />
                 <WebView
                     ref={ webview => { this.webview = webview; }}
                     source={{ uri: newPageUrl }}
+                    onMessage={(event) => this.toggleSaveButton(event)}
                 />
             </View>
         )

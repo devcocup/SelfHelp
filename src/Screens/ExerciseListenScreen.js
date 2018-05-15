@@ -77,6 +77,8 @@ export default class ExerciseListenScreen extends Component {
         const { content } = params
         const { bgImage } = content
 
+      console.log(this.props)
+
         return (
             <ImageBackground
                 style={[AppStyles.mainContainer, styles.container]}
