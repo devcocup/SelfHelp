@@ -109,16 +109,16 @@ const LearnLabels = [
                     ],
                     subCategories: [
                         {
-                            categoryTitle: 'Building Hope and Resiliency',
+                            categoryTitle: 'Building Hope and Resiliency: Addressing the Effects of Sexual Assault',
                             categoryContent: [
-                                'Addressing the Effects of Sexual Assault: This program seeks to help survivors begin to recover, heal, and build resiliency after a sexual assault. Recognizing the effect that trauma can have, this program is part of a comprehensive effort to enhance resilience and improve readiness across the Total Force. Users will learn about sexual assault and its effects, assess their current coping skills, and find information about additional support and resources available. This program may be especially helpful for survivors that are not yet ready to connect directly with anyone or for those that prefer to do their own research before taking the next step.'
+                                'This program seeks to help survivors begin to recover, heal, and build resiliency after a sexual assault. Recognizing the effect that trauma can have, this program is part of a comprehensive effort to enhance resilience and improve readiness across the Total Force. Users will learn about sexual assault and its effects, assess their current coping skills, and find information about additional support and resources available. This program may be especially helpful for survivors that are not yet ready to connect directly with anyone or for those that prefer to do their own research before taking the next step.'
                             ],
                             url: 'https://safehelpline.org/building-hope-and-resiliency'
                         },
                         {
                             categoryTitle: 'How to Support a Survivor',
                             categoryContent: [
-                                'The How to Support a Survivor program provides concrete tools that can help friends, family members, and colleagues of survivors of sexual assault support the course of a survivor\'s recovery. This program identifies helping behaviors that support survivors of sexual assault while also educating supporters about behaviors that can be harmful and how to avoid them.'
+                                'The How to Support a Survivor program provides concrete tools that can help friends, family members, and colleagues of survivors of sexual assault support the course of a survivor’s recovery. This program identifies helping behaviors that support survivors of sexual assault while also educating supporters about behaviors that can be harmful and how to avoid them.'
                             ],
                             url: 'https://safehelpline.org/HTSAS'
                         },
@@ -969,7 +969,7 @@ const SelfCareSuggestionLabels = [
         icon: require('../Assets/Images/at_the_beach.png'),
         subTopic: 'At the Beach',
         description: 'Reduce, anxiety, tension, and stress with this guided audio exercies.',
-        subDescription: 'This exercise will help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch. This exercise may elp to reduce anxiety, tension, and stress. It can make your arms or legs feel \"heavy\". You may also feel half awake or like you are \"wandering off\" mentally. These aer natural reactions to relaxation. If you feel uncomfortable at any time during the exercise, just open your eyes and remind yourself that you are in control and you are safe. Please avoid doing this exercise while driving.',
+        subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Following this exercise can help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch.',
         bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg'),
         music: 'at_the_beach'
     },
@@ -977,6 +977,7 @@ const SelfCareSuggestionLabels = [
         icon: require('../Assets/Images/focusing_on_the_present.png'),
         subTopic: 'Focusing on the Present',
         description: 'An exercise to ground yourself in the Pressent to reduce stress',
+        subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed or feel like what you went through is happening all over again.',
         bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
         music: 'focusing_on_present'
     },
@@ -984,6 +985,7 @@ const SelfCareSuggestionLabels = [
         icon: require('../Assets/Images/guided_breathing.png'),
         subTopic: 'Guided Breathing',
         description: 'Breathing techniques to help you relax when you are overwhelmed.',
+        subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided breathing may help you when you are feeling nervous, overwhelmed, or tense. Focusing on your breath may help you feel more relaxed and in the present.',
         bgImage: require('../Assets/Images/guided_breathing_bg-min.jpg'),
         music: 'guided_breathing'
     },
@@ -991,6 +993,7 @@ const SelfCareSuggestionLabels = [
         icon: require('../Assets/Images/guided_muscle_relaxation.png'),
         subTopic: 'Guided Muscle Relaxation',
         description: 'Reduce tension with this audio guided muscle relaxationexercise.',
+        subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided muscle relaxation may help to reduce tension and help you feel calmer. Before starting this exercise, please consult with your doctor if you have a history of muscle spasms, back problems or other conditions that may be made worse by tensing your muscles.',
         bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg'),
         music: 'guided_muscle_relaxation'
     }
