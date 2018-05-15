@@ -57,10 +57,10 @@ export default class ResetConfirmScreen extends Component {
               <View style={styles.container}>
                 <View style={[styles.warningMessageArea, AppStyles.hCenter]}>
                     <Text style={styles.headerTitle}>WARNING</Text>
-                    <Text style={styles.headerContent}>Are you sure you want to erase your Safe Help Line app data and reset your pin?</Text>
+                    <Text style={styles.headerContent}>Are you sure you want to erase your Safe Helpline app data and reset your pin?</Text>
                 </View>
                 <View style={[styles.descriptionArea, AppStyles.center]}>
-                    <Text style={styles.descriptionText}>You will lose journal entries, user photos, and saved cooring pages.</Text>
+                    <Text style={styles.descriptionText}>You will lose journal entries, user photos, and saved coloring pages.</Text>
                 </View>
                 <View style={[styles.buttonArea, AppStyles.hCenter]}>
                     <Button
