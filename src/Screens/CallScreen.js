@@ -189,7 +189,9 @@ export default class CallScreen extends Component {
   };
 
   handleDisconnect = () => {
+    const { goBack } = this.props.navigation;
     TwilioVoice.disconnect();
+    goBack()
   }
 
   hangUpCall = navigation => {
