@@ -71,11 +71,11 @@ export default class QuizScenarioScreen extends Component {
                             return (
                                 <View
                                     key={index}
-                                    style={[styles.cardContainer, AppStyles.hCenter]}
+                                    style={AppStyles.hCenter}
                                 >
                                     {
                                         (index + 1) === quizIndex &&
-                                        <View>
+                                        <View style={styles.cardContainer}>
                                             <QuestionBox
                                                 content={item.question}
                                             />
