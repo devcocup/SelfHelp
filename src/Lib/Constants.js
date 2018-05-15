@@ -763,17 +763,17 @@ const AtTheBeachLabels = {
 
 const QuizLabels = [
     {
-        title: 'At a bar (culture change)',
-        question: 'You are at a bar with some people in your training uint. Some of the guys start saying lewd and disrespectful comments about the women in your unit who aren\'t there. What can you do to intervene?',
+        title: 'Culture Change',
+        question: 'You are at a bar with some people in your training unit. Some of the guys start saying lewd and disrespectful comments about the women in your unit who aren\'t there. What can you do to intervene?',
         answers: [
             {
                 choiceCaption: 'A',
-                content: 'Interject and refocus the conversation on something else: \"Did you all watch the game last night?',
+                content: 'Interject and refocus the conversation on something else: \"Did you all watch the game last night?\"',
                 subContent: 'Distraction can be a good option in the moment if you\'re not sure how to address their comments long-term or don\'t feel safe discussing why it\'s not okay for them to make those comments.'
             },
             {
                 choiceCaption: 'B',
-                content: 'Interrupt the conversation and tell them that what they\'re saying isn\'t okay: \"Why would you say that about Sue or Julia? You would\'t say that about me. That\'s messed up.\"',
+                content: 'Interrupt the conversation and tell them that what they\'re saying isn\'t okay: \"Why would you say that about Sue or Julia? You wouldn\'t say that about me. That\'s messed up.\"',
                 subContent: 'Asking why someone is saying these things is a good lead into telling them why what they\'re saying is harmful. As a peer they may be more likely to listen to what you have to say.'
             },
             {
