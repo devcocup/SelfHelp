@@ -10,13 +10,9 @@ const { height, width } = Dimensions.get("window")
 
 const HeadingContainer = ({ headingImage, headingText }) => {
     return (
-        <View style={[styles.headingContainer, AppStyles.hCenter]}>
-            <View style={styles.iconArea}>
-                <Image source={headingImage} style={styles.imgStyle} />
-            </View>
-            <View style={styles.textArea}>
-                <Text style={styles.textStyle}>{headingText}</Text>
-            </View>
+        <View style={[styles.headingContainer, AppStyles.hCenter, AppStyles.vCenter]}>
+            <Image source={headingImage} style={styles.imgStyle}/>
+            <Text style={styles.textStyle}>{headingText}</Text>
         </View>
     )
 }
@@ -29,18 +25,9 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
     },
 
-    iconArea: {
-        flex: .4,
-        alignItems: 'flex-end'
-    },
-
     imgStyle: {
-        width: 90,
+        width: 65,
         height: 65
-    },
-
-    textArea: {
-        flex: .6
     },
 
     textStyle: {
@@ -48,8 +35,7 @@ const styles = StyleSheet.create({
         fontSize: Constants.FontSizes.headingFS,
         fontWeight: '900',
         fontFamily: 'Arial-BoldMT',
-        fontWeight: 'bold',
-        marginLeft: 5
+        fontWeight: 'bold'
     }
 })
 

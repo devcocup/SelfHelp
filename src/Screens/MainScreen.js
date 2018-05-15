@@ -146,7 +146,7 @@ export default class MainScreen extends Component {
                 />
                 <ScrollView style={{ backgroundColor:'rgb(0,131,105)' }}>  
                     <View style={{ backgroundColor:'white', height:height/5, justifyContent:'center',alignItems:'center' }}>
-                        <Image source={Logo} style={{ height:height/7, width:width }} resizeMode="contain"/>
+                        <Image source={Logo} style={{ height:height/5, width:width }} resizeMode="contain"/>
                     </View>   
                     <View style={{margin:10}}>
                         <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
