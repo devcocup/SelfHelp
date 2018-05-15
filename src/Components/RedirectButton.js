@@ -23,7 +23,19 @@ const RedirectButton = ({ content, onPress }) => {
                         {content.categoryTitle ? content.categoryTitle : content.text}
                     </Text>
                 </View>
-            </TouchableOpacity>   
+            </TouchableOpacity>
+            {
+                content.categoryContent.map((subItem, subIndex) => {
+                    return (
+                        <Text
+                            key={subIndex}
+                            style={styles.subTextStyle}
+                        >
+                            {subItem}
+                        </Text>
+                    )
+                })
+            }
         </View>
     )
 }
@@ -42,6 +54,14 @@ const styles = StyleSheet.create({
         fontSize: FontSizes.topicFS,
         textAlign: 'center',
         fontWeight: '600'
+    },
+
+    subTextStyle: {
+        color: 'white',
+        fontSize: FontSizes.hintFS,
+        padding: Paddings.elementP,
+        marginTop: 10,
+        marginBottom: 10
     }
 })
 
