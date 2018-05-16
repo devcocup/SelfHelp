@@ -87,7 +87,7 @@ const LearnLabels = [
         content: [
             {
                 icon: require('../Assets/Images/what_can_I_do_to_help.png'),
-                subTopic: 'What can I do to help?',
+                subTopic: 'What Can I do to Help Someone?',
                 description: 'You have the ability to make a difference by intervening. We’ve put together scenarios to give you tangible ways to step in to support others.',
                 subContent: {
                     subDescription: [
@@ -111,7 +111,7 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Building Hope and Resiliency: Addressing the Effects of Sexual Assault',
                             categoryContent: [
-                                'This program seeks to help survivors begin to recover, heal, and build resiliency after a sexual assault. Recognizing the effect that trauma can have, this program is part of a comprehensive effort to enhance resilience and improve readiness across the Total Force. Users will learn about sexual assault and its effects, assess their current coping skills, and find information about additional support and resources available. This program may be especially helpful for survivors that are not yet ready to connect directly with anyone or for those that prefer to do their own research before taking the next step.'
+                                'Sexual assault can impact everyone differently and while there is no one ‘right’ or ‘wrong’ reaction to sexual assault, we’ve put together information on some common effects survivors may experience.'
                             ],
                             url: 'https://safehelpline.org/building-hope-and-resiliency'
                         },

@@ -21,7 +21,6 @@ onRedirect = (url, navigation) => {
 }
 
 const CardContainer = ({ content, navigation }) => {
-    console.log(content)
     const cardDescriptionBox = content.subContent.subDescription.map((item, index) => {
         if(Array.isArray(item) && item.length === 4 ){
             return (
