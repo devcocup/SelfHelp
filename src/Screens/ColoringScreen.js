@@ -45,7 +45,7 @@ export default class ColoringScreen extends Component {
   // listen for selection events before save button can be toggled.
 
   toggleSaveButton = event => {
-    console.log(event);
+
     const { data } = event.nativeEvent;
     if (data === "showSave") {
       this.setState(prevState => ({ ...prevState, displaySaveButton: true }));
