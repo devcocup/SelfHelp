@@ -511,7 +511,7 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/at_the_beach.png'),
                 subTopic: 'At the Beach',
-                description: 'Reduce, anxiety, tension, and stress with this guided audio exercies.',
+                description: 'Reduce, anxiety, tension, and stress with this guided audio exercise.',
                 subDescription: 'This exercise will help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch. This exercise may elp to reduce anxiety, tension, and stress. It can make your arms or legs feel \"heavy\". You may also feel half awake or like you are \"wandering off\" mentally. These aer natural reactions to relaxation. If you feel uncomfortable at any time during the exercise, just open your eyes and remind yourself that you are in control and you are safe. Please avoid doing this exercise while driving.',
                 bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg'),
                 music: 'at_the_beach'
@@ -536,7 +536,7 @@ const ExercisesLabels = [
                 icon: require('../Assets/Images/guided_muscle_relaxation.png'),
                 subTopic: 'Guided Muscle Relaxation',
                 subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided muscle relaxation may help to reduce tension and help you feel calmer. Before starting this exercise, please consult with your doctor if you have a history of muscle spasms, back problems or other conditions that may be made worse by tensing your muscles.',
-                description: 'Reduce tension with this audio guided muscle relaxationexercise.',
+                description: 'Reduce tension with this audio guided muscle relaxation exercise.',
                 bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg'),
                 music: 'muscle_relaxation'
             },
@@ -977,7 +977,7 @@ const SelfCareSuggestionLabels = [
     {
         icon: require('../Assets/Images/focusing_on_the_present.png'),
         subTopic: 'Focusing on the Present',
-        description: 'An exercise to ground yourself in the Pressent to reduce stress',
+        description: 'An exercise to ground yourself in the present to reduce stress',
         subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed or feel like what you went through is happening all over again.',
         bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
         music: 'focusing_on_present'
