@@ -43,6 +43,7 @@ export default class WhatCanIDoScreen extends Component {
         this.goToScreen('QuizScenarioScreen')
     }
 
+
     render() {
         const { navigation } = this.props
         const { subTopic } = navigation.state.params
