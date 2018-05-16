@@ -87,7 +87,7 @@ export default class ExercisesScreen extends Component {
                     <ScrollView>
                         <HeadingContainer
                             headingImage={ExercisesIcon}
-                            headingText='Excercises'
+                            headingText='Exercises'
                         />
                         <CardContainer
                             navigation={navigation}
