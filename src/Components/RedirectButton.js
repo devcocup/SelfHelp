@@ -25,7 +25,7 @@ const RedirectButton = ({ content, onPress }) => {
                 </View>
             </TouchableOpacity>
             {
-                content.categoryContent.map((subItem, subIndex) => {
+                content.categoryContent && content.categoryContent.map((subItem, subIndex) => {
                     return (
                         <Text
                             key={subIndex}
