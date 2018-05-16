@@ -87,8 +87,8 @@ const LearnLabels = [
         content: [
             {
                 icon: require('../Assets/Images/what_can_I_do_to_help.png'),
-                subTopic: 'What can I do to help someone?',
-                description: 'Learn how to help someone who has been harassed or sexual assaulted.',
+                subTopic: 'What can I do to help?',
+                description: 'You have the ability to make a difference by intervening. We’ve put together scenarios to give you tangible ways to step in to support others.',
                 subContent: {
                     subDescription: [
                         'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every situation is different, but hopefully this tool can help prepare you to support people at risk. You don\'t have to be a hero to make a big difference in someone\'s life.',
@@ -140,7 +140,8 @@ const LearnLabels = [
             {
                 icon: require('../Assets/Images/what_to_do.png'),
                 subTopic: 'What to do',
-                description: 'Learn what to do if you or someone you know has been sexually assaulted.',
+                description: 'If you or someone you know has been sexually assaulted, find out important information' +
+                ' and the many ways to get support.',
                 subContent: {
                     subDescription: [
                         'It can be hard to know what to do, how to feel, or what your options are after a sexual assault. Please know that you\'re not alone.  Safe Helpline can help you get the information and support that you need to heal.',
@@ -190,7 +191,7 @@ const LearnLabels = [
             {
                 icon: require('../Assets/Images/effects_of_sexual_assault.png'),
                 subTopic: 'Effects of Sexual Assault',
-                description: 'Here are some common effects survivors of sexual assault may face.',
+                description: 'Sexual assault can impact everyone differently and while there is no one ‘right’ or ‘wrong’ reaction to sexual assault, we’ve put together information on some common effects survivors may experience.',
                 subContent: {
                     subDescription: [
                         'Sexual violence can have psychological, emotional, and physical effects. These effects can be difficult, and survivors may experience them at different points in their lives. With the right help and support, these effects can be managed, and you can go on to lead a healthy and fulfilling life. It is important to remember that recovery from sexual assault is possible.',
@@ -387,7 +388,7 @@ const LearnLabels = [
             {
                 icon: require('../Assets/Images/tsm_overview.png'),
                 subTopic: 'TSM Overview',
-                description: 'Sexual assault Information for Transitioning Service Members.',
+                description: 'Are you in the process of separating or retiring from Military Service? There are a number of resources available to help you with transition.',
                 subContent: {
                     subDescription: [
                         'Transitioning out of the military can be a stressful time but may be especially difficult for survivors of sexual assault who may feel overwhelmed by the process or unsure about how to access care after they transition out.',
@@ -490,7 +491,7 @@ const LearnLabels = [
             {
                 icon: require('../Assets/Images/benefits_and_services.png'),
                 subTopic: 'Benefits and Services',
-                description: 'Services & Benefits for survivors of sexual assault who are TSMs.',
+                description: 'Choose from DoD, VA, and civilian resources for survivors of sexual assault who are transitioning from Service.',
                 subContent: {
                     subDescription: [
                         'Are you in the process of separating or retiring from Military Service? Being a survivor of sexual assault and going through the transition process can be difficult. There are a number of DoD, Veterans Affairs and civilian resources available to help you through the transition.',
@@ -510,7 +511,7 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/at_the_beach.png'),
                 subTopic: 'At the Beach',
-                description: 'Reduce, anxiety, tension, and stress with this guided audio exercies.',
+                description: 'Reduce, anxiety, tension, and stress with this guided audio exercise.',
                 subDescription: 'This exercise will help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch. This exercise may elp to reduce anxiety, tension, and stress. It can make your arms or legs feel \"heavy\". You may also feel half awake or like you are \"wandering off\" mentally. These aer natural reactions to relaxation. If you feel uncomfortable at any time during the exercise, just open your eyes and remind yourself that you are in control and you are safe. Please avoid doing this exercise while driving.',
                 bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg'),
                 music: 'at_the_beach'
@@ -535,7 +536,7 @@ const ExercisesLabels = [
                 icon: require('../Assets/Images/guided_muscle_relaxation.png'),
                 subTopic: 'Guided Muscle Relaxation',
                 subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided muscle relaxation may help to reduce tension and help you feel calmer. Before starting this exercise, please consult with your doctor if you have a history of muscle spasms, back problems or other conditions that may be made worse by tensing your muscles.',
-                description: 'Reduce tension with this audio guided muscle relaxationexercise.',
+                description: 'Reduce tension with this audio guided muscle relaxation exercise.',
                 bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg'),
                 music: 'muscle_relaxation'
             },
@@ -976,7 +977,7 @@ const SelfCareSuggestionLabels = [
     {
         icon: require('../Assets/Images/focusing_on_the_present.png'),
         subTopic: 'Focusing on the Present',
-        description: 'An exercise to ground yourself in the Pressent to reduce stress',
+        description: 'An exercise to ground yourself in the present to reduce stress',
         subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed or feel like what you went through is happening all over again.',
         bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
         music: 'focusing_on_present'
