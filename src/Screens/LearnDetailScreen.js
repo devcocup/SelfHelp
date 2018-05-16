@@ -86,7 +86,7 @@ const CardContainer = ({ content, navigation }) => {
     })
 
     return (
-        <View style={AppStyles.hCenter}>
+        <View style={[AppStyles.hCenter, styles.container]}>
             <TopicButton text={content.subTopic} />
             <View style={styles.descriptionArea}>
                 {cardDescriptionBox}
@@ -118,6 +118,10 @@ export default class LearnDetailScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+    container : {
+        paddingBottom: 20
+    },
+
     descriptionArea: {
         padding: Paddings.containerP
     },
