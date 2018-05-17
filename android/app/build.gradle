@@ -102,7 +102,7 @@ android {
         applicationId "com.RAINN.selfhelpline"
         minSdkVersion 18
         targetSdkVersion 26
-        versionCode 11
+        versionCode 12
         versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
