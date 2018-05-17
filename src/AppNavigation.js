@@ -46,7 +46,6 @@ import ImageViewScreen from './Screens/ImageViewScreen'
 import SelfCareSuggestionScreen from './Screens/SelfCareSuggestionScreen'
 import JournalHistoryScreen from './Screens/JournalHistoryScreen'
 import LearnRedirectScreen from './Screens/LearnRedirectScreen'
-import PeopleICanCallScreen from './Screens/PeopleICanCallScreen'
 
 
 export const AppNavigation = StackNavigator({
@@ -90,8 +89,7 @@ export const AppNavigation = StackNavigator({
     ImageViewScreen: { screen: ImageViewScreen },
     SelfCareSuggestionScreen: { screen: SelfCareSuggestionScreen },
     JournalHistoryScreen: { screen: JournalHistoryScreen },
-    LearnRedirectScreen: { screen: LearnRedirectScreen },
-    PeopleICanCallScreen: { screen: PeopleICanCallScreen}
+    LearnRedirectScreen: { screen: LearnRedirectScreen }
 },
 {
     headerMode: 'none',
