@@ -29,7 +29,7 @@ const onCardSelected = (content, navigation) => {
             ScreenName = 'SoothingSoundsScreen'
             break
         case 'People I Can Call':
-            ScreenName = 'PeopleICanCallScreen'
+            ScreenName = 'TalkToSomeoneScreen'
             break
         case 'Things that make me smile':
             ScreenName = 'ThingsThatMakeMeSmileScreen'
