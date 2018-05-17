@@ -59,9 +59,9 @@ export default class SelfCareQuizResultScreen extends Component {
         navigate('TalkToSomeoneScreen')
     }
 
-    onCardClicked = (navigation) => {
+    onCardClicked = (navigation, status) => {
         const { navigate } = navigation
-        navigate('SelfCareSuggestionScreen')
+        navigate('SelfCareSuggestionScreen', { status: status })
     }
 
     render() {
@@ -101,7 +101,7 @@ export default class SelfCareQuizResultScreen extends Component {
                                     key={index}
                                     status={item.status}
                                     frequency={frequencyText}
-                                    onPress={() => this.onCardClicked(navigation)}
+                                    onPress={() => this.onCardClicked(navigation, item.status)}
                                 />
                             )
                         })

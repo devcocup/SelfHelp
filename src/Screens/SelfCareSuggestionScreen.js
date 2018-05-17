@@ -20,6 +20,9 @@ const onCardSelected = (content, navigation) => {
 }
 
 const CardContainer = ({ navigation }) => {
+    const { params } = navigation.state
+    const { status } = params
+    const headerText = 'Suggestions for ' + status + ':'
     const cardList = SelfCareSuggestionLabels.map((item, index) => {
         return (
             <SingleCard
@@ -36,7 +39,7 @@ const CardContainer = ({ navigation }) => {
         >
             {
                 <TopicButton
-                    text='Suggestions for Sleep Issues:'
+                    text={headerText}
                 />
             }
             {cardList}

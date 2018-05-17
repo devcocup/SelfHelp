@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     },
 
     headerText: {
-        fontSize: FontSizes.listFS,
+        fontSize: 20,
         fontWeight: '600',
         color: 'orange'
     },
