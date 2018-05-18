@@ -22,11 +22,6 @@ const CardWithImage = ({ cardImage, text, bgColor, onPress }) => {
                     (cardImage !== '') &&
                     <View style={[styles.cardImageArea, AppStyles.center]}>
                         <Image source={cardImage} style={styles.cardImageStyle} />
-                    </View>
-                }
-                {
-                    (cardImage !== '') &&
-                    <View style={styles.cardTextArea}>
                         <Text style={styles.buttonText}>{text}</Text>
                     </View>
                 }
@@ -51,7 +46,8 @@ const styles = StyleSheet.create({
     },
 
     cardImageArea: {
-        flex: .33
+        flex: 1,
+        flexDirection: 'row'
     },
 
     cardImageStyle: {

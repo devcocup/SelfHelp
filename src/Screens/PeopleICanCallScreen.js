@@ -22,6 +22,7 @@ const { height, width } = Dimensions.get('window')
 const { ThingsThatMakeMeSmileImages, Margins, Paddings, Colors, FontSizes } = Constants
 
 const PLATFORM = Platform.OS;
+const userIcon = require('../Assets/Images/male.png') 
 
 
 export default class PeopleICanCallScreen extends Component {
@@ -29,7 +30,8 @@ export default class PeopleICanCallScreen extends Component {
         super(props)
     
         this.state = {
-            contacts: []
+            contacts: [],
+            filterContacts: []
         }
     }
 
@@ -58,7 +60,8 @@ export default class PeopleICanCallScreen extends Component {
                 console.log("Fetch Contacts: ", err)
             }
             this.setState({
-                contacts: contacts
+                contacts: contacts,
+                filterContacts: contacts
             })
         })
     }
@@ -66,7 +69,7 @@ export default class PeopleICanCallScreen extends Component {
     onContactItemClicked = (contact) => {
         const { navigation } = this.props
         const { navigate } = navigation
-        navigate('TalkToSomeoneScreen', { contact })
+        navigate('TalkToSomeoneScreen', { contact: contact })
     }
 
     renderSeparator = () => {
@@ -87,9 +90,18 @@ export default class PeopleICanCallScreen extends Component {
         );
     };
 
+    filterContacts = (key) => {
+        const { contacts } = this.state
+        key = key.toLowerCase();
+        const filterContacts = contacts.filter(item => item.givenName.toLowerCase().indexOf(key) !== -1 || item.familyName.toLowerCase().indexOf(key) !== -1)
+        this.setState({
+            filterContacts: filterContacts
+        })
+    }
+
     render() {
         const { navigation } = this.props
-        const { contacts, modalVisible } = this.state
+        const { filterContacts, modalVisible } = this.state
         
         return (
             <View style={AppStyles.mainContainer}>
@@ -100,17 +112,18 @@ export default class PeopleICanCallScreen extends Component {
                 <SearchBar
                     containerStyle={styles.searchBar}
                     placeholder="Type Here..." 
+                    onChangeText={(key) => this.filterContacts(key)}
                     round
                     lightTheme
                 />
                 <FlatList
-                    data={contacts}
+                    data={filterContacts}
                     renderItem={({ item }) => (
                         <ListItem
                             roundAvatar
                             title={`${item.givenName} ${item.familyName}`}
                             subtitle={item.phoneNumbers[0].number}
-                            avatar={{ uri: item.thumbnailPath }}
+                            avatar={item.thumbnailPath? { uri: item.thumbnailPath }:userIcon}
                             containerStyle={{ borderBottomWidth: 0 }}
                             onPress={() => this.onContactItemClicked(item)}
                             titleStyle={styles.title}
@@ -120,7 +133,7 @@ export default class PeopleICanCallScreen extends Component {
                     keyExtractor={item => item.recordID}
                     ItemSeparatorComponent={this.renderSeparator}
                     ListEmptyComponent={this.renderEmptyView}
-                    contentContainerStyle={[ { flexGrow: 1 } , contacts.length ? null : { justifyContent: 'center'} ]}
+                    contentContainerStyle={[ { flexGrow: 1 } , filterContacts.length ? null : { justifyContent: 'center'} ]}
                 />
                     
                 

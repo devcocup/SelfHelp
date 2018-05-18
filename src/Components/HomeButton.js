@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, Image, TouchableHighlight, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableHighlight, Dimensions, StyleSheet } from 'react-native'
+
+const { height, width } = Dimensions.get('window')
 
 export default class HomeButton extends Component {
     constructor(props) {
@@ -24,7 +26,7 @@ export default class HomeButton extends Component {
                 underlayColor='rgb(0,143,120)'
             >
                 <View style={styles.container}>
-                    <Image source={this.props.source} style={{ height: 55, width: 55 }} />
+                    <Image source={this.props.source} style={{ height: width * 0.13, width: width * 0.13 }} />
                     <Text style={ styles.textStyle}> {this.props.Label} </Text>
                 </View>
             </TouchableHighlight>
@@ -41,10 +43,10 @@ var styles = StyleSheet.create({
     },
 
     buttonStyleDefault: {
-        marginLeft: 10,
+        marginLeft: width * 0.04,
         backgroundColor: 'rgb(0,143,120)',
-        height: 120,
-        width: 160,
+        height: width * 0.25,
+        width: width * 0.35,
         borderRadius: 7,
         justifyContent: 'flex-end',
         alignItems: 'center',
@@ -54,10 +56,10 @@ var styles = StyleSheet.create({
     },
 
     buttonStylePress: {
-        marginLeft: 10,
+        marginLeft: width * 0.04,
         backgroundColor: 'rgb(0,143,120)',
-        height: 120,
-        width: 160,
+        height: width * 0.25,
+        width: width * 0.35,
         borderRadius: 7,
         justifyContent: 'flex-end',
         alignItems: 'center',
@@ -65,9 +67,8 @@ var styles = StyleSheet.create({
 
     textStyle: {
         color: 'white',
-        fontSize: 23,
+        fontSize: 20,
         fontWeight: '600',
-        marginBottom: 20,
         fontFamily: 'Arial-BoldMT',
         fontWeight: 'bold'
     }
