@@ -75,6 +75,19 @@ export default class TalkToSomeoneScreen extends Component {
         }
     }
 
+    componentWillMount() {
+        const { navigation } = this.props
+        const { params } = navigation.state
+        if (params) {
+            const { contact } = params
+            if (contact) {
+                this.setState({
+                    selectedContacts: [contact]
+                })
+            }
+        }
+    }
+
     dismissModal = () => {
         this.setState({
             callMenuVisible: false,
@@ -181,11 +194,11 @@ export default class TalkToSomeoneScreen extends Component {
                                 return (
                                     <PhoneCard
                                         key={index}
-                                        name={item.name}
-                                        phoneNumber={item.number}
+                                        name={`${item.givenName} ${item.familyName}`}
+                                        phoneNumber={item.phoneNumbers[0].number}
                                         isRemovable
                                         bgColor={Colors.gray}
-                                        onPress={() => callPhone(item.number)}
+                                        onPress={() => callPhone(item.phoneNumbers[0].number)}
                                         onRemove={() => removeContact(index)}
                                     />
                                 )

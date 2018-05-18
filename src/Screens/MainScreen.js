@@ -145,10 +145,10 @@ export default class MainScreen extends Component {
                     index={1}
                 />
                 <ScrollView style={{ backgroundColor:'rgb(0,131,105)' }}>  
-                    <View style={{ backgroundColor:'white', height:height/5, justifyContent:'center',alignItems:'center' }}>
-                        <Image source={Logo} style={{ height:height/5, width:width }} resizeMode="contain"/>
+                    <View style={{ backgroundColor:'white', height:height * 0.2, justifyContent:'center',alignItems:'center' }}>
+                        <Image source={Logo} style={{ height:height * 0.2, width:width }} resizeMode="contain"/>
                     </View>   
-                    <View style={{margin:10}}>
+                    <View style={{margin:height * 0.08}}>
                         <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
                             <HomeButton 
                                 source={Chat} 
@@ -222,6 +222,6 @@ var styles = StyleSheet.create({
     Boxcontainer: {
         flexDirection: 'row',
         justifyContent:'center',
-        margin: 5
+        margin: width * 0.02
     }
 })

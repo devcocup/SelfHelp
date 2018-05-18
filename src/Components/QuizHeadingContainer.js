@@ -37,7 +37,7 @@ const QuizHeadingContainer = ({ quizTitle, quizSubTitleOne, quizSubTitleTwo, sub
 
 const styles = StyleSheet.create({
     headingContainer: {
-        height: height / 4,
+        height: height * 0.35,
         width,
         backgroundColor: 'white'
     },

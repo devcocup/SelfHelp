@@ -20,14 +20,14 @@ const HeadingContainer = ({ headingImage, headingText }) => {
 const styles = StyleSheet.create({
     headingContainer: {
         flexDirection: 'row',
-        height: height / 4,
+        height: height * 0.2,
         width,
         backgroundColor: "white",
     },
 
     imgStyle: {
-        width: 65,
-        height: 65
+        width: 100,
+        height: 100
     },
 
     textStyle: {

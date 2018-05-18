@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
 
     statusText: {
         color: 'white',
-        fontSize: FontSizes.topicFS,
+        fontSize: FontSizes.topicFS - 2,
         fontWeight: '600'
     },
 
@@ -151,6 +151,6 @@ const styles = StyleSheet.create({
 
     frequencyText: {
         color: 'white',
-        fontSize: FontSizes.contentFS
+        fontSize: FontSizes.contentFS - 2
     }
 })

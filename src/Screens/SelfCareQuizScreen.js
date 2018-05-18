@@ -246,7 +246,7 @@ const styles = StyleSheet.create({
     },
 
     buttonStyle: {
-        height: height / 5,
+        height: 60,
         width: width / 2 - 30,
         marginTop: Margins.containerM,
         backgroundColor: Colors.lightGreen,

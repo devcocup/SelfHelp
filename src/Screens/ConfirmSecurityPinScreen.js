@@ -110,26 +110,27 @@ const styles = StyleSheet.create({
 
     title: {
         color: 'white',
-        fontSize: FontSizes.menuFS,
+        fontSize: FontSizes.topicFS,
         fontWeight: '600'
     },
 
     dotArea: {
-        width: width - 140,
+        width: width * 0.6,
         height: 60
     },
 
     panelArea: {
         flexDirection: 'row',
         flexWrap: 'wrap',
-        width: width * 4 / 5 - width / 10
+        width: width * 0.58,
+        marginTop: height * 0.02
     },
 
     panel: {
-        width: width / 5,
-        height: width / 5,
+        width: width * 0.15,
+        height: width * 0.15,
         borderRadius: BorderRadii.buttonBR,
         backgroundColor: Colors.darkGreen,
-        margin: 5
+        margin: width * 0.02
     }
 })

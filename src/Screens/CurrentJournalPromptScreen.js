@@ -116,7 +116,7 @@ export default class CurrentJournalPromptScreen extends Component {
                                     value={this.state.journalText}
                                 />
                             </View>
-                            <View style={styles.buttonArea}>
+                            <View style={[styles.buttonArea, AppStyles.hCenter]}>
                                 <Button
                                     label='Done'
                                     bgColor='white'
