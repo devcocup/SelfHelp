@@ -121,7 +121,11 @@ export default class SearchResultScreen extends Component {
                     type='Back'
                     navigation={navigation}
                 />
-                <ScrollView>
+                <ScrollView
+                  overScrollMode='always'
+                  // style={{paddingVertical: 100}}
+
+                >
                     {
                         !fetched &&
                         <View style={[styles.loading, AppStyles.center]}>
