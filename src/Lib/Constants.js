@@ -205,7 +205,7 @@ const LearnLabels = [
                                 'Depression is a mood disorder that occurs when feelings associated with sadness and hopelessness continue for long periods of time and interrupt regular thought patterns.  It can affect your behavior and your relationship with other people.  Depression doesn\'t discriminate—it can affect anyone of any age, gender, race, ethnicity, or religion.',
                                 'It\'s normal to have feelings of sadness, unhappiness, and hopelessness after a sexual assault.  If these feelings persist for an extended period of time, it may be an indicator of depression.  Depression is not a sign of weakness, and it\'s not something you should be expected to \"snap out of.\"  It\'s a serious mental health condition, and you may benefit from the help of a professional.',
                                 'When should I get help?',
-                                'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \'get over it.\'  However, if these feelings are interfering with your daily life, know that there is help available.',
+                                'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \"get over it.\"  However, if these feelings are interfering with your daily life, know that there is help available.',
                                 'Where can I find help and learn more?',
                                 'Learn more about depression from the National Institute of Mental Health or the National Alliance on Mental Illness.',
                                 'To find a mental health facility or program, use the Safe Helpline responder database for military and civilian resources in your area here. You can also use the Mental Health Treatment Locator function from The Substance Abuse and Mental Health Services Administration (SAMHSA).  Find the center that is closest to you and best fits your needs. Please note that not all providers in the database have been formally vetted by RAINN and not all accept TRICARE. Please confirm with the provider about the insurances they accept.',
@@ -511,7 +511,7 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/at_the_beach.png'),
                 subTopic: 'At the Beach',
-                description: 'Reduce, anxiety, tension, and stress with this guided audio exercise.',
+                description: 'This exercise will help you visualize being at the beach to reduce stress.',
                 subDescription: 'This exercise will help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch. This exercise may elp to reduce anxiety, tension, and stress. It can make your arms or legs feel \"heavy\". You may also feel half awake or like you are \"wandering off\" mentally. These aer natural reactions to relaxation. If you feel uncomfortable at any time during the exercise, just open your eyes and remind yourself that you are in control and you are safe. Please avoid doing this exercise while driving.',
                 bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg'),
                 music: 'at_the_beach'
@@ -520,7 +520,7 @@ const ExercisesLabels = [
                 icon: require('../Assets/Images/focusing_on_the_present.png'),
                 subTopic: 'Focusing on the Present',
                 subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed or feel like what you went through is happening all over again.',
-                description: 'An exercise to ground yourself in the Pressent to reduce stress',
+                description: 'An exercise to ground yourself in the present to reduce stress.',
                 bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
                 music: 'focusing_on_the_present'
             },
@@ -552,7 +552,7 @@ const ExercisesLabels = [
                 icon: require('../Assets/Images/my_safe_place.png'),
                 subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Following this exercise can  help you visualize being in your safe place, by channelling your feelings, sense of sight, smell, and touch.',
                 subTopic: 'My Safe Place',
-                description: 'This exercise will help you visualize being at the beach to reduce stress.',
+                description: 'Reduce anxiety, tension, and stress with this guided audio exercise. ',
                 bgImage: require('../Assets/Images/my_safe_place_bg-min.jpg'),
                 music: 'my_safe_place'
             },
