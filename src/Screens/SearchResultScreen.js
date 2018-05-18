@@ -129,20 +129,15 @@ export default class SearchResultScreen extends Component {
                         </View>
                     }
                     {
-                        fetched &&
-                        <View>
-                        {
-                            TypeOrder.map(category => {
-                                switch(category){
-                                    case "Vet Centers":
-                                        console.log(category)
-                                        return(<VetCentersContainer key={category}/>)
-                                    default:
-                                        return (<SearchResultSubList callPhone={this.callPhone} key={category} category={category} services={services.filter(service => TypeIdToName[service.TYPE] === category)} />)
-                                }
-                            })
-                        }
-                        </View>
+                        TypeOrder.map(category => {
+                            switch(category){
+                                case "Vet Centers":
+                                    console.log(category)
+                                    return(<VetCentersContainer/>)
+                                default:
+                                    return (<SearchResultSubList callPhone={this.callPhone} key={category} category={category} services={services.filter(service => TypeIdToName[service.TYPE] === category)} />)
+                            }
+                        })
                     }
                 </ScrollView>
             </View>

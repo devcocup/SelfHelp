@@ -519,7 +519,7 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/focusing_on_the_present.png'),
                 subTopic: 'Focusing on the Present',
-                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed, or feel like what you went through is happening all over again.',
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed or feel like what you went through is happening all over again.',
                 description: 'An exercise to ground yourself in the Pressent to reduce stress',
                 bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
                 music: 'focusing_on_the_present'
