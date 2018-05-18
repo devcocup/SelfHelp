@@ -40,7 +40,7 @@ const TypeOrder = [
     "Chaplain",
     "Legal",
     "Medical",
-    "Military Police"
+    "Military Police (Not Confidential)"
 ]
 
 

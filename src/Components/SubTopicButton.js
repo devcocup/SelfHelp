@@ -21,9 +21,21 @@ export default class SubTopicButton extends Component {
     }
 
     onItemClicked = () => {
-        this.setState({
-            isDisplayed: !this.state.isDisplayed
-        })
+        const { content, navigation } = this.props
+        const { navigate } = navigation
+        if (content.screen) {
+            navigate(content.screen)
+        } else {
+            this.setState({
+                isDisplayed: !this.state.isDisplayed
+            })
+        }
+    }
+
+    openScreenFromDescription = ( screenName ) => {
+        const {navigation} = this.props
+        const {navigate} = navigation
+        navigate(screenName)
     }
 
   renderLinks = (links) => links.map(link => <RedirectButton key={link.uri} content={link} onPress={() => onRedirect(link.uri, this.props.navigation)} />)
@@ -50,14 +62,31 @@ export default class SubTopicButton extends Component {
                     <View style={styles.subContentBox}>
                     {
                         content.categoryContent.map((subItem, subIndex) => {
-                            return (
-                                <Text
-                                    key={subIndex}
-                                    style={styles.subTextStyle}
-                                >
-                                    {subItem}
-                                </Text>
-                            )
+                            if(Array.isArray(subItem) && subItem.length === 3 ){
+                                return (
+                                    <Text
+                                        key={subIndex}
+                                        style={styles.subTextStyle}
+                                    >
+                                        {subItem[0]}&nbsp;
+                                        <Text
+                                            style={styles.subHyperText}
+                                            onPress={() => this.openScreenFromDescription(subItem[2])}
+                                        >
+                                            {subItem[1]}
+                                        </Text>
+                                    </Text>
+                                )
+                            }else{
+                                return (
+                                    <Text
+                                        key={subIndex}
+                                        style={styles.subTextStyle}
+                                    >
+                                        {subItem}
+                                    </Text>
+                                )
+                            }
                         })
                     }
                       {
@@ -93,6 +122,13 @@ const styles = StyleSheet.create({
         borderRadius: BorderRadii.boxBR,
         padding: Paddings.elementP,
         marginTop: Margins.elementMT
+    },
+
+    subHyperText: {
+        fontWeight: 'bold',
+        textDecorationColor: 'black',
+        textDecorationStyle: 'solid',
+        textDecorationLine: 'underline'
     },
 
     subTextStyle: {
