@@ -86,58 +86,6 @@ const LearnLabels = [
         topic: 'Understanding Sexual Assault',
         content: [
             {
-                icon: require('../Assets/Images/what_can_I_do_to_help.png'),
-                subTopic: 'What Can I do to Help Someone?',
-                description: 'You have the ability to make a difference by intervening. We’ve put together scenarios to give you tangible ways to step in to support others.',
-                subContent: {
-                    subDescription: [
-                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every situation is different, but hopefully this tool can help prepare you to support people at risk. You don\'t have to be a hero to make a big difference in someone\'s life.',
-                        'If you need additional support about a situation you are dealing with, you can reach out to Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
-                    ],
-                    subCategories: []
-                }
-            },
-            {
-                icon: require('../Assets/Images/learn.png'),
-                subTopic: 'Self-Paced Educational Programs',
-                description: 'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault.',
-                subContent: {
-                    subDescription: [
-                        'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault. Each program was built with a particular audience in mind, but all programs provide valuable information for anyone looking to learn more about sexual assault, its effects, and the support available.',
-                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',[
-                        'You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these', 'step-by-step instructions.', 'https://safehelpline.org/program-registration-instructions']
-                    ],
-                    subCategories: [
-                        {
-                            categoryTitle: 'Building Hope and Resiliency: Addressing the Effects of Sexual Assault',
-                            categoryContent: [
-                                'Sexual assault can impact everyone differently and while there is no one ‘right’ or ‘wrong’ reaction to sexual assault, we’ve put together information on some common effects survivors may experience.'
-                            ],
-                            url: 'https://safehelpline.org/building-hope-and-resiliency'
-                        },
-                        {
-                            categoryTitle: 'How to Support a Survivor',
-                            categoryContent: [
-                                'The How to Support a Survivor program provides concrete tools that can help friends, family members, and colleagues of survivors of sexual assault support the course of a survivor’s recovery. This program identifies helping behaviors that support survivors of sexual assault while also educating supporters about behaviors that can be harmful and how to avoid them.'
-                            ],
-                            url: 'https://safehelpline.org/HTSAS'
-                        },
-                        {
-                            categoryTitle: 'Safe Helpline 101',
-                            categoryContent: [
-                                'This program provides an overview of Safe Helpline, including services offered, information about the secure technology platform, and steps taken to protect the anonymity and confidentiality of users. Most important, this program describes how Safe Helpline services augment and support Sexual Assault Response Coordinators and Victim Advocates (SARC/SAPR VA) in their efforts to meet the needs of sexual assault survivors. The target audience for this program is SARCs, SAPR VAs, and other responders interested in learning more about Safe Helpline.'
-                            ],
-                            url: 'https://safehelpline.org/101'
-                        }
-                    ]
-                }
-            }
-        ]
-    },
-    {
-        topic: 'More Information',
-        content: [
-            {
                 icon: require('../Assets/Images/what_to_do.png'),
                 subTopic: 'What to do',
                 description: 'If you or someone you know has been sexually assaulted, find out important information' +
@@ -162,12 +110,6 @@ const LearnLabels = [
                             ]
                         },
                         {
-                            categoryTitle: 'Call the DoD Safe Helpline.',
-                            categoryContent: [
-                                'If you aren\'t sure of what to do or just want to talk to someone, you can reach out to the Safe Helpline. You\'ll be connected to a trained staff member that can provide support, walk you through your options, and when you\'re ready, connect you directly with local resources.'
-                            ]
-                        },
-                        {
                             categoryTitle: 'What happened was not your fault.',
                             categoryContent: [
                                 'Something happened to you that you didn\'t want to happen—and that\'s not OK. There is nothing you did or did not do that caused this to happen. You can learn more about the short and long-term emotional and physical effects of sexual assault here.'
@@ -180,9 +122,24 @@ const LearnLabels = [
                             ]
                         },
                         {
+                            categoryTitle: 'Call the DoD Safe Helpline.',
+                            categoryContent: [
+                                'If you aren\'t sure of what to do or just want to talk to someone, you can reach out to the Safe Helpline. You\'ll be connected to a trained staff member that can provide support, walk you through your options, and when you\'re ready, connect you directly with local resources.'
+                            ],
+                            screen: "TalkToSomeoneScreen"
+                        },
+                        {
+                            categoryTitle: 'Find a Local Responder.',
+                            categoryContent: [
+                                ''
+                            ],
+                            screen: "SearchScreen"
+                        },
+                        {
                             categoryTitle: 'Additional Resources:',
                             categoryContent: [
-                                'You can get more information about coping mechanisms and ways to heal with the self-paced educational course, Building Hope and Resiliency: Addressing the effects of Sexual Assault. If you are a friend of family member of a survivor learn more about what you can do with the self-paced educational course, How to Support a Survivor.'
+                                'You can get more information about coping mechanisms and ways to heal with the self-paced educational course, Building Hope and Resiliency: Addressing the effects of Sexual Assault.',
+                                ['If you are a friend of family member of a survivor learn more about what you can do with the self-paced educational course, How to Support a Survivor. Learn more about these programs ', 'here.', 'LearnScreen']
                             ]
                         }
                     ]
@@ -383,6 +340,58 @@ const LearnLabels = [
         ]
     },
     {
+        topic: 'More Information',
+        content: [
+            {
+                icon: require('../Assets/Images/what_can_I_do_to_help.png'),
+                subTopic: 'What Can I do to Help Someone?',
+                description: 'You have the ability to make a difference by intervening. We’ve put together scenarios to give you tangible ways to step in to support others.',
+                subContent: {
+                    subDescription: [
+                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every situation is different, but hopefully this tool can help prepare you to support people at risk. You don\'t have to be a hero to make a big difference in someone\'s life.',
+                        'If you need additional support about a situation you are dealing with, you can reach out to Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
+                    ],
+                    subCategories: []
+                }
+            },
+            {
+                icon: require('../Assets/Images/learn.png'),
+                subTopic: 'Self-Paced Educational Programs',
+                description: 'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault.',
+                subContent: {
+                    subDescription: [
+                        'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault. Each program was built with a particular audience in mind, but all programs provide valuable information for anyone looking to learn more about sexual assault, its effects, and the support available.',
+                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',[
+                        'You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these', 'step-by-step instructions.', 'https://safehelpline.org/program-registration-instructions']
+                    ],
+                    subCategories: [
+                        {
+                            categoryTitle: 'Building Hope and Resiliency: Addressing the Effects of Sexual Assault',
+                            categoryContent: [
+                                'Sexual assault can impact everyone differently and while there is no one ‘right’ or ‘wrong’ reaction to sexual assault, we’ve put together information on some common effects survivors may experience.'
+                            ],
+                            url: 'https://safehelpline.org/building-hope-and-resiliency'
+                        },
+                        {
+                            categoryTitle: 'How to Support a Survivor',
+                            categoryContent: [
+                                'The How to Support a Survivor program provides concrete tools that can help friends, family members, and colleagues of survivors of sexual assault support the course of a survivor’s recovery. This program identifies helping behaviors that support survivors of sexual assault while also educating supporters about behaviors that can be harmful and how to avoid them.'
+                            ],
+                            url: 'https://safehelpline.org/HTSAS'
+                        },
+                        {
+                            categoryTitle: 'Safe Helpline 101',
+                            categoryContent: [
+                                'This program provides an overview of Safe Helpline, including services offered, information about the secure technology platform, and steps taken to protect the anonymity and confidentiality of users. Most important, this program describes how Safe Helpline services augment and support Sexual Assault Response Coordinators and Victim Advocates (SARC/SAPR VA) in their efforts to meet the needs of sexual assault survivors. The target audience for this program is SARCs, SAPR VAs, and other responders interested in learning more about Safe Helpline.'
+                            ],
+                            url: 'https://safehelpline.org/101'
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
         topic: 'Transitioning Service Member',
         content: [
             {
@@ -559,8 +568,8 @@ const ExercisesLabels = [
             {
                 icon: require('../Assets/Images/people_I_can_call.png'),
                 subDescription: '',
-                subTopic: 'People I Can Call',
-                description: 'Make a list of the people you can call when you need to talk to them.',
+                subTopic: 'Contact DoD Safe Helpline',
+                description: 'Call or chat with a with a Safe Helpline staff member.',
                 bgImage: require('../Assets/Images/people_I_can_call_bg-min.jpg'),
                 music: ''
             },

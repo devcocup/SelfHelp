@@ -28,7 +28,7 @@ const onCardSelected = (content, navigation) => {
         case 'Listening to Soothing Sounds':
             ScreenName = 'SoothingSoundsScreen'
             break
-        case 'People I Can Call':
+        case 'Contact DoD Safe Helpline':
             ScreenName = 'TalkToSomeoneScreen'
             break
         case 'Things that make me smile':
