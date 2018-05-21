@@ -134,7 +134,7 @@ export default class MainScreen extends Component {
 
         return(
 
-            <View style={AppStyles.mainContainer}>
+            <View style={AppStyles.main}>
               <AndroidBackHandler onBackPress={this.onBackButtonPressAndroid}>
                 <Header
                     type='Home'
@@ -144,49 +144,43 @@ export default class MainScreen extends Component {
                 <HeaderStrip
                     index={1}
                 />
-                <ScrollView style={{ backgroundColor:'rgb(0,131,105)' }}>  
+                <View style={{ backgroundColor:'rgb(0,131,105)', flex: 1 }}>
                     <View style={{ backgroundColor:'white', height:height * 0.2, justifyContent:'center',alignItems:'center' }}>
                         <Image source={Logo} style={{ height:height * 0.2, width:width }} resizeMode="contain"/>
                     </View>   
-                    <View style={{margin:height * 0.08}}>
-                        <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
-                            <HomeButton 
-                                source={Chat} 
-                                Label='Chat'
-                                onPress={this.onChatMenu} 
-                            />
-                            <HomeButton 
-                                source={Phone} 
-                                Label='Call'  
-                                onPress={this.onCallMenu} 
-                            />         
-                        </View>    
-                        <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
-                            <HomeButton 
-                                source={Learn} 
-                                Label='Learn'
-                                onPress={() => this.goToScreen('LearnScreen')} 
-                            />
-                            <HomeButton 
-                                source={SelfCare}
-                                Label='Self-Care'
-                                onPress={this.onSafeCare} 
-                            />    
-                        </View>  
-                        <View style={[styles.Boxcontainer, AppStyles.hCenter]}>
-                            <HomeButton
-                                source={Exercises}
-                                Label='Exercises' 
-                                onPress={() => this.goToScreen('ExercisesScreen')}  
-                            />
-                            <HomeButton
-                                source={Search}
-                                Label='Search' 
-                                onPress={() => this.goToScreen("SearchScreen")}   
-                            />   
-                        </View>  
-                    </View> 
-                </ScrollView>
+                    <View style={{flex: 1, paddingVertical: 10, paddingHorizontal: 10, justifyContent: 'center',  flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' }}>
+                      <HomeButton
+                        source={Chat}
+                        Label='Chat'
+                        onPress={this.onChatMenu}
+                      />
+                      <HomeButton
+                        source={Phone}
+                        Label='Call'
+                        onPress={this.onCallMenu}
+                      />
+                      <HomeButton
+                        source={Learn}
+                        Label='Learn'
+                        onPress={() => this.goToScreen('LearnScreen')}
+                      />
+                      <HomeButton
+                        source={SelfCare}
+                        Label='Self-Care'
+                        onPress={this.onSafeCare}
+                      />
+                      <HomeButton
+                        source={Exercises}
+                        Label='Exercises'
+                        onPress={() => this.goToScreen('ExercisesScreen')}
+                      />
+                      <HomeButton
+                        source={Search}
+                        Label='Search'
+                        onPress={() => this.goToScreen("SearchScreen")}
+                      />
+                    </View>
+                </View>
                 <Overlay visible={chatMenuVisible}
                     closeOnTouchOutside animationType="zoomIn"
                     containerStyle={{ backgroundColor: 'rgba(0,131,105,0.78)' }}
@@ -221,6 +215,8 @@ export default class MainScreen extends Component {
 var styles = StyleSheet.create({
     Boxcontainer: {
         flexDirection: 'row',
+      flex: 1,
+
         justifyContent:'center',
         margin: width * 0.02
     }

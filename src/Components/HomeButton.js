@@ -43,10 +43,12 @@ var styles = StyleSheet.create({
     },
 
     buttonStyleDefault: {
-        marginLeft: width * 0.04,
+        marginVertical: 4,
+        marginHorizontal: 4,
         backgroundColor: 'rgb(0,143,120)',
-        height: width * 0.25,
-        width: width * 0.35,
+        height: width * .35,
+        width: width * 0.425,
+
         borderRadius: 7,
         justifyContent: 'flex-end',
         alignItems: 'center',
@@ -56,10 +58,11 @@ var styles = StyleSheet.create({
     },
 
     buttonStylePress: {
-        marginLeft: width * 0.04,
+      marginVertical: 2,
+      marginHorizontal: 2,
         backgroundColor: 'rgb(0,143,120)',
-        height: width * 0.25,
-        width: width * 0.35,
+      height: width * .35,
+      width: width * 0.45,
         borderRadius: 7,
         justifyContent: 'flex-end',
         alignItems: 'center',

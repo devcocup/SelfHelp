@@ -1,37 +1,47 @@
-import { StyleSheet, Dimensions } from 'react-native'
-import Constants from './Constants'
+import { StyleSheet, Dimensions, Platform } from "react-native";
+import Constants from "./Constants";
 
-const { height,width } = Dimensions.get('window')
-const { Colors, Paddings } = Constants
+const { height, width } = Dimensions.get("window");
+const { Colors, Paddings } = Constants;
 
 const AppStyles = StyleSheet.create({
-    center: {
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
+  center: {
+    alignItems: "center",
+    justifyContent: "center"
+  },
 
-    vCenter: {
-        justifyContent: 'center'
-    },
+  vCenter: {
+    justifyContent: "center"
+  },
 
-    vEnd: {
-        justifyContent: 'flex-end'
-    },
+  vEnd: {
+    justifyContent: "flex-end"
+  },
 
-    hCenter: {
-        alignItems: 'center'
-    },
+  hCenter: {
+    alignItems: "center"
+  },
 
-    hEnd: {
-        alignItems: 'flex-end'
-    },
+  hEnd: {
+    alignItems: "flex-end"
+  },
+  main: {
+    flex: 1,
+    backgroundColor: Colors.primaryBgColor
+  },
 
-    mainContainer: {
-        // height: height,
-        flex: 1,
-        backgroundColor: Colors.primaryBgColor,
-        // paddingTop: Paddings.containerP,
-    }
-})
+  mainContainer: {
+    // height: height,
 
-export default AppStyles
+    flex: 1,
+    backgroundColor: Colors.primaryBgColor,
+    ...Platform.select({
+      ios: {
+        paddingVertical: Paddings.containerP
+      },
+      android: {}
+    })
+  }
+});
+
+export default AppStyles;

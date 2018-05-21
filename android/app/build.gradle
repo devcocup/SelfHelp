@@ -102,7 +102,7 @@ android {
         applicationId "com.selfhelpline"
         minSdkVersion 18
         targetSdkVersion 26
-        versionCode 12
+        versionCode 13
         versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
