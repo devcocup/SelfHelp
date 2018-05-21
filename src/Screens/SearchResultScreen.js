@@ -40,7 +40,7 @@ const TypeOrder = [
     "Chaplain",
     "Legal",
     "Medical",
-    "Military Police (Not Confidential)"
+    "Military Police"
 ]
 
 
@@ -69,6 +69,7 @@ export default class SearchResultScreen extends Component {
 
     getLocalResources = (locationSearchText, servicesQuery) => {
         const jsonPath = 'https://safehelpline.org/cfc/Ajax.cfc?method=search2&query=' + locationSearchText + '&services=' + servicesQuery
+      console.log('JSON PATH: ', jsonPath)
         fetch(jsonPath)
             .then((response) => response.json())
             .then((responseJson) => {
