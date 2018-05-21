@@ -109,7 +109,7 @@ export default class CurrentJournalPromptScreen extends Component {
                             <View style={styles.textArea}>
                                 <TextInput
                                     style={[styles.inputBox, { height: this.state.visibleHeight}]}
-                                    placeholder={placeholder ? placeholder : "You may answer the prompt, or leave it empty and click 'Submit' to skip it for now ..."}
+                                    placeholder={placeholder ? placeholder : "You may answer the prompt, or leave it empty and click 'Done' to skip it for now ..."}
                                     multiline={true}
                                     blurOnSubmit={true}
                                     onChangeText={(journalText) => this.setState({ journalText })}

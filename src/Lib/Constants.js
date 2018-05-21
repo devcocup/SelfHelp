@@ -351,7 +351,7 @@ const LearnLabels = [
                 description: 'You have the ability to make a difference by intervening. We’ve put together scenarios to give you tangible ways to step in to support others.',
                 subContent: {
                     subDescription: [
-                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every situation is different, but hopefully this tool can help prepare you to support people at risk. You don\'t have to be a hero to make a big difference in someone\'s life.',
+                        'The following five scenarios provide helpful ways to step in to support others. The scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every situation is different, but hopefully this tool can help prepare you to support people at risk. You don\'t have to be a hero to make a big difference in someone\'s life.',
                         'If you need additional support about a situation you are dealing with, you can reach out to Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
                     ],
                     subCategories: []
@@ -481,7 +481,7 @@ const LearnLabels = [
                             categoryContent: [
                                 'Military Sexual Trauma (MST) is the term that the Department of Veterans Affairs uses to refer to sexual assault or repeated, threatening sexual harassment that occurred while the veteran was in the military.',
                                 'If you choose to receive support through the VA, you may be introduced to Veterans Health Affairs MST coordinators and Veterans Benefits Affairs MST Coordinators. VHA MST coordinators will help with treatment and care related to your experience of MST, and VBA MST coordinators can help with disability compensation related to MST.',
-                                'For more information on MST, visit the Veteran\'s Affairs Mental Health page.  To find your local VBA MST Coordinator go here.'
+                                ['For more information on MST, visit the Veteran\'s Affairs Mental Health page.  To find your local VBA MST Coordinator go ', 'here.', 'https://www.benefits.va.gov/benefits/mstcoordinators.asp']
                             ]
                         },
                         {
@@ -524,7 +524,7 @@ const ExercisesLabels = [
                 icon: require('../Assets/Images/at_the_beach.png'),
                 subTopic: 'At the Beach',
                 description: 'This exercise will help you visualize being at the beach to reduce stress.',
-                subDescription: 'This exercise will help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch. This exercise may elp to reduce anxiety, tension, and stress. It can make your arms or legs feel \"heavy\". You may also feel half awake or like you are \"wandering off\" mentally. These aer natural reactions to relaxation. If you feel uncomfortable at any time during the exercise, just open your eyes and remind yourself that you are in control and you are safe. Please avoid doing this exercise while driving.',
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Following this exercise can help you visualize being at the beach, by channeling your feelings, sense of sight, smell, and touch.',
                 bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg'),
                 music: 'at_the_beach'
             },
@@ -754,7 +754,7 @@ const SearchResultLabels = [
 
 const WhatCanIDoToHelpLabels = [
     'The following five scenarios provide helpful ways to step in to support others.\
-     The Scenarios cover a range of harmful behavior in the spectrum of sexual assault\
+     The scenarios cover a range of harmful behavior in the spectrum of sexual assault\
      and harassment. Each scenario includes different courses of action and how or why\
      that action can be helpful. Every stuation is different, but hopefully this \
      tool can help prepare you to support people at risk. You don\'t have to be a hero \
@@ -961,7 +961,7 @@ const QuizResultsLabels = [
         frequency: 'Sometimes'
     },
     {
-        status: 'Angriness',
+        status: 'Anger',
         frequency: 'Sometimes'
     },
     {
@@ -982,7 +982,7 @@ const SelfCareSuggestionLabels = [
         icon: require('../Assets/Images/at_the_beach.png'),
         subTopic: 'At the Beach',
         description: 'Reduce, anxiety, tension, and stress with this guided audio exercies.',
-        subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Following this exercise can help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch.',
+        subDescription: 'This exercise will help you visualize being at the beach to reduce stress.',
         bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg'),
         music: 'at_the_beach'
     },
@@ -1005,7 +1005,7 @@ const SelfCareSuggestionLabels = [
     {
         icon: require('../Assets/Images/guided_muscle_relaxation.png'),
         subTopic: 'Guided Muscle Relaxation',
-        description: 'Reduce tension with this audio guided muscle relaxationexercise.',
+        description: 'Reduce tension with this audio guided muscle relaxation exercise.',
         subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided muscle relaxation may help to reduce tension and help you feel calmer. Before starting this exercise, please consult with your doctor if you have a history of muscle spasms, back problems or other conditions that may be made worse by tensing your muscles.',
         bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg'),
         music: 'guided_muscle_relaxation'

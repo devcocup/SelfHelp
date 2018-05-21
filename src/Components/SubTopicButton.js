@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -95,7 +95,7 @@ export default class SubTopicButton extends Component {
                                         {subItem[0]}&nbsp;
                                         <Text
                                             style={styles.subHyperText}
-                                            onPress={() => this.openScreenFromDescription(subItem[2])}
+                                            onPress={() => Linking.openURL(subItem[2])}
                                         >
                                             {subItem[1]}
                                         </Text>
