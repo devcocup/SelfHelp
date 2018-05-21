@@ -30,20 +30,20 @@ export default class SearchResultSubList extends Component {
     }
 
     renderSublist = () => {
-      const {callPhone, services} = this.props;
+      const {callPhone, services, resultCountLimit} = this.props;
         return (
-            services.map((cardItem, cardIndex) => {
+            services.slice(0, resultCountLimit ? resultCountLimit : services.length).map((cardItem, cardIndex) => {
                 return (<View key={cardIndex}>
                     <View key={cardIndex} style={styles.panelItem}>
                         <View style={styles.panelItemTextArea}>
-                            <Text style={styles.subLabelText}>{cardItem.NAME}</Text>
-                            <Text style={styles.phoneNumberText}>{cardItem.PHONE1}</Text>
-                            <Text style={styles.locationText}>{cardItem.CITY}, {cardItem.STATE}</Text>
+                            <Text style={styles.subLabelText}>{cardItem.DisplayName || cardItem.Name}</Text>
+                            <Text style={styles.phoneNumberText}>{cardItem.Phone1}</Text>
+                            <Text style={styles.locationText}>{cardItem.City}, {cardItem.State}</Text>
                         </View>
                         <View style={[styles.panelItemButton, AppStyles.center]}>
                             <TouchableOpacity
                                 style={[styles.callButton, AppStyles.center]}
-                                onPress={() => callPhone(cardItem.PHONE1)}>
+                                onPress={() => callPhone(cardItem.Phone1)}>
                                 <Image
                                     source={CallIcon}
                                     style={styles.callButtonImage}
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
     },
 
     headerText: {
-        fontSize: FontSizes.listFS,
+        fontSize: FontSizes.listHeaderFS,
         fontWeight: '600',
         color: 'orange'
     },
