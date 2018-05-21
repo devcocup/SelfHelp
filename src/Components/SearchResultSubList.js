@@ -36,7 +36,7 @@ export default class SearchResultSubList extends Component {
                 return (<View key={cardIndex}>
                     <View key={cardIndex} style={styles.panelItem}>
                         <View style={styles.panelItemTextArea}>
-                            <Text style={styles.subLabelText}>{cardItem.DisplayName}</Text>
+                            <Text style={styles.subLabelText}>{cardItem.DisplayName || cardItem.Name}</Text>
                             <Text style={styles.phoneNumberText}>{cardItem.Phone1}</Text>
                             <Text style={styles.locationText}>{cardItem.City}, {cardItem.State}</Text>
                         </View>
