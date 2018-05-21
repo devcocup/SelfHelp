@@ -113,6 +113,7 @@ export default class CurrentJournalPromptScreen extends Component {
                                     multiline={true}
                                     blurOnSubmit={true}
                                     onChangeText={(journalText) => this.setState({ journalText })}
+                                    returnKeyType="done"
                                     value={this.state.journalText}
                                 />
                             </View>
