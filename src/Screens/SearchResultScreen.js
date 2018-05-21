@@ -68,12 +68,13 @@ export default class SearchResultScreen extends Component {
     }
 
     getLocalResources = (locationSearchText, servicesQuery) => {
-        const jsonPath = 'https://safehelpline.org/cfc/Ajax.cfc?method=search2&query=' + locationSearchText + '&services=' + servicesQuery
+        const jsonPath = 'http://api.search.responders.drupal.safehelpline.org/search?search=' + locationSearchText + '&services=' + servicesQuery
+        console.log(jsonPath)
         fetch(jsonPath)
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({
-                    services: responseJson,
+                    services: responseJson.results,
                     fetched: true
                 })
             })
@@ -139,7 +140,7 @@ export default class SearchResultScreen extends Component {
                                     console.log(category)
                                     return(<VetCentersContainer/>)
                                 default:
-                                    return (<SearchResultSubList callPhone={this.callPhone} key={category} category={category} services={services.filter(service => TypeIdToName[service.TYPE] === category)} />)
+                                    return (<SearchResultSubList resultCountLimit={3} callPhone={this.callPhone} key={category} category={category} services={services.filter(service => TypeIdToName[service.SARCType] === category)} />)
                             }
                         })
                     }
