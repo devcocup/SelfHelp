@@ -7,7 +7,8 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  Alert
 } from "react-native";
 
 // Global Styles & Constants
@@ -45,8 +46,12 @@ export default class LocalResourcesScreen extends Component {
   onSearchClicked = navigation => {
     const { navigate } = navigation;
     const { locationSearchText, services } = this.state;
-    const servicesQuery = this.state.searchLabelActives.join(",");
-    navigate("SearchResultScreen", { locationSearchText, servicesQuery });
+    if (this.state.searchLabelActives.length){
+        const servicesQuery = this.state.searchLabelActives.join(",");
+        navigate("SearchResultScreen", { locationSearchText, servicesQuery });
+    } else {
+        Alert.alert("Choose one or more services.")
+    }
   };
 
   onCardSelected = cardIndex => {
@@ -85,7 +90,8 @@ export default class LocalResourcesScreen extends Component {
                 onChangeText={locationSearchText =>
                   this.setState({ locationSearchText })
                 }
-                onEndEditing={() => this.onSearchClicked(navigation)}
+                // We do now want automatic search submission. The intention is to require that the user select one or more services before performing the search.
+                // onEndEditing={() => this.onSearchClicked(navigation)}
                 value={this.state.locationSearchText}
               />
             </View>
