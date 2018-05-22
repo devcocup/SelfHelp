@@ -51,12 +51,12 @@ export default class CurrentJournalPromptScreen extends Component {
     }
 
     keyboardDidShow (e) {
-        let newSize = height - 340 - e.endCoordinates.height
+        // let newSize = height - 340 - e.endCoordinates.height
 
-        this.setState({
-            visibleHeight: newSize,
-            topLogo: { width: 100, height: 70 }
-        })
+        // this.setState({
+        //     visibleHeight: newSize,
+        //     topLogo: { width: 100, height: 70 }
+        // })
     }
   
     keyboardDidHide (e) {
@@ -112,6 +112,7 @@ export default class CurrentJournalPromptScreen extends Component {
                                     placeholder={placeholder ? placeholder : "You may answer the prompt, or leave it empty and click 'Submit' to skip it for now ..."}
                                     multiline={true}
                                     blurOnSubmit={true}
+                                    returnKeyType="done"
                                     onChangeText={(journalText) => this.setState({ journalText })}
                                     value={this.state.journalText}
                                 />
