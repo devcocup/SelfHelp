@@ -39,7 +39,7 @@ export default class ChatScreen extends Component {
 
     const uri =
       this.state.chatType === "OneOnOne"
-        ? "https://hotline.safehelpline.org/safe-helpline/"
+        ? "https://hotline.safehelpline.org/m/"
         : "https://safe-helproom.safehelpline.org/#/";
 
     const { navigation } = this.props;
