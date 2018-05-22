@@ -17,7 +17,15 @@ const { Paddings, FontSizes } = Constants
 
 onRedirect = (url, navigation) => {
     const { navigate } = navigation
-    navigate('LearnRedirectScreen', { url })
+    switch (url) {
+        case 'SearchScreen':
+            navigate('SearchScreen')
+            break
+        default:
+            navigate('LearnRedirectScreen', { url })
+            break
+    }
+    
 }
 
 const CardContainer = ({ content, navigation }) => {

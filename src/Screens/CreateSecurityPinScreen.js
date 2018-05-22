@@ -66,7 +66,7 @@ export default class CreateSecurityPinScreen extends Component {
           <View style={styles.headerTextArea}>
             <Text style={styles.headerText}>Create a Security Pin</Text>
           </View>
-          <Text style={styles.title} />
+          <Text style={styles.title}>We want this to be a safe place for you to add your thoughts. To protect your privacy please create a security pin.</Text>
           <View style={styles.dotArea}>
             <PinDots dotIndex={this.state.pinNumber.length} />
           </View>
@@ -104,6 +104,12 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: FontSizes.menuFS,
     fontWeight: "600",
+    textAlign: "center"
+  },
+
+  headerNoticeText: {
+    color: "white",
+    fontSize: FontSizes.pinContentFS,
     textAlign: "center"
   },
 

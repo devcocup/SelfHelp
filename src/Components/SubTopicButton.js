@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -38,6 +38,15 @@ export default class SubTopicButton extends Component {
         navigate(screenName)
     }
 
+    openSubContentScreenFromDescription = ( screenName, index, subIndex ) => {
+        const {navigation} = this.props
+        const {navigate} = navigation
+        const content = Constants.LearnLabels[index].content[subIndex]
+        const subTopic = content.subTopic
+        const subContent = content.subContent
+        navigate(screenName, { subTopic, subContent })
+    }
+
   renderLinks = (links) => links.map(link => <RedirectButton key={link.uri} content={link} onPress={() => onRedirect(link.uri, this.props.navigation)} />)
 
 
@@ -62,7 +71,7 @@ export default class SubTopicButton extends Component {
                     <View style={styles.subContentBox}>
                     {
                         content.categoryContent.map((subItem, subIndex) => {
-                            if(Array.isArray(subItem) && subItem.length === 3 ){
+                            if(Array.isArray(subItem) && subItem.length === 5 ){
                                 return (
                                     <Text
                                         key={subIndex}
@@ -71,7 +80,22 @@ export default class SubTopicButton extends Component {
                                         {subItem[0]}&nbsp;
                                         <Text
                                             style={styles.subHyperText}
-                                            onPress={() => this.openScreenFromDescription(subItem[2])}
+                                            onPress={() => this.openSubContentScreenFromDescription(subItem[2], subItem[3], subItem[4])}
+                                        >
+                                            {subItem[1]}
+                                        </Text>
+                                    </Text>
+                                )
+                            } else if(Array.isArray(subItem) && subItem.length === 3 ){
+                                return (
+                                    <Text
+                                        key={subIndex}
+                                        style={styles.subTextStyle}
+                                    >
+                                        {subItem[0]}&nbsp;
+                                        <Text
+                                            style={styles.subHyperText}
+                                            onPress={() => Linking.openURL(subItem[2])}
                                         >
                                             {subItem[1]}
                                         </Text>

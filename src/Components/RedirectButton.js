@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, TouchableOpacity, Linking, StyleSheet, Dimensions } from 'react-native'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -26,14 +26,31 @@ const RedirectButton = ({ content, onPress }) => {
             </TouchableOpacity>
             {
                 content.categoryContent && content.categoryContent.map((subItem, subIndex) => {
-                    return (
-                        <Text
-                            key={subIndex}
-                            style={styles.subTextStyle}
-                        >
-                            {subItem}
-                        </Text>
-                    )
+                    if(Array.isArray(subItem) && subItem.length === 3 ){
+                        return (
+                            <Text
+                                key={subIndex}
+                                style={styles.subTextStyle}
+                            >
+                                {subItem[0]}&nbsp;
+                                <Text
+                                    style={styles.subHyperText}
+                                    onPress={() => Linking.openURL(subItem[2])}
+                                >
+                                    {subItem[1]}
+                                </Text>
+                            </Text>
+                        )
+                    }else{
+                        return (
+                            <Text
+                                key={subIndex}
+                                style={styles.subTextStyle}
+                            >
+                                {subItem}
+                            </Text>
+                        )
+                    }
                 })
             }
         </View>
@@ -62,6 +79,13 @@ const styles = StyleSheet.create({
         padding: Paddings.elementP,
         marginTop: 10,
         marginBottom: 10
+    },
+
+    subHyperText: {
+        fontWeight: 'bold',
+        textDecorationColor: 'white',
+        textDecorationStyle: 'solid',
+        textDecorationLine: 'underline'
     }
 })
 

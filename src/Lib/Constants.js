@@ -113,7 +113,8 @@ const LearnLabels = [
                         {
                             categoryTitle: 'What happened was not your fault.',
                             categoryContent: [
-                                'Something happened to you that you didn\'t want to happen—and that\'s not OK. There is nothing you did or did not do that caused this to happen. You can learn more about the short and long-term emotional and physical effects of sexual assault here.'
+                                'Something happened to you that you didn\'t want to happen—and that\'s not OK. There is nothing you did or did not do that caused this to happen.',
+                                ['You can learn more about the short and long-term emotional and physical effects of sexual assault ', 'here.', 'LearnDetailScreen', 0, 1]
                             ]
                         },
                         {
@@ -137,10 +138,10 @@ const LearnLabels = [
                             screen: "SearchScreen"
                         },
                         {
-                            categoryTitle: 'Additional Resources:',
+                            categoryTitle: 'Additional Resources',
                             categoryContent: [
                                 'You can get more information about coping mechanisms and ways to heal with the self-paced educational course, Building Hope and Resiliency: Addressing the effects of Sexual Assault.',
-                                ['If you are a friend of family member of a survivor learn more about what you can do with the self-paced educational course, How to Support a Survivor. Learn more about these programs ', 'here.', 'LearnScreen']
+                                ['If you are a friend of family member of a survivor learn more about what you can do with the self-paced educational course, How to Support a Survivor. Learn more about these programs ', 'here.', 'LearnDetailScreen', 1, 1]
                             ]
                         }
                     ]
@@ -149,7 +150,7 @@ const LearnLabels = [
             {
                 icon: require('../Assets/Images/effects_of_sexual_assault.png'),
                 subTopic: 'Effects of Sexual Assault',
-                description: 'Sexual assault can impact everyone differently and while there is no one ‘right’ or ‘wrong’ reaction to sexual assault, we’ve put together information on some common effects survivors may experience.',
+                description: 'Sexual assault affects everyone differently and there is no one “right” or “wrong” reaction. Find out more about some common effects survivors may experience here.',
                 subContent: {
                     subDescription: [
                         'Sexual violence can have psychological, emotional, and physical effects. These effects can be difficult, and survivors may experience them at different points in their lives. With the right help and support, these effects can be managed, and you can go on to lead a healthy and fulfilling life. It is important to remember that recovery from sexual assault is possible.',
@@ -160,22 +161,22 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Depression',
                             categoryContent: [
-                                'Depression is a mood disorder that occurs when feelings associated with sadness and hopelessness continue for long periods of time and interrupt regular thought patterns.  It can affect your behavior and your relationship with other people.  Depression doesn\'t discriminate—it can affect anyone of any age, gender, race, ethnicity, or religion.',
-                                'It\'s normal to have feelings of sadness, unhappiness, and hopelessness after a sexual assault.  If these feelings persist for an extended period of time, it may be an indicator of depression.  Depression is not a sign of weakness, and it\'s not something you should be expected to \"snap out of.\"  It\'s a serious mental health condition, and you may benefit from the help of a professional.',
-                                'When should I get help?',
-                                'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \"get over it.\"  However, if these feelings are interfering with your daily life, know that there is help available.',
-                                'Where can I find help and learn more?',
-                                'Learn more about depression from the National Institute of Mental Health or the National Alliance on Mental Illness.',
-                                'To find a mental health facility or program, use the Safe Helpline responder database for military and civilian resources in your area here. You can also use the Mental Health Treatment Locator function from The Substance Abuse and Mental Health Services Administration (SAMHSA).  Find the center that is closest to you and best fits your needs. Please note that not all providers in the database have been formally vetted by RAINN and not all accept TRICARE. Please confirm with the provider about the insurances they accept.',
-                                'Having support when you need it most can sometimes be challenging. The Safe Helpline app allows you to create a personalized self-care plan based on how you are feeling, and you can browse a number of self-care exercises to help you through a difficult moment.'
+                                // 'Depression is a mood disorder that occurs when feelings associated with sadness and hopelessness continue for long periods of time and interrupt regular thought patterns.  It can affect your behavior and your relationship with other people.  Depression doesn\'t discriminate—it can affect anyone of any age, gender, race, ethnicity, or religion.',
+                                // 'It\'s normal to have feelings of sadness, unhappiness, and hopelessness after a sexual assault.  If these feelings persist for an extended period of time, it may be an indicator of depression.  Depression is not a sign of weakness, and it\'s not something you should be expected to \"snap out of.\"  It\'s a serious mental health condition, and you may benefit from the help of a professional.',
+                                // 'When should I get help?',
+                                // 'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \"get over it.\"  However, if these feelings are interfering with your daily life, know that there is help available.',
+                                // 'Where can I find help and learn more?',
+                                // 'Learn more about depression from the National Institute of Mental Health or the National Alliance on Mental Illness.',
+                                'To find a mental health facility or program, use the Safe Helpline Responder database for military and civilian resources in your area in the Search section of this app.'
+                                // 'Having support when you need it most can sometimes be challenging. The Safe Helpline app allows you to create a personalized self-care plan based on how you are feeling, and you can browse a number of self-care exercises to help you through a difficult moment.'
                             ],
                             links: [
                               {uri: 'https://www.nimh.nih.gov/index.shtml' , text: 'National Institute of Mental Health'},
                               {uri: 'https://www.nami.org/' , text: 'National Alliance on Mental Illness'},
-                              {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline for Military & Civilian Resources'},
+                              {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                               {uri: 'https://findtreatment.samhsa.gov/', text: 'Mental Health Treatment Locator'},
                               {uri: 'https://www.samhsa.gov/', text: 'The Substance Abuse and Mental Health Services Administration (SAMHSA)'},
-                              {uri: 'http://cloudorpheus.com/safehelpline/node/18', text: 'Safe Helpline App'},
+                            //   {uri: 'http://cloudorpheus.com/safehelpline/node/18', text: 'Safe Helpline App'},
                             ]
                         },
                         {
@@ -203,16 +204,17 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Self Harm',
                             categoryContent: [
-                                'Self-harming behaviors can be a way for people to punish themselves or a way to express feelings of self-hate. These feelings are common for those that have experienced a great deal of trauma, such as after a sexual assault.',
-                                'What is self-harm?',
-                                'Deliberate self-harm, also called self-injury, is when you inflict physical harm on yourself, usually in private and without suicidal intentions.  Some survivors of sexual assault may use self-harm to cope with difficult or painful feelings. It may be a way to feel a release or regain a sense of control.  Unfortunately, this relief is often short-lived.  The urge to self-harm can return, encouraging a cycle of self-harm that may cause damage, infection, and sometimes life-threatening medical problems.',
-                                'Some people think about compulsive or obsessive behaviors in the continuum of self-harm as well. You can find more information about those behaviors here.',
-                                'What can I do if I am thinking about harming myself?',
-                                'Here you can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury.',
-                                'If I notice self-harm, what can I do?',
-                                'To an outsider, self-harm might not be very apparent.  Survivors tend to do these activities in secret.  They put effort into covering up signs of self-harm, such as wearing long sleeves over cut skin.  It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.',
-                                'Where can I find help and learn more?',
-                                'If you or someone you care about is self-harming, Self-injury Outreach & Support (SiOS) has valuable resources that may help you through this difficult time. You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
+                                // 'Self-harming behaviors can be a way for people to punish themselves or a way to express feelings of self-hate. These feelings are common for those that have experienced a great deal of trauma, such as after a sexual assault.',
+                                // 'What is self-harm?',
+                                // 'Deliberate self-harm, also called self-injury, is when you inflict physical harm on yourself, usually in private and without suicidal intentions.  Some survivors of sexual assault may use self-harm to cope with difficult or painful feelings. It may be a way to feel a release or regain a sense of control.  Unfortunately, this relief is often short-lived.  The urge to self-harm can return, encouraging a cycle of self-harm that may cause damage, infection, and sometimes life-threatening medical problems.',
+                                // 'Some people think about compulsive or obsessive behaviors in the continuum of self-harm as well. You can find more information about those behaviors here.',
+                                // 'What can I do if I am thinking about harming myself?',
+                                // 'Here you can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury.',
+                                // 'If I notice self-harm, what can I do?',
+                                // 'To an outsider, self-harm might not be very apparent.  Survivors tend to do these activities in secret.  They put effort into covering up signs of self-harm, such as wearing long sleeves over cut skin.  It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.',
+                                // 'Where can I find help and learn more?',
+                                // 'If you or someone you care about is self-harming, Self-injury Outreach & Support (SiOS) has valuable resources that may help you through this difficult time. You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
+                                'You can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury through the Self Injury Outreach & Support organization.'
                             ],
                           links: [
                             {uri: 'http://cloudorpheus.com/safehelpline/node/143' , text: 'How Trauma Can Effect the Brain'},
@@ -349,7 +351,7 @@ const LearnLabels = [
                 description: 'You have the ability to make a difference by intervening. We’ve put together scenarios to give you tangible ways to step in to support others.',
                 subContent: {
                     subDescription: [
-                        'The following five scenarios provide helpful ways to step in to support others. The Scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every situation is different, but hopefully this tool can help prepare you to support people at risk. You don\'t have to be a hero to make a big difference in someone\'s life.',
+                        'The following five scenarios provide helpful ways to step in to support others. The scenarios cover a range of harmful behavior in the spectrum of sexual assault and harassment. Each scenario includes different courses of action and how or why that action can be helpful. Every situation is different, but hopefully this tool can help prepare you to support people at risk. You don\'t have to be a hero to make a big difference in someone\'s life.',
                         'If you need additional support about a situation you are dealing with, you can reach out to Safe Helpline by calling 877-995-5247 or by visiting online.safehelpline.org. A trained Safe Helpline staff member is available to support you 24/7.'
                     ],
                     subCategories: []
@@ -362,8 +364,7 @@ const LearnLabels = [
                 subContent: {
                     subDescription: [
                         'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault. Each program was built with a particular audience in mind, but all programs provide valuable information for anyone looking to learn more about sexual assault, its effects, and the support available.',
-                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.',[
-                        'You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these', 'step-by-step instructions.', 'https://safehelpline.org/program-registration-instructions']
+                        'All three programs can be accessed anonymously, or responders can register with a valid military email address to receive one hour of D-SAACP credit.'
                     ],
                     subCategories: [
                         {
@@ -383,7 +384,8 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Safe Helpline 101',
                             categoryContent: [
-                                'This program provides an overview of Safe Helpline, including services offered, information about the secure technology platform, and steps taken to protect the anonymity and confidentiality of users. Most important, this program describes how Safe Helpline services augment and support Sexual Assault Response Coordinators and Victim Advocates (SARC/SAPR VA) in their efforts to meet the needs of sexual assault survivors. The target audience for this program is SARCs, SAPR VAs, and other responders interested in learning more about Safe Helpline.'
+                                'This program provides an overview of Safe Helpline, including services offered, information about the secure technology platform, and steps taken to protect the anonymity and confidentiality of users. Most important, this program describes how Safe Helpline services augment and support Sexual Assault Response Coordinators and Victim Advocates (SARC/SAPR VA) in their efforts to meet the needs of sexual assault survivors. The target audience for this program is SARCs, SAPR VAs, and other responders interested in learning more about Safe Helpline.',
+                                ['You can take these programs anonymously by visiting the individual program pages or register to receive D-SAACP credit by following these', 'step-by-step instructions.', 'https://safehelpline.org/program-registration-instructions']
                             ],
                             url: 'https://safehelpline.org/101'
                         }
@@ -479,7 +481,7 @@ const LearnLabels = [
                             categoryContent: [
                                 'Military Sexual Trauma (MST) is the term that the Department of Veterans Affairs uses to refer to sexual assault or repeated, threatening sexual harassment that occurred while the veteran was in the military.',
                                 'If you choose to receive support through the VA, you may be introduced to Veterans Health Affairs MST coordinators and Veterans Benefits Affairs MST Coordinators. VHA MST coordinators will help with treatment and care related to your experience of MST, and VBA MST coordinators can help with disability compensation related to MST.',
-                                'For more information on MST, visit the Veteran\'s Affairs Mental Health page.  To find your local VBA MST Coordinator go here.'
+                                ['For more information on MST, visit the Veteran\'s Affairs Mental Health page.  To find your local VBA MST Coordinator go ', 'here.', 'https://www.benefits.va.gov/benefits/mstcoordinators.asp']
                             ]
                         },
                         {
@@ -522,14 +524,14 @@ const ExercisesLabels = [
                 icon: require('../Assets/Images/at_the_beach.png'),
                 subTopic: 'At the Beach',
                 description: 'This exercise will help you visualize being at the beach to reduce stress.',
-                subDescription: 'This exercise will help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch. This exercise may elp to reduce anxiety, tension, and stress. It can make your arms or legs feel \"heavy\". You may also feel half awake or like you are \"wandering off\" mentally. These aer natural reactions to relaxation. If you feel uncomfortable at any time during the exercise, just open your eyes and remind yourself that you are in control and you are safe. Please avoid doing this exercise while driving.',
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Following this exercise can help you visualize being at the beach, by channeling your feelings, sense of sight, smell, and touch.',
                 bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg'),
                 music: 'at_the_beach'
             },
             {
                 icon: require('../Assets/Images/focusing_on_the_present.png'),
                 subTopic: 'Focusing on the Present',
-                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed or feel like what you went through is happening all over again.',
+                subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed, or feel like what you went through is happening all over again.',
                 description: 'An exercise to ground yourself in the present to reduce stress.',
                 bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
                 music: 'focusing_on_the_present'
@@ -752,7 +754,7 @@ const SearchResultLabels = [
 
 const WhatCanIDoToHelpLabels = [
     'The following five scenarios provide helpful ways to step in to support others.\
-     The Scenarios cover a range of harmful behavior in the spectrum of sexual assault\
+     The scenarios cover a range of harmful behavior in the spectrum of sexual assault\
      and harassment. Each scenario includes different courses of action and how or why\
      that action can be helpful. Every stuation is different, but hopefully this \
      tool can help prepare you to support people at risk. You don\'t have to be a hero \
@@ -959,7 +961,7 @@ const QuizResultsLabels = [
         frequency: 'Sometimes'
     },
     {
-        status: 'Angriness',
+        status: 'Anger',
         frequency: 'Sometimes'
     },
     {
@@ -980,7 +982,7 @@ const SelfCareSuggestionLabels = [
         icon: require('../Assets/Images/at_the_beach.png'),
         subTopic: 'At the Beach',
         description: 'Reduce, anxiety, tension, and stress with this guided audio exercies.',
-        subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Following this exercise can help you visualize being at the beach, by channelling your feelings, sense of sight, smell, and touch.',
+        subDescription: 'This exercise will help you visualize being at the beach to reduce stress.',
         bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg'),
         music: 'at_the_beach'
     },
@@ -1003,7 +1005,7 @@ const SelfCareSuggestionLabels = [
     {
         icon: require('../Assets/Images/guided_muscle_relaxation.png'),
         subTopic: 'Guided Muscle Relaxation',
-        description: 'Reduce tension with this audio guided muscle relaxationexercise.',
+        description: 'Reduce tension with this audio guided muscle relaxation exercise.',
         subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Guided muscle relaxation may help to reduce tension and help you feel calmer. Before starting this exercise, please consult with your doctor if you have a history of muscle spasms, back problems or other conditions that may be made worse by tensing your muscles.',
         bgImage: require('../Assets/Images/guided_muscle_relaxation_bg-min.jpg'),
         music: 'guided_muscle_relaxation'
