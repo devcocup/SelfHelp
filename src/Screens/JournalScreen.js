@@ -52,7 +52,7 @@ const CardContainer = ({ navigation }) => {
             />
             <CardWithImage
                 cardImage={BrowseJournalIcon}
-                text='Browse Past Journals'
+                text='Browse All Journals'
                 onPress={() => onBrowseJournal(navigation)}
             />
         </View>
