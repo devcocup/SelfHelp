@@ -24,12 +24,12 @@ const goToScreen = (ScreenName, url, navigation) => {
 }
 
 onColorNewpage = (navigation) => {
-    const url = 'https://audemus.io/_rainn/coloring-book/cbnew.html'
+    const url = 'https://d2u5gyte92xsb4.cloudfront.net/cbnew.html'
     goToScreen('ColoringScreen', url, navigation)
 }
 
 onBrowseSavedPages = (navigation) => {
-    const url = 'https://audemus.io/_rainn/coloring-book/cbsaved.html'
+    const url = 'https://d2u5gyte92xsb4.cloudfront.net/cbsaved.html'
     goToScreen('ColoringScreen', url, navigation)
 }
 
