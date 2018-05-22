@@ -843,7 +843,7 @@ const QuizLabels = [
     },
     {
         title: 'Sexual Abuse',
-        question: 'A friend confides in you that he\'s being forced to have sex with someone. He jokes about it at first, but you can tell it really bothers him.  He shares that the person is a woman, and an officer, but won\'t say who. \"He says he\'s ashamed and has no idea how make it stop.\" He\'s afraid that no one will believe him because he\'s a man, and why wouldn\'t he want to have sex with her. What can you do to help?',
+        question: 'A friend confides in you that he\'s being forced to have sex with someone. He jokes about it at first, but you can tell it really bothers him.  He shares that the person is a woman, and an officer, but won\'t say who. \"He says he\'s ashamed and has no idea how to make it stop.\" He\'s afraid that no one will believe him because he\'s a man, and why wouldn\'t he want to have sex with her. What can you do to help?',
         answers: [
             {
                 choiceCaption: 'A',
@@ -1027,15 +1027,15 @@ const SelfCareSuggestionLabels = [
     {
         icon: require('../Assets/Images/at_the_beach.png'),
         subTopic: 'At the Beach',
-        description: 'Reduce, anxiety, tension, and stress with this guided audio exercies.',
-        subDescription: 'This exercise will help you visualize being at the beach to reduce stress.',
+        description: 'This exercise will help you visualize being at the beach to reduce stress.',
+        subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Following this exercise can help you visualize being at the beach, by channeling your feelings, sense of sight, smell, and touch.',
         bgImage: require('../Assets/Images/at_the_beach_bg-min.jpg'),
         music: 'at_the_beach'
     },
     {
         icon: require('../Assets/Images/focusing_on_the_present.png'),
         subTopic: 'Focusing on the Present',
-        description: 'An exercise to ground yourself in the present to reduce stress',
+        description: 'An exercise to ground yourself in the present to reduce stress.',
         subDescription: 'This exercise may help to reduce anxiety, tension, and stress. Focusing on the present may be helpful if you are feeling anxious, overwhelmed or feel like what you went through is happening all over again.',
         bgImage: require('../Assets/Images/focusing_on_the_present_bg-min.jpg'),
         music: 'focusing_on_present'
