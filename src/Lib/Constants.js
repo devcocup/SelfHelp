@@ -161,14 +161,13 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Depression',
                             categoryContent: [
-                                // 'Depression is a mood disorder that occurs when feelings associated with sadness and hopelessness continue for long periods of time and interrupt regular thought patterns.  It can affect your behavior and your relationship with other people.  Depression doesn\'t discriminate—it can affect anyone of any age, gender, race, ethnicity, or religion.',
-                                // 'It\'s normal to have feelings of sadness, unhappiness, and hopelessness after a sexual assault.  If these feelings persist for an extended period of time, it may be an indicator of depression.  Depression is not a sign of weakness, and it\'s not something you should be expected to \"snap out of.\"  It\'s a serious mental health condition, and you may benefit from the help of a professional.',
-                                // 'When should I get help?',
-                                // 'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \"get over it.\"  However, if these feelings are interfering with your daily life, know that there is help available.',
-                                // 'Where can I find help and learn more?',
-                                // 'Learn more about depression from the National Institute of Mental Health or the National Alliance on Mental Illness.',
-                                'To find a mental health facility or program, use the Safe Helpline Responder database for military and civilian resources in your area in the Search section of this app.'
-                                // 'Having support when you need it most can sometimes be challenging. The Safe Helpline app allows you to create a personalized self-care plan based on how you are feeling, and you can browse a number of self-care exercises to help you through a difficult moment.'
+                                'Depression is a mood disorder that occurs when feelings associated with sadness and hopelessness continue for long periods of time and interrupt regular thought patterns.  It can affect your behavior and your relationship with other people.  Depression doesn\'t discriminate—it can affect anyone of any age, gender, race, ethnicity, or religion.',
+                                'It\'s normal to have feelings of sadness, unhappiness, and hopelessness after a sexual assault.  If these feelings persist for an extended period of time, it may be an indicator of depression.  Depression is not a sign of weakness, and it\'s not something you should be expected to \"snap out of.\"  It\'s a serious mental health condition, and you may benefit from the help of a professional.',
+                                'When should I get help?',
+                                'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \"get over it.\"  However, if these feelings are interfering with your daily life, know that there is help available.',
+                                'Where can I find help and learn more?',
+                                'To find a mental health facility or program, use the Safe Helpline Responder database for military and civilian resources in your area in the Search section of this app.',
+                                'Having support when you need it most can sometimes be challenging. The Safe Helpline app allows you to create a personalized self-care plan based on how you are feeling, and you can browse a number of self-care exercises to help you through a difficult moment.'
                             ],
                             links: [
                               {uri: 'https://www.nimh.nih.gov/index.shtml' , text: 'National Institute of Mental Health'},
