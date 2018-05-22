@@ -175,7 +175,7 @@ const LearnLabels = [
                               {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                               {uri: 'https://findtreatment.samhsa.gov/', text: 'Mental Health Treatment Locator'},
                               {uri: 'https://www.samhsa.gov/', text: 'The Substance Abuse and Mental Health Services Administration (SAMHSA)'},
-                            //   {uri: 'http://cloudorpheus.com/safehelpline/node/18', text: 'Safe Helpline App'},
+                            //   {uri: 'https://safehelpline.org/app', text: 'Safe Helpline App'},
                             ]
                         },
                         {
@@ -198,7 +198,7 @@ const LearnLabels = [
                             {uri: 'https://www.ptsd.va.gov/' , text: 'National Center for PTSD'},
                             {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'https://www.mayoclinic.org/', text: 'The Mayo Clinic'},
-                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                            {uri: 'https://safehelpline.org/nearme', text: 'Safe Helpline Responder Database'},
                           ]
                         },
                         {
@@ -216,9 +216,9 @@ const LearnLabels = [
                                 'If you or someone you care about is self-harming, Self-injury Outreach & Support (SiOS) has valuable resources that may help you through this difficult time. You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
                             ],
                           links: [
-                            {uri: 'http://cloudorpheus.com/safehelpline/node/143' , text: 'How Trauma Can Effect the Brain'},
+                            {uri: 'https://safehelpline.org/trauma' , text: 'How Trauma Can Effect the Brain'},
                             {uri: 'http://sioutreach.org/' , text: 'Self Injury Outreach & Support'},
-                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                            {uri: 'https://safehelpline.org/nearme', text: 'Safe Helpline Responder Database'},
                           ]
                         },
                         {
@@ -240,7 +240,7 @@ const LearnLabels = [
                             {uri: 'https://suicidepreventionlifeline.org/' , text: 'National Suicide Prevention Lifeline'},
                             {uri: 'https://www.veteranscrisisline.net/ChatTermsOfService.aspx?account=Veterans%20Chat' , text: 'Veterans Crisis Line'},
                             {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
-                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                            {uri: 'https://safehelpline.org/nearme', text: 'Safe Helpline Responder Database'},
                           ]
                         },
                         {
@@ -258,7 +258,7 @@ const LearnLabels = [
                           links: [
                             {uri: 'https://www.nami.org/' , text: 'National Alliance on Mental Illness'},
                             {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
-                            {uri: 'http://cloudorpheus.com/safehelpline/node/128', text: 'Safe Helpline Responder Database'},
+                            {uri: 'https://safehelpline.org/how-to-get-help8', text: 'Safe Helpline Responder Database'},
                           ]
                         },
                         {
@@ -275,7 +275,7 @@ const LearnLabels = [
                             {uri: 'https://www.nhlbi.nih.gov/' , text: 'National Heart, Lung, & Blood Institute'},
                             {uri: 'https://aasm.org/', text: 'American Academy of Sleep Medicine'},
                             {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
-                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                            {uri: 'https://safehelpline.org/nearme', text: 'Safe Helpline Responder Database'},
                           ]
                         },
                         {
@@ -309,7 +309,7 @@ const LearnLabels = [
                             {uri: 'https://www.nationaleatingdisorders.org/' , text: 'National Eating Disorder Association'},
                             {uri: 'https://www.nationaleatingdisorders.org/stories-of-hope/featured-stories-of-hope', text: 'Stories of Hope'},
                             {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
-                            {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
+                            {uri: 'https://safehelpline.org/nearme', text: 'Safe Helpline Responder Database'},
                           ]
                         },
                         {
