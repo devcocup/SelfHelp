@@ -133,6 +133,8 @@ export default class SelfCareQuizScreen extends Component {
                             <Slider
                                 value={scoreValues ? scoreValues[quizIndex - 1] : 0}
                                 maximumValue={5}
+                                minimumValue={0}
+                                step={1}
                                 trackStyle={styles.trackStyle}
                                 minimumTrackTintColor={Colors.orange}
                                 thumbStyle={styles.thumbStyle}
