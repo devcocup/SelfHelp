@@ -161,14 +161,13 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Depression',
                             categoryContent: [
-                                // 'Depression is a mood disorder that occurs when feelings associated with sadness and hopelessness continue for long periods of time and interrupt regular thought patterns.  It can affect your behavior and your relationship with other people.  Depression doesn\'t discriminate—it can affect anyone of any age, gender, race, ethnicity, or religion.',
-                                // 'It\'s normal to have feelings of sadness, unhappiness, and hopelessness after a sexual assault.  If these feelings persist for an extended period of time, it may be an indicator of depression.  Depression is not a sign of weakness, and it\'s not something you should be expected to \"snap out of.\"  It\'s a serious mental health condition, and you may benefit from the help of a professional.',
-                                // 'When should I get help?',
-                                // 'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \"get over it.\"  However, if these feelings are interfering with your daily life, know that there is help available.',
-                                // 'Where can I find help and learn more?',
-                                // 'Learn more about depression from the National Institute of Mental Health or the National Alliance on Mental Illness.',
-                                'To find a mental health facility or program, use the Safe Helpline Responder database for military and civilian resources in your area in the Search section of this app.'
-                                // 'Having support when you need it most can sometimes be challenging. The Safe Helpline app allows you to create a personalized self-care plan based on how you are feeling, and you can browse a number of self-care exercises to help you through a difficult moment.'
+                                'Depression is a mood disorder that occurs when feelings associated with sadness and hopelessness continue for long periods of time and interrupt regular thought patterns.  It can affect your behavior and your relationship with other people.  Depression doesn\'t discriminate—it can affect anyone of any age, gender, race, ethnicity, or religion.',
+                                'It\'s normal to have feelings of sadness, unhappiness, and hopelessness after a sexual assault.  If these feelings persist for an extended period of time, it may be an indicator of depression.  Depression is not a sign of weakness, and it\'s not something you should be expected to \"snap out of.\"  It\'s a serious mental health condition, and you may benefit from the help of a professional.',
+                                'When should I get help?',
+                                'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \"get over it.\"  However, if these feelings are interfering with your daily life, know that there is help available.',
+                                'Where can I find help and learn more?',
+                                'To find a mental health facility or program, use the Safe Helpline Responder database for military and civilian resources in your area in the Search section of this app.',
+                                'Having support when you need it most can sometimes be challenging. The Safe Helpline app allows you to create a personalized self-care plan based on how you are feeling, and you can browse a number of self-care exercises to help you through a difficult moment.'
                             ],
                             links: [
                               {uri: 'https://www.nimh.nih.gov/index.shtml' , text: 'National Institute of Mental Health'},
@@ -197,6 +196,7 @@ const LearnLabels = [
                           links: [
                             {uri: 'https://www.nimh.nih.gov/index.shtml' , text: 'National Institute of Mental Health'},
                             {uri: 'https://www.ptsd.va.gov/' , text: 'National Center for PTSD'},
+                            {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'https://www.mayoclinic.org/', text: 'The Mayo Clinic'},
                             {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
                           ]
@@ -204,17 +204,16 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Self Harm',
                             categoryContent: [
-                                // 'Self-harming behaviors can be a way for people to punish themselves or a way to express feelings of self-hate. These feelings are common for those that have experienced a great deal of trauma, such as after a sexual assault.',
-                                // 'What is self-harm?',
-                                // 'Deliberate self-harm, also called self-injury, is when you inflict physical harm on yourself, usually in private and without suicidal intentions.  Some survivors of sexual assault may use self-harm to cope with difficult or painful feelings. It may be a way to feel a release or regain a sense of control.  Unfortunately, this relief is often short-lived.  The urge to self-harm can return, encouraging a cycle of self-harm that may cause damage, infection, and sometimes life-threatening medical problems.',
-                                // 'Some people think about compulsive or obsessive behaviors in the continuum of self-harm as well. You can find more information about those behaviors here.',
-                                // 'What can I do if I am thinking about harming myself?',
-                                // 'Here you can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury.',
-                                // 'If I notice self-harm, what can I do?',
-                                // 'To an outsider, self-harm might not be very apparent.  Survivors tend to do these activities in secret.  They put effort into covering up signs of self-harm, such as wearing long sleeves over cut skin.  It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.',
-                                // 'Where can I find help and learn more?',
-                                // 'If you or someone you care about is self-harming, Self-injury Outreach & Support (SiOS) has valuable resources that may help you through this difficult time. You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
-                                'You can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury through the Self Injury Outreach & Support organization.'
+                                'Self-harming behaviors can be a way for people to punish themselves or a way to express feelings of self-hate. These feelings are common for those that have experienced a great deal of trauma, such as after a sexual assault.',
+                                'What is self-harm?',
+                                'Deliberate self-harm, also called self-injury, is when you inflict physical harm on yourself, usually in private and without suicidal intentions.  Some survivors of sexual assault may use self-harm to cope with difficult or painful feelings. It may be a way to feel a release or regain a sense of control.  Unfortunately, this relief is often short-lived.  The urge to self-harm can return, encouraging a cycle of self-harm that may cause damage, infection, and sometimes life-threatening medical problems.',
+                                'Some people think about compulsive or obsessive behaviors in the continuum of self-harm as well. You can find more information about those behaviors here.',
+                                'What can I do if I am thinking about harming myself?',
+                                'You can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury through the Self Injury Outreach & Support organization.',
+                                'If I notice self-harm, what can I do?',
+                                'To an outsider, self-harm might not be very apparent.  Survivors tend to do these activities in secret.  They put effort into covering up signs of self-harm, such as wearing long sleeves over cut skin.  It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.',
+                                'Where can I find help and learn more?',
+                                'If you or someone you care about is self-harming, Self-injury Outreach & Support (SiOS) has valuable resources that may help you through this difficult time. You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
                             ],
                           links: [
                             {uri: 'http://cloudorpheus.com/safehelpline/node/143' , text: 'How Trauma Can Effect the Brain'},
@@ -240,6 +239,7 @@ const LearnLabels = [
                           links: [
                             {uri: 'https://suicidepreventionlifeline.org/' , text: 'National Suicide Prevention Lifeline'},
                             {uri: 'https://www.veteranscrisisline.net/ChatTermsOfService.aspx?account=Veterans%20Chat' , text: 'Veterans Crisis Line'},
+                            {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
                           ]
                         },
@@ -257,6 +257,7 @@ const LearnLabels = [
                             ],
                           links: [
                             {uri: 'https://www.nami.org/' , text: 'National Alliance on Mental Illness'},
+                            {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'http://cloudorpheus.com/safehelpline/node/128', text: 'Safe Helpline Responder Database'},
                           ]
                         },
@@ -273,6 +274,7 @@ const LearnLabels = [
                           links: [
                             {uri: 'https://www.nhlbi.nih.gov/' , text: 'National Heart, Lung, & Blood Institute'},
                             {uri: 'https://aasm.org/', text: 'American Academy of Sleep Medicine'},
+                            {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
                           ]
                         },
@@ -306,6 +308,7 @@ const LearnLabels = [
                           links: [
                             {uri: 'https://www.nationaleatingdisorders.org/' , text: 'National Eating Disorder Association'},
                             {uri: 'https://www.nationaleatingdisorders.org/stories-of-hope/featured-stories-of-hope', text: 'Stories of Hope'},
+                            {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
                           ]
                         },
@@ -936,7 +939,50 @@ const JournalPromptQuestions = [
     'What\'s something you\'re grateful for this week? Why are you grateful for it?',
     'What are some of your favorite quotes?',
     'What is your favorite personality trait?',
-    'What is something you\'ve learned this week?'
+    'What is something you\'ve learned this week?',
+    'What skill would you like to learn and why?',
+    'What is something you’re looking forward to?',
+    'What month is your favorite and why?',
+    'What is the theme song to your life and why?',
+    'Who is someone you’d like to meet and why?',
+    'What is the best compliment you’ve ever received?',
+    'What is your favorite time of day and why?',
+    'What small change would you like to make?',
+    'Who is someone you admire and why?',
+    'What do you value in a friend?',
+    'If you could have any job in the world, what would it be?',
+    'What was something good that happened last week?',
+    'What is something you are currently grateful for?',
+    'What is your ideal vacation?',
+    'What are you currently thinking about?',
+    'What do you want to let go of this week?',
+    'What was peaceful about today?',
+    'Today you needed more ____?',
+    'How do you describe home?',
+    'What is your resolution for tomorrow?',
+    'How could today have been better?',
+    'What is your favorite word and why?',
+    'What are five words that describe you?',
+    'What are you looking forward to?',
+    'What are some  self-care activities you did this week?',
+    'Where do you like to go to exercise?',
+    'What are some words you’d like to live by?',
+    'What are some things you couldn’t imagine living without?',
+    'When do you feel the most energized?',
+    'What inspires you?',
+    'What do you really wish others knew about you?',
+    'Who has been your biggest supporter? Write that person a thank you letter',
+    'What has been your biggest accomplishment and why does it mean so much to you?',
+    'What is your greatest challenge right now?',
+    'What are 10 things you feel thankful for?',
+    'How would you finish the sentences, “Right now, I am…” and, “I want to be…” ?',
+    'What was the best thing about today?',
+    'What is your favorite book and why?',
+    'What are three things that you would do if you weren’t afraid?',
+    'What is your favorite memory?',
+    'Who are people you can count on? What makes them reliable?',
+    'What were some of your victories this week?',
+    'If you could write a letter to your future self, what would you say?'
 ]
 
 const QuizResultsLabels = [
