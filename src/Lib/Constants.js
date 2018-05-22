@@ -575,7 +575,7 @@ const ExercisesLabels = [
                 icon: require('../Assets/Images/people_I_can_call.png'),
                 subDescription: '',
                 subTopic: 'Contact DoD Safe Helpline',
-                description: 'Call or chat with a with a Safe Helpline staff member.',
+                description: 'Call or chat with a Safe Helpline staff member.',
                 bgImage: require('../Assets/Images/people_I_can_call_bg-min.jpg'),
                 music: ''
             },
