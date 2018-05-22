@@ -161,12 +161,12 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Depression',
                             categoryContent: [
-                                'Depression is a mood disorder that occurs when feelings associated with sadness and hopelessness continue for long periods of time and interrupt regular thought patterns.  It can affect your behavior and your relationship with other people.  Depression doesn\'t discriminate—it can affect anyone of any age, gender, race, ethnicity, or religion.',
-                                'It\'s normal to have feelings of sadness, unhappiness, and hopelessness after a sexual assault.  If these feelings persist for an extended period of time, it may be an indicator of depression.  Depression is not a sign of weakness, and it\'s not something you should be expected to \"snap out of.\"  It\'s a serious mental health condition, and you may benefit from the help of a professional.',
+                                'Depression is a mood disorder that occurs when feelings associated with sadness and hopelessness continue for long periods of time and interrupt regular thought patterns.  It can affect your behavior and your relationship with other people.  Depression doesn\'t discriminate—it can affect anyone of any age, gender, race, ethnicity, or religion.\n',
+                                'It\'s normal to have feelings of sadness, unhappiness, and hopelessness after a sexual assault.  If these feelings persist for an extended period of time, it may be an indicator of depression.  Depression is not a sign of weakness, and it\'s not something you should be expected to \"snap out of.\"  It\'s a serious mental health condition, and you may benefit from the help of a professional.\n',
                                 'When should I get help?',
-                                'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \"get over it.\"  However, if these feelings are interfering with your daily life, know that there is help available.',
+                                'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \"get over it.\"  However, if these feelings are interfering with your daily life, know that there is help available.\n',
                                 'Where can I find help and learn more?',
-                                'To find a mental health facility or program, use the Safe Helpline Responder database for military and civilian resources in your area in the Search section of this app.',
+                                'To find a mental health facility or program, use the Safe Helpline Responder database for military and civilian resources in your area in the Search section of this app.\n',
                                 'Having support when you need it most can sometimes be challenging. The Safe Helpline app allows you to create a personalized self-care plan based on how you are feeling, and you can browse a number of self-care exercises to help you through a difficult moment.'
                             ],
                             links: [
@@ -181,13 +181,13 @@ const LearnLabels = [
                         {
                             categoryTitle: 'PTSD',
                             categoryContent: [
-                                'It\'s normal to experience feelings of anxiety, stress, or fear after a sexual assault.  If these feelings become severe, last more than a few weeks, or interrupt your day-to-day life, it might be a condition known as post-traumatic stress disorder (PTSD).',
+                                'It\'s normal to experience feelings of anxiety, stress, or fear after a sexual assault.  If these feelings become severe, last more than a few weeks, or interrupt your day-to-day life, it might be a condition known as post-traumatic stress disorder (PTSD).\n',
                                 'What is PTSD?',
-                                'Post-traumatic stress disorder is a mental health condition that can result from a traumatic event.  Survivors might experience feelings of stress, fear, anxiety, and nervousness. While PTSD is often associated with experiencing combat, some research shows that survivors of sexual assault actually develop PTSD at higher rates than combat veterans (Kessler, Sonnega, Bromet, Hughes, & Nelson, 1995).  With PTSD, these feelings are pronounced, can be solicited by many common sights and sounds (as well as your other senses), and make it difficult to function in everyday life.',
+                                'Post-traumatic stress disorder is a mental health condition that can result from a traumatic event.  Survivors might experience feelings of stress, fear, anxiety, and nervousness. While PTSD is often associated with experiencing combat, some research shows that survivors of sexual assault actually develop PTSD at higher rates than combat veterans (Kessler, Sonnega, Bromet, Hughes, & Nelson, 1995).  With PTSD, these feelings are pronounced, can be solicited by many common sights and sounds (as well as your other senses), and make it difficult to function in everyday life.\n',
                                 'To establish a diagnosis of PTSD, there are three main symptoms of PTSD:',
                                 'Re-experiencing: feeling as if you are reliving the event through flashbacks, dreams, or intrusive thoughts.  This is different than having bad memories of what happened.',
                                 'Avoidance: intentionally or subconsciously changing your behavior to avoid scenarios associated with the event or losing interest in activities you used to enjoy.',
-                                'Hyper-arousal: feeling \"on edge\" all of the time, having difficulty sleeping, being easily startled, or prone to sudden outbursts.',
+                                'Hyper-arousal: feeling \"on edge\" all of the time, having difficulty sleeping, being easily startled, or prone to sudden outbursts.\n',
                                 'Where can I get help and more information?',
                                 'Living with PTSD can be challenging, but learning more about the condition can encourage you to ask questions and find the help you need. You can learn more about PTSD at the National Institute of Mental Health, the Mayo Clinic, or the National Center for PTSD.',
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.',
@@ -204,14 +204,14 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Self Harm',
                             categoryContent: [
-                                'Self-harming behaviors can be a way for people to punish themselves or a way to express feelings of self-hate. These feelings are common for those that have experienced a great deal of trauma, such as after a sexual assault.',
+                                'Self-harming behaviors can be a way for people to punish themselves or a way to express feelings of self-hate. These feelings are common for those that have experienced a great deal of trauma, such as after a sexual assault.\n',
                                 'What is self-harm?',
                                 'Deliberate self-harm, also called self-injury, is when you inflict physical harm on yourself, usually in private and without suicidal intentions.  Some survivors of sexual assault may use self-harm to cope with difficult or painful feelings. It may be a way to feel a release or regain a sense of control.  Unfortunately, this relief is often short-lived.  The urge to self-harm can return, encouraging a cycle of self-harm that may cause damage, infection, and sometimes life-threatening medical problems.',
-                                'Some people think about compulsive or obsessive behaviors in the continuum of self-harm as well. You can find more information about those behaviors here.',
+                                'Some people think about compulsive or obsessive behaviors in the continuum of self-harm as well. You can find more information about those behaviors here.\n',
                                 'What can I do if I am thinking about harming myself?',
-                                'You can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury through the Self Injury Outreach & Support organization.',
+                                'You can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury through the Self Injury Outreach & Support organization.\n',
                                 'If I notice self-harm, what can I do?',
-                                'To an outsider, self-harm might not be very apparent.  Survivors tend to do these activities in secret.  They put effort into covering up signs of self-harm, such as wearing long sleeves over cut skin.  It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.',
+                                'To an outsider, self-harm might not be very apparent.  Survivors tend to do these activities in secret.  They put effort into covering up signs of self-harm, such as wearing long sleeves over cut skin.  It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.\n',
                                 'Where can I find help and learn more?',
                                 'If you or someone you care about is self-harming, Self-injury Outreach & Support (SiOS) has valuable resources that may help you through this difficult time. You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
                             ],
@@ -227,10 +227,10 @@ const LearnLabels = [
                                 'Many of the emotional and psychological reactions to sexual assault can eventually lead survivors to experience thoughts of ending their life. If you or someone you care about is thinking about suicide, safety is most important.  There are ways to get help.',
                                 'For immediate assistance call 911.',
                                 'Call the National Suicide Prevention Lifeline at 800.273.TALK (8255) or chat online using the Lifeline Crisis Chat anytime, 24/7.',
-                                'Reach out to someone you trust, like a family member or friend.',
+                                'Reach out to someone you trust, like a family member or friend.\n',
                                 'Why do I feel this way?',
                                 'You aren\'t alone. If you are having suicidal thoughts, it may mean you are in crisis and need support.  Many people experience suicidal thoughts after experiencing a significant trauma.  Within the military community, there are many factors in addition to sexual assault that can increase the risk of suicidal thoughts, such as frequent deployment to hostile environments and service-related injuries.',
-                                'Suicide is preventable, and suicidal thoughts aren\'t permanent.  If you are thinking about suicide, there are resources to give you the support you need to get through this tough time.  Remember, help is out there.',
+                                'Suicide is preventable, and suicidal thoughts aren\'t permanent.  If you are thinking about suicide, there are resources to give you the support you need to get through this tough time.  Remember, help is out there.\n',
                                 'Where can I find help and learn more?',
                                 'Call the National Suicide Prevention Lifeline at 800.273.TALK (8255) or chat online using the Lifeline Crisis Chat anytime, 24/7.  The Lifeline is not a confidential service and some personal information may be collected and used if the caller is in danger, such as an IP address or the caller\'s telephone number. If you are concerned about privacy, please review the organization\'s policies before using the service.',
                                 'You can also call the Military/Veterans Crisis Line by calling the same number (800-273-8255) and pressing 1 or connect with them through their online chat service for support 24/7.',
@@ -246,12 +246,12 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Dissociation',
                             categoryContent: [
-                                'In very simple terms, dissociation is a detachment from reality.  Most professionals believe that dissociation exists on a spectrum.  At one end of the spectrum is an experience like daydreaming.  At the other end is chronic and complex dissociation, which may make it difficult for an individual to function in the \"real\" world.',
+                                'In very simple terms, dissociation is a detachment from reality.  Most professionals believe that dissociation exists on a spectrum.  At one end of the spectrum is an experience like daydreaming.  At the other end is chronic and complex dissociation, which may make it difficult for an individual to function in the \"real\" world.\n',
                                 'What is dissociation?',
-                                'Dissociation is one of the many defense mechanisms the brain can use to cope with the trauma of sexual violence. It\'s often described as an \"out of body\" experience where someone feels detached from reality. Dissociation is a natural reaction to trauma.',
+                                'Dissociation is one of the many defense mechanisms the brain can use to cope with the trauma of sexual violence. It\'s often described as an \"out of body\" experience where someone feels detached from reality. Dissociation is a natural reaction to trauma.\n',
                                 'Where can I go for help?',
                                 'If you believe you are experiencing dissociation, talk to a healthcare professional or someone you trust. You can learn more about dissociation and dissociative identity disorder from the National Alliance on Mental Illness (NAMI).',
-                                'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.',
+                                'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.\n',
                                 'Where can I find help and learn more?',
                                 'To learn more about the resources provided, or to find additional resources, please consider reaching out to Safe Helpline.'
                             ],
@@ -264,9 +264,9 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Sleep Disorders',
                             categoryContent: [
-                                'Sexual assault and other traumas affect brain circuitries directly involved in the regulation of sleep and eating behaviors. Trauma also affects circuitries involved in depression and anxiety, and both of these affect sleep and eating. When depressed, it is common to have little appetite and to sleep too much or too little. Severe anxiety can make it difficult to sleep and sometimes the brain turns to food and eating, which can be very soothing and calming, as a brief escape from the anxiety.',
+                                'Sexual assault and other traumas affect brain circuitries directly involved in the regulation of sleep and eating behaviors. Trauma also affects circuitries involved in depression and anxiety, and both of these affect sleep and eating. When depressed, it is common to have little appetite and to sleep too much or too little. Severe anxiety can make it difficult to sleep and sometimes the brain turns to food and eating, which can be very soothing and calming, as a brief escape from the anxiety.\n',
                                 'What are sleep disorders?',
-                                'Sleep disorders are medical conditions that affect the quality of sleep by interfering with normal sleep patterns.  Symptoms can include trouble falling or staying asleep, sleeping at unusual times of day, or sleeping for longer or shorter than usual.  Sleep is important for restoring physical and mental health, especially for survivors.  Some sleep disorders include nightmares, sleep terrors, or insomnia.',
+                                'Sleep disorders are medical conditions that affect the quality of sleep by interfering with normal sleep patterns.  Symptoms can include trouble falling or staying asleep, sleeping at unusual times of day, or sleeping for longer or shorter than usual.  Sleep is important for restoring physical and mental health, especially for survivors.  Some sleep disorders include nightmares, sleep terrors, or insomnia.\n',
                                 'Where can I go to get help and learn more?',
                                 'The National Heart, Lung, and Blood Institute (NHLBI) has resources to help you discuss sleep with a healthcare professional, including what questions to ask.  Additionally, you can learn more about the symptoms of insomnia and nightmares from the American Academy of Sleep Medicine.',
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
@@ -281,15 +281,15 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Eating Disorders',
                             categoryContent: [
-                                'Sexual assault and other traumas affect the brain circuitries directly involved in the regulation of sleep and eating behaviors. Trauma also affects circuitries involved in depression and anxiety, and both of these affect sleep and eating. When depressed, it is common to have little appetite and to sleep too much or too little. Severe anxiety can make it difficult to sleep and sometimes the brain turns to food and eating, which can be very soothing and calming, as a brief escape from the anxiety.',
+                                'Sexual assault and other traumas affect the brain circuitries directly involved in the regulation of sleep and eating behaviors. Trauma also affects circuitries involved in depression and anxiety, and both of these affect sleep and eating. When depressed, it is common to have little appetite and to sleep too much or too little. Severe anxiety can make it difficult to sleep and sometimes the brain turns to food and eating, which can be very soothing and calming, as a brief escape from the anxiety.\n',
                                 'Why do some survivors develop eating disorders?',
-                                'Sexual violence can have an effect on your perceived body image and affect your eating habits. You may use food in an attempt to cope with the trauma, feel in control, or compensate for feelings and emotions that may otherwise seem overwhelming.  These actions only provide short-term relief, but they have the ability to cause long-term damage to your health.',
+                                'Sexual violence can have an effect on your perceived body image and affect your eating habits. You may use food in an attempt to cope with the trauma, feel in control, or compensate for feelings and emotions that may otherwise seem overwhelming.  These actions only provide short-term relief, but they have the ability to cause long-term damage to your health.\n',
                                 'What types of eating disorders are there?',
                                 'Sexual violence can affect you in many ways, including body image concerns and a feeling of loss of control. While eating disorders can vary in type and severity, there are three main types of eating disorders.',
                                 'Anorexia nervosa: characterized by restriction and self-starvation that cause excessive weight loss and has a damaging effect on overall health',
                                 'Binge eating disorder: characterized by bingeing, the act of eating without control or response to normal hunger cues',
                                 'Bulimia nervosa: characterized by a cycle of binge eating and purging of food in some way, such as laxatives or self-induced vomiting',
-                                'It\'s also possible to engage in disordered eating that doesn\'t fit into one of these categories but is still dangerous.',
+                                'It\'s also possible to engage in disordered eating that doesn\'t fit into one of these categories but is still dangerous.\n',
                                 'What are the warning signs of an eating disorder?',
                                 'It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior. Eating disorders are as different as the people who have them, but there are some warning signs that can tip off a loved one that something is wrong.',
                                 'Dramatic weight loss or gain',
@@ -300,7 +300,7 @@ const LearnLabels = [
                                 'Frequent trips to the bathroom around meal time',
                                 'Cold hands or lowered body temperature',
                                 'Refusing to go out to eat or visit during mealtimes',
-                                'Rituals during mealtime such as chewing excessively, cutting up small bites, pushing food around a plate',
+                                'Rituals during mealtime such as chewing excessively, cutting up small bites, pushing food around a plate\n',
                                 'Where can I find help and learn more?',
                                 'Eating disorders are complex.  Finding the right support is an important part of recovery.  To be sure you\'re finding a supportive network, you can locate resources at The National Eating Disorder Association, read stories of hope, or call their Helpline at 800-931-2237.',
                                 'You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
@@ -315,14 +315,14 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Substance Abuse',
                             categoryContent: [
-                                'Alcohol and different drugs have specific effects on the brain. Some of these effects offset symptoms such as depression and anxiety. It is very common for some sexual assault survivors to \'self-medicate\' with alcohol and drugs so they can find relief, even if it\'s only temporary and leads to other problems.',
+                                'Alcohol and different drugs have specific effects on the brain. Some of these effects offset symptoms such as depression and anxiety. It is very common for some sexual assault survivors to \'self-medicate\' with alcohol and drugs so they can find relief, even if it\'s only temporary and leads to other problems.\n',
                                 'What are some reasons for substance use?',
                                 'There are a number of reasons that survivors report using substances like alcohol and drugs.  A few of these reasons include:',
                                 'Wanting to feel better',
                                 'Trying to numb or escape the pain',
                                 'Fear that family or friends won\'t understand',
                                 'Confusion or self-consciousness about the experience',
-                                'Lacking an effective support system or care',
+                                'Lacking an effective support system or care\n',
                                 'What are the warning signs of substance abuse?',
                                 'It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.  If you are concerned that you\'re using substances in a way that could be harmful to your health or have concerns about someone you care about, consider the following warning signs:',
                                 'Spending time with new friends who may encourage excess substance use',
@@ -332,7 +332,7 @@ const LearnLabels = [
                                 'Lying to hide substance use',
                                 'Avoiding friends and family that criticize substance use',
                                 'Driving while under the influence',
-                                'Getting into legal trouble or breaking laws',
+                                'Getting into legal trouble or breaking laws\n',
                                 'Where can I find help and learn more?',
                                 'If you or someone you care about is using substances, it could pose a serious health risk and have long-term health effects.  Call the Substance Abuse Treatment Referral Helpline 1.800.662.HELP (4357) to find support or search for a local treatment center through the Substance Abuse and Mental Health Services Administration.'
                             ],
