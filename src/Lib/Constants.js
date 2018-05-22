@@ -196,6 +196,7 @@ const LearnLabels = [
                           links: [
                             {uri: 'https://www.nimh.nih.gov/index.shtml' , text: 'National Institute of Mental Health'},
                             {uri: 'https://www.ptsd.va.gov/' , text: 'National Center for PTSD'},
+                            {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'https://www.mayoclinic.org/', text: 'The Mayo Clinic'},
                             {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
                           ]
@@ -203,17 +204,16 @@ const LearnLabels = [
                         {
                             categoryTitle: 'Self Harm',
                             categoryContent: [
-                                // 'Self-harming behaviors can be a way for people to punish themselves or a way to express feelings of self-hate. These feelings are common for those that have experienced a great deal of trauma, such as after a sexual assault.',
-                                // 'What is self-harm?',
-                                // 'Deliberate self-harm, also called self-injury, is when you inflict physical harm on yourself, usually in private and without suicidal intentions.  Some survivors of sexual assault may use self-harm to cope with difficult or painful feelings. It may be a way to feel a release or regain a sense of control.  Unfortunately, this relief is often short-lived.  The urge to self-harm can return, encouraging a cycle of self-harm that may cause damage, infection, and sometimes life-threatening medical problems.',
-                                // 'Some people think about compulsive or obsessive behaviors in the continuum of self-harm as well. You can find more information about those behaviors here.',
-                                // 'What can I do if I am thinking about harming myself?',
-                                // 'Here you can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury.',
-                                // 'If I notice self-harm, what can I do?',
-                                // 'To an outsider, self-harm might not be very apparent.  Survivors tend to do these activities in secret.  They put effort into covering up signs of self-harm, such as wearing long sleeves over cut skin.  It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.',
-                                // 'Where can I find help and learn more?',
-                                // 'If you or someone you care about is self-harming, Self-injury Outreach & Support (SiOS) has valuable resources that may help you through this difficult time. You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
-                                'You can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury through the Self Injury Outreach & Support organization.'
+                                'Self-harming behaviors can be a way for people to punish themselves or a way to express feelings of self-hate. These feelings are common for those that have experienced a great deal of trauma, such as after a sexual assault.',
+                                'What is self-harm?',
+                                'Deliberate self-harm, also called self-injury, is when you inflict physical harm on yourself, usually in private and without suicidal intentions.  Some survivors of sexual assault may use self-harm to cope with difficult or painful feelings. It may be a way to feel a release or regain a sense of control.  Unfortunately, this relief is often short-lived.  The urge to self-harm can return, encouraging a cycle of self-harm that may cause damage, infection, and sometimes life-threatening medical problems.',
+                                'Some people think about compulsive or obsessive behaviors in the continuum of self-harm as well. You can find more information about those behaviors here.',
+                                'What can I do if I am thinking about harming myself?',
+                                'You can find a number of helpful coping strategies that have been found to be useful by others struggling with self-injury through the Self Injury Outreach & Support organization.',
+                                'If I notice self-harm, what can I do?',
+                                'To an outsider, self-harm might not be very apparent.  Survivors tend to do these activities in secret.  They put effort into covering up signs of self-harm, such as wearing long sleeves over cut skin.  It\'s often loved ones or people who spend a lot of time with the survivor who are the first to notice changes in behavior.',
+                                'Where can I find help and learn more?',
+                                'If you or someone you care about is self-harming, Self-injury Outreach & Support (SiOS) has valuable resources that may help you through this difficult time. You can also use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
                             ],
                           links: [
                             {uri: 'http://cloudorpheus.com/safehelpline/node/143' , text: 'How Trauma Can Effect the Brain'},
@@ -239,6 +239,7 @@ const LearnLabels = [
                           links: [
                             {uri: 'https://suicidepreventionlifeline.org/' , text: 'National Suicide Prevention Lifeline'},
                             {uri: 'https://www.veteranscrisisline.net/ChatTermsOfService.aspx?account=Veterans%20Chat' , text: 'Veterans Crisis Line'},
+                            {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
                           ]
                         },
@@ -256,6 +257,7 @@ const LearnLabels = [
                             ],
                           links: [
                             {uri: 'https://www.nami.org/' , text: 'National Alliance on Mental Illness'},
+                            {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'http://cloudorpheus.com/safehelpline/node/128', text: 'Safe Helpline Responder Database'},
                           ]
                         },
@@ -272,6 +274,7 @@ const LearnLabels = [
                           links: [
                             {uri: 'https://www.nhlbi.nih.gov/' , text: 'National Heart, Lung, & Blood Institute'},
                             {uri: 'https://aasm.org/', text: 'American Academy of Sleep Medicine'},
+                            {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
                           ]
                         },
@@ -305,6 +308,7 @@ const LearnLabels = [
                           links: [
                             {uri: 'https://www.nationaleatingdisorders.org/' , text: 'National Eating Disorder Association'},
                             {uri: 'https://www.nationaleatingdisorders.org/stories-of-hope/featured-stories-of-hope', text: 'Stories of Hope'},
+                            {uri: 'SearchScreen', text: 'Safe Helpline for Military & Civilian Resources'},
                             {uri: 'http://cloudorpheus.com/safehelpline/node/137', text: 'Safe Helpline Responder Database'},
                           ]
                         },
