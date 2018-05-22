@@ -358,7 +358,7 @@ const LearnLabels = [
                 }
             },
             {
-                icon: require('../Assets/Images/learn.png'),
+                icon: require('../Assets/Images/openbook.png'),
                 subTopic: 'Self-Paced Educational Programs',
                 description: 'Safe Helpline offers three unique programs to help those looking for support or information related to sexual assault.',
                 subContent: {
