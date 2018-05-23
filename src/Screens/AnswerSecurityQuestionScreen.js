@@ -1,6 +1,8 @@
 // React
 import React, { Component } from 'react'
 import { View, Text, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView, StyleSheet, Dimensions } from 'react-native'
+import localStorage from "react-native-sync-localstorage";
+
 import { Dropdown } from 'react-native-material-dropdown'
 import SQLite from 'react-native-sqlite-2'
 
@@ -74,7 +76,7 @@ export default class AnswerSecurityQuestionScreen extends Component {
                 txn.executeSql('DROP TABLE IF EXISTS Security', [])
                 txn.executeSql('CREATE TABLE IF NOT EXISTS Security(id INTEGER PRIMARY KEY NOT NULL, pin_number VARCHAR(6), security_question VARCHAR(100), security_answer VARCHAR(200))')
             })
-            this.goToScreen('CreateSecurityPinScreen', {}, navigation)
+            this.goToScreen('CreateSecurityPinScreen', navigation)
         } else {
             this.setState({
                 instructionHeaderText: 'Your answer was incorrect, please try again'
