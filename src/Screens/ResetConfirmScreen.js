@@ -11,7 +11,7 @@ import Constants from '../Lib/Constants'
 // Assets
 import Button from '../Components/Button'
 
-const { height, wdith } = Dimensions.get('window')
+const { height, width } = Dimensions.get('window')
 const { Paddings, Margins, Colors, FontSizes } = Constants
 
 const db = SQLite.openDatabase({name: 'securityDB', createFromLocation: '/data/securityDB.sqlite'})
@@ -29,6 +29,8 @@ export default class ResetConfirmScreen extends Component {
             txn.executeSql('DROP TABLE IF EXISTS Security', [])
             txn.executeSql('CREATE TABLE IF NOT EXISTS Security(id INTEGER PRIMARY KEY NOT NULL, pin_number VARCHAR(6), security_question VARCHAR(100), security_answer VARCHAR(200))')
         })
+
+        // todo - update database.
         this.goToScreen('CreateSecurityPinScreen', {}, navigation)
     }
 
