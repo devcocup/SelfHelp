@@ -41,6 +41,14 @@ export default class CurrentJournalPromptScreen extends Component {
 
 
     componentWillMount () {
+        const { navigation } = this.props
+        const { journalAnswer } = navigation.state.params
+        if (journalAnswer) {
+            this.setState({
+                journalText: journalAnswer
+            })
+        }
+
         this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardDidShow.bind(this))
         this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardDidHide.bind(this))
     }
@@ -66,32 +74,46 @@ export default class CurrentJournalPromptScreen extends Component {
         })
     } 
 
-    runSQL(currentTime, journalQuestion, journalAnswer) {
+    runSQL(currentTime, journalQuestion, journalAnswer, isEdit=false) {
         const db = SQLite.openDatabase({name: 'journalsDB', createFromLocation: '/data/journalsDB.sqlite'})
         const encryptedTime = encrypt(AppKey, currentTime)
         const encryptedQuestion = encrypt(AppKey, journalQuestion)
         const encryptedAnswer = encrypt(AppKey, journalAnswer)
 
-        db.transaction((txn) => {
-            // txn.executeSql('DROP TABLE IF EXISTS Journals', [])
-            txn.executeSql('CREATE TABLE IF NOT EXISTS Journals(journal_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, journal_date VARCHAR(30), journal_question VARCHAR(100), journal_answer VARCHAR(200))')
-            txn.executeSql(`INSERT INTO Journals (journal_date, journal_question, journal_answer) VALUES("${encryptedTime}", "${encryptedQuestion}", "${encryptedAnswer}")`, [])
-        })
+        if (isEdit) {
+            db.transaction((txn) => {
+                // txn.executeSql('DROP TABLE IF EXISTS Journals', [])
+                txn.executeSql(`UPDATE Journals SET journal_answer="${encryptedAnswer}" WHERE journal_date = "${encryptedTime}" AND journal_question = "${encryptedQuestion}"`, [], (tx, res) => {
+                    console.log(res);
+                })
+            })    
+        } else {
+            db.transaction((txn) => {
+                // txn.executeSql('DROP TABLE IF EXISTS Journals', [])
+                txn.executeSql('CREATE TABLE IF NOT EXISTS Journals(journal_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, journal_date VARCHAR(30), journal_question VARCHAR(100), journal_answer VARCHAR(200))')
+                txn.executeSql(`INSERT INTO Journals (journal_date, journal_question, journal_answer) VALUES("${encryptedTime}", "${encryptedQuestion}", "${encryptedAnswer}")`, [])
+            })
+        }
     }
 
     onDone = (navigation) => {
         const { journalText } = this.state
-        const { navigate, state } = navigation
+        const { navigate, state, goBack } = navigation
         const { params } = state
-        const { headerContent } = params
-        const currentTime = new Date().toLocaleString()
-        this.runSQL(currentTime, headerContent, journalText)
-        navigate('JournalScreen', { updated: true })
+        const { headerContent, journalAnswer, journalDate } = params
+        if (journalDate) {
+            this.runSQL(journalDate, headerContent, journalText, true)
+            goBack()
+        } else {
+            const currentTime = new Date().toLocaleString()
+            this.runSQL(currentTime, headerContent, journalText)
+            navigate('JournalScreen', { updated: true })
+        }
     }
 
     render() {
         const { navigation, placeholder } = this.props
-        const { headerTitle, headerContent } = navigation.state.params
+        const { headerTitle, headerContent, journalDate } = navigation.state.params
 
         return (
             <View style={AppStyles.mainContainer}>

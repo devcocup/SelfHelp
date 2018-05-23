@@ -1,8 +1,9 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
 import SQLite from 'react-native-sqlite-2'
-import { encrypt } from 'react-native-simple-encryption'
+import { encrypt, decrypt } from 'react-native-simple-encryption'
+import Swipeable from 'react-native-swipeable'
 
 // Global Styles & Constants
 import AppStyles from '../Lib/AppStyles'
@@ -13,6 +14,7 @@ import Header from '../Components/Header'
 import JournalCard from '../Components/JournalCard'
 
 const { AppKey, FontSizes, Paddings } = Constants
+const headerTitle = 'Edit Journal'
 
 
 export default class JournalHistoryScreen extends Component {
@@ -53,6 +55,28 @@ export default class JournalHistoryScreen extends Component {
         })
     }
 
+    editJournalHistory = (journalHistory) => {
+        const { navigation } = this.props
+        const { navigate, goBack } = navigation
+        const journalDate = decrypt(AppKey, journalHistory.journal_date)
+        const headerContent = decrypt(AppKey, journalHistory.journal_question)
+        const journalAnswer = decrypt(AppKey, journalHistory.journal_answer)
+        navigate('CurrentJournalPromptScreen', { headerTitle, headerContent, journalAnswer, journalDate })
+        this.swipeable.recenter()
+    }
+
+    deleteJournalHistory = (journalHistory) => {
+        const question = decrypt(AppKey, journalHistory.journal_question)
+        const db = SQLite.openDatabase({name: 'journalsDB', createFromLocation: '/data/journalsDB.sqlite'})
+        db.transaction((txn) => {
+            txn.executeSql(`DELETE FROM journals where journal_question = "${journalHistory.journal_question}" AND journal_date = "${journalHistory.journal_date}"`, [], (tx, res) => {
+                console.log(res);
+            })
+        })
+        this.swipeable.recenter()
+        this.runSQL(question)
+    }
+
     render() {
         const { navigation } = this.props
         const { journalItems, isJournalEmpty } = this.state
@@ -63,17 +87,27 @@ export default class JournalHistoryScreen extends Component {
                     type='Back'
                     navigation={navigation}
                 />
-                <ScrollView>
+                <ScrollView style={{flex: 1}}>
                 {
                     journalItems.map((item, index) => {
+                        let rightButtons = [
+                            <TouchableOpacity style={{flex: 1}} onPress={() => this.editJournalHistory(item)}><Text style={[styles.editButton, styles.text]}>Edit</Text></TouchableOpacity>,
+                            <TouchableOpacity style={{flex: 1}} onPress={() => this.deleteJournalHistory(item)}><Text style={[styles.deleteButton, styles.text]}>Delete</Text></TouchableOpacity>
+                        ]
+
                         return (
-                            <View
+                            <Swipeable
+                                onRef={ref => this.swipeable = ref}
                                 key={index}
-                                style={[styles.cardContainer, AppStyles.hCenter]}>
-                                <JournalCard
-                                    content={item}
-                                />
-                            </View>
+                                rightButtonWidth={75}
+                                rightButtons={rightButtons}
+                            >
+                                <View style={[styles.cardContainer, AppStyles.hCenter]}>
+                                    <JournalCard
+                                        content={item}
+                                    />
+                                </View>
+                            </Swipeable>
                         )
                     })                    
                 }
@@ -91,11 +125,27 @@ export default class JournalHistoryScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         paddingTop: Paddings.containerP
     },
 
     text: {
         color: 'white',
         fontSize: FontSizes.topicFS
+    },
+
+    editButton: {
+        flex: 1,
+        paddingLeft: 20,
+        paddingTop: 10,
+        backgroundColor: 'blue',
+    },
+
+    deleteButton: {
+        flex: 1,
+        backgroundColor: 'red',
+        paddingLeft: 10,
+        paddingTop: 10,
     }
+
 })
