@@ -57,17 +57,19 @@ export default class ConfirmSecurityPinScreen extends Component {
         : false
       : false;
 
-    if (this.state.dotIndex === 5) {
-      this.setState({
-        completed: true
-      });
-      localStorage.setItem("PIN", confirmingPin);
-      this.goToScreen("CreateSecurityQuestionScreen", navigation);
-    }
+    //modified by eli - 2018-05-23, to fix the issues for entering last number correctly.
     if (checkedPin) {
       this.setState({
         dotIndex: this.state.dotIndex + 1
       });
+
+      if (this.state.dotIndex === 5) {
+        this.setState({
+          completed: true
+        });
+        localStorage.setItem("PIN", confirmingPin);
+        this.goToScreen("CreateSecurityQuestionScreen", navigation);
+      }
     } else {
       this.setState({
         mismatched: true,
