@@ -47,6 +47,10 @@ export default class SubTopicButton extends Component {
         navigate(screenName, { subTopic, subContent })
     }
 
+    callFromDescription = (phoneNumber) => {
+        console.log(phoneNumber)
+    }
+
   renderLinks = (links) => links.map(link => <RedirectButton key={link.uri} content={link} onPress={() => onRedirect(link.uri, this.props.navigation)} />)
 
 
@@ -84,6 +88,22 @@ export default class SubTopicButton extends Component {
                                         >
                                             {subItem[1]}
                                         </Text>
+                                    </Text>
+                                )
+                            } else if (Array.isArray(subItem) && subItem.length === 4) {
+                                return (
+                                    <Text
+                                        key={subIndex}
+                                        style={styles.subTextStyle}
+                                    >
+                                        {subItem[0]}&nbsp;
+                                        <Text
+                                            style={styles.subHyperText}
+                                            onPress={() => Linking.openURL('tel:' + subItem[3])}
+                                        >
+                                            {subItem[1]}
+                                        </Text>
+                                        {subItem[2]}
                                     </Text>
                                 )
                             } else if(Array.isArray(subItem) && subItem.length === 3 ){
