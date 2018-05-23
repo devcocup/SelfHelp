@@ -181,7 +181,7 @@ export default class JournalScreen extends Component {
                             />
                             <CardWithImage
                                 cardImage={BrowseJournalIcon}
-                                text='Browse Past Journals'
+                                text='Browse All Journals'
                                 onPress={() => onBrowseJournal(navigation)}
                             />
                         </View>
