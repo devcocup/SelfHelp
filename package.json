@@ -19,6 +19,7 @@
     "react-native-simple-encryption": "^1.2.1",
     "react-native-sound-player": "^0.3.0",
     "react-native-sqlite-2": "^1.6.0",
+    "react-native-swipeable": "^0.6.0",
     "react-native-sync-localstorage": "0.0.3",
     "react-native-tab-view": "0.0.77",
     "react-native-twilio-programmable-voice": "^3.18.1",
