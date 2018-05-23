@@ -8,7 +8,8 @@ import {
   TouchableOpacity,
   ScrollView,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  Alert
 } from "react-native";
 
 // Global Styles & Constants
@@ -57,7 +58,9 @@ export default class ColoringScreen extends Component {
   savePicture = navigation => {
     const { goBack } = navigation;
     this.webview.postMessage("save");
-    goBack();
+    Alert.alert('Success','Your Picture Has Been Saved', [
+      {text: 'Great!', onPress: () => goBack()}
+    ], {cancelable: false})
   };
 
   render() {
