@@ -69,6 +69,7 @@ export default class AnswerSecurityQuestionScreen extends Component {
 
         if (storedAnswer === securityAnswer) {
             localStorage.removeItem('PIN')
+            const db = SQLite.openDatabase({name: 'securityDB', createFromLocation: '/data/securityDB.sqlite'})
             db.transaction((txn) => {
                 txn.executeSql('DROP TABLE IF EXISTS Security', [])
                 txn.executeSql('CREATE TABLE IF NOT EXISTS Security(id INTEGER PRIMARY KEY NOT NULL, pin_number VARCHAR(6), security_question VARCHAR(100), security_answer VARCHAR(200))')
