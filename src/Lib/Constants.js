@@ -226,14 +226,14 @@ const LearnLabels = [
                             categoryContent: [
                                 'Many of the emotional and psychological reactions to sexual assault can eventually lead survivors to experience thoughts of ending their life. If you or someone you care about is thinking about suicide, safety is most important.  There are ways to get help.',
                                 'For immediate assistance call 911.',
-                                'Call the National Suicide Prevention Lifeline at 800.273.TALK (8255) or chat online using the Lifeline Crisis Chat anytime, 24/7.',
+                                ['Call the National Suicide Prevention Lifeline at ', '800.273.TALK (8255)', ' or chat online using the Lifeline Crisis Chat anytime, 24/7.', '+18002738255'],
                                 'Reach out to someone you trust, like a family member or friend.\n',
                                 'Why do I feel this way?',
                                 'You aren\'t alone. If you are having suicidal thoughts, it may mean you are in crisis and need support.  Many people experience suicidal thoughts after experiencing a significant trauma.  Within the military community, there are many factors in addition to sexual assault that can increase the risk of suicidal thoughts, such as frequent deployment to hostile environments and service-related injuries.',
                                 'Suicide is preventable, and suicidal thoughts aren\'t permanent.  If you are thinking about suicide, there are resources to give you the support you need to get through this tough time.  Remember, help is out there.\n',
                                 'Where can I find help and learn more?',
-                                'Call the National Suicide Prevention Lifeline at 800.273.TALK (8255) or chat online using the Lifeline Crisis Chat anytime, 24/7.  The Lifeline is not a confidential service and some personal information may be collected and used if the caller is in danger, such as an IP address or the caller\'s telephone number. If you are concerned about privacy, please review the organization\'s policies before using the service.',
-                                'You can also call the Military/Veterans Crisis Line by calling the same number (800-273-8255) and pressing 1 or connect with them through their online chat service for support 24/7.',
+                                ['Call the National Suicide Prevention Lifeline at ', '800.273.TALK (8255)', ' or chat online using the Lifeline Crisis Chat anytime, 24/7.  The Lifeline is not a confidential service and some personal information may be collected and used if the caller is in danger, such as an IP address or the caller\'s telephone number. If you are concerned about privacy, please review the organization\'s policies before using the service.', '+18002738255'],
+                                ['You can also call the Military/Veterans Crisis Line by calling the same number ', '(800-273-8255)', ' and pressing 1 or connect with them through their online chat service for support 24/7.', '+18002738255'],
                                 'Additionally, you can use the Safe Helpline responder database to connect with medical and mental healthcare providers on your base or installation.'
                             ],
                           links: [
