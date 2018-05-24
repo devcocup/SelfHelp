@@ -104,6 +104,7 @@ export default class CurrentJournalPromptScreen extends Component {
         if (journalDate) {
             this.runSQL(journalDate, headerContent, journalText, true)
             goBack()
+            params.isUpdated({updated: true})
         } else {
             const currentTime = new Date().toLocaleString()
             this.runSQL(currentTime, headerContent, journalText)
