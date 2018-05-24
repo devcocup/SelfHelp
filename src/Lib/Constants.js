@@ -166,7 +166,8 @@ const LearnLabels = [
                                 'When should I get help?',
                                 'You may be hesitant to get support for depression because you think you\'re just \"feeling down\" and should be able to just \"get over it.\"  However, if these feelings are interfering with your daily life, know that there is help available.\n',
                                 'Where can I find help and learn more?',
-                                'To find a mental health facility or program, use the Safe Helpline Responder database for military and civilian resources in your area in the Search section of this app.\n',
+                                'Learn more about depression from the National Institute of Mental Health or the National Alliance on Mental Illness.',
+                                'To find a mental health facility or program, use the Safe Helpline Responder database for military and civilian resources in your area in the Search section of this app. You can also use the Mental Health Treatment Locator function from The Substance Abuse and Mental Health Services Administration (SAMHSA).  Find the center that is closest to you and best fits your needs. Please note that not all providers in the database have been formally vetted by RAINN and not all accept TRICARE. Please confirm with the provider about the insurances they accept.\n',
                                 'Having support when you need it most can sometimes be challenging. The Safe Helpline app allows you to create a personalized self-care plan based on how you are feeling, and you can browse a number of self-care exercises to help you through a difficult moment.'
                             ],
                             links: [
