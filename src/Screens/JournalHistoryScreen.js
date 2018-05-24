@@ -1,6 +1,6 @@
 // React
 import React, { Component } from 'react'
-import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import { View, Text, ScrollView, TouchableOpacity, Alert, StyleSheet, Dimensions } from 'react-native'
 import SQLite from 'react-native-sqlite-2'
 import { encrypt, decrypt } from 'react-native-simple-encryption'
 import Swipeable from 'react-native-swipeable'
@@ -64,11 +64,24 @@ export default class JournalHistoryScreen extends Component {
     editJournalHistory = (journalHistory) => {
         const { navigation } = this.props
         const { navigate, goBack } = navigation
+        
         const journalDate = decrypt(AppKey, journalHistory.journal_date)
         const headerContent = decrypt(AppKey, journalHistory.journal_question)
         const journalAnswer = decrypt(AppKey, journalHistory.journal_answer)
         navigate('CurrentJournalPromptScreen', { headerTitle, headerContent, journalAnswer, journalDate, isUpdated: this.isUpdated })
         this.swipeable.recenter()
+    }
+
+    showEditAlert = (journalHistory) => {
+        Alert.alert(
+            'Notice!',
+            'Do you want to edit current entry?',
+            [
+              {text: 'Yes', onPress: () => this.editJournalHistory(journalHistory)},
+              {text: 'No', onPress: () => this.swipeable.recenter(), style: 'cancel'},
+            ],
+            { cancelable: true }
+        )
     }
 
     deleteJournalHistory = (journalHistory) => {
@@ -85,6 +98,18 @@ export default class JournalHistoryScreen extends Component {
         navigate('JournalScreen', { updated: true })
     }
 
+    showDeleteAlert = (journalHistory) => {
+        Alert.alert(
+            'Notice!',
+            'Do you want to delete current entry?',
+            [
+              {text: 'Yes', onPress: () => this.deleteJournalHistory(journalHistory)},
+              {text: 'No', onPress: () => this.swipeable.recenter(), style: 'cancel'},
+            ],
+            { cancelable: true }
+        )
+    }
+
     render() {
         const { navigation } = this.props
         const { journalItems, isJournalEmpty } = this.state
@@ -99,8 +124,8 @@ export default class JournalHistoryScreen extends Component {
                 {
                     journalItems.map((item, index) => {
                         let rightButtons = [
-                            <TouchableOpacity style={{flex: 1}} onPress={() => this.editJournalHistory(item)}><Text style={[styles.editButton, styles.text]}>Edit</Text></TouchableOpacity>,
-                            <TouchableOpacity style={{flex: 1}} onPress={() => this.deleteJournalHistory(item)}><Text style={[styles.deleteButton, styles.text]}>Delete</Text></TouchableOpacity>
+                            <TouchableOpacity style={{flex: 1}} onPress={() => this.showEditAlert(item)}><Text style={[styles.editButton, styles.text]}>Edit</Text></TouchableOpacity>,
+                            <TouchableOpacity style={{flex: 1}} onPress={() => this.showDeleteAlert(item)}><Text style={[styles.deleteButton, styles.text]}>Delete</Text></TouchableOpacity>
                         ]
 
                         return (
